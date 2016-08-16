@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Program_Models1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Additional Program Models</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Program_Models__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Program Models</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Funding_Priorities__c</fullName>
+        <defaultValue>&quot;CNCS seeks to prioritize ….In order to receive priority consideration, applicants must demonstrate that the priority area is a significant part of the program focus and intended outcomes, and must include a high quality program design. Applicants proposing programs that receive priority consideration are not guaranteed funding.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Funding Priorities</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>National_Performance_Measur_Information__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>National Performance Measure Information</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>National_Performance_Measures1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>National Performance Measures</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>National_Performance_Measures_Informatio__c</fullName>
+        <externalId>false</externalId>
+        <label>National Performance Measure Information</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>National_Performance_Measures__c</fullName>
+        <defaultValue>&quot;The National and Community Service Act, as amended by the Edward M. Kennedy Serve America Act, emphasizes measuring the impact of service and focusing on a core set of issue areas. CNCS’s five-year Strategic Plan establishes an ambitious set of objectives that guided the development of 16 agency-wide National Performance Measures. CNCS expects applicants to use National Performance Measures as part of a comprehensive performance management strategy that relies on both performance and evaluation data to learn from its work, as well as make strategic adjustments to achieve its goals. Applicants are required to use the specific performance measures outlined in this Notice. For more information, please refer to the National Performance Measures Instructions and additional program-specific evaluation requirements at the URL(s) below.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>National Performance Measures</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Program Description</relationshipLabel>
+        <relationshipName>Program_Description</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Program_Authority__c</fullName>
+        <defaultValue>&quot;The National and Community Service Act of 1990, as amended, (42 U.S.C. § 12501 et seq.).  The Domestic Volunteer Service Act of 1973, as amended (42 U.S.C. § 4950 et seq.). XX CFR §§ [xxxx – xxxx]. The full regulations are available online at [URL].&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Program Authority</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Purpose_of_Program_Funding__c</fullName>
+        <defaultValue>&quot;The mission of CNCS is to improve lives, strengthen communities, and foster civic engagement through service and volunteering. Through AmeriCorps, Senior Corps, the Social Innovation Fund, and the Volunteer Generation Fund, CNCS has helped to engage millions of citizens in meeting community and national challenges through service and volunteer action. [Insert purpose of the program funding]&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Purpose of Program Funding</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>Program Description</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Funding Opportunity  ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Program Description</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

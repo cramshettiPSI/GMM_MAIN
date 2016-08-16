@@ -1,0 +1,7 @@
+<apex:page standardController="Award_Reporting__c" extensions="FFRForAwardReportingCntrl" action="{!invokeFFRData}">
+<html lang="en-US"> 
+<h1 style= "display:none">FFR</h1>
+</html>
+<apex:pageMessages ></apex:pageMessages>
+ 
+</apex:page>

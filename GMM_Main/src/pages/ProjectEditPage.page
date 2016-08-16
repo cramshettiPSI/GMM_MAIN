@@ -1,0 +1,109 @@
+<apex:page standardController="Project__c" extensions="ProjectEditExt" sidebar="true"  showChat="true">
+<chatter:feed entityId="{!Project__c.id}" showPublisher="true"/>
+
+<apex:form id="theForm">
+   <apex:pageBlock >
+   <apex:pageBlockButtons >
+       <apex:commandButton value="Save" action="{!PageRedirect}"/>
+       <apex:commandButton value="Cancel" action="{!cancel}"/>
+   </apex:pageBlockButtons>
+   
+    <apex:pageblockSection columns="1" collapsible="true" Title="Information">
+         <apex:inputField value="{!Project__c.Status__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project_Start_Date__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project_End_Date__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.CNCS_Corporate_Structure__c}"></apex:inputField>
+    </apex:pageblocksection>
+    
+    <apex:pageblockSection columns="1" collapsible="true" Title="Project Information">
+         <apex:outputField value="{!Project__c.Name}"></apex:outputField>
+         <apex:outputField value="{!Project__c.projSequence__c}"></apex:outputField>
+         <apex:inputField value="{!Project__c.Legacy_Project_ID__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project_Title__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project_State__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Project_Site_URL__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Street_Address_1__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Street_Address_2__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.City__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.State__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Zip__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Country__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Email__c}"></apex:inputField>
+         <apex:inputField value="{!Project__c.Phone__c}"></apex:inputField>     
+    </apex:pageblocksection>
+    
+    <apex:pageblockSection columns="1" collapsible="true" Title="Project Information">
+         <apex:inputField value="{!Project__c.Project_Director__c}"></apex:inputField>
+    </apex:pageblocksection>
+   </apex:pageBlock>  
+   
+   <apex:outputPanel id="tstpopup">       
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                
+      <apex:pageBlock rendered="{!displayPopup}">
+        <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                    <apex:panelGroup >  
+                    <!--   <apex:outputLabel value="Old Address"/><br> </br> -->
+                      Old Address <br> </br>
+                      <apex:outputText value="{!Project__c.Street_Address_1__c}"/><br></br>
+                      <apex:outputText value="{!Project__c.City__c}"/> &nbsp;
+                      <apex:outputText value="{!Project__c.State__c}"/> &nbsp;
+                      <apex:outputText value="{!Project__c.Zip__c}"/> &nbsp;
+  
+                   </apex:panelGroup>
+                     <apex:panelGroup >
+                      New Address Suggestions <br> </br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+                     </apex:panelGroup>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    
+        
+          <apex:commandButton value="Use Old Address" action="{!closePopup}" rerender="tstpopup"/>
+            <apex:commandButton value="Use New Address" action="{!addressSelection}"  /> 
+            <apex:commandButton value="Cancel" action="{!closePopup}" rerender="tstpopup"/>
+         </apex:outputPanel>
+       </apex:outputPanel>
+    </apex:form>
+    
+    <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 45%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 700px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style> 
+   
+</apex:page>

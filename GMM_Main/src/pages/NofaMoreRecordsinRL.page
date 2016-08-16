@@ -1,0 +1,12 @@
+<apex:page standardController="NOFA__c" >
+ <html lang="en-US"> 
+ </html>
+    <script>    
+        window.location.replace('/{!NOFA__c.Id}?rowsperlist=100&nooverride=1');    
+    </script>
+    
+   <!-- <apex:outputPanel layout="block" style="overflow:auto; height:500px;"> 
+    <apex:relatedList id="theList" list="NOFAs_RFPs__r" pageSize="100">        
+    </apex:relatedList>    
+    </apex:outputPanel> -->
+</apex:page>

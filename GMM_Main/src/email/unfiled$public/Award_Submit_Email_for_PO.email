@@ -1,0 +1,5 @@
+Hello [Application__c.Authorized_User__c ],
+
+The following Equipment Inventory report {!Award_Reporting__c.Award_Name__c} has been submitted for Award {!Award_Reporting__c.Award_Name__c}. 
+
+The details of this report can be viewed in GMM.

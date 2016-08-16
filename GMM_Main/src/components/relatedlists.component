@@ -1,0 +1,50 @@
+<apex:component controller="RLController"  >
+  <apex:attribute name="relationfield" type="String" description="relation field" assignTo="{!arelationfield}" />
+  <apex:attribute name="recId" description="Parent Record Id" type="String" required="true" assignTo="{!arecId}" />
+  <apex:attribute name="objType" description="Type of child Object." type="String" required="true" assignTo="{!aobjType}" />
+  <apex:attribute name="fieldsList" description="List of fields to display." type="string" required="true" assignTo="{!aFields}" />
+  <apex:attribute name="recordType" description="recordType used" type="string" required="true" assignTo="{!arecordType}" />
+  <apex:form >
+  <!-- <apex:actionFunction name="DoDeleteJS" action="{!del}" immediate="true">
+      <apex:param name="RecId" assignto="{!ActionId}" value="" />
+   </apex:actionFunction>  -->
+   
+  <apex:pageBlock >       
+      <apex:outputPanel >
+          <apex:outputText style="font-weight:600" value="Filter by CNCS Status: "/>
+          <apex:selectList title="selectlist" id="selectlist"  value="{!selectedstatus}" size="1">
+              <apex:selectOptions id="selectoption"  value="{!options}"/>
+              <apex:actionSupport action="{!run}" event="onchange" reRender="results"/>
+          </apex:selectList>
+      </apex:outputPanel>
+      <apex:pageBlockTable id="results" value="{!objList}" var="o" > <!-- rendered="{!IF(AND(NOT(ISBLANK(objList)),objList.size>0),true,false)}" -->    
+      
+         <apex:column headerValue="Action" style="width:5px">
+         <apex:outputPanel >
+               <apex:commandLink style="color: #015BA7;" styleClass="cmdLink" value="Edit" action="{!Edit}" immediate="true" target="_blank">
+                  <apex:param name="RecId" value="{!o.objId}" assignTo="{!ActionId}" />
+               </apex:commandLink>                           
+         </apex:outputPanel> 
+         </apex:column>
+         
+         <apex:repeat value="{!columnList}" var="c">
+              <apex:column width="275" rendered="{!IF(c.FieldLabel != 'Application ID',true,false)}">
+                 <apex:facet name="header">                                        
+                       <span>{!c.Fieldlabel}</span> 
+                 </apex:facet>                            
+                 <apex:outputField rendered="{!IF(c.FieldLabel != 'Application ID',true,false)}" value="{!o.obj[c.FieldName]}" /> 
+              </apex:column> 
+              <apex:column width="275" rendered="{!IF(c.FieldLabel == 'Application ID',true,false)}">
+                 <apex:facet name="header">                                        
+                       <span>Application ID</span> 
+                 </apex:facet>                
+                 <apex:outputLink rendered="{!IF(c.FieldLabel == 'Application ID',true,false)}" value="/{!o.objId}" target="_blank">{!o.obj[c.FieldName]} </apex:outputLink>           
+              </apex:column>          
+          </apex:repeat>   
+      </apex:pageBlockTable><br/><br/>
+      <!-- <apex:outputText rendered="{!objList.size=0}">No Records to Display </apex:outputText> -->
+     
+  </apex:pageBlock>
+  </apex:form>
+  
+</apex:component>

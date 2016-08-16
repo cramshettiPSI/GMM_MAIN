@@ -1,0 +1,22 @@
+<apex:page standardController="Application3__c" sidebar="False" showHeader="False">
+
+<apex:variable var="per" value="{!$User.perId__c}" />
+    <apex:variable var="app" value="{!Application3__c.name}" />
+    <apex:variable var="crpp" value="{!Application3__c.NOFA_CRPP_Code__c}" />
+    <apex:variable var="par" value="{!Application3__c.Module__c}" />
+    <apex:variable var="prof" value="{!$Profile.Name}" />
+    <h2>Per ID: {!per}<br/>
+    App ID: {!app}<br/>
+    Crpp cd: {!crpp}<br/>
+    Parent: {!par}<br/>
+    Profile: {!prof}<br/></h2>
+   <apex:canvasApp applicationName="SN Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!par=="SN"}"/>
+    <apex:canvasApp applicationName="VISTA Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="VISTA" || par=="VISTA"}"/>
+    <apex:canvasApp applicationName="NCCC Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="NCCC" || crpp=="FEMA"}"/>
+    <apex:canvasApp applicationName="FGP Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="FGP" || crpp=="FGPF"}"/>
+    <apex:canvasApp applicationName="SCP Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="SCP" || crpp=="SCPF"}"/>
+    <apex:canvasApp applicationName="RSVP Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="RSVP"}"/>
+    <apex:canvasApp applicationName="SIF Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="SIF" || par=="SIF"}"/>
+    <apex:canvasApp applicationName="Generic Performance Measures" height="1000px" width="1600px" maxWidth="1600px" maxHeight="2000px" parameters="{appId:'{!app}',perId:{!per},prof:'{!prof}'}" scrolling="auto" rendered="{!crpp=="VGF" || crpp=="CADMIN"}"/>
+
+</apex:page>

@@ -1,0 +1,31 @@
+<apex:page controller="CustomSendEmailController">  
+   <html lang="en-US"> 
+   <h1 style= "display:none">Email</h1>
+   </html>
+  
+  <apex:pageMessages id="messages" /> 
+  <apex:form >
+    <apex:sectionHeader title="Send an Email"/>
+       <apex:pageBlock title="Edit Email" >
+         <apex:pageBlockButtons >          
+           <apex:commandButton value="Send" action="{!sendEmails}"  />
+           <apex:commandButton value="Return" action="{!cancel}"  />           
+           <apex:commandButton value="Cancel" action="{!cancel}"  />
+         </apex:pageBlockButtons>
+        <apex:outputLabel for="To" value="To: " ></apex:outputLabel>      
+        <apex:inputText id="To" value="{!toAddresses}" style="width:200px"/>
+        <br /><br /> 
+        <br /><br /> 
+        <apex:outputLabel for="cc" value="CC: " ></apex:outputLabel>      
+        <apex:inputText id="cc" value="{!toCCAddresses}" style="width:200px"/> 
+        <br /><br />              
+        <br /><br />
+        <apex:outputLabel value="Subject" for="Subject"/>:<br />     
+        <apex:inputText value="{!subject}" id="Subject" style="width:200px"/>
+        <br /><br />
+        <apex:outputLabel value="Body" for="Body"/>:<br />     
+        <apex:inputTextarea value="{!body}" id="Body" rows="25" cols="150"/>           
+        <br /><br /><br /> 
+       </apex:pageBlock>
+  </apex:form>     
+</apex:page>

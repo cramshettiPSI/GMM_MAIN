@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Award_Reporting__c.Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Grant_num__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Award__c.Organization_Legal_Name__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Award__c.Corporate_Program1__c</field>
+    </columns>
+    <description>This report displays list of reports what were due in the last 60 days. These reports are grouped by the PO name.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Award_Reporting__c.PO_Email__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Award_Reporting__c.PO_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Reports by PO due within the last 60</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Award_Reporting__c@Award_Reporting__c.Award__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Award_Reporting__c.Due_Date__c</dateColumn>
+        <interval>INTERVAL_LAST60</interval>
+    </timeFrameFilter>
+</Report>

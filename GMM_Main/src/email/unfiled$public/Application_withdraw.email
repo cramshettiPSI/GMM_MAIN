@@ -1,0 +1,6 @@
+Dear {!Application3__c.Withdrawn_By__c},
+
+The request to withdraw application {!Application3__c.Name}  has been processed.  This application is no longer in consideration for this competition.
+
+Thank you,
+Corporation for National and Community Service

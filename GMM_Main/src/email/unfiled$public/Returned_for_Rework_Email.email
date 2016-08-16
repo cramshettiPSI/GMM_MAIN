@@ -1,0 +1,8 @@
+Dear {!Application3__c.Submitted_By__c},       
+
+Thank you for your submission. Your concept paper has been reviewed and changes are being requested. You will be contacted directly by a CNCS Program Officer to discuss the changes.
+
+Comments: {!Application3__c.Comments__c}
+
+Thank you,       
+Corporation for National and Community Service

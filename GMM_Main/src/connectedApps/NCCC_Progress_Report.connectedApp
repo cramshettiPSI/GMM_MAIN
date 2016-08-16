@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://uategrants.cns.gov/egrantsPM/sfpprnccc_redirector.jsp</canvasUrl>
+        <locations>Visualforce</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>avasili@plan-sys.com</contactEmail>
+    <label>NCCC Progress Report</label>
+    <oauthConfig>
+        <callbackUrl>https://uategrants.cns.gov/egrantsPM/page_pprnccc.xhtml</callbackUrl>
+        <consumerKey>3MVG9ic.6IFhNpPo1ShirFiXxwNw3_VPDDonFGRL17oR_ouBw5qR0tSRDU5XTLE6J0KGE5RO2CJhh0MDHcF9Z</consumerKey>
+        <scopes>Basic</scopes>
+    </oauthConfig>
+</ConnectedApp>

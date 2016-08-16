@@ -1,0 +1,11 @@
+Dear {!Award_Reporting__c.Authorized_Representative_Name__c}: 
+ 
+On {!Today}, the Corporation for National and Community Service notified you that {!Application3__c.Organization_Name__c} access to the grant funds in the HHS Payment Management System for grant  {!Award_Reporting__c.Grant_num__c} was restricted and your organization was prohibited from drawing funds from your HHS/PMS account for this grant.  This was the result of the organization's failure to submit the Federal Financial Report (FFR) covering the period ending {!Award_Reporting__c.Reporting_End_Date__c} for grant {!Award_Reporting__c.Grant_num__c}.
+ 
+The Corporation received the FFR for grant {!Award_Reporting__c.Grant_num__c}.  Effective today, the {!Application3__c.Organization_Name__c} can now draw funds from its HHS/PMS account for this grant.
+ 
+If you have any questions, please contact your grants officer, {!Award_Reporting__c.00Nr0000000OiNT}. If you need eGrants assistance (e.g., eGrants password, error message), please contact the eGrants Help Desk at (202) 606-7506 or 1-888-677-7849 or by email at eGrantsHelp@cns.gov.
+ 
+Sincerely,
+ 
+Corporation for National and Community Service

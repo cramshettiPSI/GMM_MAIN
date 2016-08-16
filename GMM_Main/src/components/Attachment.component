@@ -1,0 +1,46 @@
+<apex:component controller="AttachmentUploadController" allowDML="true">
+    
+  <!--apex:sectionHeader title="" subtitle=""/-->
+<!-- <apex:relatedList list="Opportunities" />
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload a Attachment">
+
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!Upload}" value="Upload"/>
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File Name" for="fileName"/>
+          <apex:inputText value="{!attachment.name}" id="fileName"/>
+        </apex:pageBlockSectionItem>
+
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File" for="file"/>
+          <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" id="file"/>
+        </apex:pageBlockSectionItem>
+                  
+           
+      <apex:pageBlockSectionItem >
+        <apex:outputLabel value="Document Type" for="Document Type"/>
+            <apex:selectList value="{!selectedCountry1}" multiselect="false" size="1">
+                <apex:selectOption itemValue="NONE" itemLabel="None"/>
+                <apex:selectOption itemValue="AAE Waiver" itemLabel="AAE Waiver"/>
+                <apex:selectOption itemValue="AAE Waiver Request" itemLabel="AAE Waiver Request"/>
+                <apex:selectOption itemValue="Authorized Representative Confirmation" itemLabel="Authorized Representative Confirmation"/>
+                <apex:selectOption itemValue="Commission Executive Order" itemLabel="Commission Executive Order"/>
+                
+            </apex:selectList>
+             </apex:pageBlockSectionItem>       
+                        
+        </apex:pageBlockSection>
+
+      
+
+    </apex:pageBlock>
+    
+  </apex:form>  -->
+
+</apex:component>

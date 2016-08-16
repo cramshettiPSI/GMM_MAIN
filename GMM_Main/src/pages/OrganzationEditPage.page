@@ -1,0 +1,153 @@
+<apex:page standardController="Account" extensions="OrganizationEditExt" sidebar="true"  showChat="true">
+
+<chatter:feed entityId="{!Account.id}" showPublisher="true"/>
+
+<apex:form id="theForm">
+   <apex:pageBlock >
+   <apex:pageBlockButtons >
+       <apex:commandButton value="Save" action="{!PageRedirect}"/>
+       <apex:commandButton value="Cancel" action="{!cancel}"/>
+   </apex:pageBlockButtons>
+   
+    <apex:pageblockSection columns="2" collapsible="true" Title="Organization Information">
+         <apex:inputField value="{!Account.Legal_Name__c}"></apex:inputField>
+         <!--apex:outputField value="{Parent}"></apex:outputField>-->
+         <apex:inputField value="{!Account.Name_d_b_a__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Draft__c}"></apex:inputField>
+         <!--apex:outputField value="{RecordType}"></apex:outputField>-->
+         <apex:inputField value="{!Account.Website}"></apex:inputField>
+         <apex:inputField value="{!Account.Fax1__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Email__c}"></apex:inputField>
+         <apex:inputField value="{!Account.EIN__c}"></apex:inputField>   
+         <apex:inputField value="{!Account.Created_from_Portal__c}"></apex:inputField>
+         <apex:inputField value="{!Account.EIN_Suffix__c}"></apex:inputField>
+         <apex:inputField value="{!Account.DUNS__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Industry}"></apex:inputField>
+         <apex:inputField value="{!Account.Type}"></apex:inputField>
+         <apex:inputField value="{!Account.Description}"></apex:inputField>
+         <apex:inputField value="{!Account.NumberOfEmployees}"></apex:inputField>
+         <apex:inputField value="{!Account.Address_1__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Address_2__c}"></apex:inputField>
+         <apex:inputField value="{!Account.City__c}"></apex:inputField>
+         <apex:inputField value="{!Account.States__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Zip1__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Country__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Phone}"></apex:inputField>
+         <apex:inputField value="{!Account.Comments__c}"></apex:inputField>
+         </apex:pageblocksection>
+    
+    <apex:pageblockSection columns="2" collapsible="true" Title="Address Information">
+         <apex:inputField value="{!Account.BillingStreet}"></apex:inputField>
+         <apex:inputField value="{!Account.ShippingStreet}"></apex:inputField>
+         <apex:inputField value="{!Account.BillingCity}"></apex:inputField>
+         <apex:inputField value="{!Account.ShippingCity}"></apex:inputField>
+         <apex:inputField value="{!Account.BillingState}"></apex:inputField>
+         <apex:inputField value="{!Account.ShippingState}"></apex:inputField>
+         <apex:inputField value="{!Account.BillingCountry}"></apex:inputField>
+         <apex:inputField value="{!Account.ShippingCountry}"></apex:inputField>
+         <apex:inputField value="{!Account.BillingPostalCode}"></apex:inputField>
+         <apex:inputField value="{!Account.ShippingPostalCode}"></apex:inputField>
+         
+    </apex:pageblocksection>
+    
+    <apex:pageblockSection columns="2" collapsible="true" Title="Audit Information">
+         <apex:inputField value="{!Account.CCR_Verified__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Registration_Active_until__c}"></apex:inputField>
+         <apex:inputField value="{!Account.FAPIIS_Reviewed_on__c}"></apex:inputField>
+         <apex:inputField value="{!Account.IG_Audit_Issued_on__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Findings_Issues__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Corrective_Action_Completed__c}"></apex:inputField>
+         <apex:inputField value="{!Account.IG_Audit_Issued_on_date__c}"></apex:inputField>
+         <apex:inputField value="{!Account.IG_Audit_in_progress__c}"></apex:inputField>
+         <apex:inputField value="{!Account.No_current_IG_audit__c}"></apex:inputField>
+         <apex:inputField value="{!Account.A133_Audit_reviewed_for_FY_ending__c}"></apex:inputField>
+         <apex:inputField value="{!Account.A133_Audit_reviewed_for_FY_ending_date__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Findings_Issues1__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Corrective_Action_Completed1__c}"></apex:inputField>
+         <apex:inputField value="{!Account.A133_not_required_because__c}"></apex:inputField>
+         <apex:inputField value="{!Account.For_Profit_Organization__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Did_not_meet_500_000_threshold__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Excluded_party_list_reviewed_on__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Verified_via__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Previous_Cycle_Closed__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Financial_Management_Capability__c}"></apex:inputField> 
+         <apex:inputField value="{!Account.Indirect_Cost_Rate_Submitted__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Other_explain_in_comments__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Fed_Audit_Clearinghouse__c}"></apex:inputField>
+         <apex:inputField value="{!Account.DHHS_Print_Mgmt_System__c}"></apex:inputField>
+         <apex:inputField value="{!Account.Guidestar__c}"></apex:inputField>
+         <apex:inputField value="{!Account.SAM__c}"></apex:inputField>
+         <apex:inputField value="{!Account.FAPIIS__c}"></apex:inputField>     
+         
+    </apex:pageblocksection>
+   </apex:pageBlock>  
+   
+   <apex:outputPanel id="tstpopup">       
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                
+      <apex:pageBlock rendered="{!displayPopup}">
+        <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                    <apex:panelGroup >  
+                    <!--   <apex:outputLabel value="Old Address"/><br> </br> -->
+                      Old Address <br> </br>
+                      <apex:outputText value="{!Account.Address_1__c}"/><br></br>
+                      <apex:outputText value="{!Account.City__c}"/> &nbsp;
+                      <apex:outputText value="{!Account.States__c}"/> &nbsp;
+                      <apex:outputText value="{!Account.Zip1__c}"/> &nbsp;
+  
+                   </apex:panelGroup>
+                     <apex:panelGroup >
+                      New Address Suggestions <br> </br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+                     </apex:panelGroup>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    
+        
+          <apex:commandButton value="Use Old Address" action="{!closePopup}" rerender="tstpopup"/>
+            <apex:commandButton value="Use New Address" action="{!addressSelection}"  /> 
+            <apex:commandButton value="Cancel" action="{!unshowPopup}" rerender="tstpopup"/>
+         </apex:outputPanel>
+       </apex:outputPanel>
+    </apex:form>
+   
+    <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 3px;
+            border-style: solid;
+            z-index: 9999;
+            left: 45%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 700px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style> 
+   
+</apex:page>

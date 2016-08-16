@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Code_Short_desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Purpose Code Description</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Purpose Code &amp; Program Manager</label>
+    <listViews>
+        <fullName>ALLALL</fullName>
+        <columns>NAME</columns>
+        <columns>Code_Short_desc__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>ALL</label>
+    </listViews>
+    <nameField>
+        <label>Account Purpose Code &amp; Program Manager</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Purpose Code &amp; Program Manager</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Code_Short_desc__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Code_Short_desc__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>Active__c</searchFilterFields>
+        <searchResultsAdditionalFields>Code_Short_desc__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Name_Unique</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(CONTAINS (LOWER(VLOOKUP( $ObjectType.Account_Purpose__c.Fields.Name , $ObjectType.Account_Purpose__c.Fields.Name, Name)),LOWER (Name)),OR(ISNEW(), ISCHANGED(Name)) )</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>The Account Purpose Code &amp; Program Manager already exists. This value must be unique.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Name_Unique_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(CONTAINS(LOWER(VLOOKUP( $ObjectType.Account_Purpose__c.Fields.Name , $ObjectType.Account_Purpose__c.Fields.Name, Name)),LOWER (Name)), OR(ISNEW(), ISCHANGED(Name)) )</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>The Account Purpose Code &amp; Program Manager already exists. This value must be unique.</errorMessage>
+    </validationRules>
+</CustomObject>

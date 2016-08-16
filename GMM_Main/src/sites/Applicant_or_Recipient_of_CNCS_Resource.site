@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowHomePage>false</allowHomePage>
+    <allowStandardAnswersPages>false</allowStandardAnswersPages>
+    <allowStandardIdeasPages>false</allowStandardIdeasPages>
+    <allowStandardLookups>false</allowStandardLookups>
+    <allowStandardSearch>false</allowStandardSearch>
+    <authorizationRequiredPage>Login_Page</authorizationRequiredPage>
+    <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
+    <changePasswordPage>ChangePassword</changePasswordPage>
+    <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
+    <fileNotFoundPage>FileNotFound</fileNotFoundPage>
+    <forgotPasswordPage>ForgotPassword</forgotPasswordPage>
+    <genericErrorPage>Exception</genericErrorPage>
+    <inMaintenancePage>CommunitiesLogin</inMaintenancePage>
+    <inactiveIndexPage>CommunitiesLogin</inactiveIndexPage>
+    <indexPage>CommunitiesLanding</indexPage>
+    <masterLabel>Applicant or Recipient of CNCS Resource</masterLabel>
+    <requireHttps>true</requireHttps>
+    <requireInsecurePortalAccess>false</requireInsecurePortalAccess>
+    <selfRegPage>CommunitiesCustomSelfRegPage</selfRegPage>
+    <siteAdmin>avasili@plan-sys.com</siteAdmin>
+    <siteType>ChatterNetwork</siteType>
+    <subdomain>cncs</subdomain>
+    <urlPathPrefix>granteeportal</urlPathPrefix>
+</CustomSite>

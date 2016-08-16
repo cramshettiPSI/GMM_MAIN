@@ -1,0 +1,131 @@
+<apex:page standardController="Location__c" extensions="LocationDetailExt">
+<html lang="en-US"> 
+</html>
+ <apex:form > 
+   <apex:pageBlock title="Location Detail" mode="edit">
+  
+  <apex:pageBlockButtons >   
+  <apex:commandButton value="Edit" action="{!Edit}"/>
+  <apex:commandButton value="Delete" action="{!Delete}"/>  
+ 
+
+  </apex:pageBlockButtons>
+  
+    <apex:pageblocksection title="School Info" collapsible="False" Columns="2" rendered="{!(locationInput.Is_this_a_K_12_school__c == 'Yes')}">      
+      <apex:outputField value="{!locationInput.Name}" />
+    <!--   <apex:outputField value="{!locationInput.Application__c}" /> -->
+      <apex:outputField value="{!locationInput.School_Name__c}" />      
+      <apex:outputField value="{!locationInput.School_ID_NCES__c}" />
+      <apex:outputField value="{!locationInput.School_Street_Address_new__c}" />
+      <!--  <apex:outputField value="{!locationInput.School_Street_Address_2__c}" /> -->
+      <apex:outputField value="{!locationInput.School_City_new__c}" />
+      <apex:outputField value="{!locationInput.School_State_new__c}" />  
+      <apex:outputField value="{!locationInput.School_Zip_new__c}" />    
+      </apex:pageBlockSection> 
+  
+ 
+ <apex:pageblocksection title="School Information" collapsible="False" Columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.School_Information__c && locationInput.Location_Type__c == 'Service Location')}">      
+      <apex:outputField value="{!locationInput.Is_this_a_K_12_school__c}" />
+      <apex:outputField value="{!locationInput.NCES_ID__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c == 'Yes')}"/>      
+      </apex:pageBlockSection>
+ 
+  <!--  <apex:pageblocksection title="Standard Information" collapsible="False" Columns="2" rendered="{!locationInput.Application__r.NOFA_RFP__r.Standard_Information__c}"> -->
+  <apex:pageblocksection title="Standard Information" collapsible="False" Columns="2" rendered="{!locationInput.Application__r.NOFA_RFP__r.Standard_Information__c}">
+      <apex:outputField value="{!locationInput.Location_Type__c}" />      
+      <apex:outputField value="{!locationInput.Name}" />
+      <apex:outputField value="{!locationInput.Supervisor_Name__c}" />
+      <apex:outputField value="{!locationInput.Supervisor_Email__c}" />
+      <apex:outputField value="{!locationInput.Supervisor_Organization__c}" />
+      <apex:outputField value="{!locationInput.Supervisor_Phone_Number__c}" />
+      <apex:outputField value="{!locationInput.Supervisor_Phone_Number_Extension__c}"/>
+      <apex:outputField value="{!locationInput.Undisclosed_Location__c}" />
+      <apex:outputField value="{!locationInput.Street_Address_1__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c=='No')}"/>
+      <apex:outputField value="{!locationInput.Street_Address_2__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c=='No')}"/>
+      <apex:outputField value="{!locationInput.City__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c=='No')}"/>
+      <apex:outputField value="{!locationInput.State__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c=='No')}"/>
+      <apex:outputField value="{!locationInput.Zip__c}" rendered="{!(locationInput.Is_this_a_K_12_school__c=='No')}"/>
+      <apex:outputField value="{!locationInput.Application__c}" />
+      
+      
+    
+             </apex:pageBlockSection>
+      
+      <!-- Volunteer Information -->
+      <apex:pageBlockSection collapsible="true" Title="Volunteer Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Volunteer_Information__c && locationInput.Location_Type__c == 'Service Location')}">
+      <apex:outputField value="{!locationInput.Number_of_Volunteers__c}" />
+      <apex:outputField value="{!locationInput.Number_of_Unduplicated_Volunteers__c}" />
+      <apex:outputField value="{!locationInput.Veterans_Served__c}" />
+      </apex:pageBlockSection>
+      
+      <!-- EIN Information -->
+      <apex:pageBlockSection collapsible="true" Title="EIN Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.EIN_Information__c && locationInput.Location_Type__c == 'Service Location') ||(locationInput.Application__r.NOFA_RFP__r.EIN_Information__c && locationInput.Location_Type__c == 'Operating Site')}">
+      <apex:outputField value="{!locationInput.Location_EIN__c}" />
+      </apex:pageBlockSection>
+      
+      <!-- Focus Areas and Objectives -->
+      <apex:pageBlockSection collapsible="true" Title="Focus Area and Objectives" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Service Location') ||(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Operating Site')}">
+      <apex:outputField value="{!locationInput.Education__c}" />
+      <apex:outputField value="{!locationInput.Other_Education__c}" />
+      <apex:outputField value="{!locationInput.Veterans_Military_Families__c}" />
+      <apex:outputField value="{!locationInput.Other_Veterans_Military_Families__c}" />
+      <apex:outputField value="{!locationInput.Disaster_Services__c}" />
+      <apex:outputField value="{!locationInput.Other_Disaster_Services__c}" />
+      <apex:outputField value="{!locationInput.Environmental_Stewardship__c}" />
+      <apex:outputField value="{!locationInput.Other_Environmental_Stewardship__c}" />
+      <apex:outputField value="{!locationInput.Healthy_Futures__c}" />
+      <apex:outputField value="{!locationInput.Other_Healthy_Futures__c}" />
+      <apex:outputField value="{!locationInput.Capacity_Building__c}" />
+      <apex:outputField value="{!locationInput.Other_Capacity_Building__c}" />
+      <apex:outputField value="{!locationInput.Economic_Opportunities__c}" />
+      <apex:outputField value="{!locationInput.Other_Economic_Opportunities__c}" />
+      </apex:pageBlockSection>
+      
+      <!-- Site Date Information -->
+      <apex:pageBlockSection collapsible="true" Title="Site Date Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Service Location') ||(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Member Lodging')}">
+      <apex:outputField value="{!locationInput.Projected_Start_Date__c}" />
+      <apex:outputField value="{!locationInput.Projected_End_Date__c}" />
+      <apex:outputField value="{!locationInput.Accessible_for_people_with_disablities__c}" />
+      <apex:outputField value="{!locationInput.Description_of_Accessibility__c}" />
+      </apex:pageBlockSection>
+      
+      <!-- Site Type and Summer Associates Information -->
+      <apex:pageBlockSection collapsible="true" Title="Site Type and Summer Associates" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Type_and_Summer_Associates__c && locationInput.Location_Type__c == 'Service Location')}">
+      <apex:outputField value="{!locationInput.Site_Type__c}" />
+      <apex:outputField value="{!locationInput.Summer_Associates__c}" />
+      </apex:pageBlockSection>
+      
+      <!-- Site Type -->
+      <apex:pageBlockSection collapsible="true" Title="Site Type" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Type__c && locationInput.Location_Type__c == 'Service Location')}">
+      <apex:outputField value="{!locationInput.Station_Type__c}" />
+      <apex:outputField value="{!locationInput.Summer_Associates__c}" />
+     </apex:pageBlockSection>
+      
+      <!-- Additional Operating Site Information -->      
+      <apex:pageBlockSection collapsible="true" Title="Additional Operating Site Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Additional_Operating_Site_Information__c && locationInput.Location_Type__c == 'Operating Site')}">
+      <apex:outputField value="{!locationInput.Station_Type__c}" />
+      <apex:outputField value="{!locationInput.Summer_Associates__c}" />
+     </apex:pageBlockSection>
+     
+      
+      <!-- Lodging Information -->      
+      <apex:pageBlockSection collapsible="true" Title="Lodging" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Lodging_Information__c && locationInput.Location_Type__c == 'Member Lodging')}">
+      <apex:outputField value="{!locationInput.Lodging_Type__c}" styleClass="myClass" />
+      <apex:outputField value="{!locationInput.Lodging_Category__c}" styleClass="myClass" />
+      <apex:outputField value="{!locationInput.Lodging_Description__c}" styleClass="myClass" />
+      <apex:outputField value="{!locationInput.Lodging_Arrival_Date__c}" styleClass="myClass" />
+      <apex:outputField value="{!locationInput.Lodging_Departure_Date__c}" styleClass="myClass" />
+      <apex:outputField value="{!locationInput.Beds_Provided__c}" />
+      <apex:outputField value="{!locationInput.Laundry__c}" />
+      <apex:outputField value="{!locationInput.Kitchen__c}" />
+      <apex:outputField value="{!locationInput.Refrigerator_Microwave__c}" />
+      <apex:outputField value="{!locationInput.Shower__c}" />
+      <apex:outputField value="{!locationInput.Distance_to_Location_of_Service__c}" styleClass="myClass" />     
+     </apex:pageBlockSection>
+     
+      
+    
+  </apex:pageBlock>
+  
+       
+  </apex:form>
+</apex:page>

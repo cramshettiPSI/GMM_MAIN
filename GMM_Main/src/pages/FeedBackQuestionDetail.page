@@ -1,0 +1,152 @@
+<apex:page standardController="Application_Feedback__c" extensions="FeedqueCV" sidebar="true"  showChat="true">
+<!--chatter:feed entityId="{!Application_Feedback__c.id}" showPublisher="true"-->
+<!--<chatter:feedWithFollowers entityId="{!Application_Feedback__c.id}" showHeader="true" />-->
+ <!--  </chatter:feed> -->
+
+     <style>
+    .Score{
+   float:left;
+    }
+ 
+     </style>
+   <html lang="en-US"> 
+ 
+   </html>
+    <apex:form id="theForm">
+     
+    
+     
+    <apex:pageBlock >
+    <apex:pageBlockButtons >
+ 
+       <apex:commandButton value="Edit" action="{!edit}" disabled="{!(($Profile.Name = 'Expert Reviewers' && Application_Feedback__c.Status__c=='Submitted') 
+                                                                    || ($Profile.Name = 'Expert Reviewers' && Application_Feedback__c.Status__c=='Accepted by CNCS')
+                                                                    || (Application_Feedback__c.Status__c=='Submitted')
+                                                                    || (Application_Feedback__c.Expert_Review_Panel__r.Panel__r.Panel_Status__c=='Completed') 
+                                                                    || Application_Feedback__c.Status__c=='In Progress' 
+                                                                    || Application_Feedback__c.Status__c=='Returned for Rework' 
+                                                                    && ($Profile.Name = 'PO' && (Application_Feedback__c.Staff_Liasion1__c != userID || Application_Feedback__c.Expert_Review_Panel__r.Staff_Reviewer__c!=userID) 
+                                                                    || userID ==NULL)
+                                                                    && ($Profile.Name = 'Expert Reviewers' && (Application_Feedback__c.Panel_Coordinator__c != contactID || Application_Feedback__c.Expert_Review_Panel__r.Reviewer__c!=contactID) 
+                                                                    || contactID ==NULL))}"/>
+    <apex:commandButton value="Submit" action="{!submit}" disabled="{!if((Application_Feedback__c.Expert_Review_Panel__r.Panel__r.Panel_Status__c='Completed' || Application_Feedback__c.Status__c='Submitted') , True,False)}" />
+    <apex:commandButton value="Return To Rework" action="{!ReturnToRework}" disabled="{!($Profile.Name = 'Expert Reviewers' && Application_Feedback__c.Expert_Review_Panel__r.Reviewer__c==contactID)}"/>
+    <apex:commandButton value="Print to PDF" onclick="window.open('apex/loop__looplus?id={!Application_Feedback__c.Id}');"/> 
+    
+     <apex:commandButton value="View Record History" onclick="window.open('apex/cprh__RecordHistoryViewer?id={!Application_Feedback__c.Id}');"/>         
+                </apex:pageBlockButtons>
+        <apex:pageblockSection columns="2" collapsible="true" Title="Application Information" >
+            <apex:outputfield value="{!Application_Feedback__c.Name}"></apex:outputfield>
+            <apex:outputfield value="{!Application_Feedback__c.Organization_Name__c}"></apex:outputfield>
+            <apex:outputfield value="{!Application_Feedback__c.Project_Name__c}"></apex:outputfield>
+            <apex:outputfield value="{!Application_Feedback__c.Expert_Review_Panel__c }"></apex:outputfield>
+            <apex:outputfield value="{!Application_Feedback__c.Application__c}"></apex:outputfield>
+           <apex:outputfield value="{!Application_Feedback__c.Instructions__c}"></apex:outputfield>
+           <apex:outputfield value="{!Application_Feedback__c.Status__c}"></apex:outputfield>
+           <!-- <apex:outputfield value="{!Application_Feedback__c.Staff_Liasion1__c}"></apex:outputfield> -->
+           <apex:outputfield value="{!Application_Feedback__c.Staff_Liasion1_new__c}"></apex:outputfield>
+           <!-- <apex:outputfield value="{!Application_Feedback__c.Panel_Coordinator__c}"></apex:outputfield>  -->
+           <apex:outputfield value="{!Application_Feedback__c.Panel_Coordinator_new__c}"></apex:outputfield>
+           <apex:outputfield value="{!Application_Feedback__c.Total_Score__c}"></apex:outputfield>
+         </apex:pageblocksection>
+         
+     <apex:pageblockSection columns="1" collapsible="true" Title="Feedback Comments" > 
+     <apex:outputfield value="{!Application_Feedback__c.Feedback_Comments__c}"></apex:outputfield>    
+ 
+         </apex:pageblocksection>
+    <apex:pageblockSection columns="1" collapsible="true" Title="Review Form" >
+          <apex:variable var="section" value="null"  />
+                  
+            
+        <apex:repeat value="{!FeedqueList}" var="f" id="therepeat" >
+         
+                
+                <apex:pageBlocksection columns="1">
+                <apex:panelGrid > 
+               
+                <apex:pageBlockSectionItem rendered="{!IF(f.Name__c =section,false,true)}">
+                <apex:outputPanel >
+                   <span style="color:RED; font-weight: bold">
+                       <apex:outputField value="{!f.Name__c}"/>
+                      
+                       
+                   </span>
+                </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                 <!--  <apex:outputText value="{0,number, ###}" style="text-align:center;">   
+                        <apex:param value="{!rowNum+1}" />   
+                 </apex:outputText>-->
+                
+                <apex:pageBlockSectionItem >
+                
+                <apex:outputPanel >
+                 <!--  <span style="color:black; font-weight: bold">-->
+                       <apex:outputField value="{!f.Question__c}"/>
+                       <apex:outputField value="{!f.Answer__c}" rendered="{!IF(f.Comments_Required__c = 'Yes',True,False)}"/>
+                       
+                       
+                 <!--  </span>-->
+                </apex:outputPanel>
+                
+                </apex:pageBlockSectionItem>
+                </apex:panelGrid> 
+                 <!-- apex:outputfield value="{!f.Scoring_Method__c}"/--> 
+                
+                <apex:pageBlockSection rendered="{!IF(f.Scoring_Method__c ='Number (1-100)',true,false)}">
+                <!--apex:outputLabel value="Score" for="f.Score_number__c" /-->
+                <apex:outputfield value="{!f.Score_number__c}"  />
+                <!--apex:outputfield value="{!f.Score_Value__c}"  /-->
+                <apex:outputfield value="{!f.Weighted_Score__c}"  /> 
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection rendered="{!IF(f.Scoring_Method__c ='Yes/No',true,false)}">
+                <!--apex:outputLabel value="Score" for="f.Score_yes_no__c" /-->
+                <apex:outputfield value="{!f.Score_yes_no__c}"  />
+                <!--apex:outputfield value="{!f.Score_Value__c}"  /-->
+                <apex:outputfield value="{!f.Weighted_Score__c}"  /> 
+                </apex:pageBlockSection>
+                
+                
+                
+                
+                <apex:pageBlockSection rendered="{!IF(f.Scoring_Method__c ='Two Factor Option',true,false)}">
+                <!--apex:outputLabel value="Score" for="f.Score_two_factor__c" /-->
+                <apex:outputfield value="{!f.Score_two_factor__c}"  />
+                <!--apex:outputfield value="{!f.Score_Value__c}"  /--> 
+                <apex:outputfield value="{!f.Weighted_Score__c}"  />                  
+                </apex:pageBlockSection>
+                
+               
+                
+                
+                <apex:pageBlockSection rendered="{!IF(f.Scoring_Method__c ='Four Factor Option',true,false)}">
+                <!--apex:outputLabel value="Score" for="f.Score_four_factor__c" /-->
+                <apex:outputfield value="{!f.Score_four_factor__c}"  />
+                <!--apex:outputfield value="{!f.Score_Value__c}"  /-->
+                <apex:outputfield value="{!f.Weighted_Score__c}"  /> 
+                </apex:pageBlockSection>
+                
+                
+                <!-- <apex:inputfield value="{!f.Score_yes_no__c}" rendered="{!IF(f.Scoring_Method__c ='Yes/No',true,false)}" />
+                 <apex:inputfield value="{!f.Score_two_factor__c}" rendered="{!IF(f.Scoring_Method__c ='Two Factor Option',true,false)}" style="width:85%"/>
+                 <apex:inputfield value="{!f.Score_four_factor__c}" rendered="{!IF(f.Scoring_Method__c ='Four Factor Option',true,false)}" style="width:85%"/>
+                -->
+                <apex:panelGrid > 
+                                 
+                 <apex:variable var="section" value="{!f.Name__c}"/>
+                 </apex:panelGrid> 
+                </apex:pageBlockSection>          
+        </apex:repeat> 
+                <apex:outputtext value="Enter Recommendations" style="color:black; font-weight: bold" rendered="{!IF((Application_Feedback__c.Expert_Review_Panel__r.Panel__r.Stage_Number__r.Enter_Recommendation__c = True && $Profile.Name != 'Expert Reviewers' ),true,false)}"/>
+                <apex:pageBlockSectionItem >
+                <apex:outputfield value="{!Application_Feedback__c.Recommendations__c}" style="left:200px;" />
+                </apex:pageBlockSectionItem> 
+                <apex:outputtext value="Clarifying Questions for the Applicant" style="color:black; font-weight: bold" rendered="{!IF(Application_Feedback__c.Expert_Review_Panel__r.Panel__r.Stage_Number__r.Submit_Clarification_Questions__c = True ,true,false)}"/>
+                <apex:pageBlockSectionItem >
+                <apex:outputfield value="{!Application_Feedback__c.Clarification_Questions__c}"  style="left:200px;" />
+                </apex:pageBlockSectionItem>        
+         </apex:pageblocksection>
+     </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Amount_of_Segal_Education_Award1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount of the Segal Education Award</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Amount_of_the_Segal_AmeriCorps_Education__c</fullName>
+        <defaultValue>&quot;AmeriCorps members serving in programs funded with FY 2015 dollars who successfully complete a term of service will receive an Education Award from the National Service Trust of $5,730 for a year of full-time service, with correspondingly smaller awards for less than full-time service. The amount of the Education Award is linked to the value of the Pell Grant. A member has up to seven years after his or her term of service to use the Education Award. The minimum number of hours per service term and the amount of the Segal Education Award are as follows: A full time service term (minimum 1,700 hours) will receive a Segal Education Award of $5,730. The one-year halftime service term (minimum 900 hours)  will receive a Segal Education Award of $2,865. The reduced half-time service term (minimum 675 hours) will receive a Segal Education Award of $2,182.78. The quarter time service term (minimum 450 hours)  will receive a Segal Education Award of $1,515.55. The minimum time service term (minimum 300 hours) will receive a Segal Education Award of $1,212.44.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount of the Segal Education Award</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cost_Share_or_Match_Requirements__c</fullName>
+        <defaultValue>&quot;There is no cost share or matching requirement. -OR-Applicants are required to match their award at an amount equal to [Number] percent of the total program budget. The grantee match can be [cash] or [cash and in-kind] matching funds. Applicants must demonstrate the ability to meet [Number] percent of the cash match requirement by [ ]. If applicants are required to subgrant, please include the following guidance: Applicants must address any match requirements that will apply to subgrantees, including: • matching requirements for subgrantees • acceptable evidence of match • timing for submission of acceptable evidence of match • conditions for match waivers, if applicable.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Cost Share or Matching</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Eligible_to_Apply__c</fullName>
+        <defaultValue>&quot;The following entities are eligible to apply: public or private nonprofit organizations (including faith-based and other community organizations); institutions of higher education; government entities within states or territories (e.g., cities, counties); government-recognized veteran service organizations; labor organizations; partnerships and consortia; and Indian Tribes. An Indian Tribe is defined as an Indian tribe, band; nation; or other organized group or community; including any Native village, Regional Corporation, or Village Corporation, as defined under the Alaska Native Claims Settlement Act (43 U.S.C. §1602); that is recognized as eligible for the special programs and services provided by the United States under Federal law to Indians because of their status as Indians.  Indian Tribes also include tribal organizations controlled, sanctioned, or chartered by an entity described above. An entitythat desires to apply for an awardas a tribal organization on behalf of a Federally-recognized Tribe, or multiple specific Federally-recognized Tribes, must submit a sanctioning resolution adopted by the Tribal Council (or comparable tribal governing body) of each Indian Tribe. The resolution must identify the entity by name as a tribal organization and indicate whether it is controlled, sanctioned, or chartered by an Indian Tribe(s). It must authorize the entity to be the legal applicant and act on behalf of and include the Indian Tribe(s) in a CNCS application for the purpose of conducting the activities and providing the services described in the application. Previously receiving funds from CNCS or another federal agency is not a prerequisite to apply to this Notice.  Organizations that have been convicted of a federal crime may not receive assistance described in this Notice. Pursuant to the Lobbying Disclosure Act of 1995, an organization described in Section 501 (c)(4) of the Internal Revenue Code of 1986, 26 U.S.C. 501 (c)(4) that engages in lobbying activities is not eligible to apply.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Eligible Applicants</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Exceptions_to_the_Living_Allowance1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exceptions to the Living Allowance</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Exceptions_to_the_Living_Allowance__c</fullName>
+        <defaultValue>&quot;1. Exceptions to the Living Allowance Requirements (for programs existing prior to September 21,1993) If a program existed prior to September 21, 1993, a living allowance is not required. If an applicant chooses to offer a living allowance, it is exempt from the minimum requirement of $12,530, but not the maximum requirement of $25,060. 2. EAP Grantees are not required to provide a living allowance, but if a living allowance is provided, it must comply with the maximum requirements set forth in the Living Allowance Table above. 3. Professional Corps Grantees must provide members a living allowance or salary, which must meet the minimum, but may exceed the maximum living allowance set in the Living Allowance Table above.Professional Corps member salaries are paid entirely by the organizations with which the members serve, and are not included in the budget. School Turnaround AmeriCorps Continuation EAPs may exceed the maximum living allowance consistent with their existing grant terms.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Exceptions to the Living Allowance</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Maximum_Cost_per_MSY1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Maximum Cost per MSY</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Maximum_Cost_per_MSY__c</fullName>
+        <defaultValue>&quot;Maximum Costs per MSY are set forth below. The CNCS cost per MSY is determined by dividing the CNCS share of budgeted grant costs by the number of MSYs requested. It does not include child care or the value of the education award a member may earn. The maximum amount an applicant may request from CNCS per MSY is determined on an annual basis. New and recompeting State Commission sub-grantees/applicants will be held to the maximum cost per MSY for their grant type. The maximum cost per MSY are defined by the grant program and are as follows: Individual Competitive State/Territory Program (cost reimbursement) $13,730; Multi-state (cost reimbursement) $13,730; Professional Corps Grant (Cost Reimbursement) Up to $1,000*; Professional Corps Fixed Amount Grant Up to $1,000*; Education Award Program Fixed Amount Grant $800; Fulltime Fixed Amount Grant $13,430;  State/Territory Commission Formula Prime $18,000; Individual State/Territory Formula Program $20,000; State/Territory Commission Average (of all its subgrants) $13,730. *CNCS’ assumption is that Professional Corps will be covering the operating expenses associated with the AmeriCorps program through non CNCS funds and thus will not be requesting operating funds as part of their applications. CNCS will consider operating funds of up to $1,000 per MSY if an applicant is able to demonstrate in its narrative and supporting budget materials significant organizational financial need and substantial challenges to raising non CNCS resources. Programs operating in rural communities (as defined in the Glossary) and programs that recruit opportunity youth as AmeriCorps members may request up to $13,930 cost per MSY for the AmeriCorps members that will be serving in rural areas or who are opportunity youth. The applicant must include a compelling case as to why the applicant’s cost per MSY must be higher.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Maximum Cost per MSY</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Member_Enrollment_Requirement1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Member Enrollment Requirements for Existing Grantees</inlineHelpText>
+        <label>MBR Enroll RQMTS - Existing Grantees</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Member_Enrollment_Requirements__c</fullName>
+        <defaultValue>&quot;We expect Grantees to enroll all the members included in their grant award. Enrollment rates have a direct bearing on the number of slots and the size of awards approved in the continuation and recompete processes. Continuation and recompeting Grantees that have not achieved full enrollment in the previous year must provide an explanation and a corrective action plan in their application. Successful applicants that do not fully enroll are likely to receive a decrease in funding in subsequent years.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Member Enrollment Requirements for Existing Grantees</inlineHelpText>
+        <label>MBR Enroll RQMTS - Existing Grantees</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Member_Living_Allowance1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Member Living Allowance</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Member_Living_Allowance__c</fullName>
+        <defaultValue>&quot;The proposed budget must include a living allowance for full-time members that is between $12,530 (minimum) and $25,060 (maximum) per member except as noted below. A living allowance is not considered a salary or a wage. Cost reimbursement programs are not required to provide a living allowance for members serving in less than full-time terms of service. If a program chooses to provide a living allowance to a less than full-time member, it must comply with the maximum limits below. For Cost Reimbursement grants, the amount must be included in the proposed budget as either CNCS or grantee share. (EXCEPTION: as noted in Section B.1. and B.3.) While Fixed Amount grant applicants are not required to submit detailed budgets, they are still required to provide a living allowance that complies with the minimum and maximum requirements to members (EXCEPTION: as noted in section B.2. and B.3.) Most Fixed Amount grant applicants are not required to indicate that amount in the application and should request those positions as “without living allowance” in the budget. The minimum and maximum living allowance amounts are based on the member service term. A full time service term (1,700 hours) must have a minimum living allowance of $12,530 and a maximum living allowance of $25,060. The remaining service terms only have a maximum living allowance requirement. The one-year halftime (900 hours) service term maximum is $13,265. The reduced half-time (675 hours) service term maximum is $9,950. The quarter time (450 hours) service term maximum is $6,635. The minimum time (300 hours) service term maximum is $4,420.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Member Living Allowance</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Member_Retention_Requirement1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Member Retention Requirements for Existing Grantees</inlineHelpText>
+        <label>MBR Retention RQMTS - Existing Grantees</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Member_Retention_Requirements__c</fullName>
+        <defaultValue>&quot;We expect Grantees to pursue the highest retention rate possible. Retention rates will have a direct bearing on the number of slots and the size of awards approved in the continuation and recompete processes. Successful applicants that do not retain their members are likely to receive a decrease in funding in subsequent years. We recognize retention rates may vary among equally effective programs depending on the program model. Continuation or recompeting Grantees that have not achieved full retention in the most recently completed program year must provide an explanation and a corrective action plan in their application.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Member Retention Requirements for Existing Grantees</inlineHelpText>
+        <label>MBR Retention RQMTS - Existing Grantees</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>7</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Eligibility Information</relationshipLabel>
+        <relationshipName>Eligibility_Information</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Other_Requirements1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Requirements</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Requirements</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <label>Eligibility Information</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Eligibility Information ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Eligibility Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

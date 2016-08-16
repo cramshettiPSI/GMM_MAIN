@@ -1,0 +1,288 @@
+<apex:page Controller="AddReviewerPoolCont" sidebar="false" id="page" >
+   <html lang="en-US"> 
+   <h1 style= "display:none">AddReviewerPool</h1>
+   </html>
+  <apex:includeScript value="{!$Resource.jquery}"/>
+    
+  <apex:form id="form"> 
+    <style type="text/css">
+      .widthClass{
+          width: 100px;
+       }
+    </style> 
+  <script type="text/javascript">
+    
+        /*
+        * set row level checkboxes based on "all checkbox" state
+        */
+        function toggleSelectAll(checkbox){
+        
+            var $j = jQuery.noConflict();
+            
+            //all checkbox is selected
+            if(checkbox.checked){
+ 
+                //set all row level checkboxes selected
+                $j( ".contactCb" ).prop('checked', true);
+                
+            }
+            else{
+ 
+                //set all row level checkboxes de-selected
+                $j( ".contactCb" ).prop('checked', false);
+                
+            }
+            
+        }
+        
+        /*
+        * set "all checkbox" based on state of row level checkboxes
+        */
+        function toggleItem(checkbox){
+            
+            var $j = jQuery.noConflict();
+            
+            
+            var cbs = $j('.contactCb');
+            
+            //all row level checkboxes selected
+            if(cbs.filter(':not(:checked)').length==0){
+                
+                //set "all checkbox" selected
+                $j("input[id$=selectAll]").prop('checked', true);
+                
+            }
+            else{
+                
+                //set "all checkboxes" de-selected
+                $j("input[id$=selectAll]").prop('checked', false);
+                
+            }
+                        
+        }
+        
+        
+        function confirmAction(promptText){
+        
+            var r=confirm(promptText)
+            if (r==true){
+                return true;
+            }
+            else{
+                return false;
+            }
+                    
+        }
+        
+    
+    </script>
+    
+  <script type="text/javascript">
+      function dosearch()
+      {
+        var area = document.getElementById('page:form:pb:criteria:area').value;
+        var highestEdu = document.getElementById('page:form:pb:criteria:highestEdu').value;
+        var rating = document.getElementById('page:form:pb:criteria:rating').value;
+        var status = document.getElementById('page:form:pb:criteria:status').value;
+        var residence = document.getElementById('page:form:pb:criteria:residence').value;
+        var expertise = document.getElementById('page:form:pb:criteria:expertise').value;
+        var yrsofexp = document.getElementById('page:form:pb:criteria:yrsofexp').value;
+        var fName = document.getElementById('page:form:pb:criteria:fName').value;
+        var lName = document.getElementById('page:form:pb:criteria:lName').value;
+        var email = document.getElementById('page:form:pb:criteria:email').value;
+        var personId = document.getElementById('page:form:pb:criteria:personId').value;       
+       
+        
+         search(area,highestEdu,rating,status,residence,expertise,yrsofexp,fName,lName,email,personId);
+      }
+     </script>
+     
+      <apex:actionFunction name="search" action="{!runSearch}" rerender="results,debug,errors" >
+                   <apex:param name="area" value=""/>
+                   <apex:param name="highestEdu" value=""/>
+                   <apex:param name="rating" value=""/>
+                   <apex:param name="status" value=""/>
+                   <apex:param name="residence" value=""/>
+                   <apex:param name="expertise" value=""/>
+                   <apex:param name="yrsofexp" value=""/>
+                   <apex:param name="fName" value=""/>
+                   <apex:param name="lName" value=""/>
+                   <apex:param name="email" value=""/>
+                   <apex:param name="personId" value=""/>
+        </apex:actionFunction>
+   
+    
+    <apex:pageBlock title="Find Reviewer" mode="edit" id="pb">
+
+               <table width="100%" border="0">
+                <tr>  
+                  <td width="200" valign="top">
+                     <apex:pageBlock title="Parameters" mode="edit" id="criteria">                          
+                        <table cellpadding="2" cellspacing="2">
+                        <tr>
+                         <!-- <td style="font-weight:bold;">First Name<br/> -->
+                            <b> <apex:outputLabel for="fName" value="First Name"/> </b> <br/> 
+                            <apex:inputfield value="{!con.FirstName}" id="fName" >
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputField> <br/>
+                         <!-- </td> -->
+                       </tr>
+                       
+                       <tr>
+                            <!-- <td style="font-weight:bold;">Last Name<br/> -->
+                            <b> <apex:outputLabel for="lName" value="Last Name"/> </b> <br/>
+                            <apex:inputText value="{!lastName}" id="lName" >
+                               <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputText> <br/>
+                            <!-- </td> -->
+                       </tr>
+                       
+                       <tr>
+                            <!-- <td style="font-weight:bold;">Email<br/> -->
+                            <b> <apex:outputLabel for="email" value="Email"/> </b> <br/>
+                            <apex:inputfield value="{!con.Email}" id="email" >
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputField> <br/>                           
+                            <!-- </td> -->
+                       </tr>
+                       
+                       <tr>
+                            <!-- <td style="font-weight:bold;">Person ID<br/> -->
+                            <b> <apex:outputLabel for="personId" value="Person ID"/> </b> <br/>
+                            <apex:inputText value="{!personId}" id="personId" >
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputText> <br/> 
+                            <!-- </td> -->
+                       </tr>
+                       
+                       <tr>
+                        <!--  <td style="font-weight:bold;">State of Residence<br/> -->
+                        <!--   <apex:inputfield value="{!con.State_of_Residence__c}" id="residence" onchange="dosearch();"/> -->
+                          <b> <apex:outputLabel for="state" value="State of Residence"/> </b> <br/>
+                          <apex:selectList id="state" multiselect="true" size="15" style="width:350px" value="{!selectedstates}">
+                          <apex:selectOptions value="{!stateslist}"/>   
+                          <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>                   
+                          </apex:selectList> <br/>
+
+                          <!-- <apex:selectList value="{!countries2}" multiselect="true" size="15" style="width:350px">
+                                 <apex:selectOptions value="{!doWork2}"/>
+                                 </apex:selectList> -->
+                          <!-- </td> -->
+                       </tr>
+                      
+                       <tr>
+                          <!--  <td style="font-weight:bold;">Years of Experience<br/> -->
+                            <b> <apex:outputLabel for="yrsofexp" value="Years of Experience"/> </b> <br/>
+                            <apex:inputText value="{!syrsofExp}" id="yrsofexp" >
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputText> <br/>
+                          <!-- </td> -->         
+                       </tr>
+                       
+                       <tr>
+                        <!--    <td style="font-weight:bold;">Highest Education Level<br/> -->
+                            <b> <apex:outputLabel for="highestEdu" value="Highest Education Level"/> </b> <br/>  
+                            <apex:inputfield value="{!con.Highest__c}" id="highestEdu">
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputField> <br/>                     
+                        <!-- </td> -->  
+                       </tr>
+                       
+                        <tr>
+                          <!--   <td style="font-weight:bold;">Expert Reviewer Performance Rating<br/> -->
+                          <b> <apex:outputLabel for="rating" value="Expert Reviewer Performance Rating"/> </b> <br/> 
+                            <apex:inputfield value="{!con.Expert_Reviewer_Performance_Rating__c}" id="rating" >
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            </apex:inputField> <br/>
+                          <!-- </td> -->  
+                          
+                       </tr>
+                       
+                       <tr>
+                         <!--     <td style="font-weight:bold;">Area of Expertise<br/> -->
+                            
+                        <!--   <apex:inputfield value="{!con.Area_of_Expertise__c}" id="area" onchange="dosearch();"/> -->
+                          <b> <apex:outputLabel for="Exper" value="Area of Expertise"/> </b> <br/> 
+                            <apex:selectList id="Exper" multiselect="true" size="15" style="width:350px" value="{!selectedareaofExpertise}" >
+                                <apex:selectOptions value="{!areaofexpertiselist}"/>  
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>                    
+                            </apex:selectList> <br/>                     
+                         <!-- </td> -->  
+                       </tr>
+                       
+                      <!--<tr>
+                          <td style="font-weight:bold;">Expertise<br/>
+                            <apex:selectList value="{!countries1}" multiselect="true" size="15" style="width:350px">
+                                <apex:selectOptions value="{!doWork1}"/>
+                            </apex:selectList> 
+                            <apex:selectList multiselect="true" size="15" style="width:350px" value="{!selectedexpertise}" >
+                                <apex:selectOptions value="{!expertiselist}"/>                      
+                            </apex:selectList> 
+                            <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                            <apex:inputfield value="{!con.Expertise__c}" id="expertise" onchange="dosearch();"/>  
+                         </td>
+                       </tr>    -->           
+                  
+                       <tr>
+                        <!--  <td style="font-weight:bold;">Status<br/> -->
+                          <b> <apex:outputLabel for="status" value="Status"/> </b> <br/> 
+                           <apex:selectList id="status" size="1" style="width:350px" value="{!selectedStatus}" >
+                                <apex:selectOptions value="{!statuslist}"/>  
+                                <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>                    
+                            </apex:selectList> <br/>                         
+                           <!-- <apex:inputfield value="{!con.Status__c}" id="status" >
+                              <apex:actionSupport action="{!runsearch}" event="onchange" reRender="results,debug,errors"/>
+                           </apex:inputField>
+                           <apex:outputField value="{!con.Status__c}" id="status"/> -->
+                        
+                       </tr>
+      
+                       
+                      
+                     </table>
+                  </apex:pageBlock>
+                </td>
+    
+    
+    <td valign="top">
+
+    <apex:pageBlock mode="edit" id="results" title="Reviewers">
+    
+    <apex:pageBlockButtons location="Top">
+        <apex:commandButton value="Process Selected" action="{!savePanelMembers}" />
+        <apex:commandButton value="Cancel" action="{!cancel}" />
+   
+    </apex:pageBlockButtons>
+    
+
+        <apex:pageBlockTable value="{!contacts}" var="c" title="Reviewers">
+            <apex:column width="20px;" style="text-align:center;"> 
+                <apex:facet name="header"><input id="generalCheck" type="checkbox" title="Checkbox" onClick="toggleSelectAll(this);"/></apex:facet>
+                <apex:inputCheckbox id="Check" title="Checkbox" styleClass="contactCb" value="{!c.isSelected}" onchange="toggleItem();"/>             
+            </apex:column>
+            
+            <apex:column value="{!c.con.Name}" />
+            <apex:column value="{!c.con.Email}" />
+            <apex:column value="{!c.con.Expertise__c}" />
+            <!--apex:column value="{!c.con.Area_of_Expertise__c}" /-->
+            <apex:column value="{!c.con.Total_Years_of_Experience1__c}" />
+            <apex:column value="{!c.con.Highest__c}" />
+            <apex:column value="{!c.con.Expert_Reviewer_Performance_Rating__c}" />            
+            <apex:column value="{!c.con.State_of_Residence__c}" />
+                       
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+
+    </td>
+  </tr>
+  </table>
+  </apex:pageBlock>
+  
+   <!--<apex:pageBlock title="Debug - SOQL" id="debug">
+      <apex:outputText value="{!debugSoql}" />           
+   </apex:pageBlock>    -->
+  
+  </apex:form>         
+     
+</apex:page>

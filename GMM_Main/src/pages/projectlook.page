@@ -1,0 +1,103 @@
+<apex:page id="pg" StandardController="NOFA__c" title="New Application" extensions="NOFAtoApplicationUIExt2">
+    <script type="text/javascript"> 
+    
+    function openLookup(baseURL, width, modified, searchParam){
+        var originalbaseURL = baseURL;
+        var originalwidth = width;
+        var originalmodified = modified;
+        var originalsearchParam = searchParam;
+        
+        var lookupType = baseURL.substr(baseURL.length-3, 3);       
+         searchparam1 = '{!cid}';
+        lic= '{!lic}';
+        if (modified == '1') baseURL = baseURL + searchParam;
+      
+        var isCustomLookup = false;
+        //alert('');
+        // Following "001" is the lookup type for Account object so change this as per your standard or custom object
+        if(lookupType == "{!$ObjectType.Project__c}"){
+            
+            var urlArr = baseURL.split("&");
+            var txtId = '';
+            if(urlArr.length > 2) {
+                urlArr = urlArr[1].split('=');
+                txtId = urlArr[1];
+            }
+            
+           if(!lic.includes('Community'))
+                baseURL = "/apex/CustomProjectLookup?txt=" + txtId;
+           else{
+              if("{!$Profile.Name}"=="State Commission Profile"){ 
+                baseURL = "/statecommission/apex/CustomProjectLookup?txt=" + txtId;
+              }else{
+                baseURL = "/granteeportal/apex/CustomProjectLookup?txt=" + txtId;
+              }
+           }
+               
+            
+            // Following is the id of apex:form control "myForm". You need to change that accordingly
+            baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+            if (modified == '1') {
+                baseURL = baseURL + "&lksearch=" + searchparam1;
+            }
+           
+            // Following is the ID of inputField that is the lookup to be customized as custom lookup
+            if(txtId.indexOf('theLookup') > -1 ){
+                isCustomLookup = true;
+                
+            }
+        }
+        
+        if(isCustomLookup == true){
+     
+          openPopup(baseURL, "lookup", 350, 480, "width="+width+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+        }
+        else {
+       
+          if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+          
+          openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+        } 
+    }
+</script>
+
+<html lang="en-US">
+</html>
+    <apex:pageMessages />
+    <apex:form id="myForm">
+            <apex:pageBlock id="pb" title="My Projects">
+                <apex:pageBlockSection id="pbs" title="My Content Section" columns="2">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Select a Project" for="theLookup"/>
+                         <apex:inputField id="theLookup" value="{!applicationInput.Project__c}" required="false"/>
+                       
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="NOFA ID" for="NOFA"/>
+                    <apex:inputField value="{!applicationInput.NOFA_RFP__c}" id="NOFA"/>
+                    </apex:pageBlockSectionItem>
+                 <!--   <apex:inputField value="{!applicationInput.Module__c}"/>-->
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="My Next Action" columns="1">
+                      <apex:pageBlockSectionItem >
+                      <apex:outputText value="Click apply to start an application" />
+                        <apex:commandbutton value="Apply" action="{!Apply}"/>
+                        
+                    </apex:pageBlockSectionItem>
+                    
+                     <apex:pageBlockSectionItem >
+                    <apex:outputText value="Click to create a new project" />
+                        <apex:commandbutton value="Create" action="{!createProject}"/>
+                        
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                    <apex:outputText value="Click cancel to go back to NOFO list view" />
+                        <apex:commandbutton value="Cancel" action="{!cancel}"/>
+                        
+                    </apex:pageBlockSectionItem>
+                   
+               </apex:pageBlockSection>
+           </apex:pageBlock>
+    </apex:form>
+</apex:page>

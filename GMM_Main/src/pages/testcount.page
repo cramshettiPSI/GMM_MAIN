@@ -1,0 +1,21 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputtextArea id="myTextArea" value="{!Account.Test__c}" richtext="True"
+                    onchange="ShowCharCount(this, 200, '{!$Component.myTASize}');"
+                    onmousedown="ShowCharCount(this, 200, '{!$Component.myTASize}');"
+                    onkeyup="ShowCharCount(this, 200, '{!$Component.myTASize}');"
+                    onkeydown="ShowCharCount(this, 200, '{!$Component.myTASize}');"
+                    onclick="ShowCharCount(this, 200, '{!$Component.myTASize}');"
+                                    />
+                <apex:outputPanel id="myTASize">200 chars left</apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        function ShowCharCount(myTA, maxSize, SizeLabel) {
+            document.getElementById(SizeLabel).innerHTML = (maxSize - myTA.value.length) + ' chars left';
+        }
+    </script>
+</apex:page>

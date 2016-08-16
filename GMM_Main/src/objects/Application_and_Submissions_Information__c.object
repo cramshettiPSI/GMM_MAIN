@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Address_to_Request_Application_Package__c</fullName>
+        <defaultValue>&quot;Applicants should refer to the CNCS website to obtain the necessary information to apply. Applicants can also send an email to [Email]@cns.gov or call (202) [xxx-xxxx] for a printed copy of the application package. The TTY number is (800) 833-3722.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Address to Request Application Package</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Content__c</fullName>
+        <defaultValue>&quot;Complete applications must have the following components: • Standard Form 424 (SF-424) Face Sheet: This is automatically generated when applicants complete the data elements in the eGrants system. Many of the fields will be filled automatically with information entered during the registration process.• Narrative o Executive Summary: This is a brief description of the proposed program. Executive Summaries of all compliant applications are published on the CNCS website following [grant] or [cooperative agreement] awards.o Program Design o Organizational Capability o Cost-Effectiveness and Budget Adequacy • Standard Form 424A Budget • Performance Measures • Authorization, Assurances, and Certifications.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Application Content</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Submission__c</fullName>
+        <defaultValue>&quot;Applications are due  by 5:00 p.m. Eastern Time on the date specified above. CNCS will not consider applications received after the deadline, except as noted below. CNCS reserves the right to extend the submission deadline and any notice of such extended deadline will be posted in CNCS website. &quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Application Submission</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_and_Submission_Information__c</fullName>
+        <defaultValue>&quot;This Notice should be read together with the [Program Name] regulations, XX CFR §§ xxxx – xxxx), the Application Instructions, and the National Performance Measures. These documents are available online at [URL]. &quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Application and Submission Information</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Content_and_Form_of_Application_Submissi__c</fullName>
+        <externalId>false</externalId>
+        <label>Content and Form of Application Submissi</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DUNS_SAM__c</fullName>
+        <defaultValue>&quot;Applications must include a DUNS number and an Employer Identification. The DUNS number does not replace an Employer Identification Number. Applicants can obtain a DUNS number at no cost by calling the DUNS number request line at (866) 705-5711 or by applying online at http://fedgov.dnb.com/webform. CNCS recommends registering at least 30 days before the application due date. After obtaining a DUNS number, all applicants must register with the System for Award Management (SAM, www.sam.gov) and maintain an active SAM registration until the application process is complete and, if a [grant] or [cooperative agreement]is awarded, throughout the life of the award. SAM registration must be renewed annually. CNCS suggests finalizing a new registration or renewing an existing one at least two weeks before the application deadline to allow time to resolve any issues that may arise. Applicants that do not comply with these requirements may become ineligible to receive an award. See the SAM Quick Guide for Grantees at:https://www.sam.gov/sam/transcript/SAM_Quick_Guide_Grants_Registrations-v1.6.pdf.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>DUNS&amp;SAM</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Funding_Restrictions__c</fullName>
+        <defaultValue>&quot;The Administrative and National Policy Requirements section (at F.2.) of this Notice contain the regulations that outline the funding restrictions.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Funding Restrictions</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Indirect_Costs__c</fullName>
+        <defaultValue>&quot;CNCS allows applicants to include administrative (indirect) costs in CNCS [grants] or [cooperative agreements] budgets. Applicants have the option of using an indirect cost rate that is approved by their cognizant state or federal agency, claiming selected costs directly or [specify the program’s third or fourth options, i.e. 10% diminimis or AmeriCorps’ 5% or 10%]. The option utilized methods must be applied consistently across all federal awards.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Indirect Costs</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Late_Applications__c</fullName>
+        <defaultValue>&quot;CNCS may consider an application after the deadline, but only if the applicant submits a letter to LateApplications@cns.gov explaining the extenuating technical circumstances that caused the delay. CNCS must receive the letter within a business day after the deadline. If technical issues prevent an applicant from submitting an application on time, the letter should include the eGrants ticket number provided by the National Service Hotline. Communication with CNCS staff, including an applicant’s program officer, is not a substitute for sending the letter. CNCS will determine whether or not to accept a late application on a case-by-case basis. Please be advised that CNCS will not consider an advance request to submit a late application.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Late Applications</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice ID</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Application and Submissions Informations</relationshipLabel>
+        <relationshipName>Application_and_Submissions_Informations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Notice_of_Intent_Deadline1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Notice of Intent to Apply</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notice_of_Intent_to_Apply__c</fullName>
+        <defaultValue>&quot;Applicants are required to submit a Notice of Intent to Apply in order to be eligible for this competition. The Notice of Intent to Apply is due by 5:00 p.m. Eastern Time on the date specified above. Please submit the intent through the Grantee Portal. The Notice of Intent to Apply must include the name of the applicant organization, address, contact person, email address, and phone number, as well as [any particular programmatic information]. All Notices of Intent to Apply will receive an email response acknowledging receipt.OR CNCS strongly encourages applicants to submit a Notice of Intent to Apply by is due by 5:00 p.m. Eastern Time on the date specified above.  Please submit the intent through the Grantee Portal. The Notice of Intent to Apply must include the name of the applicant organization, address, contact person, email address, and phone number, as well as [any particular programmatic information]. All Notices of Intent to Apply will receive an email response acknowledging receipt.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Notice of Intent to Apply</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Submission_Requirements1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Submission Requirements</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_Sumission_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Sumission Requirements</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Page_Limits__c</fullName>
+        <defaultValue>&quot;Applications may not exceed [Number] double-space pages for the Narrative, including the SF-424 Face Sheet and Executive Summary as the pages print out from eGrants. The page limit does not include the Budget section and Performance Measures.Reviewers will not consider material past the page limit in the printed report, even if eGrants allows applicants to enter and submit text over the limit. CNCS strongly encourages applicants to print out the application from the “Review and Submit” page prior to its submission in order to check that it does not exceed the page limit.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Page Limits</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Submission_of_Additional_Documents1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submission of Additional Documents</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Submission_of_Additional_Documents__c</fullName>
+        <defaultValue>&quot;Applicants are required to submit the following additional documents by the application submission deadline:• Match Verification Letters• Letters of Support All required additional documents must be attached within the+L23 Grantee Portal and submitted with the application. Do not submit supplementary material such as videos, brochures, or any items not requested in this Notice. CNCS will not review or return them.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Submission of Additional Documents</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Submitting_in_eGrants__c</fullName>
+        <defaultValue>&quot;Applicants must submit applications electronically via eGrants, CNCS’s web-based system (https://egrants.cns.gov/espan/main/login.jsp). CNCS recommends that applicants create an eGrants account and begin the application at least three weeks before the deadline. Applicants should draft the application as a word document, then copy and paste the document into the appropriate eGrants field no later than 10 days before the deadline.The person who submits the application must be the applicant’s authorized representative. The authorized representative must be using eGrants under his or her own account in order to sign and submit the application. A copy of the governing body’s authorization for this official representative to sign must be on file in the applicant’s office.Contact the National Service Hotline at (800) 942-2677 or via (https://questions.nationalservice.gov/app/ask_eg) if a problem arises when creating an account or preparing or submitting the application. National Service Hotline hours are Monday through [Thursday] or [Friday], 9:00 a.m. to 7:00 p.m. Eastern Time. Be prepared to provide the application ID, organization’s name, and the Notice to which the organization is applying. If the issue cannot be resolved by the deadline, applicants must continue working with the National Service Hotline to submit via eGrants.If extenuating circumstances make it impossible for an applicant to submit in eGrants, applicants may send a paper copy of the application via overnight carrier to the following address: Corporation for National and Community Service ATT: Office of Grants Policy and Operations/[Competition Name] Application 1201 New York Avenue, NW Washington, DC 20525 Please use a non-U.S. Postal Service carrier to avoid security-related delays. All deadlines and requirements in this Notice also apply to paper applications. Paper applications must include a cover letter detailing the circumstances that make it impossible to submit via eGrants. CNCS does not accept applications submitted via fax or email.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Electronic Submission in eGrants</label>
+        <length>117023</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <label>Application and Submissions Information</label>
+    <nameField>
+        <displayFormat>ASI-{0000}</displayFormat>
+        <label>Application and Submissions Information</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application and Submissions Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

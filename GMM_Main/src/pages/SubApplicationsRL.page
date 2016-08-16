@@ -1,0 +1,4 @@
+<apex:page standardController="Prime_Application__c" >   
+    <!-- <apex:param name="recordType" value="Application" assignTo="{!recordTypeName}"/> -->
+    <c:relatedlists recId="{!Prime_Application__c.Id}" objType="Application3__c" fieldsList="Name,Legal_Name__c,Status__c" recordType="Application" RelationField="Prime_Application__c" />        
+</apex:page>

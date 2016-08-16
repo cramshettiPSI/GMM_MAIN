@@ -1,0 +1,8 @@
+Hello {!Award__c.Grants_Officer__c},
+
+Please certify the Award. {!Award__c.Name}
+{!Award__c.PO_Comments__c}
+{!Award__c.Link}
+
+Thank you, 
+CNCS.

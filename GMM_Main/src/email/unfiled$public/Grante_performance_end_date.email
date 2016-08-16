@@ -1,0 +1,58 @@
+{!User.FirstName} {!User.LastName}
+
+{!Application3__c.Titlee__c}
+
+{!Award__c.Organization_Legal_Name__c}
+
+
+{!Organization.Address}
+
+
+
+
+Grant #: {!Grant_Close_Out__c.Grant_Number__c}
+
+
+
+Dear {!Application3__c.Program_Director__c}: 
+ 
+The award referenced above expired on{!Award__c.Grant_Performance_Period_End__c}.  In closing out this award, the Corporation for National and Community Service (the Corporation) requests certain documents to ensure that all final requirements have been completed, and reports submitted. If you have not done so already, we need the referenced documents completed and returned to the Corporation no later than 90 days later than {!Award__c.Grant_Performance_Period_End__c}. 
+
+Your Program Officer should have contacted you regarding any final programmatic reporting requirements. 
+ 
+
+
+ 
+ 
+ 
+If your agency secured a copyright or patent on any material or device paid for with funds awarded under this grant, please provide the Corporation with a written confirmation describing the specific nature of the copyright or patent obtained.
+ 
+ 
+ 
+After the Corporation receives the required documents and you have made all appropriate financial adjustments and payments, we will advise you in writing that the award is closed.  Please note that the closeout of a grant does not affect:  (1) the requirement to retain records pursuant to the grant conditions; (2) the requirements and rights for audit pursuant to the grant conditions; (3) the right of the Corporation to disallow costs and recover funds on the basis of an A-133, A-128, or other audit or review; and (4) the obligation of the grantee to return any funds due the Corporation as a result of later refunds, corrections, cost disallowance, or other actions.
+ 
+Please submit the requested documents, except for any payment due, to:
+ 
+
+{!Award__c.Grants_Officer__c}
+ 
+Office of Grants Management
+ 
+Corporation for National and Community Service
+ 
+1201 New York Ave., NW
+ 
+Washington D.C. 20525
+ 
+Fax: (202) 606-3485
+ 
+Email:  {!Award__c.GO_Email__c}
+ 
+ 
+ 
+Please be aware that failure to respond to this request could result in a finding of non-compliance that would affect your agency's eligibility for future funding under any Corporation program.  Pending awards to your organization will not be processed until all outstanding closeout documents have been submitted.
+ 
+Please let us know if there is another person in your agency who should be our contact regarding this matter by providing us their name, address, and phone number.  On behalf of the Corporation, I would like to thank you for your participation in the program and your cooperation in closing out the grant immediately.  If you have any questions regarding this grant and closeout action, please contact me at {!Award__c.GO_Email__c} .
+
+Thank you 
+CNCS

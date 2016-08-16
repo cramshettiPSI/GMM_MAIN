@@ -1,0 +1,11 @@
+Dear {!Application3__c.Authorized_Representative__c}, 
+
+Your application has been returned to you for rework. Please login to the system and update the application. Once you have updated the application, please resubmit the application to CNCS. 
+
+
+Following comments have been added by CNCS:
+{!Application3__c.Application_Feedback_Summary__c}
+
+Thank you,      
+
+Corporation for National and Community Service

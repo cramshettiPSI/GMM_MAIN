@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reason_No_Longer_in_Use__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason No Longer in Use</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campus Record ID</label>
+        <referenceTo>Region__c</referenceTo>
+        <relationshipLabel>Units</relationshipLabel>
+        <relationshipName>Units</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Created_By__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unit Created By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unit_Terminated_By1__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Terminated By</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Unit</label>
+    <nameField>
+        <displayFormat>U-{000000}</displayFormat>
+        <label>Unit Record ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Units</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Effective_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_Date__c  &lt; Region__r.Region_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Effective_Date__c</errorDisplayField>
+        <errorMessage>Effective Date must be greater than or equal to the Campus Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_2</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date__c &gt;  Region__r.Region_End_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End Date must be less than or equal to the Campus End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_Date__c &gt;  End_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>End date must be after the effective date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_No_Longer_in_Use</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT(ISBLANK( End_Date__c )),
+ISBLANK( Reason_No_Longer_in_Use__c ))</errorConditionFormula>
+        <errorDisplayField>Reason_No_Longer_in_Use__c</errorDisplayField>
+        <errorMessage>required if &quot;end date&quot; is entered</errorMessage>
+    </validationRules>
+</CustomObject>

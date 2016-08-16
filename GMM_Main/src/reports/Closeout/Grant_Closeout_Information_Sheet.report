@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Grant_Close_Out__c.Grant__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Legal_Applicant_Name__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Authorized_Momentum__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Advanced_Momentum__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Disbursed_Momentum_SF_425__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Grantee_Match_per_Budget__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Closeout_Deobligation_Momentum__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Outstanding_Advance_Momentum__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Total_Federal_Expenditure_Final_FFR_SF__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c.Grantee_Match_per_Final_FFR__c</field>
+    </columns>
+    <description>This report displays a list of grants and the closeout information related to those grants.</description>
+    <format>Tabular</format>
+    <name>Grant Closeout Information Sheet</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Master_Award__c$Grant_Close_Out__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Master_Award__c.Grant_Performance_Period_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

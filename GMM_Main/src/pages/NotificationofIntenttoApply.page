@@ -1,0 +1,62 @@
+<apex:page StandardController="NOFA__c" title="Notification of Intent to Apply" extensions="NOFAtoNotificationUIExt">
+<apex:pagemessages />
+<html lang="en-US"> 
+</html>
+<style type="text/css">
+        .myClass { width: 135px; 
+             border: 3px solid;
+             color: #b30000; }
+    </style>
+  <apex:form id="theForm">
+     <apex:pageBlock title="Notification of Intent to Apply" mode="edit" id="pgbtnid">     
+                <apex:pageBlockButtons >
+            <apex:commandButton value="Save & Submit" action="{!SaveAsDraft}" />     
+            <apex:commandButton value="Cancel" action="{!Cancel}" />
+            </apex:pageBlockButtons>
+        
+      <apex:pageBlockSection collapsible="false" Title="Competition Details">       
+     <apex:outputText value="{!NOFA__c.NOFA_name__c} Notification of Intent to Apply" />
+        <br/>
+      <apex:outputText style="font-weight:bold" value="Welcome Prospective Applicants!"/>
+        <br/>
+   <apex:outputText value="This page allows potential applicants to submit a Notification of Intent to Apply for the Corporation for National and Community Service (CNCS)'s {!NOFA__c.NOFA_name__c} grant competition."/>
+        <br/>
+    <apex:outputText style="font-weight:bold" value="The submission of a Notification of Intent to Apply is not required to be eligible for this competition, but is highly recommended. It is due by {!NOFA__c.Applications_due_date__c} at 5:00 p.m. ET."/>   
+           
+   </apex:pageBlockSection> 
+ 
+ 
+   <apex:pageBlockSection collapsible="true" Title="Applicant Information" columns="2">
+ <apex:inputField value="{!applicationInput.Authorized_Representative__c}" style="width:38%;"/>  
+<apex:inputField value="{!applicationInput.Point_of_Contact__c}" style="width:38%;"/>  
+<!--    <apex:outputField value="{!NOFA__c.NOFA_Name__c}" /> 
+<apex:outputField value="{!NOFA__c.Point_of_Contact__c}" style="width:38%;"/>    -->            
+ </apex:pageBlockSection> 
+ 
+    <apex:pageBlockSection collapsible="true" Title="Questions" columns="1">
+ <apex:inputField value="{!applicationInput.Describe_the_Application_Organization__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.Other_Application_Organization__c}" style="width:38%;"/>   
+ <apex:inputField value="{!applicationInput.Primary_Focus_Area__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.Identify_program_operating_site_s__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.Other_Program_Operating_Site__c}" style="width:38%;"/>   
+ <apex:inputField value="{!applicationInput.New_Apps_of_Apps_org_will_submit__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.Recompete_Apps_of_Apps_org_will_subm__c}" style="width:38%;"/> 
+ 
+ <apex:pageBlockSectionItem helpText="{!$ObjectType.Application3__c.Fields.No_of_App_for_Disaster_Services__c.inlineHelpText}" >  
+    <apex:outputLabel value="No. of App for Disaster Services" for="DisasterServices">
+    </apex:outputLabel>
+    <apex:inputField value="{!applicationInput.No_of_App_for_Disaster_Services__c}" id="DisasterServices" style="width:38%;"/>        
+ </apex:pageBlockSectionItem>    
+
+  <apex:inputField value="{!applicationInput.No_of_Apps_for_Economic_Opportunity__c}"  style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.No_of_Apps_for_Education__c}" style="width:38%;"/>     
+ <apex:inputField value="{!applicationInput.No_of_Apps_for_Environment_Stewardship__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.No_of_Apps_for_Healthy_Futures__c}" style="width:38%;"/>  
+ <apex:inputField value="{!applicationInput.No_of_Apps_for_Vets_Military_Families__c}" style="width:38%;"/> 
+ <apex:inputField value="{!applicationInput.No_of_Apps_for_Capacity_Building__c}" style="width:38%;"/>
+ 
+ </apex:pageBlockSection> 
+ 
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

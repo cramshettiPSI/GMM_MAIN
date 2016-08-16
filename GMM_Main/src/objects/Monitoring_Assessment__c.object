@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Monitoring of awards.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Assessment_Cycle_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Cycle Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assessment_Number__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Assessment Number</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Corporate_Program1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Corporate Program</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DUNS__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Organization__r.DUNS__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DUNS #</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_GO_Completed__c</fullName>
+        <externalId>false</externalId>
+        <label>Date GO Completed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Organization__r.EIN__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EIN</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Officer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Grants_Officer__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grant Officer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant #</label>
+        <referenceTo>Award__c</referenceTo>
+        <relationshipLabel>Monitoring Assessments</relationshipLabel>
+        <relationshipName>Monitoring_Assessments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Monitoring_Assessment_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy Monitoring Assessment ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter a 4 number year (i.e. 2015)</inlineHelpText>
+        <label>Monitoring Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_City__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Organization__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Organization_Legal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text (Grant__r.Organization__r.States__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Monitoring_Considerations__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Monitoring Considerations</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Priority_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High - 150+</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium  80-149</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low 0-79</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Officer__c</fullName>
+        <externalId>false</externalId>
+        <formula>Grant__r.Program_Officer__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program Officer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_City__c</fullName>
+        <description>Changed the Formula field from (Grant__r.Master_Award__r.Project_Name__r.City__c) to the current one.</description>
+        <externalId>false</externalId>
+        <formula>Grant__r.Application_ID__r.Project__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_State__c</fullName>
+        <description>Formula field changed from (Text (Grant__r.Master_Award__r.Project_Name__r.State__c)) to the current one.</description>
+        <externalId>false</externalId>
+        <formula>Text ( Grant__r.Application_ID__r.Project__r.State__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Assessment In Progress</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assessment Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GO Assessment Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GO/PO Assessment Complete (VISTA only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Points__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Points</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Monitoring Assessment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Assessment_Number__c</columns>
+        <columns>Grant__c</columns>
+        <columns>Organization_Name__c</columns>
+        <columns>Monitoring_Fiscal_Year__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>MA-{0000}</displayFormat>
+        <label>Monitoring Assessment ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Monitoring Assessments</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Grant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Corporate_Program__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Grant_Officer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Monitoring_Fiscal_Year</fullName>
+        <active>true</active>
+        <description>Requires 4 characters in the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>LEN(TRIM(Monitoring_Fiscal_Year__c))&lt;4</errorConditionFormula>
+        <errorDisplayField>Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Enter a 4 digit year (i.e. 2015)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Monitoring_Fiscal_Year_Number_Only</fullName>
+        <active>true</active>
+        <description>Requires only numbers entered into the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>NOT(ISNUMBER(Monitoring_Fiscal_Year__c ))</errorConditionFormula>
+        <errorDisplayField>Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Only enter numbers into the Monitoring Fiscal Year field.</errorMessage>
+    </validationRules>
+</CustomObject>

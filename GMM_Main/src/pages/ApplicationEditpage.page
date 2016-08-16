@@ -1,0 +1,477 @@
+<apex:page STAndardController="Application3__c" extensions="ApplicationEditpageExt">
+ <!-- <apex:messages />  -->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <html lang="en">
+ <style type="text/css">
+          .myClass { 
+             border-left-width: 3px;
+              border-right-color:#FF0000
+            
+             border-left-style: solid;
+             border-left-color:#FF0000;
+            }
+            }
+ </style>
+ </html>
+ <style type="text/css">
+       .myMultiClass{width:100;
+       maxLength:100;
+       overflow-x: auto;
+       overflow-y: scroll;
+       autoScroll: true;       
+       }
+ </style> 
+  
+  
+  
+  
+  <apex:form id="theForm">      
+   
+  <apex:pageBlock title="Application Edit" mode="edit" id="pgbtnid">
+  <apex:pageMessages />
+         <apex:pageBlockButtons >
+            <!-- <apex:commandButton value="Submit" action="{!Save1}" disabled="{!applicationInput.Status__c!=null && applicationInput.Status__c!='Submitted'}"/>-->
+            <apex:commandButton value="Save" action="{!SaveAsDraft}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>   
+            <!-- <apex:commandButton value="Submit" action="{!Save}" disabled="{!applicationInput.Status__c!=null && applicationInput.Status__c!='--None--'}"/>--> 
+        </apex:pageBlockButtons>
+                
+ <apex:pageBlockSection collapsible="true" Title="Applicant Information" columns="2" rendered="{!Application3__c.NOFA_RFP__r.Standard_424__c}"> 
+        <!-- <apex:outputField value="{!Application3__c.NOFA_RFP__r.NOFA_name__c}"/>-->
+        <apex:inputField value="{!applicationInput.NOFA_RFP__c}"/>
+        
+         <!--  <apex:inputField value="{!Application3__c.NOFA_RFP__c}" rendered="{!!isContinuingApp}"/> --> 
+        <apex:outputField value="{!Application3__c.NOFA_RFP__c}" rendered="{!isContinuingApp}" />
+        
+        <apex:OutputField value="{!Application3__c.NOFA_RFP__r.NOFA_RFP_Summary__c}"/>
+        <apex:OutputField value="{!Application3__c.NOFA_RFP__r.Applications_due_date__c}"/>  
+        <apex:OutputField value="{!Application3__c.NOFA_RFP__r.Corporate_Program__c}"/>
+        <apex:outputField value="{!applicationInput.Type_of_Application__c}"/>
+         <apex:inputField value="{!applicationInput.Comments__c}"/>
+        <apex:outputField value="{!applicationInput.Organization__c}" style="width:32%;"/> 
+        <!--  <apex:outputField value="{!applicationInput.Type_of_Submission__c}"  style="width:38%;"/>-->
+        <apex:inputField value="{!applicationInput.Grantee_Status__c}" style="width:32%;" rendered="{!!isContinuingApp}"/> 
+        <apex:outputField value="{!applicationInput.Grantee_Status__c}" style="width:32%;" rendered="{!isContinuingApp}" /> 
+        
+      <!-- <apex:inputField value="{!applicationInput.Status__c}" style="width:32%;" rendered="{!!isContinuingApp}"/>-->
+        <apex:outputField value="{!applicationInput.Status__c}" style="width:32%;" rendered="{!isContinuingApp}"/>
+        
+        <apex:outputField value="{!applicationInput.Authorized_Representative__c}" style="width:32%;" rendered="{!!isContinuingApp}"/>     
+        <apex:outputField value="{!applicationInput.Authorized_Representative__c}" style="width:32%;" rendered="{!isContinuingApp}"/>  
+         
+        <apex:inputField value="{!applicationInput.Point_of_Contact__c}" style="width:32%;" rendered="{!!isContinuingApp}" styleClass="myClass"/>  
+        <apex:outputField value="{!applicationInput.Point_of_Contact__c}" style="width:32%;" rendered="{!isContinuingApp}"/>  
+        
+        <!--     <apex:inputField value="{!applicationInput.Assignee__c}" style="width:32%;"/>  -->
+        <apex:inputField value="{!applicationInput.Applicant_User__c}" style="width:32%;" rendered="{!!isContinuingApp}"/>
+        <apex:outputField value="{!applicationInput.Applicant_User__c}" style="width:32%;" rendered="{!isContinuingApp}"/>
+        <!-- <apex:inputField value="{!applicationInput.Date_Received__c}" />-->
+        <apex:inputField value="{!applicationInput.Application_Feedback_Summary__c}" rendered="{!!isContinuingApp}"/>  
+        <apex:outputField value="{!applicationInput.Application_Feedback_Summary__c}" rendered="{!isContinuingApp}"/>  
+        
+        <apex:inputField value="{!applicationInput.Legacy_App_ID__c}" rendered="{!!isContinuingApp}"/> 
+        <apex:outputField value="{!applicationInput.Legacy_App_ID__c}" rendered="{!isContinuingApp}"/>
+        <apex:inputField value="{!applicationInput.Amendment_Justification__c}" rendered="{!applicationInput.Amendable__c=true}"/> 
+       <!-- <apex:inputField value="{!applicationInput.Match_Rate_Percentage__c}" rendered="{!!isContinuingApp}"/>  
+        <apex:outputField value="{!applicationInput.Match_Rate_Percentage__c}" rendered="{!isContinuingApp}"/>-->
+        <apex:inputField value="{!applicationInput.Rank__c}" rendered="{!$Profile.Name!='Applicant'&& $Profile.Name!='Grantee Admin'}"/>
+        
+ </apex:pageBlockSection>
+ <!-- <apex:pageBlockSection title="Organization Contact Information" columns="2">
+        <apex:inputField value="{!applicationInput.Prefix__c}" styleClass="myClass"/ >
+        <apex:inputField value="{!applicationInput.Organizational_Affiliation__c}" />
+        <apex:inputField value="{!applicationInput.First_Name__c}" styleClass="myClass"/>
+        <apex:inputField value="{!applicationInput.Title__c}" required="false" />
+        <apex:inputField value="{!applicationInput.Middle_Name__c}" required="false"/>
+        <apex:inputField value="{!applicationInput.Telephone_Number__c}" required="false"/>
+        <apex:inputField value="{!applicationInput.Last_Name__c}" required="false"/>
+        <apex:inputField value="{!applicationInput.Email__c}" required="false"/>
+        <apex:inputField value="{!applicationInput.Suffix__c}" required="false"/>
+ </apex:pageBlockSection>-->
+
+ <apex:pageBlockSection collapsible="true" Title="Project/Program Information" columns="1">
+        <apex:inputField value="{!applicationInput.Project__c}" styleClass="myClass" rendered="{!!isContinuingApp}" /> 
+        <apex:outputField value="{!applicationInput.Project__c}" styleClass="myClass" rendered="{!isContinuingApp}"/> 
+        
+        <apex:inputField value="{!applicationInput.Project_website_urls__c}" rendered="{!!isContinuingApp}"/>
+        <apex:outputField value="{!applicationInput.Project_website_urls__c}" rendered="{!isContinuingApp}"/>
+        
+        <apex:inputField value="{!applicationInput.Proposed_Start_Date__c}" rendered="{!AND(OR(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,Application3__c.NOFA_RFP__r.Proposed_Dates__c),!isContinuingApp)}"  styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.Proposed_Start_Date__c}" rendered="{!AND(OR(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,Application3__c.NOFA_RFP__r.Proposed_Dates__c),isContinuingApp)}"  styleClass="myClass"/>
+         
+        <apex:inputField value="{!applicationInput.Proposed_Start_Date_is__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.Proposed_Start_Date_is__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" styleClass="myClass"/>
+        
+        <apex:inputField value="{!applicationInput.Proposed_End_Date__c}" rendered="{!AND(OR(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,Application3__c.NOFA_RFP__r.Proposed_Dates__c),!isContinuingApp)}" styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.Proposed_End_Date__c}" rendered="{!AND(OR(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,Application3__c.NOFA_RFP__r.Proposed_Dates__c),isContinuingApp)}" styleClass="myClass"/>
+        
+        <apex:inputField value="{!applicationInput.Proposed_End_Date_is__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" styleClass="myClass"/> 
+        <apex:outputField value="{!applicationInput.Proposed_End_Date_is__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" styleClass="myClass"/> 
+        
+        <!--
+        <apex:inputField value="{!applicationInput.Proposed_Start_Date__c}" rendered="{!(!Application3__c.NOFA_RFP__r.Proposed_Dates__c=True)}" styleClass="myClass"/>
+        <apex:inputField value="{!applicationInput.Proposed_Start_Date_is__c}" rendered="{!(!Application3__c.NOFA_RFP__r.Proposed_Dates__c!=True)}" styleClass="myClass"/>
+        <apex:inputField value="{!applicationInput.Proposed_End_Date__c}" rendered="{!(!Application3__c.NOFA_RFP__r.Proposed_Dates__c=True)}" styleClass="myClass"/>
+        <apex:inputField value="{!applicationInput.Proposed_End_Date_is__c}" rendered="{!(!Application3__c.NOFA_RFP__r.Proposed_Dates__c!=True)}" styleClass="myClass"/> -->
+        <apex:inputField value="{!applicationInput.Select_a_round__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.Select_a_round__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" styleClass="myClass"/>
+        
+        <apex:inputField value="{!applicationInput.How_many_teams_are_being_requested__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.How_many_teams_are_being_requested__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" styleClass="myClass"/>
+          
+        <apex:inputField value="{!applicationInput.Disaster_Type__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" />
+        <apex:outputField value="{!applicationInput.Disaster_Type__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" />
+        
+        <apex:inputField value="{!applicationInput.Campus__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Campus__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+        
+        <apex:inputField value="{!applicationInput.Project_Priority__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Project_Priority__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+        
+        <apex:inputField value="{!applicationInput.Disaster_Number_Funding_DOE__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Disaster_Number_Funding_DOE__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+        
+        <apex:inputField value="{!applicationInput.Partner_Project_Code__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Partner_Project_Code__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+         
+        <apex:inputField value="{!applicationInput.Team_Mobility__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Team_Mobility__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+        
+        <apex:inputField value="{!applicationInput.Primary_State_of_Service_Activities__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}"/>
+        <apex:outputField value="{!applicationInput.Primary_State_of_Service_Activities__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}"/>
+        
+        <apex:inputField value="{!applicationInput.Specify_if_you_want_to_be_in_more_rounds__c}"   rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,!isContinuingApp)}" styleClass="myClass"/>
+        <apex:outputField value="{!applicationInput.Specify_if_you_want_to_be_in_more_rounds__c}"   rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Dates_and_Questions__c,isContinuingApp)}" styleClass="myClass"/>
+        
+  </apex:pageBlockSection>
+  <!--
+      <apex:pageBlockSection collapsible="true" Title="RSVP Only" columns="1" rendered="{!Application3__c.NOFA_RFP__r.RSVP_Only__c}">
+      <apex:inputField value="{!applicationInput.Documents_RSVP_Only__c}" />
+      <apex:inputField value="{!applicationInput.of_Unduplicated_Volunteers__c}" />
+      </apex:pageBlockSection>
+      <apex:pageBlockSection collapsible="true" Title="Foster Grandparents Only" columns="1">
+      <apex:inputField value="{!applicationInput.Documents_Foster_Grandparents_Only__c}" rendered="{!Application3__c.NOFA_RFP__r.Foster_Grandparents_Only__c}"/>
+      </apex:pageBlockSection>
+  -->
+  <apex:pageBlockSection collapsible="true" Title="Areas Affected by Project" columns="1">
+         <!--<apex:inputField value="{!applicationInput.Areas_Affected_by_Project_Cities_Coutn__c}" rendered="{!Application3__c.NOFA_RFP__r.Standard__c}"/>-->
+         <apex:inputField value="{!applicationInput.State_and_or_Territories__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.State_and_or_Territories__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,isContinuingApp)}" styleClass="myClass"/>
+         
+         <apex:inputField value="{!applicationInput.Counties__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.Counties__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,isContinuingApp)}" styleClass="myClass"/>
+         
+         <!--Added Cities field on 6.5.16. Bug 7103. KY -->
+         
+         <apex:inputField value="{!applicationInput.City__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.City__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,!isContinuingApp)}"/> 
+         
+         <apex:inputField value="{!applicationInput.Other_Area_Affected_by_Project__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.Other_Area_Affected_by_Project__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.Standard__c,isContinuingApp)}"/>
+   </apex:pageblockSection>
+   
+   <apex:pageBlockSection collapsible="true" Title="Other" columns="1">
+         <apex:inputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!!isContinuingApp}"/>
+         <apex:outputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!isContinuingApp}"/>
+         
+         <apex:inputField value="{!applicationInput.Additional_Information__c}" rendered="{!!isContinuingApp}"/>
+         <apex:outputfield value="{!applicationInput.Additional_Information__c}" rendered="{!isContinuingApp}"/>
+         
+         <apex:inputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}" styleClass="myClass" rendered="{!!isContinuingApp}"/>
+         <apex:outputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}" styleClass="myClass" rendered="{!isContinuingApp}"/>
+         
+         <apex:inputField value="{!applicationInput.If_Yes_provide_your_explination_here__c}" rendered="{!!isContinuingApp}"/>
+         <apex:outputField value="{!applicationInput.If_Yes_provide_your_explination_here__c}" rendered="{!isContinuingApp}"/>
+          
+         <apex:inputField value="{!applicationInput.State_Application_Identifier__c}" rendered="{!!isContinuingApp}"/>
+         <apex:outputField value="{!applicationInput.State_Application_Identifier__c}" rendered="{!isContinuingApp}" />
+          
+         <apex:inputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>   
+        
+         <apex:inputField value="{!applicationInput.Local_State_Federal_Government_Match__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>  
+         <apex:outputField value="{!applicationInput.Local_State_Federal_Government_Match__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+          
+         <apex:inputField value="{!applicationInput.Private_Match__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.Private_Match__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>    
+         
+         <apex:inputField value="{!applicationInput.Total_Match_Dollars__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/> 
+         <apex:outputField value="{!applicationInput.Total_Match_Dollars__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/> 
+         
+         <apex:inputField value="{!applicationInput.Other_Revenue__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.Other_Revenue__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+         
+         <apex:inputField value="{!applicationInput.Number_of_episodic_volunteers_generated__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>  
+         <apex:outputField value="{!applicationInput.Number_of_episodic_volunteers_generated__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+         
+         <apex:inputField value="{!applicationInput.Number_of_ongoing_volunteers__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>  
+         <apex:outputField value="{!applicationInput.Number_of_ongoing_volunteers__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+         
+         <apex:inputField value="{!applicationInput.Number_of_members_wearing_logo_every_day__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>  
+         <apex:outputField value="{!applicationInput.Number_of_members_wearing_logo_every_day__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+         
+         <apex:inputField value="{!applicationInput.Number_of_elevator_speeches_created__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/>  
+         <apex:outputField value="{!applicationInput.Number_of_elevator_speeches_created__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/>  
+                  
+         <apex:inputField value="{!applicationInput.AmeriCorps_logo_will_display_on_website__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" styleClass="myClass"/> 
+         <apex:outputField value="{!applicationInput.AmeriCorps_logo_will_display_on_website__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" styleClass="myClass"/> 
+                  
+         <apex:inputField value="{!applicationInput.Opt_in_to_the_National_Service_Registry__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,!isContinuingApp)}" />
+         <apex:outputField value="{!applicationInput.Opt_in_to_the_National_Service_Registry__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.S_N__c,isContinuingApp)}" />
+         
+         <apex:inputField value="{!applicationInput.Focus_Area__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SIF__c,!isContinuingApp)}" styleClass="myClass"/>   
+         <apex:outputField value="{!applicationInput.Focus_Area__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SIF__c,isContinuingApp) }" styleClass="myClass"/> 
+                 
+         <apex:inputField value="{!applicationInput.Program_Type__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.VISTA__c,!isContinuingApp)}" styleClass="myClass"/> 
+         <apex:outputField value="{!applicationInput.Program_Type__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.VISTA__c,isContinuingApp)}" styleClass="myClass"/> 
+         
+         <apex:inputField value="{!applicationInput.Cost_Share__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.VISTA__c,!isContinuingApp)}" styleClass="myClass"/> 
+         <apex:outputField value="{!applicationInput.Cost_Share__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.VISTA__c,isContinuingApp)}" styleClass="myClass"/> 
+         
+         <!-- NCCC checkbox checked in Other Section of NOFA -->
+         <apex:inputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.If_Yes_Please_Explain_EO_12372__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}"/>      
+         <apex:outputField value="{!applicationInput.If_Yes_Please_Explain_EO_12372__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}"/>      
+         
+         <apex:inputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />
+         <apex:outputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" />
+         
+         <apex:inputField value="{!applicationInput.If_Yes_Please_Explain_Applicant_Deliquen__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.If_Yes_Please_Explain_Applicant_Deliquen__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.State_Application_Identifier__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.State_Application_Identifier__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />      
+         <apex:outputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" />      
+         
+         <apex:inputField value="{!applicationInput.Number_of_episodic_volunteers_generated__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />  
+         <apex:outputField value="{!applicationInput.Number_of_episodic_volunteers_generated__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" />  
+         
+         <apex:inputField value="{!applicationInput.Number_of_ongoing_volunteers__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />  
+         <apex:outputField value="{!applicationInput.Number_of_ongoing_volunteers__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" />  
+         
+         <apex:inputField value="{!applicationInput.SPR_Code__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" styleClass="myClass"/>
+         <apex:outputField value="{!applicationInput.SPR_Code__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" styleClass="myClass"/>
+         
+         <apex:inputField value="{!applicationInput.Addendum_to__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />
+         <apex:outputField value="{!applicationInput.Addendum_to__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" />
+         
+         <apex:inputField value="{!applicationInput.Former_SPR_Code__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,!isContinuingApp)}" />
+         <apex:outputField value="{!applicationInput.Former_SPR_Code__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.NCCC_Other__c,isContinuingApp)}" /> 
+         
+         <!-- SC checkbox checked in Other Section of NOFA -->
+         <apex:inputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.EO_12372_Process__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.If_Yes_Please_Explain_EO_12372__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}"/>      
+         <apex:outputField value="{!applicationInput.If_Yes_Please_Explain_EO_12372__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}"/>      
+         
+         <apex:inputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}" />
+         <apex:outputField value="{!applicationInput.Applicant_Delinquent_on_any_Federal_Debt__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}" />
+         
+         <apex:inputField value="{!applicationInput.If_Yes_Please_Explain_Applicant_Deliquen__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.If_Yes_Please_Explain_Applicant_Deliquen__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.State_Application_Identifier__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}"/>
+         <apex:outputField value="{!applicationInput.State_Application_Identifier__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}"/>
+         
+         <apex:inputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,!isContinuingApp)}" /> 
+         <apex:outputField value="{!applicationInput.State_Application_Identifier__c}"  rendered="{!AND(Application3__c.NOFA_RFP__r.SC_Other__c,isContinuingApp)}"/> 
+         
+        
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection collapsible="true" Title="Narrative" columns="1">
+         <apex:inputField value="{!applicationInput.Program_Design__c}" rendered="{!Application3__c.NOFA_RFP__r.Program_Design__c}"/>         
+         
+         <apex:inputField value="{!applicationInput.Program_Management__c}" rendered="{!Application3__c.NOFA_RFP__r.Program_Management__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Evaluation_Summary_or_Plan__c}" rendered="{!Application3__c.NOFA_RFP__r.Evaluation_Summary_of_Plan__c}"/>
+         
+         
+         
+         <apex:inputField value="{!applicationInput.Recruitment_and_Development__c}" rendered="{!Application3__c.NOFA_RFP__r.Recruitment_and_Development__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Strengthen_Communities__c}" rendered="{!Application3__c.NOFA_RFP__r.Strengthening_Communities__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Amendment_Justification__c}" rendered="{!Application3__c.NOFA_RFP__r.Amendment_Justification__c}"/>
+         
+   
+         <apex:inputField value="{!applicationInput.Continuation_Changes__c}" rendered="{!Application3__c.NOFA_RFP__r.Continuation_Changes__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Clarification_Summary__c}" rendered="{!Application3__c.NOFA_RFP__r.Clarification_Summary__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Cost_Effectiveness_Budget_Adequacy__c}" rendered="{!Application3__c.NOFA_RFP__r.Cost_Effectiveness_and_Budget_Adequacy__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Organizational_Capability__c}" rendered="{!Application3__c.NOFA_RFP__r.Organizational_Capability__c}"/>
+         
+         
+         <apex:inputField value="{!applicationInput.Executive_Summary__c}" rendered="{!Application3__c.NOFA_RFP__r.Executive_Summary__c}"/>        
+         
+         <!--   <apex:inputField value="{!applicationInput.Leadership_and_Team__c}" rendered="{!Application3__c.NOFA_RFP__r.Leadership_and_Team__c}"/>-->
+         <apex:inputField value="{!applicationInput.Intermediary_Justification__c}" rendered="{!Application3__c.NOFA_RFP__r.Intermediary_Justification__c}"/>
+        
+         
+         <apex:inputField value="{!applicationInput.Need__c}" rendered="{!Application3__c.NOFA_RFP__r.Need__c}"/>
+        
+        <apex:inputField value="{!applicationInput.Summary_of_Accomplishments__c}" rendered="{!Application3__c.NOFA_RFP__r.Summary_of_Accomplishments__c}"/>
+     <!--- <apex:inputField value="{!applicationInput.VISTA_Assignment__c}" rendered="{!Application3__c.NOFA_RFP__r.VISTA_Assignment__c}"/>-->
+         <apex:inputField value="{!applicationInput.Safety_and_Security__c}" rendered="{!Application3__c.NOFA_RFP__r.Safety_and_Security_AP__c}"/>
+        
+         
+         <apex:inputField value="{!applicationInput.Tools_and_Equipment__c}" rendered="{!Application3__c.NOFA_RFP__r.Tools_and_Equipment_AP__c}"/>
+        
+         
+         <apex:inputField value="{!applicationInput.Other_Narrative__c}" rendered="{!Application3__c.NOFA_RFP__r.Other__c}"/>
+        
+         
+  </apex:pageBlockSection>
+  
+  <apex:pageBlockSection id="focusArea" collapsible="true" Title="Focus Area and Objectives" columns="2">                    
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Natural and Other Disasters" style="font-weight:bold"  />                       
+              <c:MultiselectComponent field="Natural_and_Other_Disasters__c" homeController1="{!this}" />   
+           </apex:pageBlockSectionItem>     
+           <apex:outputField value="{!ApplicationInput.Natural_and_Other_Disasters__c}" rendered="{AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/> 
+                
+           <apex:inputField value="{!applicationInput.Otherobjectives__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}"/ >  
+           <apex:outputField value="{!applicationInput.Otherobjectives__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/ >  
+            
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Energy Conservation" style="font-weight:bold"  />                    
+              <c:MultiselectComponent field="Energy_Conservation__c" homeController1="{!this}" />           
+           </apex:pageBlockSectionItem>    
+           <apex:outputField value="{!ApplicationInput.Energy_Conservation__c}" rendered="{AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Energy__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}" />
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Energy__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}" />
+                
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Environmental Stewardship & Conservation" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Environmental_Stewardship_Conservation__c" homeController1="{!this}"/>          
+           </apex:pageBlockSectionItem> 
+           <apex:outputField value="{!ApplicationInput.Environmental_Stewardship_Conservation__c}" rendered="{AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Enivronment__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Enivronment__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+             
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Infrastructure Improvement" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Infrastructure_Improvement__c" homeController1="{!this}"/>           
+           </apex:pageBlockSectionItem> 
+           <apex:outputField value="{!ApplicationInput.Infrastructure_Improvement__c}" rendered="{AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Infrastructure__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Infrastructure__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+           
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Urban and Rural Development" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Urban_and_Rural_Development__c" homeController1="{!this}"/>           
+           </apex:pageBlockSectionItem>   
+           <apex:outputField value="{!ApplicationInput.Urban_and_Rural_Development__c}" rendered="{AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Urban__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,!isContinuingApp)}"/> 
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Urban__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Focus_Areas_and_Objectives_AP__c,isContinuingApp)}"/>  
+            
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Education_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Education" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Education__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem>  
+           <apex:outputField value="{!ApplicationInput.Education__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Education_AP__c,isContinuingApp)}"/>
+            
+           <apex:inputField value="{!applicationInput.If_other_please_specify_education__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Education_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_education__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Education_AP__c,isContinuingApp)}"/>            
+           
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Veterans_Military_Families_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Veterans & Military Families" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Veterans_Military_Families__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem>     
+           <apex:outputField value="{!ApplicationInput.Veterans_Military_Families__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Veterans_Military_Families_AP__c,isContinuingApp)}"/>     
+              
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Veterns__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Veterans_Military_Families_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Veterns__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Veterans_Military_Families_AP__c,isContinuingApp)}"/>  
+           
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Disaster_Services_AP__c,!isContinuingApp)}" >
+              <apex:outputLabel value="Disaster Services" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Disaster_Services__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem>  
+           <apex:outputField value="{!ApplicationInput.Disaster_Services__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Disaster_Services_AP__c,isContinuingApp)}"/>  
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_disaster__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Disaster_Services_AP__c,!isContinuingApp)}"/>                  
+           <apex:outputField value="{!applicationInput.If_other_please_specify_disaster__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Disaster_Services_AP__c,isContinuingApp)}"/>  
+            
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Environmental_Stewardship_AP__c,!isContinuingApp)}" >
+              <apex:outputLabel value="Environmental Stewardship" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Environmental_Stewardship__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem>  
+           <apex:outputField value="{!ApplicationInput.Environmental_Stewardship__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Environmental_Stewardship_AP__c,isContinuingApp)}"/>  
+                                    
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Enivironment_Ste__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Environmental_Stewardship_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Enivironment_Ste__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Environmental_Stewardship_AP__c,isContinuingApp)}"/> 
+            
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Healthy_Futures_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Healthy Futures" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Healthy_Futures__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem> 
+           <apex:outputField value="{!ApplicationInput.Healthy_Futures__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Healthy_Futures_AP__c,isContinuingApp)}"/> 
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Health__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Healthy_Futures_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Health__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Healthy_Futures_AP__c,isContinuingApp)}"/> 
+            
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Capacity_Building_AP__c,!isContinuingApp)}" >
+              <apex:outputLabel value="Capacity Building" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Capacity_Building__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem>
+           <apex:outputField value="{!ApplicationInput.Capacity_Building__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Capacity_Building_AP__c,isContinuingApp)}"/> 
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_capacity__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Capacity_Building_AP__c,!isContinuingApp)}"/>
+           <apex:outputField value="{!applicationInput.If_other_please_specify_capacity__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Capacity_Building_AP__c,isContinuingApp)}"/> 
+             
+           <apex:pageBlockSectionItem rendered="{!AND(Application3__c.NOFA_RFP__r.Economic_Opportunities_AP__c,!isContinuingApp)}">
+              <apex:outputLabel value="Economic Opportunities" style="font-weight:bold" />       
+              <c:MultiselectComponent field="Economic_Opportunities__c" homeController1="{!this}"/>     
+           </apex:pageBlockSectionItem> 
+           <apex:outputField value="{!ApplicationInput.Economic_Opportunities__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Economic_Opportunities_AP__c,isContinuingApp)}"/> 
+           
+           <apex:inputField value="{!applicationInput.If_other_please_specify_Economic__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Economic_Opportunities_AP__c,!isContinuingApp)}" />
+           <apex:outputField value="{!applicationInput.If_other_please_specify_Economic__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Economic_Opportunities_AP__c,isContinuingApp)}"/> 
+            
+    </apex:pageBlockSection>
+            
+    <apex:pageBlockSection collapsible="true" Title="Demographics" columns="1">    
+          <apex:inputField value="{!applicationInput.Target_Populations1__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Target_Populations__c,!isContinuingApp)}" styleClass="myMultiClass" />
+          <apex:outputField value="{!applicationInput.Target_Populations1__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Target_Populations__c,isContinuingApp)}" styleClass="myMultiClass" />
+          
+          <apex:inputField value="{!applicationInput.Characteristics_Priorities__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Characteristics_and_Priorities__c,!isContinuingApp)}" styleClass="myMultiClass"/>
+          <apex:outputField value="{!applicationInput.Characteristics_Priorities__c}" rendered="{!AND(Application3__c.NOFA_RFP__r.Characteristics_and_Priorities__c,isContinuingApp)}" styleClass="myMultiClass"/>
+    </apex:pageBlockSection>  
+    
+    <apex:pageBlockSection Title="Staff Review Decisions" columns="1" rendered="{!Application3__c.Status__c='Accepted'}">    
+      
+          <!--Budget--->
+          <apex:inputField value="{!applicationInput.Approved_Amount__c}" />          
+          
+          <apex:inputField value="{!applicationInput.Year_of_Grant__c}" />          
+          
+          <apex:inputField value="{!applicationInput.Program_Officer__c}"  />         
+          
+          <apex:inputField value="{!applicationInput.Grants_Officer__c}" />          
+          
+          <apex:inputField value="{!applicationInput.Senior_Grants_Officer__c}" />          
+          
+          <apex:inputField value="{!applicationInput.Executive_Officer__c}" />          
+          
+    </apex:pageBlockSection>       
+                                                                 
+  </apex:pageBlock> 
+  </apex:form>
+</apex:page>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Id</field>
+    </columns>
+    <columns>
+        <field>User$Username</field>
+    </columns>
+    <columns>
+        <field>User$FirstName</field>
+    </columns>
+    <columns>
+        <field>User$LastName</field>
+    </columns>
+    <columns>
+        <field>User$Email</field>
+    </columns>
+    <columns>
+        <field>User.Panel_Member__c$LastModifiedById$Status__c</field>
+    </columns>
+    <columns>
+        <field>User$LastLoginDate</field>
+    </columns>
+    <columns>
+        <field>User.Panel_Member__c$LastModifiedById$Role__c</field>
+    </columns>
+    <description>Report to display the status of Reviewers in the system--for any profiles, inclusive of those that participated.</description>
+    <format>Tabular</format>
+    <name>Status of Reviewers (Participation)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>User_Accounts_with_Panel_Member__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$ChatterAdoptionStageModifiedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

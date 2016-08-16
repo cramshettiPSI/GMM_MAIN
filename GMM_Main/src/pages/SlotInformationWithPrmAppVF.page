@@ -1,0 +1,66 @@
+<apex:page standardController="Prime_Application__c" extensions="SlotInformationWithPrmAppCntrl">
+  <apex:form >
+     <!--
+      <apex:pageBlock >
+          <apex:pageBlockTable value="{!lstSlot}" var="slotRec"> 
+          
+             
+            <apex:column headerValue="Name" >
+              <apex:outputField value="{!slotRec.Name}" />
+             </apex:column> 
+             
+              <apex:column headerValue="Slot Type" >
+              <apex:outputField value="{!slotRec.Slot_Type__c}" />
+             </apex:column> 
+             
+              <apex:column headerValue="Requested With Allowance">
+                  <apex:outputField value="{!slotRec.Requested_w_Allowance__c}" />
+              </apex:column>
+              
+              <apex:column headerValue="Requested Without Allowance">
+                  <apex:outputField value="{!slotRec.Requested_w_o_Allowance__c}" />
+              </apex:column>
+              
+                      
+              <apex:column headerValue="Recommended With Allowance">
+                  <apex:inputfield value="{!slotRec.Recommended_w_Allowance__c}" />
+              </apex:column>
+              
+              
+               <apex:column headerValue="Recommended Without Allowance">
+                  <apex:inputfield value="{!slotRec.Recommended_w_o_Allowance__c}" />
+              </apex:column>
+             
+              <apex:column headerValue="Enrollment Start Date">
+                  <apex:outputField value="{!slotRec.Enrollment_Start_Date__c}" />
+              </apex:column>
+              
+               
+               <apex:column headerValue="Enrollment Start Date">
+                  <apex:outputField value="{!slotRec.Enrollment_End_Date__c}" />
+              </apex:column>
+           
+              
+          </apex:pageBlockTable>
+           <apex:pageblockButtons >
+               <apex:commandButton value="Update" action="{!updateSlotRecs}"/>
+          </apex:pageblockButtons>
+      
+      </apex:pageBlock>
+      -->
+           <apex:pageBlock >
+                  <apex:pageBlockTable value="{!lstSlotGroupedData}" var="slotAggRec"> 
+                         <apex:column headerValue="Slot Type" >
+                             <apex:outputlabel value="{!slotAggRec.strSlotType}" />
+                         </apex:column>   
+                         <apex:column headerValue="Aggregate Recommendation With Allowance" >
+                             <apex:outputlabel value="{!slotAggRec.AggregateRecommendationWAllowance}" />
+                         </apex:column> 
+                          <apex:column headerValue="Aggregate Recommendation WithOut Allowance" >
+                             <apex:outputlabel value="{!slotAggRec.AggregateRecommendationWOAllowance}" />
+                         </apex:column>   
+                          
+                  </apex:pageBlockTable>
+           </apex:pageBlock>
+   </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+Dear {!Award_Reporting__c.Authorized_Representative_Name__c}
+
+The Corporation for National & Community Service has received and reviewed the Federal Financial Report covering the period ending  {!Award_Reporting__c.Reporting_Period__c}.  This notification is intended to provide necessary feedback concerning the financial and match data contained in your submission.
+
+
+Review of the FFR resulted in the following findings:
+
+
+Sincerely,

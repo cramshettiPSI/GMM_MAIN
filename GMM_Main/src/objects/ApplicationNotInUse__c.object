@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Applications__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Applications</label>
+        <referenceTo>Applications1NotInUse__c</referenceTo>
+        <relationshipName>Application</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program__c</fullName>
+        <externalId>false</externalId>
+        <label>Corporate Program</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training &amp; Technical Assistance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Application12 - Not In Use</label>
+    <nameField>
+        <label>Application Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Application1NotInUse</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>AmeriCorps_Fixed_Amount_Grant</fullName>
+        <active>true</active>
+        <label>AmeriCorps Fixed Amount Grant</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_Indian_Tribes</fullName>
+        <active>true</active>
+        <label>AmeriCorps Indian Tribes</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_NCCC</fullName>
+        <active>true</active>
+        <label>AmeriCorps NCCC</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_National</fullName>
+        <active>true</active>
+        <label>AmeriCorps National</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_State</fullName>
+        <active>true</active>
+        <label>AmeriCorps State</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_State_without_Comissions</fullName>
+        <active>true</active>
+        <label>AmeriCorps State without Comissions</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_Territories</fullName>
+        <active>true</active>
+        <label>AmeriCorps Territories</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_VISTA</fullName>
+        <active>true</active>
+        <label>AmeriCorps VISTA</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Basic_Innovative_Programs</fullName>
+        <active>true</active>
+        <description>Managing the Budget structure</description>
+        <label>Basic Innovative Programs</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Commission_Administration</fullName>
+        <active>true</active>
+        <label>Commission Administration</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Disability</fullName>
+        <active>true</active>
+        <label>Disability</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>FGP_Component_Programs</fullName>
+        <active>true</active>
+        <label>FGP Component Programs</label>
+        <picklistValues>
+            <picklist>Corporate_Program__c</picklist>
+            <values>
+                <fullName>TTA Regional Conferences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training %26 Technical Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISA Headquarters</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

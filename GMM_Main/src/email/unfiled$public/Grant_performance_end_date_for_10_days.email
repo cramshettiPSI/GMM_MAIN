@@ -1,0 +1,94 @@
+{!User.FirstName} {!User.LastName} 
+
+{!Application3__c.Titlee__c} 
+
+{!Award__c.Organization_Legal_Name__c} 
+
+
+{!Organization.Address} 
+
+
+
+
+Grant #: {!Grant_Close_Out__c.Grant_Number__c} 
+
+
+
+Dear {!Application3__c.Program_Director__c}: 
+
+
+The grant referenced above expired on {!Award__c.Grant_Performance_Period_End__c}. In closing out this award, the Corporation for National and Community Service (the Corporation) requests certain documents to ensure that all final requirements have been completed, reports submitted, and any financial adjustments and payments made. If you have not done so already, we need the referenced documents completed and returned to the Corporation no later than 90 days later than grant expiration date,{!Award__c.Grant_Performance_Period_End__c}. 
+
+
+
+1. Final Financial Report: 
+
+Your Final Financial Report should be cumulative for the whole project period. The report must also reflect the required percentage of matching funds that you have agreed to contribute under the terms of the grant. 
+
+
+
+2. Equipment Inventory (if applicable): 
+
+If applicable, submit an equipment inventory of items purchased with Federal grant funds with a current per unit fair market value of $5,000 or more. If you do not have equipment, you do not need to submit this report. 
+
+
+
+3. Inventory of Unused or Residual Supplies (if applicable): 
+
+If applicable, submit an inventory or a written statement of unused or residual supplies purchased with Federal grant funds which in the aggregate exceed $5,000. If you do not have inventory of Unused or Residual Supplies, you do not need to submit this report. 
+
+
+
+4. Subgrantee Certification (if applicable): 
+
+If applicable, submit a subgrantee certification or written statement that all applicable subgrantee awards have been administratively closed. This form is used by CNCS direct grantees to certify the closeout of their applicable subgrantees. If you do not have subgrantees, you do not need to submit this report. 
+
+Closeout forms and instructions are available and can be downloaded from the Corporation's website at the following address: http://www.nationalservice.gov/forms/06_1204_ac_lsa_closeout.pdf 
+
+Your Program Officer should have contacted you regarding any final programmatic reporting requirements. 
+
+As a grantee of the Corporation, you MUST make sure that the total federal expenditures reported on the Final Financial Report are accurate and match the amount reported to HHS as disbursed on the Federal Financial Report. The reported expenditure and disbursement amounts must also match the amount of funds drawn down from the HHS Payment Management System (PMS). Without the reconciliation of these amounts, the Corporation cannot close out this grant. You must complete the reconciliation process immediately. You do not need to wait until your next quarterly report is due to PMS. You can request that PMS return the report to you for correcting. Failure to submit the documentation requested in this letter or failure to assist in the reconciliation of submitted documents may adversely affect your future funding. Furthermore, the Corporation will hold all future awards and/or amendments if the documentation is not submitted, nor the reconciliation completed, within 10 days of this letter. 
+
+In addition, if you have drawn funds under the grant but not expended them, you must return the funds by check made payable to the Department of Health and Human Services. Include the PMS account and subaccount numbers on the check (these numbers can be found on page one of your Federal Financial Report from PMS). An accompanying letter should indicate that the check is a REFUND to be credited to CNCS Grant No. {!Grant_Close_Out__c.Grant_Number__c}. The letter should also specify the amount of any interest that is included in your refund check. The refund check should be sent to: 
+
+HHS Program Support Center 
+
+PO Box 530231 
+
+Atlanta, GA 30353-0231 
+
+
+Send a copy of the refund check and letter to your Corporation Grants Officer. 
+
+
+
+If your agency secured a copyright or patent on any material or device paid for with funds awarded under this grant, please provide the Corporation with a written confirmation describing the specific nature of the copyright or patent obtained. 
+
+
+
+After the Corporation receives the required documents and you have made all appropriate financial adjustments and payments, we will advise you in writing that the award is closed. Please note that the closeout of a grant does not affect: (1) the requirement to retain records pursuant to the grant conditions; (2) the requirements and rights for audit pursuant to the grant conditions; (3) the right of the Corporation to disallow costs and recover funds on the basis of an A-133, A-128, or other audit or review; and (4) the obligation of the grantee to return any funds due the Corporation as a result of later refunds, corrections, cost disallowance, or other actions. 
+
+Please submit the requested documents, except for any payment due, to: 
+
+{!Award__c.Grants_Officer__c} 
+
+Office of Grants Management 
+
+Corporation for National and Community Service 
+
+1201 New York Ave., NW 
+
+Washington D.C. 20525 
+
+Fax: (202) 606-3485 
+
+Email: {!Award__c.GO_Email__c} 
+
+
+
+Please be aware that failure to respond to this request could result in a finding of non-compliance that would affect your agency's eligibility for future funding under any Corporation program. Pending awards to your organization will not be processed until all outstanding closeout documents have been submitted and reconciliations completed. 
+
+Please let us know if there is another person in your agency who should be our contact regarding this matter by providing us their name, address, and phone number. On behalf of the Corporation, I would like to thank you for your participation in the program and your cooperation in closing out the grant immediately. If you have any questions regarding this grant and closeout action, please contact me at {!Award__c.GO_Email__c} . 
+
+Thank you, 
+CNCS.

@@ -1,0 +1,265 @@
+<apex:page id="pg" Controller="createaccount" sidebar="false" >
+<html lang="en"> 
+ <head>
+    <script type="text/javascript" >
+    
+    
+     function doSave() {
+ 
+
+                      var ein =document.getElementById('pg:theForm:pgblock:pgSection1:ein').value; 
+                     
+                 <!--   var duns =document.getElementById('pg:theForm:pgblock:pgSection1:duns').value;-->
+                    var name =document.getElementById('pg:theForm:pgblock:pgSection1:aname').value; 
+               
+                     var address1 =document.getElementById('pg:theForm:pgblock:pgSection2:aaddress1').value;
+                     var city =document.getElementById('pg:theForm:pgblock:pgSection2:acity').value;
+            
+                     var state =document.getElementById('pg:theForm:pgblock:pgSection2:astate').value;
+                     var zip =document.getElementById('pg:theForm:pgblock:pgSection2:azip').value;
+                    var phone =document.getElementById('pg:theForm:pgblock:pgSection2:aphone').value;
+                    <!-- var email =document.getElementById('pg:theForm:pgblock:pgSection3:aemail').value;-->
+            
+                     var legalname =document.getElementById('pg:theForm:pgblock:pgSection1:aLegalName').value;
+                    <!-- var phone1 =document.getElementById('pg:theForm:pgblock:pgSection1:phone1').value;-->
+            
+                      var otype =document.getElementById('pg:theForm:pgblock:pgSection1:otype').value;
+            
+                     if(otype=='' || ein=='' ||  name=='' || address1=='' || city=='' || state=='' || zip=='' || phone==''|| legalname==''){
+                      alert('Enter all required fields before validating address');
+            
+                    }
+                  
+     }
+    
+    </script>
+
+  </head>
+
+</html>
+<style type="text/css">
+.bPageHeader {
+    display:none;
+    .bPageSidebar
+     display:none;
+}
+</style>
+
+    <style>
+    body {
+        background: #FFFFFF !important;
+        height:200px;
+        width:900px;
+        position:absolute;
+        left:220px;
+          }
+</style>
+  <apex:form id="theForm">    
+ <apex:actionFunction name="Redirect" action="{!PageRedirect}" rerender="tstpopup"/>
+         <apex:pagemessages />
+        <apex:pageBlock id="pgblock" title="Enter Organization Information" >     
+        <div style="background:white !important;border:4px solid white;align:left;padding:10px;left-margin:10px;right-margin:10px;height:100%;width:100%;">
+        <div style="width:100%;height:30%;border:4px solid darkblue;align:left;padding:0px;background-color:white;left:-100%;">           
+           <apex:pageBlockSection id="pgSection1" columns="1" title="Organization Information" collapsible="false">
+               <apex:inputfield id="ein" value="{!account.EIN__c}" required="True"></apex:inputfield>
+             
+                 <!--   <a href="#" data-toggle="tooltip" title="DUNS number must be entered for your organization in order to submit an application.
+                     If needed please contact Dun & Bradstreet at http://www.dnb.com/get-a-duns-number.html to register for a DUNS number.">
+                     {!$ObjectType.account.fields.DUNS__c.label}</a>-->
+                     <apex:inputfield value="{!account.DUNS__c}" ></apex:inputfield> 
+                         
+            
+               <apex:inputfield id="aLegalName" value="{!account.Legal_Name__c}" required="true"></apex:inputfield>
+               <apex:inputfield id="aname" value="{!account.Name}" ></apex:inputfield>
+                <apex:inputfield id="otype" value="{!account.Organization_Type__c}" required="true"></apex:inputfield> 
+            <!-- <apex:inputfield id="phone1" value="{!account.Phone1__c}" required="true"></apex:inputfield>-->
+              
+                   <!-- <a href="#" data-toggle="tooltip" title="Please enter the characteristic(s) that best describe your organization.">{!$ObjectType.Account.fields.O__c.label}</a>-->
+                     <apex:inputfield value="{!account.O__c}"></apex:inputfield>
+                     
+                     
+  
+              
+           </apex:pageBlockSection>
+           <apex:pageBlockSection id="pgSection2" columns="1" title="Organization Contact Information" collapsible="false">
+              
+                <apex:inputfield id="aaddress1" value="{!account.Address_1__c}" required="true" ></apex:inputfield>
+                <apex:inputfield value="{!account.Address_2__c}" ></apex:inputfield>
+                <apex:inputfield id="acity" value="{!account.City__c}" required="true"></apex:inputfield>
+                <apex:inputfield id="astate" value="{!account.States__c}" required="true"></apex:inputfield>
+                <apex:inputfield id="azip" value="{!account.Zip1__c}" required="true" ></apex:inputfield>
+                <apex:inputfield id="aphone" value="{!account.Phone__c}" required="true"></apex:inputfield> 
+              
+            <apex:inputfield value="{!account.Latitude__c}" rendered="{!$Profile.Name ='System Administrator'}" > </apex:inputfield>
+                <apex:inputfield value="{!account.Longitude__c}" rendered="{!$Profile.Name ='System Administrator'}"> </apex:inputfield> 
+                
+              
+         
+               
+                
+                   <!-- <a href="#" data-toggle="tooltip" title="Please provide an email address where the organization can be contacted">{!$ObjectType.Account.fields.Email__c.label}</a>-->
+                    <apex:inputfield value="{!account.Email__c}" label="Organization's Email"  ></apex:inputfield> 
+               
+                         
+           </apex:pageBlockSection>
+ <!--
+           <apex:pageBlockSection columns="1" title="Indirect Cost Rate Information" collapsible="false">
+  
+ <apex:actionRegion >
+           <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.Do_you_have_anIndirect_Cost_Rate__c.inlineHelpText}">
+             <apex:outputLabel value="Do you have Indirect Cost Rate" for="Do_you_have_anIndirect_Cost_Rate__c"/>  
+                
+        
+                <apex:inputfield value="{!account.Do_you_have_anIndirect_Cost_Rate__c}" required="true"  id="costRate">
+     <apex:actionSupport event="onchange" reRender="pgsecdoc"/>
+                              </apex:inputfield>
+                            </apex:pageBlockSectionItem>
+    </apex:actionRegion >               
+           <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.Rate_Type__c.inlineHelpText}">
+           <apex:outputLabel value="Rate Type" for="Rate_Type__c"/>  
+        
+                <apex:inputfield value="{!account.Rate_Type__c}" id="rateType"/>
+                
+           </apex:pageBlockSectionItem>
+            
+                            <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.State__c.inlineHelpText}" >
+            <apex:outputLabel value="State" for="State__c"/>  
+            <apex:inputfield value="{!account.State__c}" id="effectiveto"/>
+           
+                <apex:inputfield value="{!account.State__c}" ></apex:inputfield>
+                           </apex:pageBlockSectionItem>
+                           
+             <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.Effective_From__c.inlineHelpText}" >
+               <apex:outputLabel value="Effective From" for="Effective_From__c"/>   
+              <apex:inputfield value="{!account.Effective_From__c}" id="effectiveto" />
+                          </apex:pageBlockSectionItem>
+                        
+               <apex:pageBlockSectionItem >
+               
+                <apex:inputfield value="{!account.Effective_To__c}" id="effectiveto"></apex:inputfield>
+                </apex:pageBlockSectionItem>
+                <apex:outputPanel id="pgsecdoc" >
+                <apex:pageblockSection rendered="{!account.Do_you_have_anIndirect_Cost_Rate__c=='Yes'}">
+                  <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.Effective_To__c.inlineHelpText}">
+                <apex:outputLabel value="Effective To" for="Effective_To__c"/>   
+                <apex:inputfield value="{!account.Effective_To__c}" id="effectiveto"/>
+                </apex:pageBlockSectionItem>
+                </apex:pageblockSection>
+                  </apex:outputPanel>
+                <apex:inputfield value="{!account.Issuing_Agency__c}" required="true" id="agency"/>
+                
+                    <apex:pageBlockSectionItem helpText="{!$ObjectType.Account.Fields.Descriptions__c.inlineHelpText}" >
+                    <apex:outputLabel value="Description" for="Descriptions__c"/>
+                    <apex:inputfield value="{!account.Descriptions__c}" id="hiremgr"/>
+                </apex:pageBlockSectionItem>
+            
+           
+                <apex:inputfield value="{!account.Extended__c}"  id="Extended"></apex:inputfield>
+                <apex:inputfield value="{!account.Rate_Status__c}" id="RateStatus" ></apex:inputfield> 
+                <apex:inputfield value="{!account.R_Percent__c}" id="RatePercent"></apex:inputfield>
+                <apex:inputfield value="{!account.Rate_Base__c}" id="RateBase"></apex:inputfield>
+                <apex:inputfield value="{!account.Treatment_of_FringeBenefits__c}" id="TreatofFringe"></apex:inputfield> 
+                         </apex:pageBlockSection> -->
+     
+                <apex:pageBlockButtons location="bottom">
+                
+                    <apex:commandbutton value="CANCEL" action="{!Cancelrecord}" style="height:30px;width:150px;color:black;border:3px solid darkblue;border-shadow:3px;align:left;" immediate="True"/>&nbsp;&nbsp;&nbsp;
+                    <apex:outputText value=""/>
+                    <apex:outputText value=""/>
+                   <apex:commandbutton value="CREATE" action="{!PageRedirect}" style="height:30px;width:150px;color:black;border:3px solid darkblue;border-shadow:3px;font-weight:bold;"/>
+                    <!--apex:commandButton value="Validate Address"  onclick="if(doSave() == false) { return true; }" action="{!PageRedirect}" rerender="tstpopup" style="height:30px;width:150px;color:black;border:3px solid darkblue;border-shadow:3px;font-weight:bold;"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                    <!--apex:commandButton value="Test" action="{!pageRedirect}"/>-->
+         </apex:pageBlockButtons> </div> </div>
+     
+            
+      </apex:pageBlock>
+     
+<!--Address Docotor Response window-->
+ <apex:pageBlock >
+      
+    <!--  <apex:commandButton value="Show Pop up" action="{!showPopup}" rerender="tstpopup"/>
+        <apex:pageBlock >
+            This is just filler text from the Salesforce General.
+        </apex:pageBlock> -->
+ 
+        <apex:outputPanel id="tstpopup">       
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                
+      <apex:pageBlock rendered="{!displayPopup}">
+        <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                    <apex:panelGroup >  
+                   <!--   <apex:outputLabel value="Old Address"/><br> </br> -->
+                      Old Address <br> </br>
+                      <apex:outputText value="{!Account.Address_1__c}"/><br></br>
+                       <apex:outputText value="{!Account.City__c}"/> &nbsp;
+                       <apex:outputText value="{!Account.States__c}"/> &nbsp;
+                       <apex:outputText value="{!Account.Zip1__c}"/>
+                       
+                  </apex:panelGroup>
+                    <apex:panelGroup >
+                      New Address Suggestions <br></br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet>
+                   <!--   <apex:outputtext value="Address Validity Status  "/> -->
+                      <apex:outputtext value="Address Validity Status--> {!strProcessStatusMsg}" />  
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+                    </apex:panelGroup>
+                    
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    
+        <!--<apex:commandButton value="Use Old Address" action="{!save}" rerender="tstpopup"  />-->
+              <apex:commandButton value="Use Old Address" action="{!closePopup}" rerender="tstpopup"/>
+              <apex:commandButton value="Use New Address" action="{!addressSelection}" rerender="showmsg" status="status"/>
+                <!--<apex:commandButton value="Use New Address" action="{!Submit}"  />-->
+         <apex:commandButton value="Cancel" action="{!unshowPopup}" rerender="tstpopup"/>
+      </apex:outputPanel>
+        </apex:outputPanel>
+     
+     
+    </apex:pageBlock> 
+    
+      </apex:form>
+     
+      <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 3px;
+            border-style: solid;
+            z-index: 9999;
+            left: 100%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 700px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style> 
+   
+
+      
+    
+
+</apex:page>

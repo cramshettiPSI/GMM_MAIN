@@ -1,0 +1,12 @@
+<apex:page standardController="Award__c">
+ <html lang="en-US"> 
+ </html>
+ <script>
+     alert('You are not allowed to create award');
+     if("{!$Profile.Name}"=="Applicant"||"{!$Profile.Name}"=="Grantee Admin"){
+         window.location.replace('/granteeportal/home/home.jsp');
+     }else{
+         window.location.replace('/{!$ObjectType.Application3__c}/o');
+     }
+ </script>
+</apex:page>

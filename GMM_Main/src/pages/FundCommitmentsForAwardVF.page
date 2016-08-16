@@ -1,0 +1,137 @@
+<apex:page standardController="Award__c" extensions="FundCommitmentForAwardCntrl"  action="{!invokeFcLines}">
+    <style type="text/css">
+    .popupBackground{
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+    }
+    .custPopup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        z-index: 9999;
+        left: 50%;
+        padding:10px;
+        position: absolute;
+        width: 700px;
+        margin-left: -250px;
+        top:100px;
+    }
+
+</style>
+
+ <script>
+      function newRecordForm(){
+            //alert('js method entry');
+            actFunc();
+            //alert('js method exit');
+      }
+    </script>
+
+    <apex:form >
+        <apex:actionFunction name="actFunc" action="{!hidePopup}" reRender="LDB" /> 
+        <apex:pageMessages id="showmsg"></apex:pageMessages>
+        <b><apex:outputLabel value="Fund Commitment"></apex:outputLabel></b>
+        <apex:pageBlock id="LDB">
+              <apex:commandButton action="{!openPopup}" value="Add Record" />
+ 
+             <apex:outputPanel id="tstpopup" rendered="{!showPopup}">
+                <apex:outputPanel styleClass="popupBackground" layout="block" />
+                <apex:outputPanel styleClass="custPopup" layout="block" >
+                    <center>
+                         <BR></BR>
+                         <table>
+                           <tr>
+                             <td>Start FY </td>
+                             <td> <apex:inputText value="{!objFormFundCommitment.Start_FY__c}" /> </td>
+                             <td>Ending FY</td> 
+                             <td><apex:inputField value="{!objFormFundCommitment.Ending_FY__c}"/> </td>
+                            </tr>
+                           <tr>   
+                              <td>Current Amount</td>
+                              <td> <apex:inputField value="{!objFormFundCommitment.Current_Amount__c}"/></td>
+                              <td> Change </td> 
+                              <td> <apex:inputField value="{!objFormFundCommitment.Change__c}"/> </td>
+                           </tr> 
+                           <tr>
+                              <td> Fund </td>   
+                              <td><apex:inputField value="{!objFormFundCommitment.Fund__c}"/> </td>
+                              <td>Grant_Location </td> 
+                              <td><apex:inputField value="{!objFormFundCommitment.Grant_Location__c}"/></td>
+                           </tr>
+                           <tr>   
+                              <td> Object_Class </td> 
+                              <td> <apex:inputField value="{!objFormFundCommitment.Object_Class__c}"/></td>
+                             <td> Program </td> 
+                             <td><apex:inputField value="{!objFormFundCommitment.Program__c}"/></td>
+                           </tr>
+                           <tr>   
+                              <td>Purpose </td> <td> <apex:inputField value="{!objFormFundCommitment.Purpose__c}"/></td>
+                          </tr>
+                         </table>    
+                         <apex:commandButton value="Save"  onclick="newRecordForm();return false;"/>  <!--action="{!Cancel}" -->
+                         <apex:commandButton value="Cancel" action="{!Cancel}" />  <!-- <action="{!Cancel}" -->
+                    </center>
+                 </apex:outputPanel>
+             </apex:outputPanel>
+                
+             <apex:pageBlockTable value="{!lstFundCommitment}" var="fundCommitmentRec">
+                     <!-- <apex:column headerValue="Name" >
+                                <apex:outputField value="{!fundCommitmentRec.Name}" />
+                          </apex:column> 
+                      -->       
+                      <apex:column headerValue="Start FY" >
+                          <apex:outputField value="{!fundCommitmentRec.Start_FY__c}" rendered="{!!ipFlg}"/>
+                          <apex:inputField value="{!fundCommitmentRec.Start_FY__c}" rendered="{!ipFlg}"/>
+                      </apex:column>
+                      
+                      <apex:column headerValue="Ending FY" >
+                          <apex:outputField value="{!fundCommitmentRec.Ending_FY__c}" />
+                      </apex:column> 
+                     
+                      <apex:column headerValue="Current Amount" >
+                          <apex:outputField value="{!fundCommitmentRec.Current_Amount__c}" />
+                      </apex:column> 
+                     
+                      <apex:column headerValue="Change" >
+                          <apex:outputField value="{!fundCommitmentRec.Change__c}">
+                             <apex:inlineEditSupport showOnEdit="saveButton" event="ondblclick"/>   
+                          </apex:outputField>   
+                      </apex:column> 
+                            
+                      <apex:column headerValue="Fund" >
+                          <apex:outputField value="{!fundCommitmentRec.Fund__c}" />
+                      </apex:column> 
+                      
+                      <apex:column headerValue="Grant_Location" >
+                          <apex:outputField value="{!fundCommitmentRec.Grant_Location__c}" />
+                      </apex:column> 
+     
+     
+                      <apex:column headerValue="Object_Class" >
+                          <apex:outputField value="{!fundCommitmentRec.Object_Class__c}" />
+                      </apex:column> 
+     
+                      <apex:column headerValue="Program" >
+                          <apex:outputField value="{!fundCommitmentRec.Program__c}" />
+                      </apex:column> 
+     
+                      <apex:column headerValue="Purpose" >
+                          <apex:outputField value="{!fundCommitmentRec.Purpose__c}" />
+                      </apex:column>                             
+          </apex:pageBlockTable> 
+          <apex:pageblockButtons >
+                        <!--  <apex:commandButton value="Add More" action="{!addNewRecord}"    /> -->
+                        <apex:commandButton value="Update FundCommitment" action="{!updateFundCommitment}" /> 
+          </apex:pageblockButtons>             
+                          
+        </apex:pageBlock>  
+                  
+    </apex:form>
+</apex:page>

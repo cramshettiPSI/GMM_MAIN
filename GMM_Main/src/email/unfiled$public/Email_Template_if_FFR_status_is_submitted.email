@@ -1,0 +1,6 @@
+Dear {!Award_Reporting__c.Authorized_Representative_Name__c}
+
+We have received your submission of the {!Award_Reporting__c.Name} on {!Today} for {!Award_Reporting__c.Award_Name__c}
+
+Thank you, 
+Corporation for National and Community Service

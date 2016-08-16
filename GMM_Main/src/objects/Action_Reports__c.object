@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Corporate_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFA_ID__r.Corporate_Program_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Corporate Program Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Extended_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Extended Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semi-Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yearly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NOFA_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>NOFO ID</label>
+        <referenceTo>NOFA__c</referenceTo>
+        <relationshipLabel>Action Reports</relationshipLabel>
+        <relationshipName>Action_Reports</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>NOFA_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFA_ID__r.NOFA_name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFO Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Report_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Report/Activity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Administration/New User  Audit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cost-share Statements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Equipment Inventory Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FFR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FGP/FGPF PRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Final Management Decision Audit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Final Reports</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grant/Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grant 3-Year/Closeout</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Memorandum of Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCCC National Service Participant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Review/Reviewers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planned Visit Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PMD Award</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progress Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progress Report Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PPVA Demographic Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progress Report Lite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progress Report Lite Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progress Report Lite Semiannual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSVP PRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCP/SCPF PRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subgrantee Certification Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unused or Residual Supplies Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Visit Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VISTA PRS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiver Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Period_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Period_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Reporting Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sequence_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Sequence Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Action Reports</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Action Reports ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Action Reports</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Action_Reports_Not_Editable</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( NOFA_ID__r.Status__c , &apos;Review in Progress&apos;),NOT( ISNEW()))</errorConditionFormula>
+        <errorMessage>Action Reports is not Editable if Nofa is in &apos;Review in Progress&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Due_Date_Greater_to_Reporting_Period_End</fullName>
+        <active>true</active>
+        <description>Due Date - This will be a date field that must be greater than &quot;Reporting Period End Date&quot; date.</description>
+        <errorConditionFormula>Due_Date__c  &lt;  Reporting_Period_End_Date__c</errorConditionFormula>
+        <errorDisplayField>Due_Date__c</errorDisplayField>
+        <errorMessage>Due Date  must be greater than &quot;Reporting Period End Date&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_date_must_be_great_than_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Reporting_Period_End_Date__c  &lt; Reporting_Period_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Reporting_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Report Period Ending Date must be greater than &quot;Reporting Period Start Date&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Extended_due_date_greater_than_due_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Extended_Due_Date__c  &lt; Due_Date__c</errorConditionFormula>
+        <errorDisplayField>Extended_Due_Date__c</errorDisplayField>
+        <errorMessage>Extended Due Date must be greater than &quot;Due Date&quot;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>NeW</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Action Report</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/apex.js&quot;)} 
+
+
+
+
+sforce.connection.sessionId=&quot;{!$Api.Session_ID}&quot;;
+var result=sforce.connection.describeSObjects([&quot;Action_Reports__c&quot;]);
+var objectPrefix=result[0].keyPrefix;
+
+var nofaid=&apos;{! Action_Reports__c.NOFA_ID__c }&apos;;
+if(&apos;{!NOFA__c.Status__c}&apos;==&apos;Published&apos;){
+var x;
+if (confirm(&apos;You are about to create new Action Report&apos;) == true){
+x = &quot;OK&quot;;
+}
+else
+{
+x = &quot;Cancel&quot;;
+}
+if(x == &apos;Cancel&apos;){
+window.location.replace(&apos;/{!NOFA__c.Id}&apos;);
+}
+else
+{
+window.location.replace(objectPrefix+&apos;/e?retURL=%2F{!NOFA__c.Id}&amp;{!$Label.Label_ID}={!NOFA__c.Name}&apos;);  
+}
+}
+else{
+window.location.replace(objectPrefix+&apos;/e?retURL=%2F{!NOFA__c.Id}&amp;{!$Label.Label_ID}={!NOFA__c.Name}&apos;);  
+}</url>
+    </webLinks>
+</CustomObject>

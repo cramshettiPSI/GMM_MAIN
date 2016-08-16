@@ -1,0 +1,9 @@
+Dear {!Grant_Close_Out__c.Grants_Officer__c}, 
+
+The following Grant Close out record has been created {!Grant_Close_Out__c.Name}  for the 
+{!Grant_Close_Out__c.Legal_Applicant_Name__c} organization. 
+
+Please click here for the detail link to the record : {!Grant_Close_Out__c.Link}
+
+Thank you,
+Corporation for National & Community Service

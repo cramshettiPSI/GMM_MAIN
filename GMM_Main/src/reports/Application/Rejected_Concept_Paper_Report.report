@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Project_Program_Title__c</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Organization_Name__c</field>
+    </columns>
+    <columns>
+        <field>Application3__c.NOFA_Name__c</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Concept_Paper_Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Submitted_By__c</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Submitted_On__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Application3__c.Concept_Paper</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Application3__c.Status__c</column>
+            <operator>equals</operator>
+            <value>Rejected by CNCS</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Application3__c.NOFA_RFP__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Rejected Concept Paper Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Application3__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Application3__c.APPLICATION_DATE_TEST__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

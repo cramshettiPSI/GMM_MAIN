@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reviewer Profile has been Processed: Accepted.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Accept</name>
+    <style>none</style>
+    <subject>Reviewer Status Update</subject>
+    <type>text</type>
+</EmailTemplate>

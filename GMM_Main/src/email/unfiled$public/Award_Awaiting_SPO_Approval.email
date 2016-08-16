@@ -1,0 +1,8 @@
+Hello {!Award__c.Senior_Program_Officer__c}, 
+
+Please approve the Award. {!Award__c.Name}
+{!Award__c.Link}
+
+
+Thank you, 
+CNCS.

@@ -1,0 +1,15 @@
+Hi {!Award_Reporting__c.Financial_Contact_del__c} 
+
+The Corporation for National and Community Service's records indicate that we have not received your organization's Federal Financial Report (FFR) for grant {!Award_Reporting__c.Grant_Number__c} covering the period ending {!Award_Reporting__c.Reporting_End_Date__c}. 
+
+The FFR was due on {!Award_Reporting__c.Due_Date__c}. Please submit the FFR as soon as possible via the Corporation's eGrants system. Click on the help icons on the Financial Report screens for assistance in completing your FFR via eGrants. 
+
+If you have questions regarding the FFR, please contact me by e-mail at {!Award_Reporting__c.GO_Email__c} . If you need eGrants assistance (e.g., eGrants password, error message), please contact the eGrants Help Desk at (202) 606-7506 or 1-888-677-7849 or by email at eGrantsHelp@cns.gov. 
+
+Thank you, 
+{!Name} 
+
+Corporation for National and Community Service 
+
+
+Please note: This is a computer-generated notice. If you are receiving this in error, please contact your CNCS grants officer.

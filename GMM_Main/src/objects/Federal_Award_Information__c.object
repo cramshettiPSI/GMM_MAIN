@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Information1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Additional Information</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Information__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Information</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Award_Period__c</fullName>
+        <defaultValue>&quot;For one-year awards: CNCS anticipates making one-year grant awards. Applicants must submit applications for funding that are based on a one-year project period and a one-year budget. While CNCS anticipates awarding one-year grants, it is possible that actual award periods will vary as a result of program requirements, the availability of appropriations, or specific circumstances of an individual application. For multi-year awards: The grant award covers a [Number]-year project period. CNCS generally makes an initial award for the first year of operation. Funding for subsequent years is not guaranteed and may be dependent upon availability of appropriations and satisfactory performance. CNCS reserves the right to adjust the amount of an award or elect not to continue funding.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Project Period</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Estimated_Award_Amount__c</fullName>
+        <defaultValue>&quot;Award amounts will vary as determined by the scope of the projects. CNCS will make annual awards in the range of [Dollar Amount] to [Dollar Amount].&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Estimated Award Amount</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Estimated_Funding_Available__c</fullName>
+        <defaultValue>&quot;If posting a Notice of Federal Funding Opportunity:CNCS anticipates approximately [Dollar Amount] for [Competition Name] [Fiscal Year] grant awards. The actual level of funding is subject to the availability of annual appropriations, which has not yet been made. If applicable: CNCS reserves the right to prioritize providing funding to existing awards over making new awards.  If posting a Notice of Federal Funding Availability:  According to the [FY] Appropriations, [Dollar Amount] is available for [Competition Name] grants. If applicable: CNCS reserves the right to prioritize providing funding to existing awards over making new awards.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Estimated Available Funds</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Indirect_Cost__c</fullName>
+        <defaultValue>&quot;CNCS allows applicants to include administrative (indirect) costs in CNCS grant budgets. Applicants have the option of using an indirect cost rate that is approved by their cognizant federal agency&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Indirect Cost</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Federal Award Information</relationshipLabel>
+        <relationshipName>Federal_Award_Information</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Program_Authority__c</fullName>
+        <defaultValue>&quot;The National and Community Service Act of 1990, as amended, (42 U.S.C. § 12501 et seq.).  The Domestic Volunteer Service Act of 1973, as amended (42 U.S.C. § 4950 et seq.). XX CFR §§ [xxxx – xxxx].&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Program Authority</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Program_Authority_url__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Authority Regulations</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Types_of_Grants__c</fullName>
+        <defaultValue>&quot;If the funding mechanism is a discretionary grant, include the following: [Competition Name] grants will be awarded on a [cost reimbursement] basis… If the funding mechanism is a cooperative agreement, include the following: The funding mechanism for the [Program Name] is a cooperative agreement, which provides for substantial involvement by CNCS with the grantee organizations as the approved grant activities are implemented. The assigned CNCS program officer will confer with the award recipient on a regular and frequent basis to develop and/or review service delivery and project status, including work plans, budgets, periodic reports, evaluations, etc. CNCS anticipates having substantial involvement in: • reporting data and format setting parameters for subrecipient selection•documenting and sharing lessons learned through a CNCS-sponsored learning community&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Types of Award</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Federal Award Information</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Federal Award Information id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Federal Award Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

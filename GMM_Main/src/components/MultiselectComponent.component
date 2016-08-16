@@ -1,0 +1,35 @@
+<apex:component controller="MultiSelectComponentController" language="en-US">
+    <apex:attribute name="leftlabel" type="String" description="TODO: Describe me"/>
+    <apex:attribute name="field" type="String" description="field" assignTo="{!fieldName}" />
+    <!-- <apex:attribute name="AvailableList" type="selectOption[]" description="Available List from the Page" assignTo="{!options}" required="True"/> -->
+   <!-- <apex:attribute name="ChosenList" type="selectOption[]" description="Chosen List from the Page" assignTo="{!chosenOptions}" />     -->
+   <!-- <apex:attribute name="compData" type="ComponentData" required="true" description="The data going in and out" assignTo="{!cData}"/>     -->
+  <apex:attribute name="handle" type="NOFAtoConceptPaperUIExt" description="handle to the Main class controller" assignTo="{!ahandle}"/> 
+  <apex:attribute name="homeController" type="NOFAtoApplicationUIExt" description="handle to the Main class controller" assignTo="{!nofatoapp}"/>  
+  <apex:attribute name="homeController1" type="ApplicationEditpageExt" description="handle to the Main class controller" assignTo="{!appEdit}"/> 
+  <apex:attribute name="homeController2" type="ConceptpapereditExt" description="handle to the Main class controller" assignTo="{!cPaperEdit}"/> 
+  
+    
+<!-- Apex function called to move the selected values from available list to chosen list and vice versa -->
+     
+    <apex:outputPanel id="multiselect" title="MultiSelectPicklist" >                  
+        <apex:panelGrid columns="5" id="panel" title="Mutiselectpanel" >    
+        <apex:selectList id="deselected" multiselect="true" size="5" value="{!deselected}" label="Select Values" style="width:200px;" title="SelectList">            
+            <apex:selectOptions value="{!options}" />
+            <apex:actionSupport event="ondblclick" action="{!selecting}" rerender="multiselect"  />
+        </apex:selectList>
+            <apex:panelGroup >
+            <br/>
+            <apex:commandButton id="select" value=">" action="{!selecting}" reRender="multiselect,selected,deselected" />               
+            <br/><br/>
+            <apex:commandButton id="deselect" value="<" action="{!deselecting}" reRender="multiselect,selected,deselected" />                            
+            </apex:panelGroup>           
+   <!-- An action status to show that the operation of moving between the lists is in progress--->           
+        <apex:selectList id="selected" multiselect="true" size="5" value="{!selected}" label="Selected Values" style="width:200px;" title="SelectedList">            
+            <apex:selectOptions value="{!selectedOptions}" />
+            <apex:actionSupport event="ondblclick" action="{!deselecting}" rerender="multiselect"  />
+        </apex:selectList>
+        </apex:panelGrid>  
+    </apex:outputPanel>
+    
+</apex:component>

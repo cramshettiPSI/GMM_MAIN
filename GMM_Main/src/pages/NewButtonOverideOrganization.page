@@ -1,0 +1,8 @@
+<apex:page standardController="Account">
+    <html lang="en-US"> 
+</html>
+ <script>
+ alert('You are not allowed to create New Organization from here');
+     window.replace('/001/o');
+ </script>
+</apex:page>

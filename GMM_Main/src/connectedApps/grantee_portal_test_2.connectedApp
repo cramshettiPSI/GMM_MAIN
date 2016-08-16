@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://uatmy.americorps.gov/grantee/sfgp_redirector.jsp</canvasUrl>
+        <locations>Visualforce</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>avasili@plan-sys.com</contactEmail>
+    <label>Grantee Portal</label>
+    <oauthConfig>
+        <callbackUrl>https://uatmy.americorps.gov/grantee/sfgp_redirector.jsp</callbackUrl>
+        <consumerKey>3MVG9ic.6IFhNpPo1ShirFiXxwNTaHGQrPj5JpRr3rYv7naLujNfXsXr.kB6xPm3RGvgIHhdY9PUTajpvaNED</consumerKey>
+        <scopes>Basic</scopes>
+    </oauthConfig>
+</ConnectedApp>

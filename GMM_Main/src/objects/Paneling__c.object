@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Comment_s1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Consensus Bands Comments</inlineHelpText>
+        <label>Comment(s):</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comment_s__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Consensus Score Comments</inlineHelpText>
+        <label>Comment(s):</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Completed_by_Panel_Coordinator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Panel coordinator will check the check box if they finish the review.</description>
+        <externalId>false</externalId>
+        <label>Completed by Panel Coordinator</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed_by_Staff_Liaison__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the staff liaison completes the review then he will check the check box</description>
+        <externalId>false</externalId>
+        <label>Completed by Staff Liaison</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Consensus_Approach__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Stage_Number__r.Consensus_Approach__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consensus Approach</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>End date of the panel</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Field1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Consensus Score Number</inlineHelpText>
+        <label>#</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFA_Group_Name1__c</fullName>
+        <description>Formula field to display name of the NOFA Group on the paneling object</description>
+        <externalId>false</externalId>
+        <formula>Stage_Number__r.NOFA_Group__r.Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFO Group Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFA_Group_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup for NOFA Group object</description>
+        <externalId>false</externalId>
+        <label>NOFO Group Name</label>
+        <referenceTo>NOFA_Group__c</referenceTo>
+        <relationshipLabel>Paneling</relationshipLabel>
+        <relationshipName>Paneling</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Coordinator__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Look up to Contact object to find panel coordinator</description>
+        <externalId>false</externalId>
+        <label>Panel Coordinator</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Paneling</relationshipLabel>
+        <relationshipName>Paneling</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Panel Name</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Panel_Status_Text__c</fullName>
+        <description>Changes the Panel Status Picklist value in to a Text field, which can be used to create Formula fields.</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Panel_Status__c )</formula>
+        <label>Panel Status Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Panel_Status__c</fullName>
+        <description>Panel Status can be selected from set of values</description>
+        <externalId>false</externalId>
+        <label>Panel Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Consensus Bands Response</inlineHelpText>
+        <label>Response</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Sequence Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Staff_Liaison__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup to Contact object to select a staff for paneling</description>
+        <externalId>false</externalId>
+        <label>Staff Liaison</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Paneling (Staff Liaison)</relationshipLabel>
+        <relationshipName>Paneling1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Staff_Liasion1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Staff Liasion</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>PO</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Paneling</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Stage_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Stage_Number__r.Name__c</formula>
+        <label>Stage Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage_Number__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup to stages object to the stage number</description>
+        <externalId>false</externalId>
+        <label>Stage Number</label>
+        <referenceTo>Stages__c</referenceTo>
+        <relationshipLabel>Paneling</relationshipLabel>
+        <relationshipName>Panel</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Start Date of the panel</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Type of the panel</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expert or Blended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Paneling</label>
+    <nameField>
+        <displayFormat>Panel-{00000000}</displayFormat>
+        <label>Panel ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Paneling</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Consensus_Bands</fullName>
+        <active>true</active>
+        <label>Consensus Bands</label>
+        <picklistValues>
+            <picklist>Panel_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Expert or Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Consensus_Scores</fullName>
+        <active>true</active>
+        <label>Consensus Scores</label>
+        <picklistValues>
+            <picklist>Panel_Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Expert or Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staff</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Panel_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Consensus_Results</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(AND((Consensus_Approach__c ==&quot;Consensus Scores&quot;),(ISBLANK( Field1__c ))),
+
+AND((Consensus_Approach__c ==&quot;Consensus Scores&quot;),(ISBLANK( Comment_s__c ))))</errorConditionFormula>
+        <errorMessage>Enter Number and Comments for Consensus Scores</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Consensus_Results1</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR(AND((Consensus_Approach__c ==&quot;Consensus Bands&quot;),(ISBLANK(  Response__c ))),
+AND((Consensus_Approach__c ==&quot;Consensus Bands&quot;),(ISBLANK(  Comment_s1__c ))))</errorConditionFormula>
+        <errorMessage>Enter Response and Comments for Consensus Bands</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>End_Date_greater_than_Start_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Start_Date__c   &gt;=   End_Date__c</errorConditionFormula>
+        <errorDisplayField>End_Date__c</errorDisplayField>
+        <errorMessage>Panel End Date must be greater than Panel Start Date</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Clone_Plus</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Clone Plus</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/ClonePlus?id={!Paneling__c.Id}&amp;childobjecttypes=Panel_Member__c,Panel_Application__c,Expert_Review_Panel__c</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Panels</fullName>
+        <availability>online</availability>
+        <description>Button where creates a Feedback for that particular panel member and application associated to it.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Feedback Forms</masterLabel>
+        <openType>sidebar</openType>
+        <page>AssignPanels</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

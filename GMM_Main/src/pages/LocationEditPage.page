@@ -1,0 +1,294 @@
+<apex:page standardController="Location__c" extensions="LocationEditExt">
+<html lang="en-US"> 
+</html>
+<style type="text/css">
+    
+          .myClass { 
+             border-left-width: 3px;
+             color: #black;
+             border-left-style: solid;
+             border-left-color:#B22222;
+            }
+    </style>
+    
+ <apex:form > 
+   <apex:pageBlock title="Location Edit" mode="edit" id="pbid">
+  <apex:messages />
+  <apex:pageBlockButtons >  
+ <apex:commandButton value="Save" action="{!PageRedirect}"/>  
+  <apex:commandButton value="Cancel" action="{!Cancel}"/>   
+  <!--apex:commandButton value="Validate Address" action="{!PageRedirect}" rerender="tstpopup"/-->
+  </apex:pageBlockButtons>
+ 
+ 
+ <!--- rendered="{!locationInput.RecordType.Name == 'School Data'}" -->
+  <apex:outputPanel id="Schoolinfo"> 
+ <apex:pageblocksection title="School Info" collapsible="False" Columns="2" rendered="{!(locationInput.Is_this_a_K_12_school__c != 'No')}" >  
+      <apex:inputField value="{!locationInput.Name}" />
+      <apex:inputField value="{!locationInput.School_Name__c}" />      
+      <apex:inputField value="{!locationInput.School_ID_NCES__c}" />
+      <!-- <apex:inputField value="{!locationInput.School_Street_Address_new__c}" />
+      <apex:inputField value="{!locationInput.School_Street_Address_2__c}" />
+      <apex:inputField value="{!locationInput.School_City__c}" />
+      <apex:inputField value="{!locationInput.School_State__c}" />  
+      <apex:inputField value="{!locationInput.School_Zip__c}" /> -->
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+   <!--- rendered="{!(locationInput.Application__r.NOFA_RFP__r.School_Information__c && locationInput.Location_Type__c = 'Service Location')}" -->
+   <apex:outputPanel id="Schoolinfo2">
+ <apex:pageblocksection title="School Information" collapsible="False" Columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.School_Information__c && locationInput.Location_Type__c = 'Service Location')}"  >      
+      <apex:inputField value="{!locationInput.Is_this_a_K_12_school__c}" >
+          <apex:actionSupport event="onclick" reRender="ShowNCESID1,ShowNCESID2"/>     
+      </apex:inputField>
+       <apex:outputPanel id="ShowNCESID1">     
+         <apex:pageBlockSection rendered="{!locationInput.Is_this_a_K_12_school__c== 'Yes'}" >
+          <apex:inputField value="{!locationInput.NCES_ID__c}"/>             
+        </apex:pageBlockSection>
+   
+       </apex:outputPanel>
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+      
+     <!--- rendered="{!locationInput.Is_this_a_K_12_school__c== 'Yes'}" -->  
+     
+      
+ 
+ <!--- rendered="{!locationInput.Application__r.NOFA_RFP__r.Standard_Information__c}" --->
+  <apex:pageblocksection title="Standard Infromation" collapsible="False" Columns="2" rendered="{!locationInput.Application__r.NOFA_RFP__r.Standard_Information__c}" >
+      <apex:inputField value="{!locationInput.Location_Type__c}">
+      <apex:actionSupport event="onchange" rerender="EINsec,site,stype,Volsec,focus,addi,Schoolinfo,Schoolinfo2,sitedate,lodging" />
+      </apex:inputfield>
+      <apex:inputField value="{!locationInput.Name}" styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.Supervisor_Name__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Supervisor_Email__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Supervisor_Organization__c}" />
+      <apex:inputField value="{!locationInput.Supervisor_Phone_Number__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Supervisor_Phone_Number_Extension__c}" />
+      <apex:inputField value="{!locationInput.Undisclosed_Location__c}" styleClass="myClass" />
+      </apex:pageBlockSection>
+      <apex:outputPanel id="ShowNCESID2">
+      <apex:pageBlockSection rendered="{!locationInput.Is_this_a_K_12_school__c== 'No'}" > 
+      <apex:inputField value="{!locationInput.Name}" styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.Street_Address_1__c}" styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.Street_Address_2__c}" />
+      <apex:inputField value="{!locationInput.City__c}" styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.State__c}" styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.Zip__c}" styleClass="myClass"/> 
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+      
+      
+      
+      <!-- Volunteer Information -->
+      <!-- rendered="{!locationInput.Application__r.NOFA_RFP__r.Volunteer_Information__c}" -->
+
+       <apex:outputPanel id="Volsec">
+      <apex:pageBlockSection collapsible="true" Title="Volunteer Information" columns="2" rendered="{!((locationInput.Application__r.NOFA_RFP__r.Volunteer_Information__c) && (locationInput.Location_Type__c == 'Service Location'))}" >
+      <apex:inputField value="{!locationInput.Number_of_Volunteers__c}" />
+      <apex:inputField value="{!locationInput.Number_of_Unduplicated_Volunteers__c}" />
+      <apex:inputField value="{!locationInput.Veterans_Served__c}"/>
+      </apex:pageBlockSection>
+      </apex:outputpanel>
+      
+      <!-- EIN Information -->
+      <!-- rendered="{!locationInput.Application__r.NOFA_RFP__r.EIN_Information__c}" -->
+      <apex:outputPanel id="EINsec">
+      <apex:pageBlockSection collapsible="true" Title="EIN Information" columns="2" rendered="{!((locationInput.Application__r.NOFA_RFP__r.EIN_Information__c) && ((locationInput.Location_Type__c == 'Operating Site') || (locationInput.Location_Type__c == 'Service Location')))}" >
+      <apex:inputField value="{!locationInput.Location_EIN__c}" />
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+      
+      <!-- Focus Areas and Objectives -->
+      <apex:outputPanel id="focus"> 
+      <!--- rendered="{!(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_location__c && locationInput.Location_Type__c == 'Service Location') ||(Application.NOFA_RFP__r.Focus_Area_and_Objectives_location__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(Application.NOFA_RFP__r.Focus_Area_and_Objectives_location__c && locationInput.Location_Type__c == 'Operating Site')}" --->
+        <apex:pageBlockSection collapsible="true" Title="Focus Area and Objectives" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Service Location') ||(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_Location__c && locationInput.Location_Type__c == 'Operating Site')}" >
+         <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Education" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Education__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem>
+            <apex:inputField value="{!locationInput.Other_Education__c}" />
+            
+         <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Veterans & Military Families" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Veterans_Military_Families__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem>    
+            <apex:inputField value="{!locationInput.Other_Veterans_Military_Families__c}" />
+            
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Disaster Services" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Disaster_Services__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem>    
+            <apex:inputField value="{!locationInput.Other_Disaster_Services__c}" />
+            
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Environmental Stewardship" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Environmental_Stewardship__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem>   
+            <apex:inputField value="{!locationInput.Other_Environmental_Stewardship__c}" />
+            
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Healthy Futures" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Healthy_Futures__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem> 
+            <apex:inputField value="{!locationInput.Other_Healthy_Futures__c}" />
+            
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Capacity Building" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Capacity_Building__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem> 
+            <apex:inputField value="{!locationInput.Other_Capacity_Building__c}" />
+            
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Economic Opportunities" style="font-weight:bold" />                    
+              <c:MultiPicklistComponent field="Economic_Opportunities__c" homeController1="{!this}"/>           
+            </apex:pageBlockSectionItem> 
+            <apex:inputField value="{!locationInput.Other_Economic_Opportunities__c}" />  
+            
+            </apex:pageBlockSection> 
+        </apex:outputPanel> 
+      
+   <!--      Focus Areas and Objectives 
+      <apex:pageBlockSection collapsible="true" Title="Focus Area and Objectives" columns="2" rendered="{!locationInput.Application__r.NOFA_RFP__r.Focus_Area_and_Objectives_location__c}">
+      <apex:inputField value="{!locationInput.Education__c}" />
+      <apex:inputField value="{!locationInput.Other_Education__c}" />
+      <apex:inputField value="{!locationInput.Veterans_Military_Families__c}" />
+      <apex:inputField value="{!locationInput.Other_Veterans_Military_Families__c}" />
+      <apex:inputField value="{!locationInput.Disaster_Services__c}" />
+      <apex:inputField value="{!locationInput.Other_Disaster_Services__c}" />
+      <apex:inputField value="{!locationInput.Environmental_Stewardship__c}" />
+      <apex:inputField value="{!locationInput.Other_Environmental_Stewardship__c}" />
+      <apex:inputField value="{!locationInput.Healthy_Futures__c}" />
+      <apex:inputField value="{!locationInput.Other_Healthy_Futures__c}" />
+      <apex:inputField value="{!locationInput.Capacity_Building__c}" />
+      <apex:inputField value="{!locationInput.Other_Capacity_Building__c}" />
+      <apex:inputField value="{!locationInput.Economic_Opportunities__c}" />
+      <apex:inputField value="{!locationInput.Other_Economic_Opportunities__c}" />
+      </apex:pageBlockSection> -->
+      
+      <!-- Site Date Information -->
+      <apex:outputPanel id="sitedate"> 
+      <!-- rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Service Location') ||(Application.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(Application.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Member Lodging')}" -->
+      <apex:pageBlockSection collapsible="true" Title="Site Date Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Service Location') ||(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Inclement Weather Site') ||(locationInput.Application__r.NOFA_RFP__r.Site_Date_Information__c && locationInput.Location_Type__c == 'Member Lodging')}" >
+      <apex:inputField value="{!locationInput.Projected_Start_Date__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Projected_End_Date__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Accessible_for_people_with_disablities__c}"  />
+      <apex:inputField value="{!locationInput.Description_of_Accessibility__c}"  />
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+      <!-- Site Type and Summer Associates Information -->
+      <apex:outputPanel id="site">
+      <!-- rendered="{!locationInput.Application__r.NOFA_RFP__r.Site_Type_and_Summer_Associates__c}" -->
+      <apex:pageBlockSection collapsible="true" Title="Site Type and Summer Associates" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Type_and_Summer_Associates__c && locationInput.Location_Type__c == 'Service Location' )}">
+      <apex:inputField value="{!locationInput.Site_Type__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Summer_Associates__c}" />
+      </apex:pageBlockSection>
+      </apex:outputPanel>
+      <!-- Site Type -->
+      <apex:outputPanel id="stype"> 
+       <!-- rendered="{!locationInput.Application__r.NOFA_RFP__r.Site_Type__c}" -->
+      <apex:pageBlockSection collapsible="true" Title="Site Type" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Type__c && locationInput.Location_Type__c == 'Service Location' && ($Profile.Name ='Grantee Admin'))}" >
+      <apex:inputField value="{!locationInput.Station_Type__c}"  styleClass="myClass"/>
+      <apex:inputField value="{!locationInput.Summer_Associates__c}" />
+     </apex:pageBlockSection>
+      </apex:outputPanel>
+      <!-- Additional Operating Site Information -->
+      <!-- rendered="{!Application.NOFA_RFP__r.Site_Type__c}" -->
+      <apex:outputPanel id="addi"> 
+      <apex:pageBlockSection collapsible="true" Title="Additional Operating Site Information" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Site_Type__c &&  locationInput.Location_Type__c == 'Operating Site' )}"  >
+      <apex:inputField value="{!locationInput.Station_Type__c}" />
+      <apex:inputField value="{!locationInput.Summer_Associates__c}" />
+     </apex:pageBlockSection>
+     </apex:outputPanel>
+      
+      <!-- Lodging Information -->
+      <!--- --->
+      <apex:outputPanel id="lodging">
+      <apex:pageBlockSection collapsible="true" Title="Lodging" columns="2" rendered="{!(locationInput.Application__r.NOFA_RFP__r.Lodging_Information__c && locationInput.Location_Type__c == 'Member Lodging')}" >
+      <apex:inputField value="{!locationInput.Lodging_Type__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Lodging_Category__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Lodging_Description__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Lodging_Arrival_Date__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Lodging_Departure_Date__c}" styleClass="myClass" />
+      <apex:inputField value="{!locationInput.Beds_Provided__c}" />
+      <apex:inputField value="{!locationInput.Laundry__c}" />
+      <apex:inputField value="{!locationInput.Kitchen__c}" />
+      <apex:inputField value="{!locationInput.Refrigerator_Microwave__c}" />
+      <apex:inputField value="{!locationInput.Shower__c}" />
+      <apex:inputField value="{!locationInput.Distance_to_Location_of_Service__c}" styleClass="myClass" />
+      
+      
+     </apex:pageBlockSection>
+      </apex:outputPanel>
+    
+  </apex:pageBlock>
+  
+   <apex:outputPanel id="tstpopup">       
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                
+      <apex:pageBlock rendered="{!displayPopup}">
+        <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                    <apex:panelGroup >  
+                    <!--   <apex:outputLabel value="Old Address"/><br> </br> -->
+                      Old Address <br> </br>
+                      <apex:outputText value="{!locationInput.Street_Address_1__c}"/><br></br>
+                      <apex:outputText value="{!locationInput.City__c}"/> &nbsp;
+                      <apex:outputText value="{!locationInput.State__c}"/> &nbsp;
+                      <apex:outputText value="{!locationInput.Zip__c}"/> &nbsp;
+  
+                   </apex:panelGroup>
+                     <apex:panelGroup >
+                      New Address Suggestions <br> </br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+                     </apex:panelGroup>
+            </apex:pageBlockSection> 
+        </apex:pageBlock>
+    
+        
+          <apex:commandButton value="Use Old Address" action="{!closePopup}" rerender="tstpopup"/>
+       <!-- <apex:commandButton value="Use New Address" action="{!Submit}" rerender="showmsg" status="status"/> --> 
+            <apex:commandButton value="Use New Address" action="{!addressSelection}"  /> 
+            <apex:commandButton value="Cancel" action="{!unshowPopup}" rerender="tstpopup"/>
+         </apex:outputPanel>
+       </apex:outputPanel>
+  </apex:form>
+  
+  <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 3px;
+            border-style: solid;
+            z-index: 9999;
+            left: 45%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 700px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style> 
+   
+</apex:page>

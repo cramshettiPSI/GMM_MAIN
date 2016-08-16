@@ -1,0 +1,30 @@
+<apex:page controller="ClonePlusController1" action="{!initialiseObjectsForCloning}">
+
+<html lang="en-US"> 
+<h1 style= "display:none">Clone</h1>
+</html>
+    
+  <apex:sectionHeader title="Clone Plus: {!objectName}"/>
+
+  <apex:pageMessages />
+
+  <apex:form id="theform" >
+  
+    Please select the child objects you would like to clone.<br/><br/>
+  
+    <apex:repeat value="{!objectChildren}" var="child">
+      <apex:PageBlock title="{!child.pluralLabel}"> 
+        <apex:pageBlockTable value="{!child.objectRows}" var="objectRow">
+          <apex:column headerValue="Clone" width="10%">
+            <apex:inputCheckbox value="{!objectRow.selected}"/>
+          </apex:column>
+       <apex:column headerValue="Id"   value="{!objectRow.Id}" width="45%"/>
+        </apex:pageBlockTable>
+      </apex:PageBlock>
+    </apex:repeat>
+    
+    <apex:PageBlock >
+      <apex:commandButton action="{!doClone}" value="Clone"/>
+    </apex:PageBlock>
+  </apex:form>  
+</apex:page>

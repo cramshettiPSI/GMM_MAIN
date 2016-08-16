@@ -1,0 +1,1644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>PrimeApplicationDetail</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Allow_Prime_and_Sub_Applications__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( NOFO_RFP__r.Allow_Prime_Applicants_and_Sub_Applicant__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Allow Prime and Sub Applications</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant_Delinquent_on_any_Federal_Debt__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant Delinquent on any Federal Debt</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Assurances_Text__c</fullName>
+        <defaultValue>&quot;This is setup on the CNCS NOFO. The setup (text or link) should carry over to the prime application with the checkbox for the prime applicant to check and carryout the e-signature process&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Assurances__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Assurances</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Authorization_Text__c</fullName>
+        <defaultValue>&quot;This is setup on the CNCS NOFO. The setup (text or link) should carry over to the prime application with the checkbox for the prime applicant to check and carryout the e-signature process&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Authorization__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Authorization</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AutoNumber__c</fullName>
+        <displayFormat>{000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>AutoNumber</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Corporate_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CNCS Corporate Program</label>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>Prime Applications</relationshipLabel>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recommended to CNCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted to CNCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted Late to CNCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Review In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned for Rework</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected by CNCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Held for Formula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepting Sub-Applications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed to Sub-Applicants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Certification_Text__c</fullName>
+        <defaultValue>&quot;This is setup on the CNCS NOFO. The setup (text or link) should carry over to the prime application with the checkbox for the prime applicant to check and carryout the e-signature process&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Certification__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Certification</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Competitive_or_Formula__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitive or Formula</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Formula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFO_RFP__r.Corporate_Program__r.Name</formula>
+        <label>Corporate Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Demonstrates_Ethics_Integrity__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Demonstrates Ethics &amp; Integrity</label>
+        <picklist>
+            <controllingField>Information_available__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>No</controllingFieldValues>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EO_12372_Process__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Application Subject to Review by State Executive Order 12372 Process?</inlineHelpText>
+        <label>EO 12372 Process</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ex_Officer_Cost_Share__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Ex. Officer Cost Share</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Executive_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Executive Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FAPIIS_Review_Comments__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>FAPIIS Review Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Grants_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Grants Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>If_yes_please_explain__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, please explain</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>If_yes_please_explain_app_delinque__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, please explain</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Information_available__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Information available?</label>
+        <picklist>
+            <controllingField>Subject_to_FAPIIS_Review__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>No</controllingFieldValues>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issue_Area__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Issue Area</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Community and Economic Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FEMA (NCCC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health/Nutrition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Homeland Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Human Needs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infrastructure (NCCC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy Conservatism (NCCC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Urban/Rural Development (NCCC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Disaster Recovery/Relief</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Various</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issuing_Office__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( NOFO_RFP__r.Issuing_Officer__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Issuing Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $Profile.Name = &apos;Applicant&apos; || $Profile.Name = &apos;Grantee Admin&apos;, 
+HYPERLINK(&quot;apex/projectlook?id=&quot;&amp;NOFO_RFP__r.Id&amp;&quot;&amp;primeApplicationId=&quot;&amp;Id&amp;&quot;&amp;opentoApps=&quot;&amp;TEXT(CNCS_Status__c), IMAGE( &quot;https://cns--devsb12--c.cs32.content.force.com/servlet/servlet.ImageServer?id=015r00000008unk&amp;oid=00Dr00000000Rxt&quot;, &quot;Submit Application&quot;)),&apos;Only Grantees Can Appply&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Award</label>
+        <referenceTo>Master_Award__c</referenceTo>
+        <relationshipLabel>Prime Applications</relationshipLabel>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mitigating_Circumstances__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Mitigating Circumstances</label>
+        <picklist>
+            <controllingField>Demonstrates_Ethics_Integrity__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>No</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>No</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NOFA_RFP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFO_RFP__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFA/RFP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFO_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( NOFO_RFP__r.Fiscal_Yr__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFO Fiscal Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFO_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFO_RFP__r.NOFA_name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFO Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFO_RFP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NOFO/RFP</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+            <filterItems>
+                <field>NOFA__c.NOFA_Type__c</field>
+                <operation>contains</operation>
+                <value>Continuation, New &amp; Continuation</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.CNCS_Corporate_Program__c</field>
+                <operation>equals</operation>
+                <valueField>NOFA__c.CNCS_Corporate_Program__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>NOFA__c.NOFA_Type__c</field>
+                <operation>equals</operation>
+                <value>New, New &amp; Continuation</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>NOFA__c</referenceTo>
+        <relationshipLabel>Prime Applications</relationshipLabel>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Organization_Legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Organization__r.Legal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prime_Application_Configured_BudgetForms__c</fullName>
+        <externalId>false</externalId>
+        <label>Prime Application Configured BudgetForms</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Prime_Application_ID_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Prime Application ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prime_Application_Id_w_link__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( $Profile.Name  = &apos;State Commission Profile&apos;, HYPERLINK(&quot;/statecommission/&quot;&amp;Id,  Prime_Application_ID_Number__c , &quot; &quot;), IF( $Profile.Name  = &apos;Applicant&apos;  || $Profile.Name  = &apos;Grantee Admin&apos;, HYPERLINK(&quot;/granteeportal/&quot;&amp;Id,Prime_Application_ID_Number__c , &quot; &quot;), HYPERLINK(&quot;/&quot;&amp;Id,  Prime_Application_ID_Number__c , &quot; &quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prime Application Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prime_Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prime Application</label>
+        <referenceTo>Prime_Application__c</referenceTo>
+        <relationshipLabel>Prime Applications</relationshipLabel>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Prime_Organization__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Organization__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prime Organization</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrmAppOrgId__c</fullName>
+        <externalId>false</externalId>
+        <formula>NOFO_RFP__r.Organizations__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PrmAppOrgId</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Program End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Program_Office_Director__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Program Office Director</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Program Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Program_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support Grant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Program Grant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project_Director__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Project_Director__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Director</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Name</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Prime Applications</relationshipLabel>
+        <relationshipName>Prime_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Title__c</fullName>
+        <description>Project_Name__r.Title__c</description>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Website_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Website URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Ready_for_Ranking__c</fullName>
+        <externalId>false</externalId>
+        <label>Ready for Ranking</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Recommended_Award_Amount__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Recommended Award Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Satisfactory_Record_Executing_Programs__c</fullName>
+        <externalId>false</externalId>
+        <label>Satisfactory Record Executing Programs</label>
+        <picklist>
+            <controllingField>Information_available__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Senior_Grants_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Senior Grants Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Senior_Program_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Senior Program Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Prime_Applications4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>State_Application_Identifier1__c</fullName>
+        <externalId>false</externalId>
+        <label>State Application Identifier</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Application_Identifier__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>State Application Identifier</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_Commission_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Organization__r.Legal_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State Commission Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Application_Count_For_FAIN__c</fullName>
+        <description>This field is for Auto Number generation of subapp for FAIN which is to count the number of Sub Applications irrespective of Ranking value wrt PrimeApp</description>
+        <externalId>false</externalId>
+        <label>Sub Application Count For FAIN</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Application_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Application Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Application_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Application Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Concept_Paper_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Concept Paper Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Subject_to_FAPIIS_Review__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Subject to FAPIIS Review</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SumOfBudgetLines__c</fullName>
+        <externalId>false</externalId>
+        <label>SumOfBudgetLines</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Recommended_MSYs__c</fullName>
+        <description>As per req #2790</description>
+        <externalId>false</externalId>
+        <label>Total Recommended MSYs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_Application__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Application</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Prime Application</label>
+    <listViews>
+        <fullName>Created_Today1</fullName>
+        <columns>NAME</columns>
+        <columns>CNCS_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Prime_Application_ID_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+    </listViews>
+    <nameField>
+        <label>Prime Application ID Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Prime Applications</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Application</fullName>
+        <active>true</active>
+        <label>Application</label>
+        <picklistValues>
+            <picklist>Applicant_Delinquent_on_any_Federal_Debt__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CNCS_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Held for Formula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recommended to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returned for Rework</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted Late to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitive_or_Formula__c</picklist>
+            <values>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formula</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Demonstrates_Ethics_Integrity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EO_12372_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Area__c</picklist>
+            <values>
+                <fullName>Community and Economic Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disaster Recovery%2FRelief</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Conservatism %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FEMA %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FNutrition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Safety</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urban%2FRural Development %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Various</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ready_for_Ranking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfactory_Record_Executing_Programs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject_to_FAPIIS_Review__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Application__c</picklist>
+            <values>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Concept_Paper</fullName>
+        <active>true</active>
+        <label>Concept Paper</label>
+        <picklistValues>
+            <picklist>Applicant_Delinquent_on_any_Federal_Debt__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CNCS_Status__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Held for Formula</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Recommended to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returned for Rework</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted Late to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted to CNCS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Competitive_or_Formula__c</picklist>
+            <values>
+                <fullName>Competitive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formula</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Demonstrates_Ethics_Integrity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EO_12372_Process__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issue_Area__c</picklist>
+            <values>
+                <fullName>Community and Economic Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disaster Recovery%2FRelief</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Conservatism %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FEMA %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health%2FNutrition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Homeland Security</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Human Needs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Safety</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urban%2FRural Development %28NCCC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Various</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ready_for_Ranking__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfactory_Record_Executing_Programs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject_to_FAPIIS_Review__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Application__c</picklist>
+            <values>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Prime_Application_Id_w_link__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Prime_Organization__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NOFO_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NOFO_RFP__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CNCS_Corporate_Program__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Prime_Application_Id_w_link__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Prime_Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CNCS_Corporate_Program__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NOFO_RFP__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NOFO_Name__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Prime_Application_ID_Number__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>FAPIIS_Review_Comments</fullName>
+        <active>true</active>
+        <description>As per req #2790</description>
+        <errorConditionFormula>OR(
+AND(ISPICKVAL( Mitigating_Circumstances__c , &quot;Yes&quot;),(ISBLANK( FAPIIS_Review_Comments__c ))),
+AND(
+(ISPICKVAL( Satisfactory_Record_Executing_Programs__c , &quot;No&quot;)),
+(ISPICKVAL( Demonstrates_Ethics_Integrity__c , &quot;No&quot;)), 
+(ISPICKVAL( Mitigating_Circumstances__c , &quot;No&quot;)), 
+(ISBLANK( FAPIIS_Review_Comments__c ))))</errorConditionFormula>
+        <errorDisplayField>FAPIIS_Review_Comments__c</errorDisplayField>
+        <errorMessage>Enter Comments</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sub_Application_Due_Date</fullName>
+        <active>true</active>
+        <errorConditionFormula>(Sub_Application_Due_Date__c &gt;  NOFO_RFP__r.Applications_due_date__c)</errorConditionFormula>
+        <errorDisplayField>Sub_Application_Due_Date__c</errorDisplayField>
+        <errorMessage>The date entered must be at least one day earlier than the &quot;Application Due Date&quot; on the NOFO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sub_Concept_Paper_Due_Date_2</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(NOFO_RFP__r.Allow_Concept_Paper__c, &apos;Yes&apos;) &amp;&amp;   Sub_Concept_Paper_Due_Date__c &gt;  NOFO_RFP__r.Concept_Paper_Due_Date__c</errorConditionFormula>
+        <errorDisplayField>Sub_Concept_Paper_Due_Date__c</errorDisplayField>
+        <errorMessage>The date entered must be at least one day earlier than the &quot;Concept Paper Due Date&quot; on the NOFO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sub_concept_paper_due_date_rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(NOFO_RFP__r.Allow_Concept_Paper__c, &apos;Yes&apos;) &amp;&amp;  ISNULL(Sub_Concept_Paper_Due_Date__c )</errorConditionFormula>
+        <errorDisplayField>Sub_Concept_Paper_Due_Date__c</errorDisplayField>
+        <errorMessage>A Sub-Concept Paper Due Date can only be entered if a concept paper is required by the NOFO</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>if_no_explain_applicant_deliquent_NA</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Applicant_Delinquent_on_any_Federal_Debt__c , &apos;No&apos;)&amp;&amp; NOT(ISBLANK(If_yes_please_explain_app_delinque__c))</errorConditionFormula>
+        <errorDisplayField>Applicant_Delinquent_on_any_Federal_Debt__c</errorDisplayField>
+        <errorMessage>Entries can only be made if &quot; Applicant Delinquent on any Federal Debt&quot; is “Yes.&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>if_no_explain_eo_NA</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( EO_12372_Process__c , &apos;No&apos;) &amp;&amp; NOT(ISBLANK(If_yes_please_explain__c))</errorConditionFormula>
+        <errorDisplayField>EO_12372_Process__c</errorDisplayField>
+        <errorMessage>Entries can only be made if &quot;EO 12372 Process&quot; is “Yes.&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>if_yes_explain_Delinquent</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( Applicant_Delinquent_on_any_Federal_Debt__c , &apos;Yes&apos;)&amp;&amp; ISBLANK(If_yes_please_explain_app_delinque__c)</errorConditionFormula>
+        <errorDisplayField>If_yes_please_explain_app_delinque__c</errorDisplayField>
+        <errorMessage>An entry is required is “Applicant Delinquent on any Federal Debt” is “Yes.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>if_yes_explain_eo</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL( EO_12372_Process__c , &apos;Yes&apos;) &amp;&amp; ISBLANK(If_yes_please_explain__c)</errorConditionFormula>
+        <errorDisplayField>If_yes_please_explain__c</errorDisplayField>
+        <errorMessage>An entry is required is “EO 12372 Process” is “Yes.”</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Apply</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Apply</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if(&apos;{!$Profile.Name}&apos; == &apos;State Commission Profile&apos;){ 
+window.location.replace(&apos;/statecommission/apex/projectlook?id={!Prime_Application__c.NOFO_RFPId__c}&amp;retURL=%2F{!Prime_Application__c.Id}&amp;primeApplicationId={!Prime_Application__c.Id}&apos;); 
+} 
+else{ 
+window.location.replace(&apos;/apex/projectlook?id={!Prime_Application__c.NOFO_RFPId__c}&amp;retURL=%2F{!Prime_Application__c.Id}&amp;primeApplicationId={!Prime_Application__c.Id}&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Award_Report</fullName>
+        <availability>online</availability>
+        <description>US # 1110.</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Award Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://cns--devsb12.cs32.my.salesforce.com/00Or0000000JzaI?pv0={!Prime_Application__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Intent_to_Apply</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Intent to Apply</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if(&apos;{!$Profile.Name}&apos; == &apos;Applicant&apos;){ 
+window.location.replace(&apos;/granteeportal/apex/NotificationofIntenttoApply?scontrolCaching=1&amp;id={!Prime_Application__c.NOFO_RFPId__c}&amp;retURL=%2F{!Prime_Application__c.Id}&apos;); 
+} 
+else{ 
+window.location.replace(&apos;/apex/NotificationofIntenttoApply?scontrolCaching=1&amp;id={!Prime_Application__c.NOFO_RFPId__c}&amp;retURL=%2F{!Prime_Application__c.Id}&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Sub_Applications</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Sub-Applications</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var primeapp = new sforce.SObject(&quot;Prime_Application__c&quot;); 
+primeapp.id = &apos;{!Prime_Application__c.Id}&apos;; 
+primeapp.CNCS_Status__c= &apos;Submitted to CNCS&apos;; 
+var result = sforce.connection.update([primeapp]); 
+window.location.reload();</url>
+    </webLinks>
+</CustomObject>

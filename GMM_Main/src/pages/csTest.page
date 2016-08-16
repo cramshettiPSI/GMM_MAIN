@@ -1,0 +1,14 @@
+<apex:page standardController="Account" sidebar="False" showHeader="False" >
+
+ <html lang="en-US"> 
+ <h1 style= "display:none">Account</h1>
+ </html>
+
+<apex:variable var="per" value="{!$User.perId__c}" /> 
+<apex:variable var="org" value="{!Account.ID__c}" />
+<apex:variable var="prof" value="{!$Profile.Name}" />
+<h2>Per ID: {!per}<br/>
+Org ID: {!org}<br/></h2>
+<apex:canvasApp applicationName="Cost Share Statement" height="1200px" width="800px" parameters="{orgId:{!org},perId:{!per},prof:'{!prof}'}" scrolling="auto"/>
+
+</apex:page>

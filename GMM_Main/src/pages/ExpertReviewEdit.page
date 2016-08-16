@@ -1,0 +1,217 @@
+<apex:page standardController="Contact" extensions="ExpertReviewEdit" sidebar="true">  
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <html lang="en">
+  <style type="text/css">
+        .myClass { 
+             border-left-width: 3px;
+             color: #black;
+             border-left-style: solid;
+             border-left-color:red;
+            
+}
+    </style>
+    </html>
+   
+  <apex:form id="theForm">  
+ <apex:pageMessages / >
+    <apex:pageBlock title="Expert Review Application" id="pb">
+      <apex:pageBlockButtons location="Top">
+       <!-- <apex:commandButton action="{!save_upsert}" value="Submit"/>-->
+        <apex:commandButton action="{!SaveAsDraft}" value="Save" />
+        <apex:commandButton action="{!Cancel}" value="Cancel"/>
+      </apex:pageBlockButtons>
+      <apex:actionRegion >
+      <apex:pageblockSection columns="2" collapsible="true" Title="Account information" id="pbs1">
+         <apex:inputfield value="{!con.Salutation}" styleClass="myClass"></apex:inputfield><br/><br/>
+         <apex:inputfield value="{!con.Preferred_Name__c}"/><br/><br/>
+          <apex:inputfield value="{!con.FirstName}" styleClass="myClass"  ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Middle_Name__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.LastName}"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Suffix__c}"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Primary_Phone__c}" styleClass="myClass"></apex:inputfield><br></br>
+          <apex:inputfield value="{!con.Is_this_a_Mobile_Number__c}" styleClass="myClass" ></apex:inputfield><br></br> 
+          <apex:inputfield value="{!con.Would_you_like_to_receive_texts__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.OtherPhone}"></apex:inputfield><br></br>
+          <apex:inputfield value="{!con.Email}" required="true" ></apex:inputfield><br></br>
+     <apex:inputfield value="{!con.Re_Enter_Email__c}" ></apex:inputfield><br/><br/> 
+     <apex:inputfield value="{!con.External_Reviewer_Comments__c}" ></apex:inputfield> <br/>  
+      <apex:inputfield value="{!con.Comments__c}"></apex:inputfield><br/>  
+
+     
+      </apex:pageblockSection>
+      <apex:pageBlockSection collapsible="true" Title="Contact Information" columns="2" id="pbs2">
+          <apex:inputfield value="{!con.Mailing_Street_Address_1__c}" styleClass="myClass"/><br/><br/>
+          <apex:inputfield value="{!con.Mailing_Street_Address_2__c}" /><br/><br/>
+          <apex:inputfield value="{!con.Mailing_City__c}" styleClass="myClass"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Mailing_State__c}" styleClass="myClass" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Mailing_Zip_Code__c}"  ></apex:inputfield><br/><br/>
+      </apex:pageblocksection>
+      <apex:pageBlockSection collapsible="true" Title="Demographic Information" columns="2" id="pbs3">
+          <apex:inputField value="{!con.Highest__c}" styleClass="myClass"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.State_of_Residence__c}" styleClass="myClass"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Gender__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Date_of_Birth__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Ethnicity_Type__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Race_Type__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.How_did_you_hear_about_CNCS_Reviews__c}" id="hearcncs" styleClass="myClass" >
+          <apex:actionSupport action="{!MakeSpecificationValidation}" event="onchange" reRender="pb,pbs3"/>
+          </apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Please_Specify__c}" id="Please" styleClass="{!cssapply}"></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.Reasonable_Accommodations_Required__c}" ></apex:inputfield><br/><br/>
+          <apex:inputfield value="{!con.If_Yes_describe_what_is_needed__c}" ></apex:inputfield><br/><br/>
+          
+      <!-- <apex:inputField value="{!con.Highest__c}"/>-->
+      </apex:pageBlocksection> 
+     
+      <apex:pageBlockSection collapsible="true" Title="Honorarium Information" columns="2" rendered="{!if(isChecked = true,TRUE,FALSE)}" >
+      <apex:inputfield value="{!con.SSN__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Verify_SSN__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Account_Type__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Routing_Number__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Verify_Routing_Number__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Account_Number__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!con.Verify_Account_Number__c}" ></apex:inputfield><br/><br/>
+      
+       </apex:pageBlocksection> 
+      
+      
+      <!-- Education History-->
+    
+        <apex:pageBlockSection columns="2" collapsible="true" title="Education History">
+
+                 
+               <!--  <apex:inputField value="{!history.Education_Name__c}"/> -->
+                 <apex:inputField value="{!history.CollegeUniversity__c}" styleClass="myClass"/>
+                 <apex:inputfield value="{!history.Organization_Type1__c}" styleClass="myClass"/>
+                 <apex:inputField value="{!history.From__c}" styleClass="myClass"/>
+                 <apex:inputField value="{!history.To__c}"  styleClass="myClass"  />
+                 <apex:inputField value="{!history.Currently_Enrolled__c}" styleClass="myClass" />
+                 <apex:inputField value="{!history.Areas_of_Study_Degree_Details__c}" styleClass="myClass" />
+                 
+                 
+                
+        <br/>    <apex:commandButton action="{!AddRow2}" value="Add "  >
+             <apex:actionSupport event="onchange" reRender="membAdd" />
+            </apex:commandButton>
+         
+      </apex:pageBlockSection>
+   
+    
+    <apex:variable var="rowNum" value="{!0}"  />
+    
+    <apex:pageBlock id="membAdd"  >   
+    <apex:variable var="rowNum" value="{!0}"  />               
+            
+        <apex:repeat value="{!historyList}" var="e1" id="therepeat" >
+               
+                <apex:pageBlocksection columns="2">
+                  <!--apex:outputText value="{0,number, ###}" style="text-align:center;"-->   
+                        <apex:param value="{!rowNum+1}" />   
+                 <!--/apex:outputText-->
+                 <apex:inputHidden />
+                 <!--<apex:inputField value="{!e1.Education_Name__c}"/>-->
+                 <apex:inputField value="{!e1.CollegeUniversity__c}" />
+                 <apex:inputfield value="{!e1.Organization_Type1__c}" />
+                 <apex:inputField value="{!e1.From__c}" />
+                 <apex:inputField value="{!e1.To__c}" />   
+                 <apex:inputField value="{!e1.Currently_Enrolled__c}"  />
+                 <apex:inputField value="{!e1.Areas_of_Study_Degree_Details__c}" />          
+                 <apex:commandLink style="font-size:15px; font-weight:bold; text-align:center;color:Black;" value="Delete" action="{!delRow2}" reRender="membAdd,temp" rendered="{!rowNum>=0}">
+                        <apex:param value="{!rowNum}" name="index" />
+                 </apex:commandLink>
+                 <apex:variable var="rowNum" value="{!rowNum+1}"/>
+                </apex:pageBlockSection>
+               
+                
+        </apex:repeat>          
+         
+        
+    </apex:pageBlock>
+<!-- Education History End Here -->
+
+<!-- Employment History -->
+    
+   
+        <apex:pageBlockSection columns="2" collapsible="true" title="Employment History">
+         
+                    <apex:inputfield value="{!history2.Employer__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.Organization_Type__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.empFrom__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.empTo__c}" styleClass="myClass"/>
+                     <apex:inputfield value="{!history2.Currently_Employed__c}" styleClass="myClass"/> 
+                    <apex:inputfield value="{!history2.Area_of_Expertise__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.Experience_Type__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.Expertise__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.Years_of_Experience__c}" styleClass="myClass"/>
+                    <apex:inputfield value="{!history2.Job_Description__c}" styleClass="myClass"/>
+                     
+                    <apex:inputHidden />
+                
+           <apex:commandButton action="{!AddEmpRow2}" value="Add "  >
+             <apex:actionSupport event="onchange" reRender="membEmpAdd" />
+            </apex:commandButton>
+         
+      </apex:pageBlockSection>
+    
+    
+    <apex:variable var="rowNum1" value="{!0}"  />
+    
+    <apex:pageBlock id="membEmpAdd" >   
+    <apex:variable var="rowNum1" value="{!0}"  />               
+            
+        <apex:repeat value="{!historyList2}" var="e2" id="therepeat">
+
+                <apex:pageBlocksection columns="2">
+                  <apex:outputText value="{0,number, ###}" style="text-align:center;">   
+                        <apex:param value="{!rowNum1+1}" />   
+                 </apex:outputText>
+                 
+                  <apex:inputHidden />
+                    <apex:inputfield value="{!e2.Employer__c}" />
+                    <apex:inputfield value="{!e2.Organization_Type__c}" />
+                    <apex:inputfield value="{!e2.empFrom__c}" />
+                    <apex:inputfield value="{!e2.empTo__c}" />
+                    <apex:inputfield value="{!e2.Currently_Employed__c}"/>
+                    <apex:inputfield value="{!e2.Area_of_Expertise__c}" />
+                    <apex:inputfield value="{!e2.Experience_Type__c}" />
+                     <apex:inputfield value="{!e2.Expertise__c}" />
+                    <apex:inputfield value="{!e2.Years_of_Experience__c}" />
+                    <apex:inputfield value="{!e2.Job_Description__c}" />  
+                    <apex:inputHidden />
+                 <apex:commandLink style="font-size:15px; font-weight:bold; text-align:center;color:Black;" value="Delete" action="{!delEmpRow2}" reRender="membEmpAdd,temp" rendered="{!rowNum1>=0}">
+                        <apex:param value="{!rowNum1}" name="index" />
+                 </apex:commandLink>
+                 <apex:variable var="rowNum1" value="{!rowNum1+1}"/>
+                </apex:pageBlockSection>
+               
+                
+        </apex:repeat>          
+         
+        
+    </apex:pageBlock>
+    
+<!-- Employment History End Here -->  
+     </apex:actionRegion> 
+     
+     <apex:pageBlockSection columns="2" collapsible="true" title="Review Rating" rendered="{!$Profile.Name ='Staff User'|| $Profile.Name ='System Administrator'}" >
+         <apex:outputField value="{!con.Background_rating__c} "/>
+         <apex:outputField value="{!con.Panel_Coordinator_Performance_Rating__c}"/>
+         <apex:outputField value="{!con.Expert_Reviewer_Performance_Rating__c}"/>
+         <apex:outputField value="{!con.Panel_Coordinator_Overall_Rating__c}"/>
+         <apex:outputField value="{!con.Expert_Reviewer_Overall_Rating__c}"/>
+         <apex:inputField value="{!con.Performance_Rating_Validation__c}"/>
+         
+     </apex:pageBlockSection>
+     
+     <apex:actionRegion >
+      <apex:pageBlockSection columns="2" collapsible="true" title="Attachments">
+        <apex:inputFile value="{!fileBody}" fileName="{!fileName}" id="attach" />
+        <apex:inputField value="{!attach.Type__c}" />
+      </apex:pageBlockSection>
+      </apex:actionRegion>
+      
+    </apex:pageBlock>
+  </apex:form>
+  
+  
+</apex:page>

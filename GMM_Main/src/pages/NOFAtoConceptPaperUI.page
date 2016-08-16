@@ -1,0 +1,334 @@
+<apex:page StandardController="NOFA__c" title="New Concept Paper" extensions="NOFAtoConceptPaperUIExt" sidebar="False">
+<html lang="en-US"> 
+</html>
+ <script type="text/javascript">
+        var $j = jQuery.noConflict();
+        $j(document).ready(function(){
+            setTimeout(function() {
+                $j('select.myMultiClass').each(function(i, val) { 
+                   val.style.width = "100px"; 
+                   val.style.height = "250px";
+                 <!--     $j(val).width(100);
+                    $j(val).height(75);  -->
+                })
+            },100);
+        });
+    </script>
+  
+  <style type="text/css">
+    
+          .myClass { 
+             border-left-width: 3px;
+             color: #black;
+             border-left-style: solid;
+             border-left-color:#B22222;
+            }
+    </style>         
+ 
+  <apex:form id="theForm">
+     <apex:pageBlock title="Concept Paper Edit" mode="edit">
+     <apex:pageMessages />
+            <apex:pageBlockButtons >
+    <!-- <apex:commandButton value="Submit" action="{!save1}"/> -->
+    <apex:commandButton value="Save" action="{!SaveAsDraft}"/> 
+     <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+ <apex:pageBlockSection collapsible="true" Title="General Information" columns="2" rendered="{!Nofa.Standard_CP__c}">
+  <apex:outputField value="{!applicationInput.NOFA_RFP__c}"/>
+   <!-- <apex:inputField value="{!applicationInput.NOFA_Name__c}"/>
+ <apex:inputField value="{!applicationInput.Name}" required="false"/>-->
+            <!--    <apex:inputField value="{!applicationInput.Concept_Paper_Name__c}"  style="width:38%;"/> 
+             <apex:outputField value="{!applicationInput.Corporate_Program__c}" /> 
+             <apex:outputField value="{!applicationInput.Concept_Paper_Due_Date__c}" /> 
+             <apex:outputField value="{!applicationInput.Type_of_Application__c}" /> -->
+             <apex:inputField value="{!applicationInput.Grantee_Status__c}" />
+             <apex:inputField value="{!applicationInput.Comments__c}"/>  
+             
+         <!--   <apex:inputField value="{!applicationInput.Withdraw_Justification__c}"/> -->
+            </apex:pageBlockSection>
+             
+  <apex:pageBlockSection collapsible="true" Title="Organization Contact Information" columns="2" rendered="{!Nofa.Standard_CP__c}">     
+   <apex:inputField value="{!applicationInput.Point_of_Contact__c}" style="width:32%;" styleClass="myClass"/>
+ <!--  <apex:inputField value="{!applicationInput.Prefix__c}" style="width:38%;"/>
+ <apex:inputField value="{!applicationInput.First_Name__c}" style="width:32%;"/>
+ <apex:inputField value="{!applicationInput.Last_Name__c}" style="width:38%;"/>
+  <apex:inputTextarea value="{!applicationInput.Title__c}" style="width: 150px; height: 25px"/>  
+  <apex:inputField value="{!applicationInput.Telephone_Number__c}" style="width: 150px; height: 25px"/>
+ <apex:inputField value="{!applicationInput.Email__c}" style="width:38%;"/> 
+ <apex:inputField value="{!applicationInput.Comments__c}"/>  
+  <apex:OutputField value="{!applicationInput.Organization__c}" style="width:32%;"/>  -->
+  </apex:pageBlockSection>
+   
+   <apex:pageBlockSection collapsible="true" Title="Project Information" columns="2" rendered="{!Nofa.Standard_CP__c}">
+   <apex:inputField value="{!applicationInput.Project__c}" style="width:38%;" styleClass="myClass"/>
+  <!-- <apex:outputField value="{!applicationInput.Project_Directors__c}"  styleClass="myClass"/> -->
+   <apex:inputField value="{!applicationInput.Project_Website_URL_CP__c}" style="width:38%;"/>
+   <!-- Modified rendering for the 4 fields below. -->
+  <apex:inputField value="{!applicationInput.Proposed_Start_Date__c}" rendered="{!OR(Nofa.Standard_CP__c==True,Nofa.Other_NCCC_CP__c==True)}" styleClass="myClass" />
+   <apex:inputField value="{!applicationInput.Proposed_Start_Date_is__c}" rendered="{!(Nofa.Other_NCCC_CP__c==True)}" styleClass="myClass"/>
+  <apex:inputField value="{!applicationInput.Proposed_End_Date__c}" rendered="{!OR(Nofa.Standard_CP__c==True,Nofa.Other_NCCC_CP__c==True)}"  styleClass="myClass"/>
+  <apex:inputField value="{!applicationInput.Proposed_End_Date_is__c}"  rendered="{!(Nofa.Other_NCCC_CP__c==True)}" styleClass="myClass" />
+ <!--    <apex:inputField value="{!applicationInput.Proposed_Start_Date__c}" style="width:38%;" styleClass="myClass"/>
+     <apex:inputField value="{!applicationInput.Proposed_Start_Date_is__c}" style="width:38%;" styleClass="myClass"/>
+   <apex:inputField value="{!applicationInput.Proposed_End_Date__c}" style="width:38%;" styleClass="myClass"/> 
+   <apex:inputField value="{!applicationInput.Proposed_End_Date_is__c}" style="width:38%;" styleClass="myClass"/>     -->
+   </apex:pageBlockSection>
+   
+   <apex:pageBlockSection collapsible="true" Title="Areas Affected by Project" columns="1">
+         <!--<apex:outputField value="{!applicationInput.Areas_Affected_by_Project_Cities_Coutn__c}" rendered="{!Application3__c.NOFA_RFP__r.Standard__c}"/>-->
+          <apex:inputField value="{!applicationInput.State_and_or_Territories__c}" rendered="{!Nofa.Standard_CP__c}" styleClass="myClass"/>
+          <apex:inputField value="{!applicationInput.Counties__c}" rendered="{!Nofa.Standard_CP__c}" styleClass="myClass"/>
+            <apex:inputField value="{!applicationInput.City__c}" styleClass="myClass"/> 
+          <apex:inputField value="{!applicationInput.Other_Area_Affected_by_Project__c}" rendered="{!Nofa.Standard_CP__c}"/>
+      </apex:pageblockSection>
+      
+     <!--  <apex:inputField value="{!applicationInput.NCCC_Dates_CP__c}" rendered="{!Nofa.NCCC_Dates_CP__c}"/> -->
+      <apex:pageBlockSection collapsible="true" Title="Narrative" columns="1">
+       <apex:pageBlockSectionItem rendered="{!Nofa.Executive_Summary_CP__c}"  >   
+          <apex:outputLabel value="Executive Summary" for="Executive_Summary__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+            <apex:inputField value="{!applicationInput.Executive_Summary__c}" styleClass="myClass"/>
+             </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem rendered="{!Nofa.Organizational_Capability_CP__c}">   
+          <apex:outputLabel value="Organizational Capability" for="Organizational_Capability__c" />    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+     <apex:inputField value="{!applicationInput.Organizational_Capability__c}"  styleClass="myClass"/>
+       </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+       <apex:pageBlockSectionItem rendered="{!Nofa.Program_Design_CP__c}" >   
+          <apex:outputLabel value="Program Design" for="Program_Design__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+        <apex:inputField value="{!applicationInput.Program_Design__c}" />
+        </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+        <apex:pageBlockSectionItem rendered="{!Nofa.Program_Management_CP__c}"> 
+          <apex:outputLabel value="Program Management" for="Program_Management__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">  
+           <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Program_Management__c}"  />
+        </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+       <apex:pageBlockSectionItem rendered="{!Nofa.Evaluation_Summary_or_Plan_CP__c}">   
+          <apex:outputLabel value="Evaluation Summary or Plan" for="Evaluation_Summary_or_Plan__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Evaluation_Summary_or_Plan__c}"  styleClass="myClass"/>
+         </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+        <apex:pageBlockSectionItem rendered="{!Nofa.Recruitment_and_Development_CP__c}" >   
+          <apex:outputLabel value="Recruitment and Development" for="Recruitment_and_Development__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Recruitment_and_Development__c}"  styleClass="myClass"/>
+          </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem rendered="{!Nofa.Strengthening_Communities_CP__c}">   
+          <apex:outputLabel value="Strengthening Communities" for="Strengthen_Communities__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Strengthen_Communities__c}" styleClass="myClass"/>
+            </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem rendered="{!Nofa.Amendment_Justification_CP__c}"  >   
+          <apex:outputLabel value="Amendment Justification" for="Amendment_Justification__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Amendment_Justification__c}" />
+          </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+      
+      <apex:pageBlockSectionItem rendered="{!Nofa.Continuation_Changes_CP__c}" >   
+          <apex:outputLabel value="Continuation Changes" for="Continuation_Changes__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Continuation_Changes__c}" styleClass="myClass"/>
+        </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+       <apex:pageBlockSectionItem rendered="{!Nofa.Clarification_Summary_CP__c}">   
+          <apex:outputLabel value="Clarification Summary" for="Clarification_Summary__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Clarification_Summary__c}"  styleClass="myClass"/>
+           </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+      <apex:pageBlockSectionItem rendered="{!Nofa.Cost_Effectiveness_and_Budget_Adequacy_C__c}" >   
+          <apex:outputLabel value="Cost Effectiveness and Budget Adequacy" for="Cost_Effectiveness_Budget_Adequacy__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+       <apex:inputField value="{!applicationInput.Cost_Effectiveness_Budget_Adequacy__c}" styleClass="myClass"/>
+         </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+       <apex:pageBlockSectionItem rendered="{!Nofa.Need_CP__c}">   
+          <apex:outputLabel value="Need" for="Need__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+       <apex:inputField value="{!applicationInput.Need__c}"  styleClass="myClass"/>
+         </apex:outputPanel>  
+       </apex:pageBlockSectionItem>
+      <apex:pageBlockSectionItem rendered="{!Nofa.Intermediary_Justification_CP__c}">   
+          <apex:outputLabel value="Intermediary Justification" for="Intermediary_Justification__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+       <apex:inputField value="{!applicationInput.Intermediary_Justification__c}"  styleClass="myClass"/>
+         </apex:outputPanel>  
+       </apex:pageBlockSectionItem> 
+     <!--     <apex:pageBlockSectionItem rendered="{!Nofa.Safety_and_Security_CP__c}" >   
+          <apex:outputLabel value="Safety and Security" for="Safety_and_Security__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+               <apex:inputField value="{!applicationInput.Safety_and_Security__c}"  styleClass="myClass"/>
+               </apex:outputPanel>  
+       </apex:pageBlockSectionItem>
+  <apex:pageBlockSectionItem rendered="{!Nofa.Tools_and_Equipment_CP__c}">   
+          <apex:outputLabel value="Tools and Equipment" for="Tools_and_Equipment__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+     <apex:inputField value="{!applicationInput.Tools_and_Equipment__c}"  styleClass="myClass"/>
+      </apex:outputPanel>  
+       </apex:pageBlockSectionItem> -->
+   
+       <apex:pageBlockSectionItem rendered="{!Nofa.Other_CP__c}">   
+          <apex:outputLabel value="Other" for="Other_Narrative__c"/>    
+          <apex:outputPanel styleClass="requiredInput" layout="block">
+          <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+    <apex:inputField value="{!applicationInput.Other_Narrative__c}"  styleClass="myClass"/>
+     </apex:outputPanel>  
+       </apex:pageBlockSectionItem>
+     
+          </apex:pageBlockSection>
+       
+       <!-- Focus Area and Objectives for non-NCCC Concept Papers -->   
+       <apex:pageBlockSection collapsible="true" Title="Focus Area and Objectives" columns="2" >
+       <apex:pageBlockSectionItem rendered="{!Nofa.Education_CP__c}">
+              <apex:outputLabel value="Education" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Education_CP__c" handle="{!this}" />           
+       </apex:pageBlockSectionItem>       
+      <!-- <apex:inputField value="{!applicationInput.Education_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Education_CP__c}"/> -->
+       <apex:inputField value="{!applicationInput.Other_Education_CP__c}" rendered="{!Nofa.Education_CP__c}"/>
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Veterans_Military_Families_CP__c}">
+              <apex:outputLabel value="Veterans & Military Families" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Veterans_and_Military_Families_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+       <!-- <apex:inputField value="{!applicationInput.Veterans_and_Military_Families_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Veterans_Military_Families_CP__c}" /> -->
+       <apex:inputField value="{!applicationInput.Other_Veterans_and_Military_Families_CP__c}" rendered="{!Nofa.Veterans_Military_Families_CP__c}"/>
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Disaster_Services_CP__c}">
+              <apex:outputLabel value="Disaster Services" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Disaster_Services_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+      <!-- <apex:inputField value="{!applicationInput.Disaster_Services_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Disaster_Services_CP__c}"/> -->
+       <apex:inputField value="{!applicationInput.Other_Disaster_Services_CP__c}" rendered="{!Nofa.Disaster_Services_CP__c}"/>
+       
+       <apex:pageBlockSectionItem rendered="{!Nofa.Environmental_Stewardship_CP__c}">
+              <apex:outputLabel value="Environmental Stewardship" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Environment_Stewardship_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem> 
+       <!--  <apex:inputField value="{!applicationInput.Environment_Stewardship_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Environmental_Stewardship_CP__c}" /> -->
+       <apex:inputField value="{!applicationInput.Other_Environment_Stewardship_CP__c}" rendered="{!Nofa.Environmental_Stewardship_CP__c}"/> 
+       
+       <!-- Added on 9.29.15 -->
+       <apex:pageBlockSectionItem rendered="{!Nofa.Energy_Efficiency_CP__c}">
+              <apex:outputLabel value="Energy Efficiency" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Energy_Efficiency_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+     <!--  <apex:inputField value="{!applicationInput.Environment_Stewardship_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Environmental_Stewardship_CP__c}" /> -->
+       <apex:inputField value="{!applicationInput.Other_Energy_Efficiency_CP__c}" rendered="{!Nofa.Energy_Efficiency_CP__c}"/>
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Healthy_Futures_CP__c}">
+              <apex:outputLabel value="Healthy Futures" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Healthy_Futures_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+      <!-- <apex:inputField value="{!applicationInput.Healthy_Futures_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Healthy_Futures_CP__c}"/>  -->
+       <apex:inputField value="{!applicationInput.Other_Healthy_Futures_CP__c}" rendered="{!Nofa.Healthy_Futures_CP__c}"/> 
+       
+       
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Capacity_Building_CP__c}">
+              <apex:outputLabel value="Capacity Building" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Capacity_Building_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+     <!--   <apex:inputField value="{!applicationInput.Capacity_Building_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Capacity_Building_CP__c}"/>  -->
+       <apex:inputField value="{!applicationInput.Other_Capacity_Building_CP__c}" rendered="{!Nofa.Capacity_Building_CP__c}"/>
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Economic_Opportunities_CP__c}">
+              <apex:outputLabel value="Economic Opportunities" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Economic_Opportunities_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    
+       <!-- <apex:inputField value="{!applicationInput.Economic_Opportunities_CP__c}" styleClass="myMultiClass" rendered="{!Nofa.Economic_Opportunities_CP__c}"/>   -->
+       <apex:inputField value="{!applicationInput.Other_Economic_Opportunities_CP__c}" rendered="{!Nofa.Economic_Opportunities_CP__c}"/> 
+       
+      <!--  <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Target Populations" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Target_Populations_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>    -->
+       <!-- <apex:inputField value="{!applicationInput.Target_Populations_CP__c}" styleClass="myMultiClass" />       -->
+       
+        
+       <!-- </apex:pageBlockSection> -->
+         
+           <!-- Focus Area and Objectives for NCCC Concept Papers -->   
+     <!--  <apex:pageBlockSection collapsible="true" Title="Focus Area and Objectives" columns="2" > -->
+        <apex:pageBlockSectionItem rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}">
+              <apex:outputLabel value="Natural and Other Disasters" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Natural_and_Other_Disasters__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>  
+      <!--  <apex:inputField value="{!applicationInput.Natural_and_Other_Disasters_CP__c}" styleClass="myMultiClass" /> -->
+       <apex:inputField value="{!applicationInput.Other_Natural_and_Other_Disasters_CP__c}" rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}"/>
+       
+       <apex:pageBlockSectionItem rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}">
+              <apex:outputLabel value="Energy Conservation" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Energy_Conservation_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>  
+      <!-- <apex:inputField value="{!applicationInput.Energy_Conservation_CP__c}" styleClass="myMultiClass" /> -->
+        <apex:inputField value="{!applicationInput.Other_Energy_Conservation_CP__c}" rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}"/>
+       
+        <apex:pageBlockSectionItem rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}">
+              <apex:outputLabel value="Environmental Stewardship & Conservation" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Environmental_Stewardship_Conservation__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>  
+      <!-- <apex:inputField value="{!applicationInput.Environmental_Stewardship_Conservation_C__c}" styleClass="myMultiClass" /> -->
+       <apex:inputField value="{!applicationInput.Other_Environmental_Steward_Conserv_CP__c}" rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}"/>
+       
+        
+        
+         <apex:pageBlockSectionItem rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}">
+              <apex:outputLabel value="Infrastructure Improvement" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Infrastructure_Improvement_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>  
+       <!-- <apex:inputField value="{!applicationInput.Infrastructure_Improvement_CP__c}" styleClass="myMultiClass" /> -->
+        <apex:inputField value="{!applicationInput.Other_Infrastructure_Improvement_CP__c}" rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}"/>
+        
+         <apex:pageBlockSectionItem rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}">
+              <apex:outputLabel value="Urban and Rural Development" style="font-weight:bold" />                    
+              <c:MultiselectComponent field="Urban_and_Rural_Development_CP__c"  handle="{!this}"/>           
+       </apex:pageBlockSectionItem>  
+     <!--  <apex:inputField value="{!applicationInput.Urban_and_Rural_Development_CP__c}" styleClass="myMultiClass" /> -->
+        <apex:inputField value="{!applicationInput.Other_Urban_and_Rural_Development_CP__c}" rendered="{!Nofa.Focus_Areas_and_Objectives_NCCC_CP__c}"/> 
+        
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Target Populations" style="font-weight:bold" styleClass="myClass"/>                    
+              <c:MultiselectComponent field="Target_Populations_CP__c"  />           
+       </apex:pageBlockSectionItem>   
+       <apex:inputField value="{!applicationInput.Other_Target_Populations_CP__c}" />     
+     <!--  <apex:inputField value="{!applicationInput.Target_Populations_CP__c}" styleClass="myMultiClass"/>   -->      
+      <!-- <apex:inputField value="{!applicationInput.Other_Target_Populations_CP__c}" />        -->
+       </apex:pageBlockSection>  
+       
+        <apex:pageBlockSection collapsible="true" Title="Other">
+        <apex:inputField value="{!applicationInput.Have_funding_history_with_any_CNCS_org__c}" rendered="{!Nofa.Have_funding_history_with_a_CNCS_Prog_CP__c}" />
+        <apex:inputField value="{!applicationInput.How_many_teams_are_being_requested_CP__c}" rendered="{!Nofa.Other_NCCC_CP__c}" styleClass="myClass"/>
+        <apex:inputField value="{!applicationInput.Number_of_teams_to_complete_this_proj_CP__c}" rendered="{!Nofa.Other_NCCC_CP__c}" styleClass="myClass"/>
+          <apex:inputField value="{!applicationInput.Primary_State_of_Service_Activities__c}" rendered="{!Nofa.Other_NCCC_CP__c}" /> 
+          <apex:inputField value="{!applicationInput.Select_a_round__c}" rendered="{!Nofa.Other_NCCC_CP__c}" styleClass="myClass"/> 
+        <apex:inputField value="{!applicationInput.Specify_if_you_want_to_be_in_more_rou_CP__c}" rendered="{!Nofa.Other_NCCC_CP__c}" styleClass="myClass"/> 
+        <apex:inputField value="{!applicationInput.Disaster_Type_CP__c}" rendered="{!Nofa.Other_NCCC_CP__c}" styleClass="myClass"/>        
+         </apex:pageBlockSection>   
+                                                          
+</apex:pageBlock> 
+ </apex:form>
+  </apex:page>

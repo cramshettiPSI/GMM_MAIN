@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Assessment_Criteria__c</fullName>
+        <defaultValue>&quot;Applications should include a well-designed plan with clear and compelling justifications for receiving the requested funds. Reviewers will assess the applications against the selection criteria and rate them accordingly considering the weights assigned to each criterion: Program Design Organizational Capability Cost-Effectiveness and Budget Adequacy&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Criteria</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Blend_Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Blended Review</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Blended_Review__c</fullName>
+        <defaultValue>&quot;Panels of Expert Reviewers (External and CNCS Staff Reviewers) will assess applications based on the Program Design, Organizational Capability, and Cost-Effectiveness and Budget Adequacy Selection Criteria. CNCS will recruit and select reviewers on the basis of demonstrated expertise in [Program Name] programming and/or the Focus Areas, as well as experience assessing applications. All reviewers will be screened for conflicts of interest.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Blended Review</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Clarfication_Process__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Clarification Process</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Clarification_Process__c</fullName>
+        <defaultValue>&quot;CNCS may ask some applicants to provide clarifying information. This information is used by CNCS staff to make funding recommendations. A request for clarification does not guarantee a grant award. Applicants may be recommended for funding even if they are not asked for clarification. Failure to respond to a request for clarification in a timely fashion will result in removal of applications from consideration. CNCS staff may conduct a site visit inspection, as appropriate.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Clarification Process</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Compliance_and_Elgibility_Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Compliance and Eligibility Review</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Effectiveness_and_Budget_Adequacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost-Effectiveness and Budget Adequacy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>External_Review__c</fullName>
+        <defaultValue>&quot;External Reviewers will assess applications based on the Program Design, Organizational Capability, and Cost-Effectiveness and Budget Adequacy Selection Criteria. CNCS will recruit and select reviewers on the basis of demonstrated expertise in [Program Name] programming and/or the Focus Areas, as well as experience assessing applications. All External Reviewers will be screened for conflicts of interest.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>External Review</label>
+        <length>17028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extrnal_Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>External Review</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Feedback_to_Applicants__c</fullName>
+        <defaultValue>&quot;Following awards, compliant applicants will receive summary comments from the [External Review], [Blended Review], or [Staff Review]. This feedback will be based on the review of the original application and will not reflect information that may have been provided in response to clarification.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Feedback to Applicants</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Internal_Review__c</fullName>
+        <defaultValue>&quot;CNCS Staff Reviewers will assess the applications based on the Program Design, Organizational Capability, and Cost-Effectiveness and Budget Adequacy Selection Criteria. Staff Reviewers will also consider the comprehensiveness and feasibility of the application, as well as the priorities and strategic considerations detailed in this Notice. CNCS will recruit and select Staff Reviewers on the basis of demonstrated expertise in [Program Name] programming and/or the Focus Areas, as well as experience assessing applications. All Staff Reviewers will be screened for conflicts of interest.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Internal Review</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Internl_Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Internal Review</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice ID</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Application Review Information</relationshipLabel>
+        <relationshipName>Application_Review_Information</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Organizational_Capability__c</fullName>
+        <defaultValue>&quot;(XX percent): In determining the quality of the application reviewers will consider the following criteria:o the extent to which the applicant demonstrates … o …&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Organizational Capability</label>
+        <length>6000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Post_Revew_Quality_Control__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Post Review Quality Control</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Post_Review_Quality_Control__c</fullName>
+        <defaultValue>&quot;After the initial review process is complete, CNCS staff will review the results for fairness and consistency. Some applications may be selected for a Post-Review Quality Control assessment. This additional level of review will be used to assess the applications for which there were significant irregularities in the review panel.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Post Review Quality Control</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Program_Design__c</fullName>
+        <defaultValue>&quot;        (XX percent): In determining the quality of the application reviewers will assess the following criteria:  o the extent to which the proposed project addresses … o the extent to which the proposed project would implement …o the potential contribution …o the clarity and importance …  o the extent to which the proposal logically connects …    o the likelihood that the intervention …&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Program Design</label>
+        <length>6000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Revew_Model__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Review Model</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Review_Model__c</fullName>
+        <defaultValue>&quot;External Reviewers will assess applications based on the Program Design, Organizational Capability, and Cost-Effectiveness and Budget Adequacy Selection Criteria. CNCS will recruit and select reviewers on the basis of demonstrated expertise in [Program Name] programming and/or the Focus Areas, as well as experience assessing applications. All External Reviewers will be screened for conflicts of interest.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Review Model</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Review_and_Selection_Process__c</fullName>
+        <defaultValue>&quot;The assessment of applications involves a wide range of considerations. CNCS will engage [External] and/or [Staff] Reviewers with relevant knowledge and expertise to assess and provide input on the eligible applications. In the end, the review and selection process will produce a diversified set of high-quality programs that represent the priorities and strategic considerations described in this Notice.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Review and Selection Process</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Risk_Assessment_Evaluation__c</fullName>
+        <defaultValue>&quot;CNCS staff will evaluate the risks to the program posed by each applicant, including conducting due diligence to ensure an applicant’s ability to manage federal funds. This evaluation is in addition to the assessment of the applicant’s eligibility and the quality of its application on the basis of the Selection Criteria, and results from this evaluation will inform funding decisions. If CNCS determines that an award will be made, special conditions that correspond to the degree of risk assessed may be applied to the award.In evaluating risks, CNCS may consider the following: • financial stability• quality of management systems and ability to meet the management standards prescribed in applicable OMB Guidance • applicant’s record in managing previous CNCS awards, cooperative agreements, or procurement awards, including: o timeliness of compliance with applicable reporting requirements o accuracy of data reported o validity of performance measure data reported o conformance to the terms and conditions of previous federal awards o if applicable, the extent to which any previously awarded amounts will be expended prior to future awards • information available through OMB-designated repositories of government-wide eligibility qualification or financial integrity information, such as: o Federal Awardee Performance and Integrity Information System (FAPIIS)o DUNS and SAM o “Do Not Pay” • reports and findings from single audits performed under Subpart F – Audit Requirements, 2 CFR Part 200 and findings and reports of any other available audits • IRS Tax Form 990 • applicant organization’s annual report • publicly available information, including information from the applicant organization&apos;s website • applicant’s ability to effectively implement statutory, regulatory, or other requirements imposed on award recipients• [Other elements considered relevant per Program Office].&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Risk Assessment Evaluation</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selection_for_Funding__c</fullName>
+        <defaultValue>&quot;The review and selection process is designed to: • identify applications that demonstrate:o high alignment with the selection criteria o high alignment with the priorities outlined in the Notice o … • yield a diversified portfolio based on the following strategic considerations: o geographic representation: [Definition]o Focus Area representation: [Definition] o equitable treatment of:  rural and urban communities: [Definition]  small and large programs: [Definition]  …: [Definition] o representation of organizations that embrace innovative approaches to solving problems.In order to obtain a diversified portfolio, the Chief Executive Officer will select the final awardees based on the staff recommendations, priorities, and strategic considerations. CNCS reserves the right to change the review and selection process in case of extenuating circumstances.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Selection for Funding</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Selection_of_Aplications_for_Internal_R__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Selection of Applications for Internal R</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Selection_of_Applications_for_Internal_R__c</fullName>
+        <defaultValue>&quot;Applications will advance to Internal Review based on the results of the External Review, Post Review Quality Control, as well as the consideration of the priorities and strategic considerations. Applications that do not advance to Internal Review will not be recommended for funding. &quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Selection of Applications for Internal R</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stages_in_the_Review_and_Selection_Proce__c</fullName>
+        <defaultValue>&quot;CNCS staff will review all applications to determine compliance with eligibility, deadline, and completeness. Applications determined non-compliant will not be considered. An application is compliant if the applicant satisfies all of the following requirements: Submits a Notice of Intent to Apply and/or Concept Form by the submission deadline.Is an eligible organization. Submits an application and all required documentation by the submission deadline. Submits an application that is complete; in that it contains all required elements and additional documents, and follows the instructions provided in this Notice.CNCS will screen applications in accordance with the requirements in this Notice to determine if the applicant has met all eligibility and submission requirements. The screening may occur at various stages of the grant-making process. Applicants determined to be ineligible will not receive an award.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Compliance and Eligibility Review</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>12</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Transparency_in_Grant_Making__c</fullName>
+        <defaultValue>&quot;CNCS is committed to transparency in grant-making. The following information for new and re-competing applications will be published on the CNCS website(http://nationalservice.gov/about/open-government-initiative/transparency/results-grants-competition) within 90 business days after all [grants] or [cooperative agreements]are awarded: • a list of all compliant applications submitted • Executive Summaries of all compliant applications submitted by the applicants • data extracted from the SF-424 Face Sheet and the submitted program narratives for successful applications • a blank template of the external review worksheet • a list of all external reviewers that completed the review process • a summary of external reviewer comments for successful applications. Do not submit supplementary material such as videos, brochures, or any items not requested in this Notice. CNCS will not review or return them.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Transparency in Grant-Making</label>
+        <length>117028</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Application Review Information</label>
+    <nameField>
+        <displayFormat>ARI-{0000}</displayFormat>
+        <label>Application Review Information ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application Review Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

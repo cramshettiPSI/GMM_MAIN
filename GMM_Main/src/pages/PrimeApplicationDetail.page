@@ -1,0 +1,190 @@
+<apex:page language="en-US" id="PrimeApplication" standardController="Prime_Application__c" extensions="PrimeApplicationExt" label="primeapplication" showheader="True" title="Prime Application">
+<html lang="en">
+  <head>
+    <style type="text/css">
+    
+          .myClass { 
+             border-left-width: 3px;
+             color: #black;
+             border-left-style: solid;
+             border-left-color:#B22222;
+            }
+    </style>
+  </head>
+</html>
+<apex:pageMessages />
+
+<script type="text/javascript">
+  function  check_Val(){ 
+ 
+     var RecordExecutingPrograms = document.getElementById('PrimeApplication:formid:pb:FAPIISid:FAPIISidsec:RecordExecutingPrograms').value;
+     //alert('REP'+RecordExecutingPrograms);
+     var MigratingCircumstances=document.getElementById('PrimeApplication:formid:pb:FAPIISid:FAPIISidsec:MigratingCircumstances').value;
+     //alert('MP'+MigratingCircumstances);
+     var EthicsIntegrity=document.getElementById('PrimeApplication:formid:pb:FAPIISid:FAPIISidsec:EthicsIntegrity').value; 
+     //alert('EI'+EthicsIntegrity);
+     var ProgramOfficer =document.getElementById('PrimeApplication:formid:pb:RecAw:RecAwSec:ProgramOfficer').value; 
+     //alert('PO'+ProgramOfficer);   
+     var SeniorProgramOfficer =document.getElementById('PrimeApplication:formid:pb:RecAw:RecAwSec:SeniorProgramOfficer').value;
+      //alert('SPO'+SeniorProgramOfficer);
+ 
+
+    if(ProgramOfficer == '' || SeniorProgramOfficer == '' ){
+        alert('Please enter Required fields'); 
+    }
+    /*
+    else if((pc.Recommended_Award_Amount__c == '') && ((pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Yes') || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Support Grant' ) || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Program Grant'))){
+        alert ('Please enter Recommended Award Amount');
+    }
+    */
+    else if((RecordExecutingPrograms && MigratingCircumstances && EthicsIntegrity) =='No') {
+        return confirm('The current Application does not meet the FAPIIS requirements to move forward in the proess. Please verify that you wish to continue');
+    }
+    else
+        return true; 
+  }
+</script>
+  
+<apex:form id="formid">
+  <apex:pageBlock id="pb" title="Prime Application Detail" mode="maindetail" >
+        <apex:pageBlockButtons >
+            <apex:commandButton Title="Edit" value="Edit" action="{!Edit}" rendered="{!($Profile.Name!='Grantee Admin' && $Profile.Name!='Applicant' && $Profile.Name!='Expert Reviewers' && pc.CNCS_Status__c = 'On Holding Pending Resources') || ($Profile.Name='State Commission Profile' && (pc.CNCS_Status__c = 'In Progress' || pc.CNCS_Status__c = 'Accepting Sub-Applications' || pc.CNCS_Status__c = 'Returned for Rework' || pc.CNCS_Status__c = 'Closed to Sub-Applicants' || pc.CNCS_Status__c = 'Held for Formula'))}" /> 
+            <apex:commandButton Title="Open to Sub-applicants" value="Open to Sub-applicants" action="{!openSubApplications}" rendered="{!$Profile.Name='State Commission Profile' && (pc.CNCS_Status__c = 'In Progress' || pc.CNCS_Status__c = 'Returned for Rework')}"/>
+            <apex:commandButton Title="Close to Sub-applicants" value="Close to Sub-applicants" action="{!closeSubApplications}" rendered="{!$Profile.Name='State Commission Profile' && pc.CNCS_Status__c == 'Accepting Sub-Applications'}"/>
+            <!-- <apex:commandButton Title="Delete" value="Delete" action="{!delete}" rendered="{!$Profile.Name='State Commission Profile' && pc.CNCS_Status__c!='In Progress' && pc.CNCS_Status__c != 'Accepting Sub-Applications' && pc.CNCS_Status__c != 'Closed to Sub-Applicants' && pc.CNCS_Status__c != 'Submitted to CNCS' }"/> -->
+            <apex:commandButton Title="Apply" action="{!apply}" value="Apply" rendered="{!pc.CNCS_Status__c = 'Accepting Sub-Applications' && ($Profile.Name='Applicant' || $Profile.Name='Grantee Admin')}"/>
+            <apex:commandButton Title="Recommend for Award" value="Recommend for Award" action="{!RecAwardsMethod}" rendered="{!($Profile.Name ='PO' ||$Profile.Name ='System Administrator') && pc.CNCS_Status__c='Accepted' || pc.CNCS_Status__c='Submitted to CNCS' }" />
+            <apex:commandButton Title="Change To Formula NOFA" action="{!FormulaNOFAchange}" value="Change To Formula NOFA" rendered="{!($Profile.Name ='State Commission Profile'||$Profile.Name ='System Administrator') && (pc.CNCS_Status__c = 'In Progress' || pc.CNCS_Status__c = 'Returned for Rework' || pc.CNCS_Status__c='Accepting Sub-Applications' ||  pc.CNCS_Status__c = 'Closed to Sub-Applicants' || pc.CNCS_Status__c = 'Held for Formula' || pc.CNCS_Status__c = 'Submitted to CNCS' || pc.CNCS_Status__c = 'Submitted Late to CNCS' || pc.CNCS_Status__c = 'Recommended to CNCS' )}" />
+            <apex:commandButton Title="Amendment" action="{!Amend}" value="Amendment" rendered="{!pc.CNCS_Status__c='Awarded' && $Profile.Name='State Commission Profile'}"/>
+            <apex:commandButton Title="Submit Sub-Applications" action="{!submitsubApps}" value="Submit Sub-Applications" rendered="{!$Profile.Name='State Commission Profile' && (pc.CNCS_Status__c = 'Closed to Sub-Applicants' || pc.CNCS_Status__c = 'Held for Formula')}"/>
+            <apex:commandButton value="Continuing Application" action="{!ContPrimeApp}" rendered="{!pc.CNCS_Status__c='Awarded' && $Profile.Name='State Commission Profile'}" />
+            <apex:commandButton value="Clone" action="{!primeAppClone}" rendered="{!$Profile.Name!='Grantee Admin' && $Profile.Name!='Applicant' && $Profile.Name!='Expert Reviewers'}"/> 
+            <apex:commandButton value="Copy Held Formula Applications" action="{!CopyHeldFormulaApplications}" rendered="{!Prime_Application__c.Competitive_or_Formula__c='Competitive' && $Profile.Name='State Commission Profile' && (pc.CNCS_Status__c='Accepting Sub-Applications' || pc.CNCS_Status__c='Closed to Sub-Applicants' || pc.CNCS_Status__c='Held for Formula' || pc.CNCS_Status__c='Submitted to CNCS' || pc.CNCS_Status__c='Recommended to CNCS' || pc.CNCS_Status__c='Submitted Late to CNCS' )}"/> 
+            <apex:commandButton value="Print to PDF " onclick="window.open('apex/loop__looplus?id={!Prime_Application__c.Id}');" rendered="{!$Profile.Name!='Grantee Admin' && $Profile.Name!='Applicant' && $Profile.Name!='Expert Reviewers'}"/> 
+            <!-- <apex:commandlink action="sUrlRewrite+00Or0000000JzaI?pv0={!LEFT(Prime_Application__c.Id,15)}'" value="Award Report">-->
+            <!-- <apex:commandlink action="https://cns--devsb25.cs32.my.salesforce.com/00Or0000000K0Qx?pv0={!LEFT(Prime_Application__c.Id,15)}" value="Award Report" rendered="{!$Profile.Name='State Commission Profile'}">           
+            </apex:commandLink>    -->     
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection id="ApplicantInfo" Title="Applicant Info" columns="2">        
+            <!-- <apex:outputField id="Name" value="{!Prime_Application__c.Prime_Application_ID_Number__c}"/> -->
+            <apex:outputField id="NOFO" value="{!Prime_Application__c.NOFO_RFP__c}"/>
+            <apex:outputField value="{!Prime_Application__c.NOFO_Name__c}"/>
+            <apex:outputField value="{!Prime_Application__c.CNCS_Corporate_Program__c}"/>
+            <apex:outputField value="{!Prime_Application__c.Corporate_Program__c}"/>
+            <apex:outputField value="{!Prime_Application__c.NOFO_RFP__r.NOFA_RFP_Summary__c}"/>
+            <apex:outputField value="{!Prime_Application__c.Allow_Prime_and_Sub_Applications__c}"/>                  
+            <apex:outputField value="{!Prime_Application__c.CNCS_Status__c}" rendered="{!$Profile.Name!='Applicant' && $Profile.Name!='Grantee Admin'}" />  
+            <apex:outputField value="{!Prime_Application__c.Prime_Application_ID_Number__c}" />      
+            <apex:outputField value="{!Prime_Application__c.Project_Website_URL__c}" />            
+            <!-- <apex:outputField id="WebsiteURL" value="{!Prime_Application__c.Project_Website_URL__c}"/>                     
+            <apex:outputField id="Status" value="{!Prime_Application__c.CNCS_Status__c}" />            
+            <apex:outputField id="PrimeApplication" value="{!Prime_Application__c.Prime_Application__c}"/>
+            <apex:outputField id="MasterAward" value="{!Prime_Application__c.Master_Award__c}"/>             
+            <apex:outputField id="StateApplicationIdentifier" value="{!Prime_Application__c.State_Application_Identifier1__c}"/>    -->          
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection Title="Application Info" columns="2">
+            <apex:outputField id="CompetitiveOrFormula" value="{!Prime_Application__c.Competitive_or_Formula__c}"/>
+            <apex:outputField id="Type" value="{!Prime_Application__c.Type_of_Application__c}"/>
+            <apex:outputField value="{!Prime_Application__c.Project_Name__c}"/>
+            <apex:outputField value="{!Prime_Application__c.Project_Title__c}"/>
+            <apex:outputField id="StartDate" value="{!Prime_Application__c.Program_Start_Date__c}"/>
+            <apex:outputField id="EndDate" value="{!Prime_Application__c.Program_End_Date__c}"/>
+            <apex:outputField id="EO12372" value="{!Prime_Application__c.EO_12372_Process__c}"/>
+            <apex:outputField id="IfYesExplainE012372" value="{!Prime_Application__c.If_yes_please_explain__c}"/>
+            <apex:outputField id="ApplicantDelinquent" value="{!Prime_Application__c.Applicant_Delinquent_on_any_Federal_Debt__c}"/>
+            <apex:outputField id="IfYesExplain" value="{!Prime_Application__c.If_yes_please_explain_app_delinque__c}"/>                                  
+            <!--  <apex:outputField id="Identifier" value="{!Prime_Application__c.State_Application_Identifier1__c}"/> -->                       
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection Title="Sub-Applicant Information" columns="2">
+            <apex:outputField id="ConceptPaperDueDate" value="{!Prime_Application__c.Sub_Concept_Paper_Due_Date__c}"/>
+            <apex:outputField id="SubApplicationDueDate" value="{!Prime_Application__c.Sub_Application_Due_Date__c}"/>
+        </apex:pageBlockSection>
+        
+        <!-- <apex:pageBlockSection Title="Authorize" columns="1">
+            <apex:outputField id="Authorization" value="{!Prime_Application__c.Authorization__c}"/>
+            <apex:outputField id="Assurances" value="{!Prime_Application__c.Assurances__c}"/>
+            <apex:outputField id="Certification" value="{!Prime_Application__c.Certification__c}"/>
+            <apex:outputField id="PrimeApplicationConfiguredBudgetForms" value="{!Prime_Application__c.Prime_Application_Configured_BudgetForms__c}"/>
+        </apex:pageBlockSection>    -->
+               
+ 
+        <apex:pageBlock id="RecAw" title="Recommend for Awards"  rendered="{!RecAwards}" >
+          <apex:pageBlockSection id="RecAwSec" columns="2"  collapsible="false" >        
+             <apex:inputField id="ProgramOfficer" value="{!pc.Program_Officer__c}" styleClass="myClass" />  
+             <apex:inputField id="SeniorProgramOfficer" value="{!pc.Senior_Program_Officer__c}" styleClass="myClass"/>
+             <apex:inputField id="GrantsOfficer" value="{!pc.Grants_Officer__c}" />
+             <apex:inputField id="SeniorGrantsOfficer" value="{!pc.Senior_Grants_Officer__c}" />
+             <apex:inputField id="ExecutiveOfficer" value="{!pc.Executive_Officer__c}" />   
+             <apex:inputField id="AwardAmount" value="{!pc.Recommended_Award_Amount__c}" styleClass="myClass" rendered="{!((pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Yes') || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Support Grant' ) || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Program Grant'))}"/> 
+             <apex:inputField id="MSYs" value="{!pc.Total_Recommended_MSYs__c}" /> 
+             <apex:inputField id="IssueArea" value="{!pc.Issue_Area__c}" />          
+          </apex:pageBlockSection>
+        </apex:pageBlock>
+ 
+        <apex:pageBlock id="FAPIISid" title="FAPIIS Review"  rendered="{!RecAwards}" >
+          <apex:pageBlockSection id="FAPIISidsec" columns="2"  collapsible="false" >
+             <apex:inputField id="FAPIISreview" value="{!pc.Subject_to_FAPIIS_Review__c}" styleClass="myClass" />
+             <apex:inputField id="Date" value="{!pc.Date__c}" styleClass="myClass" />
+             <apex:inputField id="InfoAvailable" value="{!pc.Information_available__c}" styleClass="myClass" />
+             <apex:inputField id="RecordExecutingPrograms" value="{!pc.Satisfactory_Record_Executing_Programs__c}" styleClass="myClass" />
+             <apex:inputField id="EthicsIntegrity" value="{!pc.Demonstrates_Ethics_Integrity__c}" styleClass="myClass" />
+             <apex:inputField id="MigratingCircumstances" value="{!pc.Mitigating_Circumstances__c}" styleClass="myClass" />
+             <apex:inputField id="ReviewComments" value="{!pc.FAPIIS_Review_Comments__c}" styleClass="myClass" />           
+          </apex:pageBlockSection>   
+          <apex:pageBlockButtons >
+            <apex:commandButton value="Approved for Award" action="{!ApprovedforAward}" onclick="if(!check_Val()) return false;"/> 
+          </apex:pageBlockButtons> 
+        </apex:pageBlock>   
+  
+       <apex:pageBlockSection Title="Recommend for Awards" columns="2" rendered="{!$Profile.Name != 'State Commission Profile' || $Profile.Name != 'Applicant' || $Profile.Name != 'Grantee Admin' || $Profile.Name != 'Expert Reviewers'}">    
+             <apex:outputField value="{!Prime_Application__c.Program_Officer__c}" />  
+             <apex:outputField value="{!Prime_Application__c.Senior_Program_Officer__c}" />
+             <apex:outputField value="{!Prime_Application__c.Grants_Officer__c}" />
+             <apex:outputField value="{!Prime_Application__c.Senior_Grants_Officer__c}" />
+             <apex:outputField value="{!Prime_Application__c.Executive_Officer__c}" />   
+             <apex:outputField value="{!Prime_Application__c.Recommended_Award_Amount__c}" rendered="{!((pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Yes') || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Support Grant' ) || (pc.NOFO_RFP__r.Cash_Grants_Awards__c=='Optional' && pc.Program_Type__c=='Program Grant'))}"/> 
+             <apex:outputField value="{!Prime_Application__c.Total_Recommended_MSYs__c}" /> 
+             <apex:outputField value="{!Prime_Application__c.Issue_Area__c}" /> 
+        </apex:pageBlockSection>  
+  
+        <apex:pageBlockSection Title="FAPIIS Review" columns="2" rendered="{!$Profile.Name != 'State Commission Profile' || $Profile.Name != 'Applicant' || $Profile.Name != 'Grantee Admin' || $Profile.Name != 'Expert Reviewers'}"> 
+             <apex:outputField value="{!Prime_Application__c.Subject_to_FAPIIS_Review__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.Date__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.Information_available__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.Satisfactory_Record_Executing_Programs__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.Demonstrates_Ethics_Integrity__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.Mitigating_Circumstances__c}" styleClass="myClass" />
+             <apex:outputField value="{!Prime_Application__c.FAPIIS_Review_Comments__c}" styleClass="myClass" />                            
+        </apex:pageBlockSection>  
+  </apex:pageBlock>
+</apex:form>
+
+
+    <apex:pageBlock rendered="{!NOT(OR($Profile.Name =='Grantee Admin',$Profile.Name =='Applicant'))}">
+        <apex:include pageName="CldBdgPrmAppMultiSelectVF" />
+    </apex:pageBlock>
+    <apex:pageBlock title="Sub-Applicant Applications">                
+        <apex:include pageName="SubApplicationsRL" />
+    </apex:pageBlock>
+    <apex:pageBlock title="Sub-Applicant Concept Papers">
+        <apex:include pageName="SubApplicationConceptPapers" />
+    </apex:pageBlock>
+    <apex:pageBlock title="Sub-Application Rank Details">
+        <apex:include pageName="InlineEditAppToPrimeAppVF" />
+    </apex:pageBlock>           
+    <apex:pageBlock >       
+        <!--  <apex:relatedList List="Master_Awards__r" />     -->    
+        <apex:relatedList List="Award__r"  rendered="{!$Profile.Name = 'PO' || $Profile.Name = 'System Administrator'}"/ >                
+        <!-- <apex:relatedList List="Slots__r" id="Slot"/>   -->
+    </apex:pageBlock>      
+    <apex:pageBlock title="Slots" rendered="{!NOT(OR($Profile.Name =='Grantee Admin',$Profile.Name =='Applicant'))}">
+        <apex:include pagename="SlotInformationWithPrmAppVF"/>
+    </apex:pageBlock>
+    
+         
+
+    <!--<apex:facet name="body">Titles can be overriden with facets</apex:facet>   
+    <apex:facet name="header">Titles can be overriden with facets</apex:facet> -->
+</apex:page>

@@ -1,0 +1,3243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddInfluence</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>AmeriCorps NCCC Concept Paper Package</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Id%2E Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation%2FReview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perception Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>AmeriCorps VISTA Concept Paper Package</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Id%2E Decision Makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation%2FReview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perception Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal%2FPrice Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Proposition</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Anticipated_length_of_project_months__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated length of project (months)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hold Pending Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Are_you_a_former_grantee_sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Are you a former grantee/sponsor?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Areas_Affected_by_the_Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Areas Affected by the Project</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Certifications__c</fullName>
+        <defaultValue>&quot;By selecting I Agree, you certify that you agree to perform all actions and support all intentions in the Certification sections of this Concept Paper&quot;</defaultValue>
+        <description>“By selecting &quot;I Agree&quot;, you certify that you agree to perform all actions and support all intentions in the Certification sections of this Concept Paper.”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>“Please read the authorization, assurances and certifications below. You must view or print the assurances/certifications before you can click on each &quot;I Agree&quot; for assurance or certification.”</inlineHelpText>
+        <label>Certifications</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cite__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.City1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CloseDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Members_Participants__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>“How many member/participants does your organization have?&quot;</inlineHelpText>
+        <label>Current Members/Participants</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Disaster_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Disaster Services</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Disaster Assistance Provided</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Disaster Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Document_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Document Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NONE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AAE Waiver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AAE Waiver Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorized Representative Confirmation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commission Executive Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <externalId>false</externalId>
+        <label>Education</label>
+        <picklist>
+            <picklistValues>
+                <fullName>School Readiness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K-12 Success</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-HS Education Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teacher Corps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Emaile__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Email1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Environmental_Stewardship__c</fullName>
+        <externalId>false</externalId>
+        <label>Environmental Stewardship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Energy Efficiency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>At-Risk Ecosystems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awareness and Stewardship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Green Jobs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Environmental Stewardship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Fee_for_Service__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you ever had a &quot;Fee for Service&quot; arrangement with a youth or conservation corps program? “Fee for Service” is an agreement in which your org. pays fees or reimburses costs to a service program in exchange for member or team support.</inlineHelpText>
+        <label>Fee for Service</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Flexibility_of_Proposed_Dates__c</fullName>
+        <externalId>false</externalId>
+        <label>Flexibility of Proposed Dates</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flexible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Focus_Area_and_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Economic Opportunity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Financial Literacy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Find Opportunity Futures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Economic Opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Microenterprise Families</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asset Building Served</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Economic Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Have_you_previouly_worked_with_NCCC__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If &apos;Yes&apos;, how many teams have served your organization?</inlineHelpText>
+        <label>Have you previouly worked with NCCC ?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Healthy_Futures__c</fullName>
+        <externalId>false</externalId>
+        <label>Healthy Futures</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Aging in Place</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Obesity and Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access to Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Healthy Initiatives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Housing_Arrangements__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In the event that housing is not available on the regional campus or your project is beyond a reasonable driving distance (1 hr) from your regional campus, briefly describe the housing arrangements you are exploring for the team.</inlineHelpText>
+        <label>Housing Arrangements</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>How_did_you_find_out_about_NCCC__c</fullName>
+        <externalId>false</externalId>
+        <label>How did you find out about NCCC?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Current NCCC Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I am an NCCC Alumni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I am a past NCCC Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCCC Staff Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other (please specify)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outreach Presentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Previous NCCC Sponsor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State CNCS Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Commission Community Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>How_many_teams_are_being_requested__c</fullName>
+        <externalId>false</externalId>
+        <label>How many teams are being requested?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_AGREE__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>I AGREE</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>If_Other_comments__c</fullName>
+        <externalId>false</externalId>
+        <label>If Other , comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>If_Yes_Fee_for_Service_Incorporation__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>NCCC has effectively been used in past projects to augment and support existing youth corps partnerships with organizations. Please describe how your plan to utilize NCCC will incorporate your existing partnership with the &quot;Fee for Service&quot; corps.</inlineHelpText>
+        <label>If &quot;Yes,&quot; Fee for Service Incorporation</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>If_Yes_how_many_teams__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;If &apos;Yes&apos;, how many teams have served your organization?&quot;</inlineHelpText>
+        <label>If &quot;Yes,&quot; how many teams?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_Yes_when__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If &apos;Yes&apos;, when did a team most recently work with your organization?</inlineHelpText>
+        <label>If &quot;Yes,&quot; when?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_yes_for_how_many_years__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, for how many years?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_yes_how_many_members_participants__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, how many members/participants?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_yes_please_explain__c</fullName>
+        <externalId>false</externalId>
+        <label>If yes, please explain</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Intermediary_Justification__c</fullName>
+        <externalId>false</externalId>
+        <label>Intermediary Justification</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IsPrivate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Mailing_Addres__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Mailing_Address_1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mailing Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mailing_Address__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If different from the organization address above, please provide the primary address where the service activities will take place.</inlineHelpText>
+        <label>Mailing Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFA_RFP_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NOFO/RFP ID</label>
+        <referenceTo>NOFA__c</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Need__c</fullName>
+        <externalId>false</externalId>
+        <label>Need</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NextStep</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Organization_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Federal Government</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>For Profit Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Higher Education Organization - Private</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Higher Education Organization - State Controlled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HQ Internal Organizations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Tribe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - County</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - Municipal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - Township</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Native American</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Non Profit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Commission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Education Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Territory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown designation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Organizational_Capability__c</fullName>
+        <externalId>false</externalId>
+        <label>Organizational Capability</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_CNCS_Resources__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>“Does your organization have other CNCS resources?”</inlineHelpText>
+        <label>Other CNCS Resources</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Other_comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Other comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Issue_Area__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box for the primary issue area that the project will address.</inlineHelpText>
+        <label>Primary Issue Area</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Energy Conservation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental Stewardship and Conservation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infrastructure Improvement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Natural and Other Disasters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Urban and Rural Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Project_Address__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If different from the organization address above, please provide the primary address where the service activities will take place.</inlineHelpText>
+        <label>Primary Project Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Probability</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Project_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Title</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Project 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Provide_Organization_Mission__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide a brief description of your organization&apos;s mission.</inlineHelpText>
+        <label>Provide Organization Mission</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Service_Activities_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide a brief description about the service activities for which your organization is requesting an NCCC team. Please conclude your statement with the desired outcome expected from the involvement of NCCC.</inlineHelpText>
+        <label>Service Activities Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>StageName</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs Analysis</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>20</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Proposition</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>50</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Id. Decision Makers</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>60</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Perception Analysis</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>70</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proposal/Price Quote</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>75</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negotiation/Review</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>90</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Closed</forecastCategory>
+                <probability>100</probability>
+                <won>true</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Lost</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>InProgress</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presubmitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strengthening_Communities__c</fullName>
+        <externalId>false</externalId>
+        <label>Strengthening Communities</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Target_Populations__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Populations</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low-income Nat-Amer./Nat-AK/Pac-Islander</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income individuals with disabilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Those experiencing homelessness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unemployed individuals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income adults</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income youth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income formerly incarcerated youth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income formerly incarcerated adults</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income communities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income veterans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low-income military families</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Telephone__c</fullName>
+        <externalId>false</externalId>
+        <label>Telephone</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Telephonee__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Telephone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalOpportunityQuantity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Veterans_and_Military_Families__c</fullName>
+        <externalId>false</externalId>
+        <label>Veterans and Military</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Veterans and Families</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Access and Attract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Veterans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Weeks_for_Team_8_12_to_Complete_Projec__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>How many weeks will it take a team of 8 to 12 members working full time (40-45 hours per week) to complete this project?</inlineHelpText>
+        <label>Weeks for Team to Complete Project</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllOpportunities</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingNextMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Closing Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingThisMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Closing This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpportunities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>Won</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.WON</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Won</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>AmeriCorps_NCCC</fullName>
+        <active>true</active>
+        <businessProcess>AmeriCorps NCCC Concept Paper Package</businessProcess>
+        <description>AmeriCorps NCCC Concept Paper Package</description>
+        <label>AmeriCorps NCCC</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold Pending Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Are_you_a_former_grantee_sponsor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disaster_Services__c</picklist>
+            <values>
+                <fullName>Disaster Assistance Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Disaster Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>AAE Waiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AAE Waiver Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized Representative Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commission Executive Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NONE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Education__c</picklist>
+            <values>
+                <fullName>K-12 Success</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post-HS Education Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>School Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teacher Corps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_Stewardship__c</picklist>
+            <values>
+                <fullName>At-Risk Ecosystems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awareness and Stewardship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Efficiency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Jobs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Environmental Stewardship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Fee_for_Service__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Flexibility_of_Proposed_Dates__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexible</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Focus_Area_and_Objectives__c</picklist>
+            <values>
+                <fullName>Asset Building Served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Community Economic Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Literacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Find Opportunity Futures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Microenterprise Families</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Economic Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Have_you_previouly_worked_with_NCCC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Healthy_Futures__c</picklist>
+            <values>
+                <fullName>Access to Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aging in Place</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obesity and Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Healthy Initiatives</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_find_out_about_NCCC__c</picklist>
+            <values>
+                <fullName>Current NCCC Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I am a past NCCC Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I am an NCCC Alumni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCCC Staff Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28please specify%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outreach Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous NCCC Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State CNCS Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Commission Community Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization_Type__c</picklist>
+            <values>
+                <fullName>Federal Government</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>For Profit Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ Internal Organizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Higher Education Organization - Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Higher Education Organization - State Controlled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indian Tribe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - County</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - Municipal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - Township</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Non Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Native American</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Education Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Territory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown designation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Other_CNCS_Resources__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Issue_Area__c</picklist>
+            <values>
+                <fullName>Energy Conservation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Stewardship and Conservation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natural and Other Disasters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urban and Rural Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Title__c</picklist>
+            <values>
+                <fullName>Project 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Presubmitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Target_Populations__c</picklist>
+            <values>
+                <fullName>Low-income Nat-Amer%2E%2FNat-AK%2FPac-Islander</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income communities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income formerly incarcerated adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income formerly incarcerated youth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income individuals with disabilities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income military families</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income veterans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income youth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Those experiencing homelessness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unemployed individuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Veterans_and_Military_Families__c</picklist>
+            <values>
+                <fullName>Access and Attract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Veterans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans and Families</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>AmeriCorps_VISTA</fullName>
+        <active>true</active>
+        <businessProcess>AmeriCorps VISTA Concept Paper Package</businessProcess>
+        <description>AmeriCorps VISTA Concept Paper Package</description>
+        <label>AmeriCorps VISTA</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hold Pending Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Are_you_a_former_grantee_sponsor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disaster_Services__c</picklist>
+            <values>
+                <fullName>Disaster Assistance Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Disaster Services</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Document_Type__c</picklist>
+            <values>
+                <fullName>AAE Waiver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AAE Waiver Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorized Representative Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commission Executive Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NONE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Education__c</picklist>
+            <values>
+                <fullName>K-12 Success</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post-HS Education Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>School Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teacher Corps</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Environmental_Stewardship__c</picklist>
+            <values>
+                <fullName>At-Risk Ecosystems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awareness and Stewardship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy Efficiency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Jobs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Environmental Stewardship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Fee_for_Service__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Flexibility_of_Proposed_Dates__c</picklist>
+            <values>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Flexible</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Focus_Area_and_Objectives__c</picklist>
+            <values>
+                <fullName>Asset Building Served</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Community Economic Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Literacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Find Opportunity Futures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Microenterprise Families</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Economic Opportunity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Have_you_previouly_worked_with_NCCC__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Healthy_Futures__c</picklist>
+            <values>
+                <fullName>Access to Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aging in Place</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obesity and Food</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Healthy Initiatives</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_did_you_find_out_about_NCCC__c</picklist>
+            <values>
+                <fullName>Current NCCC Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I am a past NCCC Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>I am an NCCC Alumni</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCCC Staff Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %28please specify%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outreach Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous NCCC Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State CNCS Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Commission Community Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Organization_Type__c</picklist>
+            <values>
+                <fullName>Federal Government</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>For Profit Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ Internal Organizations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Higher Education Organization - Private</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Higher Education Organization - State Controlled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indian Tribe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - County</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - Municipal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Government - Township</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>National Non Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Native American</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Commission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Education Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>U%2ES%2E Territory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown designation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Other_CNCS_Resources__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_Issue_Area__c</picklist>
+            <values>
+                <fullName>Energy Conservation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Environmental Stewardship and Conservation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infrastructure Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Natural and Other Disasters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urban and Rural Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Project_Title__c</picklist>
+            <values>
+                <fullName>Project 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>InProgress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Presubmitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Target_Populations__c</picklist>
+            <values>
+                <fullName>Low-income Nat-Amer%2E%2FNat-AK%2FPac-Islander</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income communities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income formerly incarcerated adults</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income formerly incarcerated youth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income individuals with disabilities</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income military families</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income veterans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low-income youth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Those experiencing homelessness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unemployed individuals</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Existing Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Business</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Veterans_and_Military_Families__c</picklist>
+            <values>
+                <fullName>Access and Attract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Veterans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Veterans and Families</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.SITE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>Close_date</fullName>
+        <active>false</active>
+        <errorConditionFormula>CloseDate &lt;  Proposed_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>CloseDate</errorDisplayField>
+        <errorMessage>Proposed end date should be after proposed start date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fee_for_Service_Incorporation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Fee_for_Service__c,&quot;yes&quot;),
+LEN(If_Yes_Fee_for_Service_Incorporation__c) = 0)</errorConditionFormula>
+        <errorDisplayField>If_Yes_Fee_for_Service_Incorporation__c</errorDisplayField>
+        <errorMessage>Enter the value for  &quot;Fee for Service Incorporation&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_a_Record</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOFA_RFP_Id__r.Concept_Paper_Due_Date__c &lt;  TODAY()</errorConditionFormula>
+        <errorMessage>You cannot edit the record as the Concept Paper due date is passed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Number_of_Teams</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Have_you_previouly_worked_with_NCCC__c, &quot;Yes&quot;),
+ISBLANK( If_Yes_how_many_teams__c ))</errorConditionFormula>
+        <errorDisplayField>If_Yes_how_many_teams__c</errorDisplayField>
+        <errorMessage>Please enter the value for the number of teams you have served in your organization</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_CNCS_Resources_required_field</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+ISPICKVAL(Other_CNCS_Resources__c,&apos;Yes&apos;),
+ISBLANK( If_yes_please_explain__c ))</errorConditionFormula>
+        <errorDisplayField>If_yes_please_explain__c</errorDisplayField>
+        <errorMessage>If Other CNCS resource then please explain</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proposed_start_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Proposed_Start_Date__c &lt; TODAY()</errorConditionFormula>
+        <errorDisplayField>Proposed_Start_Date__c</errorDisplayField>
+        <errorMessage>Proposed start date should be after today&apos;s date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Fields_Former_member</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( Are_you_a_former_grantee_sponsor__c , &apos;yes&apos;),
+ISBLANK(If_yes_for_how_many_years__c),
+ISBLANK(If_yes_how_many_members_participants__c))</errorConditionFormula>
+        <errorDisplayField>If_yes_for_how_many_years__c</errorDisplayField>
+        <errorMessage>If you are a former grantee sponsor then please enter the number of years and number of members/participants</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>When_did_a_Team_work_most_recently</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Have_you_previouly_worked_with_NCCC__c, &quot;Yes&quot;),
+ISBLANK(  If_Yes_when__c  ))</errorConditionFormula>
+        <errorDisplayField>If_Yes_when__c</errorDisplayField>
+        <errorMessage>Please provide the time period a Team most recently worked with your organization</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Loop__LOOP</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>800</height>
+        <linkType>url</linkType>
+        <masterLabel>Create PDF</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__loop?eid={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop__LOOP_Merge</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>1000</height>
+        <linkType>url</linkType>
+        <masterLabel>Deprecated LM</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__loopmerge?eid={!Opportunity.Id}&amp;accountId={!Opportunity.AccountId}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop__LOOPlus</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>500</height>
+        <linkType>url</linkType>
+        <masterLabel>Run DDP</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/loop__looplus?eid={!Opportunity.Id}&amp;accountId={!Opportunity.AccountId}&amp;sessionId={!$Api.Session_ID}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop__Mass_LOOP_Merge</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deprecated Mass LM</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+var ids = {!GETRECORDIDS($ObjectType.Opportunity)};
+if (!ids || ids.length &lt; 1)
+    alert(&apos;Please select at least one record.&apos;);
+else
+{
+    var url = &quot;/apex/loop__loopmerge?retURL=&quot;+encodeURI(window.location.pathname+window.location.search);
+    url += &quot;&amp;recordIds=&quot;+ids.join(&apos;,&apos;);
+    window.location.href = url;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Loop__Mass_LOOPlus</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Run DDP</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+var ids = {!GETRECORDIDS($ObjectType.Opportunity)};
+if (!ids || ids.length &lt; 1)
+    alert(&apos;Please select at least one record.&apos;);
+else
+{
+    var url = &quot;/apex/loop__masslooplus?retURL=&quot; + encodeURI(window.location.pathname+window.location.search);
+    url += &quot;&amp;recordIds=&quot;+ids.join(&apos;,&apos;);
+    url += &quot;&amp;sessionId={!$Api.Session_ID}&quot;;
+    window.location.href = url;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>cprh__View_Record_History</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Record History</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;/apex/cprh__RecordHistoryViewer?id={!Opportunity.Id}&quot;, &quot;_blank&quot;, &quot;toolbar=no, scrollbars=yes, resizable=yes, width=600, height=400&quot;);</url>
+    </webLinks>
+</CustomObject>

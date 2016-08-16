@@ -1,0 +1,216 @@
+<apex:page standardController="Contact" extensions="ContactCreateController8" sidebar="true"> 
+<html lang="en-US"> 
+  <style type="text/css">
+        .myClass { width: 135px; 
+             border: 3px solid;
+             color: #b30000;
+             text-color: black; }
+    </style>
+    </html>
+  <apex:form id="theForm">  
+ <apex:pageMessages / > 
+    <apex:pageBlock mode="mainDetail" title="Expert Reviewer Application">
+     
+      <apex:pageBlockButtons >
+         <apex:commandButton action="{!editbtn}" value="Edit" />
+     <!--  <apex:commandButton action="{!Applybtn}" value="Apply" disabled="{!$Profile.Name ='Staff User'|| $Profile.Name ='System Administrator'||con.Status__c!="In Progress" &&  con.ownerID==con.createdbyid}" /> -->
+     <!--   <apex:commandButton action="{!Acceptbtn}" value="Accept" disabled="{!$Profile.Name='Staff User'|| $Profile.Name ='Expert Reviewers' && (con.Status__c=="In Progress" || con.Status__c=="Accepted")}"  /> -->
+     <!--   <apex:commandButton action="{!rejectbtn}" value="Reject"  disabled="{!$Profile.Name ='Expert Reviewers'|| (con.Status__c=="In Progress" || con.Status__c=="Accepted")}" /> -->
+     <!--  <apex:commandButton action="{!pendingbtn}" value="Pending - SAI" disabled="{!$Profile.Name ='Expert Reviewers'||(con.Status__c=="In Progress" || con.Status__c=="Accepted")}" /> -->
+         <apex:commandButton action="{!Applybtn}" value="Apply" rendered="{!$Profile.Name ='Staff User'}" />
+         <apex:commandButton action="{!Acceptbtn}" value="Accept" rendered="{!($Profile.Name ='PO' || $Profile.Name ='OIG' || $Profile.Name ='System Administrator' || $Profile.Name ='Staff User'
+                                           || $Profile.Name ='GO - PO' || $Profile.Name ='Grants officer' || $Profile.Name ='XO-OIG' || $Profile.Name ='Program Admin') && (con.Status__c=="Submitted" || con.Status__c=="Re-Submitted")}" />
+         <apex:commandButton action="{!rejectbtn}" value="Reject" rendered="{!($Profile.Name ='PO'|| $Profile.Name ='OIG' || $Profile.Name ='System Administrator' || $Profile.Name ='Staff User'
+                                           || $Profile.Name ='GO - PO' || $Profile.Name ='Grants officer' || $Profile.Name ='XO-OIG' || $Profile.Name ='Program Admin') && (con.Status__c=="Submitted" || con.Status__c=="Re-Submitted")}" />
+         <apex:commandButton action="{!pendingbtn}" value="Pending - SAI" rendered="{!($Profile.Name ='PO'|| $Profile.Name ='OIG' || $Profile.Name ='System Administrator' || $Profile.Name='Staff User' || $Profile.Name ='GO - PO' || $Profile.Name ='Grants officer' || $Profile.Name ='XO-OIG' || $Profile.Name ='Program Admin') && (con.Status__c=="Submitted" || con.Status__c=="Re-Submitted")}" />
+         <apex:outputField value="{!con.ownerId}"/> 
+         <apex:commandButton action="{!SubmitBtn}" value="Submit" rendered="{!($Profile.Name ='PO' || $Profile.Name ='System Administrator' || $Profile.Name ='Staff User'
+                                           || $Profile.Name ='GO - PO' || $Profile.Name ='Grants officer' || $Profile.Name ='XO-OIG' || $Profile.Name ='Expert Reviewers' || $Profile.Name ='Program Admin') && (con.Status__c=="Draft" || con.Status__c=="Pending - SAI" || con.Status__c=="Rejected")}" />
+        <!-- <apex:commandButton value="View Record History" onclick="window.open('apex/cprh__RecordHistoryViewer?id={!Contact.Id}');" rendered="{!$Profile.Name ='System Administrator'}"/> -->
+      </apex:pageBlockButtons>
+        
+      <apex:pageblockSection columns="1" collapsible="true" Title="Account information" >
+         <apex:outputfield value="{!con.Salutation}" styleClass="myClass"></apex:outputfield><br/>
+         <apex:outputfield value="{!con.Preferred_Name__c}" styleClass="myClass"  ></apex:outputfield><br/>
+          <apex:outputfield value="{!con.FirstName}" styleClass="myClass"  ></apex:outputfield><br/>
+          <apex:outputfield value="{!con.Middle_Name__c}" ></apex:outputfield><br/>
+          <apex:outputfield value="{!con.LastName}" styleClass="myClass"></apex:outputfield><br/>
+          <apex:outputfield value="{!con.Suffix__c}"></apex:outputfield><br/>
+          <apex:outputfield value="{!con.Status__c}" styleClass="myClass"></apex:outputfield>  <br/>
+          <apex:outputfield value="{!con.Primary_Phone__c}" styleClass="myClass" id="priPhone"></apex:outputfield><br/>
+          <apex:outputfield value="{!con.Is_this_a_Mobile_Number__c}" styleClass="myClass" ></apex:outputfield><br/> 
+          <apex:outputfield value="{!con.Would_you_like_to_receive_texts__c}" ></apex:outputfield><br/>
+          <apex:outputfield value="{!con.OtherPhone}"></apex:outputfield><br/>
+          <apex:outputfield value="{!con.Email}"  styleClass="myClass"></apex:outputfield><br/>
+          <!--apex:outputfield value="{!con.Re_Enter_Email__c}" ></apex:outputfield><br/><br/> -->
+          <apex:outputfield value="{!con.External_Reviewer_Comments__c}"  styleClass="myClass"></apex:outputfield> <br/>
+          <!--apex:outputfield value="{!con.ExpertReviewerStatus__c}" styleClass="myClass" ></apex:outputfield>-->
+          <apex:outputfield value="{!con.Comments__c}"></apex:outputfield><br/>  
+         
+      </apex:pageblockSection>
+      <apex:pageBlockSection collapsible="true" Title="Contact Information" columns="2">
+          <apex:outputfield value="{!con.Mailing_Street_Address_1__c}" styleClass="myClass"/><br/><br/>
+          <apex:outputfield value="{!con.Mailing_Street_Address_2__c}" /><br/><br/>
+          <apex:outputfield value="{!con.Mailing_City__c}" styleClass="myClass"></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Mailing_State__c}" styleClass="myClass" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Mailing_Zip_Code__c}" styleClass="myClass" ></apex:outputfield><br/><br/>
+      </apex:pageblocksection>
+      <apex:pageBlockSection collapsible="true" Title="Demographic Information" columns="2">
+          <apex:outputfield value="{!con.Highest__c}"></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.State_of_Residence__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Gender__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Date_of_Birth__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Ethnicity_Type__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Race_Type__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.How_did_you_hear_about_CNCS_Reviews__c}"  ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Please_Specify__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.Reasonable_Accommodations_Required__c}" ></apex:outputfield><br/><br/>
+          <apex:outputfield value="{!con.If_Yes_describe_what_is_needed__c}" ></apex:outputfield><br/><br/>
+          <!--apex:outputfield value="{!con.Total_Years_of_Experience__c}" ></apex:outputfield><br/><br/-->
+           <!--apex:outputfield value="{!con.Years_of_Experience__c }" ></apex:outputfield><br/><br/>
+           <apex:outputfield value="{!con.Area1_of_Expertise__c}" ></apex:outputfield><br/><br/>
+           <apex:outputfield value="{!con.Expertise1__c}" ></apex:outputfield><br/><br/>
+           <apex:outputField value="{!con.Highest__c}"/-->
+      </apex:pageBlocksection> 
+      
+       <!--   <apex:pageBlock id="active">
+          <apex:inputCheckbox id="Active" value="{!isChecked}" >
+          <apex:actionsupport event="onclick" rerender="A" />
+          </apex:inputCheckbox>
+
+      <apex:outputPanel id="A">  -->
+
+      <apex:pageBlockSection collapsible="true" Title="Honorarium Information" columns="2" rendered="{!isChecked}">
+      <apex:outputfield value="{!con.SSN__c}"  ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Verify_SSN__c}" ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Account_Type__c}" ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Routing_Number__c}" ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Verify_Routing_Number__c}" ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Account_Number__c}" ></apex:outputfield><br/><br/>
+      <apex:outputfield value="{!con.Verify_Account_Number__c}" ></apex:outputfield><br/><br/>
+      
+       </apex:pageBlocksection> 
+      <!-- </apex:outputPanel>
+       </apex:pageBlock>  -->
+
+      
+      
+      <!-- Education History-->
+    
+        <apex:pageBlockSection columns="2" collapsible="true" title="Education History">
+
+                
+             <!--  <apex:outputfield value="{!history.Education_Name__c}"/> -->
+              <!-- apex:outputfield value="{!history.Highest_Level_of_Education__c}"/-->
+                 <apex:outputfield value="{!history.CollegeUniversity__c}"/>
+                 <apex:outputfield value="{!history.Organization_Type1__c}"/>
+                 <apex:outputfield value="{!history.From__c}"/>
+                 <apex:outputfield value="{!history.To__c}" />
+                 <apex:outputfield value="{!history.Currently_Enrolled__c}"/>
+                 <apex:outputfield value="{!history.Areas_of_Study_Degree_Details__c}"/>
+                
+                 
+                
+           
+         
+      </apex:pageBlockSection>
+   
+    
+    <apex:variable var="rowNum" value="{!0}"  />
+    
+    <apex:pageBlock mode="mainDetail" id="membAdd"  >   
+    <apex:variable var="rowNum" value="{!0}"  />               
+            
+        <apex:repeat value="{!historyList}" var="e1" id="therepeat" >
+               
+                <apex:pageBlocksection columns="2">
+                <apex:outputText value="{0,number, ###}" style="text-align:center;">   
+                        <apex:param value="{!rowNum+1}" />   
+                 </apex:outputText> 
+                 <apex:inputHidden />
+            <!--   <apex:outputfield value="{!e1.Education_Name__c}"/> -->
+                 <apex:outputfield value="{!e1.CollegeUniversity__c}"/>
+                 <apex:outputfield value="{!e1.Organization_Type1__c}"/>
+                 <apex:outputfield value="{!e1.From__c}"/>
+                 <apex:outputfield value="{!e1.To__c}"/>
+                 <apex:outputfield value="{!history.Currently_Enrolled__c}"/>
+                 <apex:outputfield value="{!e1.Areas_of_Study_Degree_Details__c}"/>
+                 
+                 <apex:variable var="rowNum" value="{!rowNum+1}"/>
+                </apex:pageBlockSection>
+               
+                
+        </apex:repeat>          
+         
+        
+    </apex:pageBlock>
+<!-- Education History End Here -->
+
+<!-- Employee History -->
+    
+   
+        <apex:pageBlockSection columns="2" collapsible="true" title="Employee History">
+         
+                    <apex:outputfield value="{!history2.Employer__c}"/>
+                    <apex:outputfield value="{!history2.Organization_Type__c}"/>
+                    <apex:outputfield value="{!history2.empFrom__c}"/>
+                    <apex:outputfield value="{!history2.empTo__c}"/>
+                    <apex:outputfield value="{!history2.Currently_Employed__c}"/>
+                    <apex:outputfield value="{!history2.Area_of_Expertise__c}"/>
+                    <apex:outputfield value="{!history2.Expertise__c}"/>
+                    <apex:outputfield value="{!history2.Years_of_Experience__c}"/>
+                    <apex:outputfield value="{!history2.Job_Description__c}"/>   
+                    <apex:inputHidden />
+                
+           
+         
+      </apex:pageBlockSection>
+    
+    
+    <apex:variable var="rowNum1" value="{!0}"  />
+    
+    <apex:pageBlock mode="mainDetail" id="membEmpAdd" >   
+    <apex:variable var="rowNum1" value="{!0}"  />               
+            
+        <apex:repeat value="{!historyList2}" var="e2" id="therepeat">
+
+                <apex:pageBlocksection columns="2">
+                  <apex:outputText value="{0,number, ###}" style="text-align:center;">   
+                        <apex:param value="{!rowNum1+1}" />   
+                 </apex:outputText>
+                 
+                  <apex:inputHidden />
+                    <apex:outputfield value="{!e2.Employer__c}"/>
+                    <apex:outputfield value="{!e2.Organization_Type__c}"/>
+                    <apex:outputfield value="{!e2.empFrom__c}"/>
+                    <apex:outputfield value="{!e2.empTo__c}"/>
+                    <apex:outputfield value="{!history2.Currently_Employed__c}"/>
+                    <apex:outputfield value="{!e2.Area_of_Expertise__c}"/>
+                    <apex:outputfield value="{!e2.Expertise__c}"/>
+                    <apex:outputfield value="{!e2.Years_of_Experience__c}"/>
+                    <apex:outputfield value="{!e2.Job_Description__c}"/>  
+                    <apex:inputHidden />
+                
+                 <apex:variable var="rowNum1" value="{!rowNum1+1}"/>
+                </apex:pageBlockSection>
+               
+                
+        </apex:repeat>          
+         
+        
+    </apex:pageBlock>
+    
+<!-- Employee History End Here -->  
+<!-- Review Rating -->
+        <apex:pageBlockSection columns="2"  title="Review Rating" rendered="{!$Profile.Name ='Staff User'|| $Profile.Name ='System Administrator'}" >
+            <apex:outputfield value="{!con.Background_rating__c}"/>
+            <apex:outputfield value="{!con.Panel_Coordinator_Performance_Rating__c}"/>
+            <apex:outputfield value="{!con.Expert_Reviewer_Performance_Rating__c}"/>
+            <apex:outputfield value="{!con.Panel_Coordinator_Overall_Rating__c}"/>
+            <apex:outputfield value="{!con.Expert_Reviewer_Overall_Rating__c}"/>
+            <apex:outputfield value="{!con.Performance_Rating_Validation__c}"/>
+        </apex:pageBlockSection>    
+    </apex:pageBlock>
+  </apex:form>
+  <apex:relatedList List="Attachments__r" id="theList"  pageSize="10" />
+</apex:page>

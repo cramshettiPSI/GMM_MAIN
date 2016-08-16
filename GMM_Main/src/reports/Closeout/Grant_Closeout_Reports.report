@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$Award__c.Master_Award__c</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Report_Type__c</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Due_Date__c</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Reporting_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Reporting_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Submitted_Date__c</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Status__c</field>
+    </columns>
+    <description>Grant Closeout Reports for Grant Closeout.</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Award__c.Master_Award__c</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Award_Reporting__c.Federal_Financial_Reports,Award_Reporting__c.Progress_Reports,Award_Reporting__c.Equipment_Inventory,Award_Reporting__c.Inventory_of_Unused_or_Residual_Supplies,Award_Reporting__c.Subgrantee_Certification</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Grant Closeout Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Award_Reporting__c@Award_Reporting__c.Award__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Award_Reporting__c.Created_on__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

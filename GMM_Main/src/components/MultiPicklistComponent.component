@@ -1,0 +1,30 @@
+<apex:component controller="MultiPicklistComponentController">
+    <apex:attribute name="field" type="String" description="field" assignTo="{!fieldName}" />  
+  
+  <apex:attribute name="homeController" type="LocationExtension" description="handle to the Main class controller" assignTo="{!Locationcreate}"/>
+  <apex:attribute name="homeController1" type="LocationEditExt" description="handle to the Main class controller" assignTo="{!LocationEdit}"/>
+   
+    
+<!-- Apex function called to move the selected values from available list to chosen list and vice versa -->
+     
+    <apex:outputPanel id="multiselect">                  
+        <apex:panelGrid columns="5" id="panel">    
+        <apex:selectList id="deselected" multiselect="true" size="5" value="{!deselected}" style="width:200px;">            
+            <apex:selectOptions value="{!options}" />
+            <apex:actionSupport event="ondblclick" action="{!selecting}" rerender="multiselect"  />
+        </apex:selectList>
+            <apex:panelGroup >
+            <br/>
+            <apex:commandButton id="select" value=">" action="{!selecting}" reRender="multiselect,selected,deselected" />               
+            <br/><br/>
+            <apex:commandButton id="deselect" value="<" action="{!deselecting}" reRender="multiselect,selected,deselected" />                            
+            </apex:panelGroup>           
+   <!-- An action status to show that the operation of moving between the lists is in progress--->           
+        <apex:selectList id="selected" multiselect="true" size="5" value="{!selected}" style="width:200px;">            
+            <apex:selectOptions value="{!selectedOptions}" />
+            <apex:actionSupport event="ondblclick" action="{!deselecting}" rerender="multiselect"  />
+        </apex:selectList>
+        </apex:panelGrid>  
+    </apex:outputPanel>
+    
+</apex:component>

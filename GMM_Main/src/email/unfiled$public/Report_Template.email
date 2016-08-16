@@ -1,0 +1,23 @@
+Grant #: {!Award_Reporting__c.Grant_Number__c}
+
+The grant referenced above expired on {!Award_Reporting__c.Grant_End_Date__c}.  As you are aware, your organization was given 90 days to submit the required closeout documents.  As of {!Award_Reporting__c.Due_Date__c}, CNCS has not received the {!Award_Reporting__c.Name}.  If you have not done so already, please submit the reports to the Corporation.
+
+Your Program Officer will contact you regarding any final programmatic reporting requirements.
+
+In addition, if you have drawn funds under the grant but not expended them, you must return the funds by check made payable to the Department of Health and Human Services. Include the Payment Management System account and subaccount numbers on the check (these numbers can be found on page one of your PSC 272 Report).  An accompanying letter should indicate that the check is a REFUND to be credited to CNS Grant No. {!Award_Reporting__c.Grant_Number__c}.  The letter should also specify the amount of any interest that is included in your refund check.  The refund check should be sent to:  HHS Program Support Center, PO Box 530231, Atlanta, GA, 30353-0231.  Send a copy of the refund check and letter to your Corporation grants officer.
+
+If your agency secured a copyright or patent on any material or device paid for with funds awarded under this grant, please provide the Corporation with a written confirmation describing the specific nature of the copyright or patent obtained.
+
+As a grantee of the Corporation for National and Community Service, you MUST make sure that the total federal expenditures recorded on the Final Federal Financial Report (SF 425) are accurate and match the amount reported to HHS as disbursed.  The amount must also match the amount of funds drawn down from the HHS Payment Management System.   Without the reconciliation of these amounts, the Corporation cannot close out this grant.  Failure to submit the documentation requested in this letter or failure to assist in the reconciliation of submitted documents may adversely affect your future funding.
+
+After the Corporation receives the required documents and you have made any appropriate financial adjustments and payments, we will advise you in writing that the award is closed.  Please note that the closeout of a grant does not affect:  (1) the requirement to retain records pursuant to the grant conditions; (2) the requirements and rights for audit pursuant to the grant conditions; (3) the right of the Corporation to disallow costs and recover funds on the basis of an A-133, A-128 or other audit or other review; and (4) the obligation of the grantee to return any funds due the Corporation as a result of later refunds, corrections, cost disallowance or other actions.
+
+Please be aware that failure to respond to this request could result in a finding of non-compliance that would affect your agency's eligibility for future funding under any Corporation program.  Pending awards to your organization will not be processed until all outstanding closeouts have been submitted.
+
+If you have any questions regarding this grant and closeout action, please contact me.
+
+Please let us know if there is another person in your agency who should be our contact regarding this matter by providing us their name, address and phone number.
+
+On behalf of the Corporation, I would like to thank you for your participation in the program and your cooperation in closing out the grant.
+
+Thanks

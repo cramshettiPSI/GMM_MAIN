@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Grant Monitoring</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Grant_Monitoring__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Monitoring</label>
+        <referenceTo>Grant_Monitoring__c</referenceTo>
+        <relationshipName>Monitoring_Plans</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Initiating_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Initiating Office</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint - Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint - Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_Monitoring_Activity_Count__c</fullName>
+        <description>Counts the number of open monitoring activities.</description>
+        <externalId>false</externalId>
+        <label>Open Monitoring Activity Count</label>
+        <summarizedField>Monitoring_Activity__c.Activity_Complete__c</summarizedField>
+        <summaryForeignKey>Monitoring_Activity__c.Monitoring_Plan__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Monitoring_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Monitoring Activity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>On-Site Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-Site Training/Technical Assistance (T/TA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted/Issue-based Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drawdown Analysis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compliance Visit – Programmatic &amp; Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compliance Visit – Programmatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Standards review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Plan In Progress</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plan Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Target_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Month</label>
+        <picklist>
+            <picklistValues>
+                <fullName>January</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>February</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>March</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>April</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>May</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>June</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>July</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>August</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>September</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>October</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>November</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>December</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Monitoring Plan Record ID</label>
+    <nameField>
+        <displayFormat>MP-{0000}</displayFormat>
+        <label>Monitoring Plan ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Monitoring Plans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Monitoring_Fiscal_Year</fullName>
+        <active>true</active>
+        <description>Requires 4 characters in the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>LEN(TRIM( Monitoring_Fiscal_Year__c ))&lt;4</errorConditionFormula>
+        <errorDisplayField>Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Enter a 4 digit year (i.e. 2015)</errorMessage>
+    </validationRules>
+</CustomObject>

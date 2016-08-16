@@ -1,0 +1,7 @@
+<apex:page standardController="Grant_Close_Out__c" extensions="GrantCOForCloseOutCntrl" action="{!invokeCloseOutWithSupp_Mech_CD}">
+<html lang="en-US"> 
+<h1 style= "display:none">CloseOut</h1>
+</html>
+<apex:pageMessages ></apex:pageMessages>
+ 
+</apex:page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://uategrants.cns.gov/espan/gr_main/sfcs_redirector.jsp</canvasUrl>
+        <locations>Visualforce</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>avasili@plan-sys.com</contactEmail>
+    <label>Cost Share Statement</label>
+    <oauthConfig>
+        <callbackUrl>https://uategrants.cns.gov/espan/main/login.jsp</callbackUrl>
+        <consumerKey>3MVG9ic.6IFhNpPo1ShirFiXxwHHI0mw6D99VSrsTb1LJULrClE1PAl9v2qmV.AcJpM5hpHppoahKf_R7eU_H</consumerKey>
+        <scopes>Basic</scopes>
+    </oauthConfig>
+</ConnectedApp>

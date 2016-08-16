@@ -1,0 +1,55 @@
+<apex:page standardController="Prime_Application__c" extensions="CldBdgPrmAppMultiSelectCntrl" id="CldBdgPrmAppMultiSelectPG"> 
+  <apex:form >
+           <apex:pageBlock title="Budget Form">
+              <DIV style="overflow-y:auto; height:150px;">
+                 <!--       <apex:selectList value="{!selBudgetForm}" multiselect="true" id="selBdgFrmLst" onclick=" return getMultiValuefromPicklist();" >  
+                       <apex:selectOptions value="{!BudgetFormOptions}">   </apex:selectOptions>
+                   </apex:selectlist>
+                   
+                   <script>
+                     var bdgFrmSelVals='';
+                    function getMultiValuefromPicklist() {
+                        //alert('hello');
+                            var select = document.getElementById('cldBdgFrmCntrlPG:cldBdgFrmCntrlFrm:selBdgFrmLst');
+                            var selected = [ ];
+                            for (var i = 0; i < select.length; i++) {
+                                if (select.options[i].selected) selected.push(select.options[i].value);
+                            }
+                           // alert("'" + selected.join("','") + "'");
+                           bdgFrmSelVals="'" + selected.join("','") + "'";
+                       // alert('bdgFrmSelVals'+bdgFrmSelVals);
+                     //  {!selBudgetForm}=bdgFrmSelVals;
+                      // alert('bdgFrmSelVals'+ {!selBudgetForm});
+                            return  "'" + selected.join("','") + "'";
+            
+           
+                    }
+                </script> -->
+               
+               <table>
+                        <tr>
+                           <td>
+                               <c:CldBdgMultiSelectPickList leftLabel="Available Budget Form"
+                                        leftOption="{!allBdgFrms }"
+                                        rightLabel="Selected Budget Form"
+                                        rightOption="{!selectedBdgFrms }"
+                                        size="14"
+                                        width="150px"/>
+                            </td>
+                            <td>
+                                <apex:commandButton action="{!save}" value="Configure" />  <!-- action="{!save}" -->
+                            </td>
+                            <td>
+                               <apex:outputText >{!message}</apex:outputText>
+                            </td>
+                            <td>
+                                 <apex:pageMessages id="showmsg"></apex:pageMessages>
+                            </td>
+                        </tr>
+                       </table>    
+             
+               </DIV>
+               
+          </apex:pageBlock>
+  </apex:form>
+</apex:page>

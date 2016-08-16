@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>req #794</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Award_Reporting__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Award Reporting</label>
+        <referenceTo>Award_Reporting__c</referenceTo>
+        <relationshipLabel>Source Of Federal Funds</relationshipLabel>
+        <relationshipName>Source_Of_Federal_Funds</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CFDA_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>CFDA Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Federal_Agency_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Federal Agency Name</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Federal_Department_Name__c</fullName>
+        <description>#794</description>
+        <externalId>false</externalId>
+        <label>Federal Department Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Department of Agriculture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Commerce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Defense</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Homeland Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Interior</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Justice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Labor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Department of State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Treasury</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Veteran Affairs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental Protection Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Services Administration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Health and Human Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Housing and Urban Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Aeronautics and Space Administration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nuclear Regulatory Commission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Science Foundation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office of Personnel Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small business Administration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Security Administration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Agency for International Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>All other agencies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Other_Federal_Funds_Expended__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Federal Funds Expended</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Award_Number__c</fullName>
+        <description>req #794</description>
+        <externalId>false</externalId>
+        <label>Sub Award Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Source Of Federal Fund</label>
+    <nameField>
+        <label>Source Of Federal Funds  Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Source Of Federal Funds</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

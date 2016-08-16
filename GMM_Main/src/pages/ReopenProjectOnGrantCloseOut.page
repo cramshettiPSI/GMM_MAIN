@@ -1,0 +1,9 @@
+<apex:page controller="ReopenProjectOnGrantCloseOutCtrl" action="{!reOpenProject}" showHeader="false" sidebar="false">
+    <script>
+        function closeWindow(){
+            window.close();
+        }
+        closeWindow();
+    </script>
+    
+</apex:page>

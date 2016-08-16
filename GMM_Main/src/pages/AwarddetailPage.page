@@ -1,0 +1,352 @@
+<apex:page standardController="Award__c" extensions="AwardExtension" tabStyle="Award__c" action="{!initMethod}">
+   <html lang="en-US"> 
+   </html>
+<apex:includeScript value="{!URLFOR($Resource.jquery)}" />
+<apex:includeScript value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="/resources/demos/external/jquery.bgiframe-2.1.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />   
+<script>
+$(document).ready(function(){
+         $("#txt").hide();
+         $("#pwd").hide();
+       var a = '{!$Profile.Name =='System Administrator'}';
+         if(a == 'true'){
+             $("#esginbtn").css("visibility", "hidden")
+         }
+            
+    $("#esginbtn").click(function(){
+         $("#txt").val('');
+         $("#txt").show();
+         
+         $("#dialogconfirm").dialog({
+            
+            resizable: false,
+            height:260,
+            width:400,
+            modal: true,
+            buttons: {
+                "OK": function() {
+                  var a =  validatepwd($("#txt").val(),$("#pwd").val());
+                  
+                  if(a==true){
+                      
+                      $( this ).dialog( "close" );
+                      showterms();                  
+                      }
+                },
+                "Cancel": function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+        });
+     });
+    
+    function validatepwd(value,pwd){
+        if(value==pwd){
+        alert('Success');
+        return true;
+        }
+        else{
+        alert('you have entered incorrect password');
+        $("#txt").val('');
+        return false;
+       }
+ }
+function showterms(){
+var url = null
+if(window.location.href.indexOf("visual.force.com") > -1) {
+  url='/apex/passwordcheck?id={!Award__c.id}';  
+}
+else{
+url ='{!URLFOR($Site.BaseCustomUrl+'/'+SUBSTITUTE($Site.Prefix, '/', '')+'/passwordcheck?id='+Award__c.Id)}';
+}
+
+newWin=window.open(url, 'Popup','height=600,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no');
+
+//var b = window.open('/apex/passwordcheck?id={!Award__c.id}','_blank','height=600,width=600');
+
+if (window.focus){  
+           newWin.focus();  
+         }  
+}
+
+function reload() {  //this is function used to refresh parent page
+       reloadparent();
+       //newWin.close(); 
+}  
+
+</script>
+<apex:form id="frm">
+<div id="dialogconfirm" title="Enter your Password">
+    <input type="password" id="txt"/>
+    <input type="password" id="pwd" value="{!userpwd}"/>
+ </div>
+<apex:pageMessages />
+<!-- 
+<script type="text/javascript">
+function CertifySendtoSGOError()
+{
+if ({!awarddetail  .Application_ID__r.Organization__r.CCR_Verified__c} != true){
+
+ var x = confirm('The CCR Status has not been verified.You must verify the applicants CCR registration before issuing this award.Click the Cancel button to cancel this transaction and make the required update.  Otherwise click the OK button to proceed with certification');
+
+ if(x == true){
+   
+    if({!awarddetail  .Application_ID__r.Demonstrates_Ethics_Integrity__c== 'No'} || {!awarddetail  .Application_ID__r.Satisfactory_Record_Executing_Programs__c == 'No'} || {!awarddetail  .Application_ID__r.Mitigating_Circumstances__c == 'No'}){
+        var y = confirm('Award record <Award ID> from <Organization Name> does not meet the FAPIIS requirements to move forward in the process. Please verify that you wish to continue.');        
+        if(y == true){            
+            return true;
+        }else{          
+           return false;
+           window.location.replace('/{!Award__c.Id}');           
+        }
+    }
+ }else{
+    return false;    
+    window.location.replace('/{!Award__c.Id}');
+ }
+}
+
+else if({!awarddetail  .Application_ID__r.Organization__r.CCR_Verified__c} == true && {!awarddetail  .Application_ID__r.Organization__r.Registration_Active_until__c < Today()}) {
+
+var x = confirm('The CCR Registration has expired.  You must update the expiration date before issuing this award. Click the Cancel button to cancel this transaction and make the required update.  Otherwise click the OK button to proceed with certification');
+
+ if(x == true){   
+    if({!awarddetail  .Application_ID__r.Demonstrates_Ethics_Integrity__c== 'No'} || {!awarddetail  .Application_ID__r.Satisfactory_Record_Executing_Programs__c == 'No'} || {!awarddetail  .Application_ID__r.Mitigating_Circumstances__c == 'No'}){
+        var y = confirm('Award record {!awarddetail  .Name} from {!awarddetail  .Application_ID__r.Organization__r.Name} does not meet the FAPIIS requirements to move forward in the process. Please verify that you wish to continue.');        
+        if(y == true){            
+            return true;
+        }else{          
+           return false;
+           window.location.replace('/{!Award__c.Id}');           
+        }
+    }
+ }else{
+    return false;
+    //alert('got here in 1st else');
+    window.location.replace('/{!Award__c.Id}');
+ }
+}
+}
+</script> 
+-->
+ 
+
+ <apex:pageblock id="CustomList" title="" mode="maindetail">
+  <apex:pageBlockButtons location="Top" rendered="{!awarddetail.Sub_Award__c=='Yes'}">
+     
+   <apex:commandButton value="Edit" action="{!Edit}"/> 
+   </apex:pageBlockButtons>
+ <apex:pageBlockButtons location="Top" rendered="{!awarddetail.Sub_Award__c=='No'}">  
+   <apex:commandButton value="Amend" action="{!Amend}" rendered="{!awarddetail  .Grant_Status__c=='Awarded'}" />  
+  <!-- ----------------------------------Test Buttons_KY_08.18.15------------------------------------------>
+   <!--    <apex:commandButton value="Edit1" action="{!Edit}" rendered="{!(showPOButton)}" disabled="{!awarddetail  .Ownerid != $User.Id}"/>
+     <apex:commandButton value="Edit2" action="{!Edit}" rendered="{!(showSPOButton || !NOT(showXOButton||showGOButton||showSGOButton))}"/>
+     <apex:commandButton value="Edit3" action="{!Edit}" rendered="{!(showXOButton)}"/>
+     <apex:commandButton value="Commit Funds" action="{!ApproveAgreementbyXO}" />
+     <apex:commandButton value="Edit5" action="{!Edit}" rendered="{!(showSPOButton)}"/>
+     <apex:commandButton value="Edit4" action="{!Edit}" rendered="{!(showGOButton)}" disabled="{!awarddetail  .Ownerid != $User.Id}"/>-->
+     
+      <apex:commandButton value="Edit" action="{!Edit}" rendered="{!(showGOButton || showSGOButton || showPOButton || showSPOButton || showXOButton)}"/>
+      
+    <!-- <apex:commandButton value="Edit" action="{!Edit}"  rendered="{!showEditButton}"/> -->
+     <apex:commandButton value="Edit" action="{!Edit}"  rendered="{!$Profile.Name == 'Applicant' || $Profile.Name == 'System Administrator'}" onclick="aaaaa();"/>
+      <apex:commandButton value="Reject Application from PO Cert" action="{!reject}" disabled="{!awarddetail  .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton)}"/>
+      <apex:commandButton value="Withdraw Application" action="{!Withdraw}" disabled="{!awarddetail  .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton)}"/>
+      <apex:commandButton value="Return to Applicant for Rework" action="{!ReturntoRework}" disabled="{!awarddetail.Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton)}"/>
+      <apex:commandButton value="Certify Application (by PO)" action="{!CertifiyApplicationbyPO }" disabled="{!awarddetail  .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton) && (awarddetail  .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail  .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail  .Application_ID__r.Program_Type__c==null   ) || (showPOButton || showSPOButton) && (awarddetail  .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail  .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail  .Application_ID__r.Program_Type__c==null && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes')}" />
+      <apex:commandButton value="Certify & Send to Organization for e-Signature" action="{!esign}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c!=True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant'   ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c!=True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant'   ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c!=True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No' && awarddetail .Application_ID__r.Program_Type__c==null  ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c!=True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Standard'  )}"/>
+      <apex:commandButton value="Certify & Send for Organization re-Signature" action="{!esign}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c==True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant'   ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c==True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant'   ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c==True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No' && awarddetail .Application_ID__r.Program_Type__c==null  ) || (showPOButton || showSPOButton) && (awarddetail .Organization_re_Signature__c==True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Standard'  )}"/>
+        <apex:commandButton value="Approve Award Previously Certified by PO " action="{!ApproveGrantpreviouslycertifiedbyPO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSPOButton) && (awarddetail .Committed__c!= True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==Null)|| (showSPOButton) && (awarddetail .Organization_re_Signature__c==True && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==Null && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes')}"/>
+        <apex:commandButton value="Certify Application Previously Committed " action="{!CertifyApplicationCommitted}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSPOButton) && (awarddetail .Committed__c == True && awarddetail .Grant_Status__c != 'Awaiting SGO Approval' && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==Null  ) || (showSPOButton) && (awarddetail .Committed__c == True && awarddetail .Grant_Status__c != 'Awaiting SGO Approval' && awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==Null && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes')}" /> 
+      <!-- <apex:commandButton value="Commit Funds" action="{!ApproveAgreementbyXO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==null) ||(showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' ) ||(showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant') ||(showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant')}"/> -->
+      <apex:commandButton value="View Record History" onclick="window.open('apex/cprh__RecordHistoryViewer?id={!Award__c.Id}');"/>      
+      <!-- <apex:commandButton value="Obligate" action="{!Obligatepgmtypenull}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==null && awarddetail .Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c=='Awaiting SGO Obligation') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant' && awarddetail .Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant' && awarddetail .Grant_Status__c=='Awaiting SGO Approval') }" /> -->
+        <apex:commandButton value="Award" action="{!AwardApp}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==null && awarddetail .Grant_Status__c=='Obligated') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c=='Obligated' && awarddetail .Sponsor_e_Signature__c = True) || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c=='Awaiting SGO Award') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant' && awarddetail .Grant_Status__c=='Obligated') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant' && awarddetail .Grant_Status__c=='Obligated') }" />     
+        <!--apex:commandButton value="Testing for integration Award" action="{!AwardApp}"    /-->     
+        
+         <apex:commandButton value="Return to SPO" action="{!sendtospo}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showGOButton || showSGOButton ||showXOButton)}" />  
+          <apex:commandButton value="Return to GO" action="{!sendtoGO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSGOButton)}" />         
+             <apex:commandButton value="Return to PO" action="{!sendtopo}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showGOButton|| showSPOButton || showSGOButton ||showXOButton)}" />
+           <apex:commandButton value="Return to XO" action="{!returntoXO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showGOButton || showSGOButton)}"/>     
+         <!--   <apex:commandButton value="Sign Agreement" action="{!esignature}" disabled="{!awarddetail .Grant_Status__c!='Awaiting Organization e-Signature'}" rendered="{!NOT(showGOButton || showSGOButton || showPOButton || showSPOButton || showXOButton)}"/>
+          <apex:commandButton value="Sign Agreement and send to CSHR XO" action="{!esignaturebySPO}" rendered="{!(showSPOButton )}"/> -->
+           <apex:commandButton value="Move application to next status without committing" action="{!moveWithoutCommitting}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .Application_ID__r.Program_Type__c==null) || (showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes') || (showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant') || (showXOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant')}" />
+         <!--      <apex:commandButton value="Sign MA, Send to XO for Commitment" action="{!CSHRtoXO}" rendered="{!showXOButton}"/> -->      
+           <apex:commandButton value="Sign and Award Agreement" action="{!AwardnonCS}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSPOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Standard'   ) || (showSPOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No' && awarddetail .Application_ID__r.Program_Type__c==Null   )}"/>       
+           <apex:commandButton value="Move to Next Status without Obligating" action="{!MovetoAward}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!showSGOButton}"/>
+           <apex:commandButton value="Certify and Send for Organization eSignature" action="{!eSignaturebySGO}" rendered="{!(showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c == 'Awaiting SGO Approval') || (showSGOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && awarddetail .NOFA_Name__r.Cooperative_Agreement__c=='Yes' && awarddetail .Grant_Status__c == 'Obligated')}"/> 
+           <apex:commandButton value="Sign Agreement and send to XO" action="{!SignAgreementtoXO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSPOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Program Grant' && awarddetail .Grant_Status__c!='Being Committed') || (showSPOButton) && (awarddetail .Application_ID__r.Type_of_Application__c!='Amendment' && awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && awarddetail .Application_ID__r.Program_Type__c=='Support Grant')}"/>
+          
+          
+          <!--  <apex:commandButton value="Certify, Send to SGO" action="{!CertifytoSGO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}"                     
+              onclick="return confirm('The CCR Status has not been verified.You must verify the applicants CCR registration before issuing this award. Click the No button to cancel this transaction and make the required update.  Otherwise click the Yes button to proceed with certification.');" rendered="{!(showGOButton) && (awarddetail .Application_ID__r.Organization__r.CCR_Verified__c != true) || (showSGOButton) && (awarddetail .Application_ID__r.Organization__r.CCR_Verified__c != true)}" >
+                </apex:commandButton>
+        
+         
+            <apex:commandButton value="Certify, Send to SGO" action="{!CertifytoSGO}" disabled="{!awarddetail .Grant_Status__c=='Awaiting Organization e-Signature'}"                     
+              onclick="return confirm('The CCR Registration has expired.  You must update the expiration date before issuing this award. Click the No button to cancel this transaction and make the required update.  Otherwise click the Yes button to proceed with certification.');" rendered="{!(showGOButton) && (awarddetail .Application_ID__r.Organization__r.CCR_Verified__c == true) && (awarddetail .Application_ID__r.Organization__r.Registration_Active_until__c < Today() ) || (showSGOButton) && (awarddetail .Application_ID__r.Organization__r.CCR_Verified__c == true) && (awarddetail .Application_ID__r.Organization__r.Registration_Active_until__c < Today())}" >
+                </apex:commandButton>      -->             
+              
+               <apex:commandButton value="Print to PDF" onclick="window.open('apex/loop__looplus?id={!Award__c.Id}');"/> 
+               
+              <apex:commandButton value="Certify, Send to SGO"  rendered="{!(showGOButton || showSGOButton)}" onclick="return CertifySendtoSGOError();" action="{!CertifytoSGO}" />
+               </apex:pageBlockButtons>   
+                         
+              <apex:pageBlockButtons location="Top" rendered="{!($Profile.Name == 'Applicant' || $Profile.Name == 'Grantee Admin') && (awarddetail .Grant_Status__c=='Awaiting Organization e-Signature')}">
+              <!--<apex:commandButton Value="Sign Agreement" id="esginbtn" onclick="showterms()" oncomplete="closeaftersave()"/>-->
+              <input type="button" Value="Sign Agreement" id="esginbtn"  class="btn" />
+              <apex:actionFunction name="reloadparent" action="{!reload}"  /> 
+               </apex:pageBlockButtons> 
+       
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <apex:pageblocksection title="Prime Application Information" collapsible="False" Columns="2" rendered="{!awarddetail.Application_ID__c == ''}"> 
+            <apex:outputField value="{!awarddetail .Prime_Application__c}" />    
+            <apex:outputField value="{!awarddetail .Prime_Application_Type__c}" /> 
+            <apex:outputField value="{!awarddetail .NOFA_Name__c}"/>
+            <apex:outputField value="{!awarddetail .NOFO_RFP_Name_Prime__c}" />
+            <apex:outputField value="{!awarddetail .Corporate_Program_Prime__c}" />
+            <apex:outputField value="{!awarddetail .Issuing_Office__c}"/>
+            <apex:outputField value="{!awarddetail .Organization_Legal_Name_Prime__c}" />       
+            <apex:outputField value="{!awarddetail .Project_Title_Prime__c}"/>
+        </apex:pageblocksection>
+        
+    <apex:pageblocksection title="Application Information" collapsible="False" Columns="2" rendered="{!awarddetail.Application_ID__c != ''}"> 
+            <apex:outputField value="{!awarddetail .Application_ID__c}" />    
+            <apex:outputField value="{!awarddetail . Application_Type__c}" />
+            <apex:outputField value="{!awarddetail .NOFA_Name__c}"/>
+            <apex:outputField value="{!awarddetail .NOFO_RFP_Name_New__c}" rendered="{!awarddetail.Application_ID__c != ''}"/>
+            <apex:outputField value="{!awarddetail .Corporate_Program1__c}" />
+            <apex:outputField value="{!awarddetail .Issuing_Officer__c}"/>
+            <apex:outputField value="{!awarddetail .Organization_Legal_Name__c}" />  
+            <apex:outputField value="{!awarddetail .Project_Title__c}"/>     
+            <!--  <apex:outputField value="{!awarddetail .Project_Name__c}"/>-->
+            <!--  <apex:outputField value="{!awarddetail.Project__c}"/> -->
+        </apex:pageblocksection>
+                  
+    <apex:pageblocksection title="Award Information" collapsible="False" Columns="2" rendered="{!awarddetail .Corporate_Program1__c != 'NCCC'}">
+      <apex:outputField value="{!awarddetail .Master_Award__c}" />   
+      <apex:outputField value="{!awarddetail .Grant_Status__c}" />           
+        <apex:outputField value="{!awarddetail .Name}" />  
+        <apex:outputField value="{!awarddetail .Year_of_Grant__c}" rendered="{!awarddetail.Application_ID__c != ''}"/>
+        <apex:outputField value="{!awarddetail .Fiscal_Year_Prime__c}" rendered="{!awarddetail.Application_ID__c == ''}"/>
+        <apex:outputField value="{!awarddetail .Amendment__c}"/>
+        <apex:outputField value="{!awarddetail .of__c}" />  
+        <apex:outputField value="{!awarddetail .Project_Years_Awarded_This_Award__c}" rendered="{!$Profile.Name!= 'Applicant'}"/>
+        <apex:outputField value="{!awarddetail .Approved_Amount__c}" rendered="{!$Profile.Name!= 'Applicant'}" />  
+        <apex:outputField value="{!awarddetail .Cost_Share__c}" rendered="{!$Profile.Name!= 'Applicant'}" /> 
+        <apex:outputField value="{!awarddetail .Partnership_Funds__c}" rendered="{!$Profile.Name!= 'Applicant'}"/>     
+        <apex:outputField value="{!awarddetail .Amendment_Type__c}" rendered="{!$Profile.Name!= 'Applicant'}" />
+        <apex:outputField value="{!awarddetail .Amendment_Reason__c}" rendered="{!$Profile.Name!= 'Applicant'}"/>    
+        <apex:outputField value="{!awarddetail .Award_Description__c}" rendered="{!$Profile.Name!= 'Applicant'}"/>
+        <apex:outputField value="{!awarddetail .Special_Conditions__c}" rendered="{!$Profile.Name!= 'Applicant'}"/> 
+         <apex:outputField value="{!awarddetail .Award_Flow__c}" rendered="{!$Profile.Name!= 'Applicant'}"/>        
+         
+    </apex:pageblocksection>
+    <apex:pageblocksection title="Award Dates" collapsible="False" Columns="2" rendered="{!$Profile.Name!= 'Applicant'  && $Profile.Name!='Grantee Admin'}"> 
+       <!-- <apex:outputField value="{!awarddetail .Agreement_Period_Start_Date__c}" />    
+        <apex:outputField value="{!awarddetail .Agreement_Period_End_Date__c}" />   -->
+        <apex:outputField value="{!awarddetail .Agreement_Period_Start_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Standard')}"/>
+        <apex:outputField value="{!awarddetail .Agreement_Period_End_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Standard')}"/>   
+        <apex:outputField value="{!awarddetail .Grant_Performance_Period_Start_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Program Grant') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Support Grant')}"/>
+        <apex:outputField value="{!awarddetail .Grant_Performance_Period_End_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Program Grant') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Support Grant')}"/>
+        <apex:outputField value="{!awarddetail .Budget_Period_Start__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Program Grant') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Support Grant')}"/>  
+        <apex:outputField value="{!awarddetail .Budget_Period_End__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Program Grant') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Support Grant')}"/>    
+        <apex:outputField value="{!awarddetail .Enrollment_Period_Start_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes')}"/>
+        <apex:outputField value="{!awarddetail .Enrollment_Period_End_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Yes')}"/>
+    </apex:pageblocksection>
+    <apex:pageblocksection title="Certifying Officials" collapsible="False" Columns="2"  rendered="{!($Profile.Name!= 'Applicant'  && $Profile.Name!='Grantee Admin' && awarddetail .Corporate_Program1__c != 'NCCC')}"> 
+        <apex:outputField value="{!awarddetail .Program_Officer__c}" />
+        <apex:outputField value="{!awarddetail .Senior_Program_Officer__c}" />
+        <apex:outputField value="{!awarddetail .Executive_Officer__c}" />
+        <apex:pageBlockSectionItem />
+        <apex:outputField value="{!awarddetail .Grants_Officer__c}" />
+        <apex:outputField value="{!awarddetail .Senior_Grants_Officer__c}" /> 
+    </apex:pageblocksection>
+    <apex:pageblocksection title="Notes and Flags" collapsible="False" Columns="2" rendered="{!($Profile.Name!= 'Applicant'  && $Profile.Name!='Grantee Admin' && awarddetail .Corporate_Program1__c != 'NCCC')}">  
+        <apex:outputField value="{!awarddetail .PO_Comments__c}" />    
+        <apex:outputField value="{!awarddetail .Fund_Commitment_Comments__c}" />
+        <apex:outputField value="{!awarddetail .Grants_Officer_Comments__c}" />    
+        <apex:outputField value="{!awarddetail .Fund_Obligation_Comments__c}" /> 
+        <apex:outputField value="{!awarddetail .Red_Flags__c}"  />
+        <apex:outputField value="{!awarddetail .Red_Flag_Count__c}" /> 
+    </apex:pageblocksection>
+    <apex:pageblocksection title="FAPIIS Review" collapsible="False" Columns="2" rendered="{!($Profile.Name!= 'Applicant'  && $Profile.Name!='Grantee Admin' && awarddetail .Corporate_Program1__c != 'NCCC')}">
+        <apex:outputField value="{!awarddetail .Subject_to_FAPIIS_Review__c}" />
+        <apex:outputField value="{!awarddetail .FAPIIS_Review_Date__c}" />
+        <apex:outputField value="{!awarddetail .Information_Available__c}" />
+        <apex:outputField value="{!awarddetail .Satisfactory_Record_Executing_Programs__c}" />
+        <apex:outputField value="{!awarddetail .Demonstrates_Ethics_Integrity__c}" />
+        <apex:outputField value="{!awarddetail .Mitigating_Circumstances__c}" />
+        <apex:outputField value="{!awarddetail .FAPIIS_Review_Comments__c}" />
+    </apex:pageblocksection>
+
+    <apex:pageblocksection title="Certifying Information" collapsible="False" Columns="2" rendered="{!($Profile.Name!= 'Applicant'  && $Profile.Name!='Grantee Admin' && awarddetail .Corporate_Program1__c != 'NCCC')}">
+    <apex:outputField value="{!awarddetail .PO__c}" />
+   <!--   <apex:outputField value="{!awarddetail .PO__c}" /> -->
+     <apex:outputField value="{!awarddetail .PO_Certification_Date__c}" />
+       <apex:outputField value="{!awarddetail .SPO__c}" />
+         <apex:outputField value="{!awarddetail .SPO_Certification_Date__c}" />
+     </apex:pageblocksection>
+     
+        <!-- Detail section for Awards where Corporate Program is equal to NCCC -->
+    <!--<apex:pageblocksection title="Award Information" collapsible="False" Columns="2" rendered="{!awarddetail .Corporate_Program1__c == 'NCCC'}" > 
+        <apex:outputField value="{!awarddetail .Name}" />
+        <apex:outputField value="{!awarddetail .Application_ID__c}" />
+        <apex:outputField value="{!awarddetail .Amendment__c}" /> 
+        <apex:outputField value="{!awarddetail .of__c}" />
+        <apex:outputField value="{!awarddetail .Organization_Legal_Name__c}" />     
+        <apex:outputField value="{!awarddetail .Project_Name__c}" />
+        <apex:outputField value="{!awarddetail .Project_Start_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Standard')}"/>
+        <apex:outputField value="{!awarddetail .Project_End_Date__c}" rendered="{!(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='No') ||(awarddetail .NOFA_Name__r.Cash_Grants_Awards__c=='Optional') && (awarddetail .Application_ID__r.Program_Type__c=='Standard')}"/>   
+        <apex:outputField Label="RFP" value="{!awarddetail .NOFA_Name__c}" />  
+        <apex:outputField value="{!awarddetail .Grant_Status__c}" />
+        <apex:outputField value="{!awarddetail  .Application_Type__c}" />
+        <!--  FFR Status -- >
+        <!--        PR Status -->
+       <!-- <apex:outputField value="{!awarddetail  .Match_Status__c}" />
+        <apex:outputField value="{!awarddetail  .Amendment_Type__c}" /> 
+        <apex:outputField value="{!awarddetail  .Amendment_Reason__c}" /> 
+        <apex:outputField value="{!awarddetail  .Program_Officer__c}" />
+        <apex:outputField value="{!awarddetail  .Senior_Program_Officer__c}" />
+        <apex:outputField value="{!awarddetail  .PO_Comments__c}" />
+        <apex:outputField value="{!awarddetail  .Award_Description__c}" /> 
+        <apex:outputField value="{!awarddetail  .Special_Conditions__c}" /> 
+    </apex:pageblocksection>--->
+
+         
+ </apex:pageblock>
+ 
+
+ </apex:form>
+ 
+ <apex:relatedList subject="{!Award__c}" list="ActivityHistories" />
+ <apex:relatedList List="Team_Assignments__r" rendered="{!awarddetail.Corporate_Program1__c == 'AmeriCorps NCCC'}"/>
+<!-- <apex:relatedList List="Team_Assignments__r" rendered="{$Profile.Name != 'Applicant'}"/>
+<apex:relatedList list="Award_Reporting__r" pageSize="10" rendered="{$Profile.Name != 'Applicant'}"/> -->
+<apex:relatedList list="Award_Reporting__r" />
+ <apex:relatedList List="Attachments__r" id="theList"  pageSize="10" />
+ <!--  <apex:pageblock rendered="{!$Profile.Name != 'Applicant'}"> -->
+ <c:GenericHistoryComponent recordLimit1="10" myObject1="{!Award__c}" rendered="{!($Profile.Name != 'Applicant' && $Profile.Name != 'Grantee Admin' && $Profile.Name != 'State Commission Profile')}"/>
+ <!-- </apex:pageblock> -->
+ <apex:pageblock title="Slots" rendered="{!($Profile.Name != 'Applicant' && $Profile.Name != 'Grantee Admin' && $Profile.Name != 'State Commission Profile')}"> 
+      <apex:include pagename="SlotInformationWithAwardVF" />
+ </apex:pageblock>
+ 
+<!--<apex:relatedList List="Fund_Commitment__r"/> -->
+<apex:include pageName="FundCommitmentForAwardVF" rendered="{!($Profile.Name != 'Applicant' && $Profile.Name != 'Grantee Admin' && $Profile.Name != 'State Commission Profile')}"/>
+<apex:include pageName="FundObligationForAwardVF" rendered="{!($Profile.Name != 'Applicant' && $Profile.Name != 'Grantee Admin' && $Profile.Name != 'State Commission Profile')}"/> 
+ <!--<cprh:NotesAndAttachmentsViewer ParentRecordId="{!Award__c.Id}"></cprh:NotesAndAttachmentsViewer> -->
+ 
+
+  
+</apex:page>

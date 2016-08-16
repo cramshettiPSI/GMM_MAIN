@@ -1,0 +1,6 @@
+Dear {!User.FirstName} {!User.LastName}:
+
+The request to withdraw Concept Paper {!01Ir00000008X6C.Name} has been processed.  This application is no longer in consideration for this competition.
+
+Thank you,
+Corporation for National and Community Service

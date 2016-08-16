@@ -1,0 +1,31 @@
+<apex:page standardController="Contact" extensions="UpdateFields" action="{!accept}">
+<html lang="en-US"> 
+</html>
+    <apex:form >
+        <apex:pageMessages />
+      <!--   <apex:detail subject="{!Contact.Id}" relatedList="true" title="true" showChatter="true" inlineEdit="true" oncomplete="javascript:location.reload();"  />
+       <apex:outputText value="{!Contact.Status__c}" rendered="false"></apex:outputText>
+       <script type="text/javascript">
+       function checkButtonName(){
+        if('{!buttonAcceptUser}' == true || '{!buttonAcceptUser}' == 'true') {
+            enableDisableButtons("accept_user");
+        }
+        if('{!buttonRejectUser}' == true || '{!buttonRejectUser}' == 'true'){
+            enableDisableButtons("reject_user");
+        }
+    }
+    checkButtonName();
+    function enableDisableButtons(btnName1) {
+      try{
+        var buttons = document.getElementsByName(btnName1);
+        for (var i=0; i < buttons.length; i++) {
+          buttons[i].className="btnDisabled ";
+          buttons[i].disabled=true;      
+        }
+      } catch(e) {
+      }
+    }
+    </script>-->
+    
+    </apex:form>
+</apex:page>

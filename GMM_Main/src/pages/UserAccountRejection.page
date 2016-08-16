@@ -1,0 +1,10 @@
+<apex:page standardController="Contact" extensions="UpdateFields" action="{!reject}">
+<html lang="en-US"> 
+</html>
+    <apex:form >
+        <apex:pageMessages />
+        <!--<apex:commandButton Value="Accept User" action="{!accept}" rendered="{!$Profile.Name ='Grantee Admin'}" />
+        <apex:commandButton Value="Reject User" action="{!reject}" rendered="{!$Profile.Name ='Grantee Admin'}" />
+        <apex:outputField Value="{Status__c}" rendered="false"/>-->
+    </apex:form>
+</apex:page>

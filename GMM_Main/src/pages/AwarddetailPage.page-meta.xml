@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Removed this code from line 341
+&lt;!-- &lt;apex:include pageName=&quot;066r00000004QnO&quot;/&gt; --&gt;</description>
+    <label>AwarddetailPage</label>
+</ApexPage>

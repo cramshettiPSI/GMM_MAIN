@@ -1,0 +1,13 @@
+<apex:page standardController="CNCS_Corporate_Program__c" extensions="CNCSCorporateProgramRecortType" action="{!RedirectPage}">
+
+<html lang="en-US"> 
+</html>
+
+<script type="text/javascript">
+
+var rec = "{!rec}";
+var key="{!keyPrefix}"
+alert('Recordtype_Id'+rec);
+//window.location.replace(/a1o/e?retURL=%2Fa1o%2Fo&RecordType='+rec+'&nooverride=1');
+</script>
+</apex:page>

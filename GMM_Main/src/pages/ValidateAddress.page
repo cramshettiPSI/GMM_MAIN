@@ -1,0 +1,31 @@
+<apex:page controller="GetAddress">
+<html lang="en-US"> 
+</html>
+<apex:form > 
+<apex:pageBlock title="Address Verification" mode="edit">
+   <apex:pageBlockButtons >
+        <apex:commandButton value="Use Old Address" action="{!Cancel}"/>
+        <apex:commandButton value="Use New Address" action="{!Submit}"  /> 
+        <apex:commandButton value="Cancel" action="{!Cancel}"/>
+   </apex:pageBlockButtons>
+       <apex:pageMessages id="showmsg"/>
+      <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                   <apex:panelGroup >  
+                    
+                      Old Address <br> </br>
+                      <apex:outputText value="{!StreetAddress1}"/>
+                       <apex:outputText value="{!city}"/> 
+                   </apex:panelGroup> 
+                    
+                      New Address Suggestions <br> </br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection> 
+</apex:pageBlock>
+</apex:form>
+</apex:page>

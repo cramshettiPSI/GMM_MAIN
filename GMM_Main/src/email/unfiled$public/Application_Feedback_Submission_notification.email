@@ -1,0 +1,6 @@
+Hi {!Application_Feedback__c.Submitted_By__c},
+
+"Your application feedback was successfully submitted to CNCS." 
+
+Thanks,
+CNCS

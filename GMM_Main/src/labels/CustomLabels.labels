@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Accept_User_Account_Tmp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Accept User Account Tmp</shortDescription>
+        <value>00Xr0000000QJDX</value>
+    </labels>
+    <labels>
+        <fullName>AssurancesFileId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssurancesFileId</shortDescription>
+        <value>015r0000000DKAh</value>
+    </labels>
+    <labels>
+        <fullName>CertificationFileId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CertificationFileId</shortDescription>
+        <value>015r0000000DKAi</value>
+    </labels>
+    <labels>
+        <fullName>Corp_Structure_Prime_App</fullName>
+        <categories>CNCS Corporate Program field on Prime Application</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Corp Structure - Prime App</shortDescription>
+        <value>CF00Nr0000000VGPD</value>
+    </labels>
+    <labels>
+        <fullName>Corporate_Program_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Corporate Program Name</shortDescription>
+        <value>CF00Nr0000000VpKO</value>
+    </labels>
+    <labels>
+        <fullName>Grantee_Portal_Link</fullName>
+        <categories>CNCS IT Modranization</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Grantee Portal Link</shortDescription>
+        <value>https://devsb25-devsb25.cs32.force.com/granteeportal</value>
+    </labels>
+    <labels>
+        <fullName>Label_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label ID</shortDescription>
+        <value>CF00Nr0000000VFls</value>
+    </labels>
+    <labels>
+        <fullName>NOFO_Name</fullName>
+        <categories>NOFO_RFP__c field on Prime Application.</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NOFO Name</shortDescription>
+        <value>CF00Nr0000000VGPZ</value>
+    </labels>
+    <labels>
+        <fullName>Prime_Applicant_Button_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prime Applicant Button Label</shortDescription>
+        <value>CF00Nr0000000IKDN</value>
+    </labels>
+    <labels>
+        <fullName>Project_Organization_lookup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Organization lookup</shortDescription>
+        <value>CF00Nr0000000OuBk</value>
+    </labels>
+    <labels>
+        <fullName>Project_Prime_Application</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Project Prime Application</shortDescription>
+        <value>CF00Nr0000000VGPj</value>
+    </labels>
+    <labels>
+        <fullName>Reject_User_Account_Tmp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reject User Account Tmp</shortDescription>
+        <value>00Xr0000000QJET</value>
+    </labels>
+    <labels>
+        <fullName>org_field_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>org field label</shortDescription>
+        <value>CF00Nr0000000OuBk</value>
+    </labels>
+</CustomLabels>

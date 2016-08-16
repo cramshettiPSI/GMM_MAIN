@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Location_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Location Description</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Location Code</label>
+    <listViews>
+        <fullName>ALL</fullName>
+        <columns>NAME</columns>
+        <columns>Location_Description__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>ALL</label>
+    </listViews>
+    <nameField>
+        <label>Account Location Code</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Location Code</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Location_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Location_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Location_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Name_Unique</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(CONTAINS(LOWER(VLOOKUP( $ObjectType.Grant_location_number__c.Fields.Name , $ObjectType.Grant_location_number__c.Fields.Name, Name)),  LOWER(Name)), OR(ISNEW(), ISCHANGED(Name)) )</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>The Account Location Code already exists. This value must be unique.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Name_Unique_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(CONTAINS(LOWER(VLOOKUP( $ObjectType.Grant_location_number__c.Fields.Name , $ObjectType.Grant_location_number__c.Fields.Name, Name)),
+LOWER(Name)), OR(ISNEW(), ISCHANGED(Name)) )</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>The Account Location Code already exists. This value must be unique.</errorMessage>
+    </validationRules>
+</CustomObject>

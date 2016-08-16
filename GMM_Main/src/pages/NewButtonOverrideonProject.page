@@ -1,0 +1,12 @@
+<apex:page standardController="Project__c">
+<html lang="en-US"> 
+</html>
+ <script>
+     alert('You are not allowed to create project please go to Organization inorder create a new one');
+     if("{!$Profile.Name}"=="Applicant"||"{!$Profile.Name}"=="Grantee Admin"){
+         window.location.replace('/granteeportal/{!$ObjectType.Account}/o');
+     }else{
+         window.location.replace('/{!$ObjectType.Project__c}/o');
+     }      
+ </script>
+</apex:page>

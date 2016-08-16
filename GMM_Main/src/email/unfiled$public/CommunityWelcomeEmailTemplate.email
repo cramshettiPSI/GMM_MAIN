@@ -1,0 +1,12 @@
+Hi {!Receiving_User.FirstName},
+
+Welcome to {!Community_Name}!
+
+This is an automated E-mail message. Please do not reply to it. A new login account has been created for you with the username {!Receiving_User.Email}
+
+Please go to {!Community_Url}
+
+For additional assistance, please submit a help request via https://questions.nationalservice.gov/app/ask_eg or contact the help desk at 1-800-942-2677. Information about GMM support is provided in the Corporation for National and Community Service website at www.nationalservice.gov by clicking on the GMM button. You can also access the online user help from within GMM.
+
+Thank you,
+{!Organization.Name}

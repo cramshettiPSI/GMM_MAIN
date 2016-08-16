@@ -1,0 +1,45 @@
+<apex:page controller="ClonePlusController" action="{!initialiseObjectsForCloning}">
+
+<html lang="en-US"> 
+<h1 style= "display:none">Clone</h1>
+</html>
+    
+  <apex:sectionHeader title="Clone Plus: {!objectName}"/>
+
+  <apex:pageMessages />
+
+  <apex:form id="theform" >
+  
+    Please select the child objects you would like to clone.<br/><br/>
+  
+    <apex:repeat value="{!objectChildren}" var="child">
+      <apex:PageBlock title="{!child.pluralLabel}"> 
+        <apex:pageBlockTable value="{!child.objectRows}" var="objectRow">
+          <apex:column headerValue="Clone" width="10%">
+            <apex:inputCheckbox value="{!objectRow.selected}"/>
+          </apex:column>
+       <!-- <apex:column headerValue="Id"   value="{!objectRow.Id}" width="45%"/> -->       
+       <apex:column headerValue="Name" value="{!objectRow.Name}" width="45%"/>       
+           <apex:column headerValue="Due Date" value="{!objectRow.obj['Due_Date__c']}" rendered="{!child.pluralLabel=='Action Reports'}" width="45%"/>
+           <apex:column headerValue="Reporting Period End Date" value="{!objectRow.obj['Reporting_Period_End_Date__c']}" rendered="{!child.pluralLabel=='Action Reports'}" width="45%"/>
+           <apex:column headerValue="Reporting Period Start Date" value="{!objectRow.obj['Reporting_Period_Start_Date__c']}" rendered="{!child.pluralLabel=='Action Reports'}" width="45%"/>
+           <apex:column headerValue="Report/Activity" value="{!objectRow.obj['Report_Activity__c']}" rendered="{!child.pluralLabel=='Action Reports'}" width="45%"/>
+           <apex:column headerValue="Sequence Number" value="{!objectRow.obj['Sequence_Number__c']}" rendered="{!child.pluralLabel=='Action Reports'}" width="45%"/>
+      
+       
+           <apex:column headerValue="Account Purpose Code & Program Manager" value="{!objectRow.obj['Account_Purpose__c']}" rendered="{!child.pluralLabel=='Funding Source'}" width="45%"/>
+           <apex:column headerValue="Account Fiscal Year and Fund Code" value="{!objectRow.obj['Fiscal_Yr_Basis__c']}" rendered="{!child.pluralLabel=='Funding Source'}" width="45%"/>
+           <apex:column headerValue="Account Location Code  " value="{!objectRow.obj['Grant_location_number__c']}" rendered="{!child.pluralLabel=='Funding Source'}" width="45%"/>
+           <apex:column headerValue="Object Class Code" value="{!objectRow.obj['Object_code__c']}" rendered="{!child.pluralLabel=='Funding Source'}" width="45%"/>
+           <apex:column headerValue="Active" value="{!objectRow.obj['Funds_Remaining__c']}" rendered="{!child.pluralLabel=='Funding Source'}" width="45%"/> 
+       
+        </apex:pageBlockTable>
+      </apex:PageBlock>
+    </apex:repeat>
+    
+    <apex:PageBlock >
+      <apex:commandButton action="{!doClone}" value="Clone"/>
+    </apex:PageBlock>
+  </apex:form>  
+
+</apex:page>

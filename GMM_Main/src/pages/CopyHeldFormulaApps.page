@@ -1,0 +1,22 @@
+<apex:page standardController="Prime_Application__c" extensions="CopyHeldFormulaApps">
+    <apex:pageMessages /> 
+    <apex:form >
+        <apex:pageBlock >
+         <apex:pageBlockButtons >
+             <apex:commandButton value="Copy" action="{!copy}"/>
+             <apex:commandButton value="Cancel" action="{!cancel}"/>
+         </apex:pageBlockButtons>
+         <apex:pageBlockTable title="Prime Application Formula" value="{!primeAppsFormula}" var="p" rendered="{!NOT(ISNULL(primeAppsFormula))}" >
+             <apex:column >
+                 <apex:inputCheckbox value="{!p.selected}"/>
+             </apex:column>
+             <apex:column value="{!p.pc.Prime_Application_Id_w_link__c}"/>
+             <apex:column value="{!p.pc.NOFO_RFP__c}"/>
+             <apex:column value="{!p.pc.NOFO_Name__c}"/>
+             <apex:column value="{!p.pc.Project_Name__c}"/>
+             <apex:column value="{!p.pc.CNCS_Status__c}"/>
+             <apex:column value="{!p.pc.Competitive_or_Formula__c}"/>                                          
+         </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:page>

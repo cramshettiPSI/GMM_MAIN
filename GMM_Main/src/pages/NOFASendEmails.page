@@ -1,0 +1,8 @@
+<apex:page standardController="NOFA__c" extensions="NofaSendEmailsCont" action="{!sendEmails}">
+<html lang="en-US"> 
+</html>
+<apex:pageMessages /> 
+        <apex:sectionHeader subtitle="{!NOFA__c.Name}"> <!-- title="Send Emails" -->
+            <a href="/{!Nofa__c.Id}">&lt;&lt;  Back to Nofa</a>
+        </apex:sectionHeader>
+</apex:page>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Application3__c$Name</field>
+    </columns>
+    <columns>
+        <field>Application3__c$Id</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Master_Awards__r$Name</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Master_Awards__r$Id</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Master_Awards__r.Award__r$Name</field>
+    </columns>
+    <columns>
+        <field>Application3__c.Master_Awards__r.Award__r$Id</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Application3__c.Master_Awards__r.Award__r$CreatedBy</column>
+            <operator>equals</operator>
+            <value>System Administrator</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Apps, MA and Awards</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Master_Awards_with_Awards_and_APplications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Application3__c.Master_Awards__r.Award__r$Id</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Application3__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,43 @@
+<apex:page standardController="Project__c" extensions="ValidateAddress" Sidebar="False" Showheader="False">
+<html lang="en-US"> 
+</html>
+
+  <script type="text/javascript">
+  function refreshParent(Address) {
+  alert('#####'+address.value);
+  if (window.opener && !window.opener.closed) {
+      window.opener.location.reload();
+ } 
+}
+</script>  
+  
+  <apex:form >
+      <apex:pageBlock >
+        <apex:pageMessages id="showmsg"/>
+        <apex:pageBlockSection title="Suggestions" columns="1" collapsible="false"> 
+                    
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    
+       </apex:pageBlockSection> 
+        </apex:pageBlock>
+    
+        <apex:commandButton value="Submit" action="{!Submit}" rerender="out,showmsg" status="status"/>
+   
+   </apex:form>
+   
+    <apex:outputPanel id="out">
+          <apex:actionstatus id="status" startText="Selecting..."  onstop="{!IF(ISNULL(Address),'','javascript:self.close();')}"> 
+            
+             <apex:facet name="stop"> 
+               <apex:outputPanel rendered="{!Address!=null}"> 
+                  <p>You have selected address:</p> 
+                 <apex:outputText value="{!Address}"/> 
+              </apex:outputPanel> 
+            </apex:facet> 
+          </apex:actionstatus>
+        </apex:outputPanel>   
+</apex:page>

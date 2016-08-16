@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Expert_Reviewer_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Expert Reviewer Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Expert Reviewer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Reviewer Pools</relationshipLabel>
+        <relationshipName>Reviewer_Pools</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NOFA_Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NOFO Group</label>
+        <referenceTo>NOFA_Group__c</referenceTo>
+        <relationshipLabel>Reviewer Pool</relationshipLabel>
+        <relationshipName>Reviewer_Pools</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Roles__c</fullName>
+        <externalId>false</externalId>
+        <label>Roles</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experienced Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted Experience Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluation Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Editor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality Control Reiviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inter-Rater Reliability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-Review Quality Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Available</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Available</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Available with Comments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Confirmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In-Eligible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eligible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eligible – COI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User_Account_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Expert_Reviewer_Name__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Account Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Reviewer Pool</label>
+    <nameField>
+        <displayFormat>RP-{0000}</displayFormat>
+        <label>Reviewer Pool Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Reviewer Pool</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_Reviewer_Pool</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add External Reviewer</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/AddReviewerPool?id={!NOFA_Group__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Eligibility_Email</fullName>
+        <availability>online</availability>
+        <description>00Xr0000000LxEJ</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Eligibility Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var con = new sforce.SObject(&quot;Reviewer_Pool__c&quot;); 
+var emailtemplate = sforce.connection.query(&quot;SELECT name,Id from EmailTemplate where Name = &apos;Eligibilty Email&apos;&quot;); 
+var records = emailtemplate.getArray(&quot;records&quot;); 
+con.id = &apos;{!Reviewer_Pool__c.Id}&apos;; 
+con.Status__c = &apos;Eligible&apos;; 
+var result = sforce.connection.update([con]); 
+var targetURL = &apos;/_ui/core/email/author/EmailAuthor?&apos;+ 
+&apos;&amp;retURL=%2F{!Reviewer_Pool__c.Id}&apos;+ 
+&apos;&amp;p2_lkid={!Reviewer_Pool__c.User_Account_Id__c}&apos;+ 
+&apos;&amp;template_id=&apos;+records[0].Id; 
+window.location.href = targetURL</url>
+    </webLinks>
+</CustomObject>

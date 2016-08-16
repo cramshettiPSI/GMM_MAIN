@@ -1,0 +1,5 @@
+Hello {!Team_Assignment__c.Applicant_Name__c}
+Congratulations again on being selected as AmeriCorps NCCC Project Sponsor.  Your project has been approved and is being assigned a team for the upcoming project period.  A staff member will contact you with additional details about the team, project, and next steps.
+
+Thank You
+{!Team_Assignment__c.Award_PO__c}

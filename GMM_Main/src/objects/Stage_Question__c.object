@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>It states whether the stage question is active or not.</description>
+        <externalId>false</externalId>
+        <label>Active?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Comments__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>It states whether comments are allowed or not</description>
+        <externalId>false</externalId>
+        <label>Allow Comments</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>If_Yes_Comments_Required__c</fullName>
+        <description>selects from a set of values and based on the values its controls allow comments field</description>
+        <externalId>false</externalId>
+        <label>If Yes, Comments Required</label>
+        <picklist>
+            <controllingField>Allow_Comments__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>checked</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>checked</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <description>Questions are entered here</description>
+        <externalId>false</externalId>
+        <label>Question?</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Roles__c</fullName>
+        <externalId>false</externalId>
+        <label>Roles</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alternate Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Reviewers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experienced Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted Expertise Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluation Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Editor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality Control Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inter-Rater Reliability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-Review Quality Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff Liaison</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Scoring_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Scoring Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Number (1-100)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes/No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Two Factor Option</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Four Factor Option</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Section__c</fullName>
+        <description>It selects a value from set of values, which derives the section in the stages object</description>
+        <externalId>false</externalId>
+        <label>Section</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Section 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Section 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Section 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Section 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Section 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stages_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Stages ID</label>
+        <referenceTo>Stages__c</referenceTo>
+        <relationshipLabel>Stage Question</relationshipLabel>
+        <relationshipName>Stage_Question</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <description>Weight for that particular question is entered</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Stage Question</label>
+    <nameField>
+        <displayFormat>Stage Question-{0000}</displayFormat>
+        <label>Stage Question ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stage Question</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Section_Selection</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(AND(Stages_ID__r.Section_1__c == Null,ISPICKVAL(Section__c , &apos;Section 1&apos;)),(AND(Stages_ID__r.Section_2__c == Null ,ISPICKVAL(Section__c , &apos;Section 2&apos;))),(AND(Stages_ID__r.Section_3__c == Null ,ISPICKVAL(Section__c , &apos;Section 3&apos;))),(AND(Stages_ID__r.Section_4__c == Null ,ISPICKVAL(Section__c , &apos;Section 4&apos;))), 
+(AND(Stages_ID__r.Section_5__c ==Null ,ISPICKVAL(Section__c , &apos;Section 5&apos;))))</errorConditionFormula>
+        <errorMessage>Selected Section doesnt have TITLE</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Stage_Question_Active</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Active__c = TRUE,( ISBLANK( Question__c ) ))</errorConditionFormula>
+        <errorMessage>Question should be filled</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Yes_comments_req_when_check_box_checked</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( Allow_Comments__c , ISBLANK(TEXT(If_Yes_Comments_Required__c)))</errorConditionFormula>
+        <errorDisplayField>If_Yes_Comments_Required__c</errorDisplayField>
+        <errorMessage>If Yes, Comments Required should be required if the Allow Comments checkbox is checked</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Test_feedback</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Test feedback</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+window.location.replace(&quot;/apex/Stagetofeedbackquestion?scontrolCaching=1&amp;id={! Stage_Question__c.Id}&quot;);</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,10 @@
+Hello {!Award__c.Executive_Officer__c}, 
+
+Please commit the funds for this Award. {!Award__c.Name}
+{!Award__c.Application_ID__c}
+{!Award__c.Grant__c}
+{!Award__c.PO_Comments__c}
+{!Award__c.Link}
+
+Thank you, 
+CNCS.

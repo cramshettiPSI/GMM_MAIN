@@ -1,0 +1,47 @@
+<apex:page standardController="NOFA__c" extensions="CldBdgMultiselectExampleController" id="cldBdgFrmCntrlPG">  
+ <html lang="en-US">
+ <h1 style= "display:none">CldBdg</h1>
+ </html>
+ <apex:form >
+        <apex:pageBlock title="Budget Form">
+       <!-- <apex:pageMessages id="showmsg"></apex:pageMessages> -->
+        <DIV style="overflow-y:auto; height:150px;">
+        <table>
+            <tr>
+                
+             </tr>
+             <tr>    
+                <td>
+                    <c:CldBdgMultiSelectPickList leftLabel="Available Budget Form"
+                        leftOption="{!allContacts}"
+                        rightLabel="Selected Budget Form"
+                        rightOption="{!selectedContacts}"
+                        size="14"
+                        width="150px"/>
+                </td>
+                <td>
+                  <apex:outputLabel value="Budget Application Limit" for="Limit"/> 
+                </td>
+                <td>
+                 <apex:inputfield value="{!NOFA__c.Budget_Application_Limit__c}" id="Limit" /> 
+                </td>
+                <td>
+                <apex:commandButton value="Configure" action="{!save}"/>
+                </td>
+                 <td>
+                   <apex:outputText >{!message}</apex:outputText>
+                </td>
+                <td>
+                     <apex:pageMessages id="showmsg"></apex:pageMessages>
+                </td>
+                
+          <!--  <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons> -->
+            </tr>
+            </table>
+          </DIV>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:outputText >{!message}</apex:outputText>
+</apex:page>

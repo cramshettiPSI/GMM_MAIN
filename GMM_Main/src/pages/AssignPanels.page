@@ -1,0 +1,5 @@
+<apex:page standardController="Paneling__c" extensions="CreatePanelAssignments1" action="{!AssignPanels}">
+
+
+
+</apex:page>

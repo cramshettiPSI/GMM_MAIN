@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to send eligible status to expert reviewer applicant</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Eligibilty Email</name>
+    <style>none</style>
+    <subject>Your profile has been reviewed and determined as eligible!</subject>
+    <type>text</type>
+</EmailTemplate>

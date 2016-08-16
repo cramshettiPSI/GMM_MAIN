@@ -1,0 +1,102 @@
+<apex:page controller="searchOrganizationcls" id="pg" showHeader="false" sidebar="false">
+<html lang="en-US"> 
+</html>
+    <apex:form id="fm">
+    <script type="text/javascript">          
+        function doSearch(e){  
+            
+            if(window.event){                    
+                key = window.event.keyCode;     //IE               
+            } 
+            else{                    
+                key = e.which;     //firefox               
+            }               
+            if(key == 13) {                    
+                var ele=document.getElementById('pg:fm:orgList:j_id29:j_id31:j_id33');                                                           
+                ele.click();                     
+                return false;               
+            } else{                    
+                return true;               
+            }          
+        }     
+        pg:fm:orgList:j_id28:j_id31:j_id33
+        
+    </script>
+  <!--  <div style="width:100%;height:500%;background-color:white;border:5px solid white;align:right;padding:120px;right-margin:100px"></div>
+    <div style="float:right;width:55%;"></div>
+    <div style="float:center;width:70%;"></div> -->
+  
+    <apex:inputHidden value="{!actCount}" id="actCount"/>
+        <script>
+            function validateRecords(){                
+                var actcountvalue=document.getElementById('pg:fm:actCount').value; 
+               if(actcountvalue > 0){
+                    alert('Your Organization already Exists');
+                    return false;
+                }
+                else{
+                    return true;
+                }
+                return false;
+            }
+        </script>
+       
+ 
+    <apex:pageBlock title="SEARCH FOR OR REGISTER AN ORGANIZATION" id="orgList">
+    <apex:pageMessages /> 
+  <!--  <div style="width:100%;height:500px;align:center;padding:-15px;color:white;border:4px solid darkblue;left-margin:15px;right-margin:55px;">-->
+        <apex:pageBlockSection title="Search Organization" collapsible="false">
+            <apex:inputField id="searchtext" value="{!actobj.EIN__c}" onkeypress="return doSearch(event)"/>
+             <apex:inputField value="{!actobj.Name}" required="false"/>
+                
+            <apex:pageBlockSectionItem >
+                <apex:outputText value=""/>
+                <apex:commandbutton value="Search" action="{!searchOrganization}" rerender="orgList,actCount"/>    
+            
+           </apex:pageBlockSectionItem>
+       </apex:pageBlockSection>
+     
+        
+       <apex:pageBlockSection title="Organization List" collapsible="false" ></apex:pageBlockSection>         
+            <apex:pageBlockTable value="{!accountList}" var="accountobj" style="width=100%;height=500px"  >
+                <apex:column headerValue="Actions" >
+                    <apex:commandLink value="Select" action="{!Choose}">
+                                <apex:param name="MyAccountId"
+                                    value="{!accountobj.Id}"
+                                    assignTo="{!MyAccountId}"/>
+                                    
+                            </apex:commandLink>                 
+                    
+                        <apex:param name="accountId" value="{!accountobj.Id}" assignTo="{!paramValue}"/>
+                </apex:column>
+                <apex:column value="{!accountobj.EIN__c}"/>
+                <apex:column headerValue="Name" value="{!accountobj.Legal_Name__c}"/>
+                <apex:column headerValue="Address" value="{!accountobj.Address_1__c}"/>
+                <apex:column headerValue="City" value="{!accountobj.City__c}"/>
+                <apex:column headerValue="State" value="{!accountobj.State__c}"/>
+                <apex:column headerValue="Point of Contact" value="{!accountobj.First_Name__c}"/>
+            </apex:pageBlockTable> 
+
+     
+     </apex:pageBlock>
+   
+
+  <apex:pageBlock >
+            <apex:pageBlockbuttons location="bottom" >
+            
+                 <!---<apex:commandbutton value="Cancel" onclick="javascript:return false;" style="right=-700px;align:left;height:30px;width:180px;color:black;border:3px solid darkblue;border-shadow:6px;"/>-->
+                 <apex:commandbutton value="Cancel" action="{!cancel}" style="right=-700px;align:left;height:30px;width:180px;color:black;border:3px solid darkblue;border-shadow:6px;"/>
+                <apex:outputText value=""/> 
+             <apex:outputText value="Cannot find your organization?" style="font-weight:bold;color:black"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!---<apex:commandbutton value="Create New Organization" onclick="return validateRecords();" action="{!createOrganization}" style="height:30px;width:180px;color:black;border:3px solid darkblue;border-shadow:3px;align:right;"/>--->
+                <apex:commandbutton value="Create New Organization" action="{!createOrganization}" style="height:30px;width:180px;color:black;border:3px solid darkblue;border-shadow:3px;align:right;"/>
+            </apex:pageBlockbuttons>
+           
+               </apex:pageBlock>
+    
+ <!--    <div style="float:center;width:15%;"></div>-->
+    
+  
+   </apex:form>
+     
+</apex:page>

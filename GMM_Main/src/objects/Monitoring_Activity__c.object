@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Monitoring Activities associated to Monitoring Plans.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Activity_Canceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Canceled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(Record_Completed_Date__c),1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CC_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CC Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Changes_to_Plan_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Changes to Plan/Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow Up Completed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Follow_Up_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow Up Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Planned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow-up Planned Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Close_Out__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant Close Out</label>
+        <referenceTo>Grant_Close_Out__c</referenceTo>
+        <relationshipLabel>Monitoring Activities</relationshipLabel>
+        <relationshipName>Monitoring_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inactivate_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Inactivate Record</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Inactive_Record_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Inactive Record (Reason)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Initiating_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Initiating Office</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint – Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint – Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Staff_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Staff Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Grants Officer</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Program Officer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Monitoring_Activities1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Length__c</fullName>
+        <externalId>false</externalId>
+        <label>Length</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Award_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Award Name</label>
+        <referenceTo>Master_Award__c</referenceTo>
+        <relationshipLabel>Monitoring Activities</relationshipLabel>
+        <relationshipName>Monitoring_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Activity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Programmatic &amp; Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compliance Visit – Programmatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drawdown Analysis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-site Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-site Training/Technical Assistance (T/TA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Standards review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted/Issue-based Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Plan</label>
+        <referenceTo>Monitoring_Plan__c</referenceTo>
+        <relationshipLabel>Monitoring Activities</relationshipLabel>
+        <relationshipName>Monitoring_Activities</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Other_Team_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Other Team User</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Grants Officer</value>
+            </filterItems>
+            <filterItems>
+                <field>User.Profile.Name</field>
+                <operation>equals</operation>
+                <value>Program Officer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Monitoring_Activities2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Month</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Completed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Staff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Monitoring Activity</label>
+    <nameField>
+        <displayFormat>MA-{0000}</displayFormat>
+        <label>Monitoring Activity Record ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Monitoring Activities</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Monitoring_Fiscal_Year</fullName>
+        <active>true</active>
+        <description>Requires 4 characters in the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>LEN(TRIM( Monitoring_Fiscal_Year__c  ))&lt;4</errorConditionFormula>
+        <errorDisplayField>Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Requires 4 characters in the Monitoring Fiscal Year field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Monitoring_Fiscal_Year_Number_only</fullName>
+        <active>true</active>
+        <description>Requires only numbers entered into the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>NOT(ISNUMBER(  Monitoring_Fiscal_Year__c  ))</errorConditionFormula>
+        <errorDisplayField>Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Only enter numbers into the Monitoring Fiscal Year field.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,133 @@
+<apex:page Controller="CommunitiesSelfRegController1" showHeader="false">
+   <!-- Begin Default Content REMOVE THIS -->
+<apex:messages />
+<html lang="en"> 
+<style type="text/css">
+.bPageHeader {
+    display:none;
+    .bPageSidebar
+     display:none;
+}
+</style>
+
+
+    <style>
+    body {
+        background: #FFFFFF !important;
+        height:200px;
+        width:900px;
+        position:absolute;
+        left:220px;
+          }
+</style>
+</html>
+
+  <apex:form forceSSL="true" >
+  <apex:pageBlock title="User Account " mode="edit">
+  <apex:pageBlockButtons location="bottom">
+  <apex:commandButton value="Save" action="{!registerUser}"/>        
+  <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+ <!-- <apex:commandButton value="Validate Address" action="{!PageRedirect}" rerender="tstpopup"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                     
+  </apex:pageBlockButtons>  
+  <apex:pageBlockSection collapsible="true" Title="Account Information" columns="2"> 
+      <apex:inputfield value="{!contact.Salutation}" required="true"></apex:inputfield><br/><br/>
+       <apex:pageBlockSectionItem >
+          <a href="#" data-toggle="tooltip" title="As long as the use of this name is not intended for avoiding legal obligations or for misrepresentation, CNCS acknowledges the need for users to identify themselves by a first name other than their legal first name where possible" >{!$ObjectType.Contact.fields.Preferred_Name__c.label}</a>         
+          <apex:inputfield value="{!contact.Preferred_Name__c}" id="PreferredName" ></apex:inputfield> 
+      </apex:pageBlockSectionItem>    <br/><br/>
+      <apex:inputfield value="{!contact.FirstName}" required="true"></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!contact.Middle_Name__c}" ></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!contact.LastName}" required="true"></apex:inputfield><br/><br/>
+      
+      <apex:inputfield value="{!contact.Suffix__c}"></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!contact.Primary_Phone__c}" required="true"></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!contact.Is_this_a_Mobile_Number__c}" required="true"></apex:inputfield><br></br> 
+      <apex:inputfield value="{!contact.Would_you_like_to_receive_texts__c}" required="true"></apex:inputfield><br/><br/>
+      <apex:inputfield value="{!contact.OtherPhone}"></apex:inputfield><br></br>
+      <apex:inputfield value="{!contact.Email}" id="Email" required="true"></apex:inputfield><br/><br/>
+      
+      <apex:inputfield value="{!contact.Re_Enter_Email__c}" required="true"></apex:inputfield>
+     
+ </apex:pageblocksection> <br/><br/>
+<!-- <apex:pageBlockSection collapsible="true" Title="Contact Information" columns="1"> 
+            <apex:inputfield value="{!contact.Mailing_Street_Address_1__c}" required="true"></apex:inputfield>
+      <apex:inputfield value="{!contact.Mailing_Street_Address_2__c}" ></apex:inputfield>
+      <apex:inputfield value="{!contact.Mailing_City__c}" required="true" ></apex:inputfield>
+      <apex:inputfield value="{!contact.Mailing_State__c}" required="true"></apex:inputfield>
+      <apex:inputfield value="{!contact.Mailing_Zip_Code__c}" required="true"></apex:inputfield>
+      <apex:inputfield value="{!contact.Latitude__c}" rendered="{!$Profile.Name ='System Administrator'}" > </apex:inputfield> 
+      <apex:inputfield value="{!contact.Longitude__c}" rendered="{!$Profile.Name ='System Administrator'}"> </apex:inputfield> 
+ </apex:pageBlocksection> -->
+   
+ </apex:pageBlock>
+ 
+ <!-- <apex:outputPanel id="tstpopup">       
+        <apex:outputPanel styleClass="popupBackground" layout="block" rendered="{!displayPopUp}"/> 
+        <apex:outputPanel styleClass="custPopup" layout="block" rendered="{!displayPopUp}">
+                
+      <apex:pageBlock rendered="{!displayPopup}">
+        <apex:pageMessages id="showmsg"/>
+            <apex:pageBlockSection title="Addresses" columns="2" collapsible="false"> 
+                    <apex:panelGroup >  
+                    <!--   <apex:outputLabel value="Old Address"/><br> </br>
+                      Old Address <br> </br>
+                      <apex:outputText value="{!Contact.Mailing_Street_Address_1__c}"/>
+                       <apex:outputText value="{!Contact.Mailing_City__c}"/> 
+                   </apex:panelGroup>
+                    
+                      New Address Suggestions <br> </br>
+                    <apex:pageBlockSectionItem >
+                    <apex:facet name="header"><b>Address Suggestions</b></apex:facet> 
+                      <apex:selectRadio value="{!Address}" layout="pageDirection">
+                      
+                        <apex:selectOptions value="{!options}"/><br/>
+                      </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+            </apex:pageBlockSection> 
+        </apex:pageBlock> -->
+    
+        
+        <!--  <apex:commandButton value="Use Old Address" action="{!closePopup}" rerender="tstpopup"/>
+       <!-- <apex:commandButton value="Use New Address" action="{!Submit}" rerender="showmsg" status="status"/> 
+            <apex:commandButton value="Use New Address" action="{!Submit}"  /> 
+            <apex:commandButton value="Cancel" action="{!closePopup}" rerender="tstpopup"/>
+         </apex:outputPanel>
+       </apex:outputPanel> -->
+  </apex:form>
+  
+
+      <style type="text/css">
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            /* These are the 3 css properties you will need to change so the popup
+            displays in the center of the screen. First set the width. Then set
+            margin-left to negative half of what the width is. You can add
+            the height property for a fixed size pop up if you want.*/
+            width: 700px;
+            margin-left: -250px;
+            top:150px;
+        }
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+
+    </style> 
+   
+
+     
+  </apex:page>

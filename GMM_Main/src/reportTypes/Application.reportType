@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Application3__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>to see data which are hidden - just to validate data</description>
+    <label>Application</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Applicant__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rank_Limit__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rank__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Assessment_of_Quality_Indicators__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>NOFA_ID__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>NOFA_Name__c</field>
+            <table>Application3__c</table>
+        </columns>
+        <masterLabel>vvvv</masterLabel>
+    </sections>
+</ReportType>

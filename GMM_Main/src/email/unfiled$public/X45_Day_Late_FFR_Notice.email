@@ -1,0 +1,31 @@
+Dear {!Award_Reporting__c.Authorized_Representative_Name__c}:
+
+ 
+
+The Corporation for National and Community Service hereby requests that the following account be placed on manual hold:
+
+ 
+
+                Account Name: {!Application3__c.Organization_Name__c}
+
+                Account Number:
+
+                Personal Identification Number:              
+
+                Subaccount:      
+
+ 
+
+Sincerely,
+
+ 
+
+Margaret Rosenberry
+Director, Office of Grants Management
+
+
+<OR>
+
+
+Rocco Gaudio
+Director, Field Financial Management Center

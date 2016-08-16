@@ -1,0 +1,5 @@
+<apex:page standardController="NOFA__c"> 
+ <html lang="en-US"> 
+ </html>    
+ <c:relatedlists recId="{!NOFA__c.Id}" objType="Application3__c" fieldsList="Name,Organization__c,Status__c,Grantee_Status__c,Submitted_By__c" recordType="Concept Paper" RelationField="Nofa_Rfp__c" />       
+</apex:page>

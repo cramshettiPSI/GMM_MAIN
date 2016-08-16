@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Grant_Close_Out__c$Grant__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c$Org_Name__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c$Project_Period_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c$Grants_Officer__c</field>
+    </columns>
+    <columns>
+        <field>Grant_Close_Out__c$Program_Officer__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Weekly Overdue Closeout List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Grants_Closeout__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Grant_Close_Out__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,29 @@
+<apex:page standardController="Action_Reports__c">
+<html lang="en-US"> 
+</html>
+ <apex:form >
+  <script>
+  
+  window.onload = function new_func(){
+  
+var confirm_val=confirm("You are about to create new Action Report") 
+
+if(confirm_val==true){
+var nofaid='{!Action_Reports__c.NOFA_ID__c}';
+var nofa='{!Action_Reports__c.NOFA_ID__r.Name}';
+
+<!--var nofaid='{!Action_Reports__c.NOFA__c}';--->
+parent.location.href='/a0g/e?CF00Nr0000000O76L='+nofa+'&CF00Nr0000000O76L_lkid='+nofaid+'&retURL=%2F'+nofaid+'&nooverride=1';
+}
+else
+{
+var nofaid='{!Action_Reports__c.NOFA_ID__c}';
+<!--var nofaid='{!Action_Reports__c.NOFA__c}';-->
+parent.location.href='/'+nofaid;
+}
+
+}
+</script>
+
+ </apex:form>
+</apex:page>

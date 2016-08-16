@@ -1,0 +1,14 @@
+<apex:page standardController="Application3__c">
+<html lang="en-US"> 
+</html>
+ <script>
+     alert('You are not allowed to create application please go to NOFA inorder to submit or create the Application');
+     if("{!$Profile.Name}"=="Applicant"||"{!$Profile.Name}"=="Grantee Admin"){
+         window.location.replace('/granteeportal/home/home.jsp');
+     }else{
+         window.location.replace('/{!$ObjectType.Application3__c}/o');
+     } 
+     //window.location='https://cns--devsb12.cs32.my.salesforce.com/a0V/o';
+     //window.location.replace('/a1d/o');
+ </script>
+</apex:page>

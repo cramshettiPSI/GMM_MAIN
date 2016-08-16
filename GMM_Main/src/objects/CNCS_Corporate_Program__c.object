@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Program_Record_Type</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>It tells you whether the record is in active status or not.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Child_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Child_Program_Name__r.Code_Child__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Child Program Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Child_Program_Name1__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Child_Program_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Child Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Child_Program_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program Name</label>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>CNCS Child Programs</relationshipLabel>
+        <relationshipName>CNCS_Corporate_Structure</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Corporate_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Corporate_Program_Name__r.Code_Corporate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Corporate Program Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Corporate_Program_Name1__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Corporate_Program_Name__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Corporate Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Corporate_Program_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is Child Program Name..but based on requirement I made it as  Program name and you will see two Program Name</description>
+        <externalId>false</externalId>
+        <label>Program Name</label>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>CNCS Corporate Programs</relationshipLabel>
+        <relationshipName>CNCS_Corporate_Programs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Program_Name__r.Code_CNCS__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Program Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Program_Name1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( RecordType.DeveloperName = &apos;Program&apos; , Name, null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Program_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>CNCS_Program_Name1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CNCS Program Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CNCS_Program_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CNCS Program Name</label>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>CNCS Corporate Programs</relationshipLabel>
+        <relationshipName>CNCS_Corporate_Programs1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Program_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Child Program Name</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>CNCS_Corporate_Program__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Child Program</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>CNCS Corporate Structure (Child Program Name)</relationshipLabel>
+        <relationshipName>CNCS_Corporate_Structure1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Code_CNCS__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>4 digit char code for program name</description>
+        <externalId>false</externalId>
+        <label>CNCS 4 Char Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Code_Child__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique code for CNCS Child program</description>
+        <externalId>false</externalId>
+        <label>Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Code_Corporate__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique code for CNCS Corporate program</description>
+        <externalId>false</externalId>
+        <label>Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Corporate_Programs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Corporate Programs</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>CNCS Corporate Programs</relationshipLabel>
+        <relationshipName>CNCS_Corporate_Programs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Director_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Director ID</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CNCS_Corporate_Programs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>End date of the program</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Module__c</fullName>
+        <externalId>false</externalId>
+        <label>PM Module</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FGP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NCCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSVP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SIF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VISTA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Director_ID__r.FirstName &amp;&quot; &quot;&amp; Director_ID__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Short Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Start date of the program</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Street_Address_Line1__c</fullName>
+        <description>Street number, street lane name</description>
+        <externalId>false</externalId>
+        <label>Street Address Line1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_Line_2__c</fullName>
+        <description>Apt/Building number</description>
+        <externalId>false</externalId>
+        <label>Street Address Line 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <formula>Director_ID__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CNCS Corporate Structure</label>
+    <listViews>
+        <fullName>Corporate_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Code_Corporate__c</columns>
+        <columns>CNCS_Corporate_Program_Name__c</columns>
+        <columns>Short_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CNCS_Corporate_Program__c.Corporate_Program</value>
+        </filters>
+        <label>Corporate Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Programs</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>CNCS_Corporate_Program__c.Program</value>
+        </filters>
+        <label>Programs</label>
+        <sharedTo>
+            <role>Administrator</role>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>CNCS Corporate Program Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CNCS Corporate Structure</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Child_Program</fullName>
+        <active>true</active>
+        <label>Child Program</label>
+        <picklistValues>
+            <picklist>Module__c</picklist>
+            <values>
+                <fullName>FGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISTA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Corporate_Program</fullName>
+        <active>true</active>
+        <label>Corporate Program</label>
+        <picklistValues>
+            <picklist>Module__c</picklist>
+            <values>
+                <fullName>FGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISTA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Program</fullName>
+        <active>true</active>
+        <label>Program</label>
+        <picklistValues>
+            <picklist>Module__c</picklist>
+            <values>
+                <fullName>FGP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RSVP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISTA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Code_Corporate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Short_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CNCS_Corporate_Program_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Code_Corporate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Code_Corporate__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CNCS_Corporate_Program_Name1__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CNCS_Program_Code__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Corporate_Programs__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>CNCS_Corporate_Program_Name1__c</searchFilterFields>
+        <searchFilterFields>Code_Corporate__c</searchFilterFields>
+        <searchResultsAdditionalFields>Code_Corporate__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Name_Length</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(LEN(Name) &gt; 10, RecordType.Name  = &apos;Program&apos;)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>CNCS Corporate Program Name Should be not more than 10 Characters</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Child_Program</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Child Program</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/connection.js&quot;)}
+
+var parentId = window.sfdcPage.getEntityId();
+
+var cncs = sforce.connection.query(&quot;Select Name from CNCS_Corporate_Program__c where id= &apos;&quot;+parentId+&quot;&apos; &quot;);
+var cncsrecords = cncs.getArray(&quot;records&quot;);
+
+if(cncsrecords.length == 1){
+
+window.location.href=&apos;/a1o/e?CF00Nr0000000VG5m=&apos;+cncsrecords[0].Name+&apos;&amp;CF00Nr0000000VG5m_lkid={!CNCS_Corporate_Program__c.Id}&amp;RecordType=012r00000000E8Y&amp;retURL=%2F{!CNCS_Corporate_Program__c.Id}&amp;nooverride=1&apos;;
+
+}
+else{
+alert(&apos;Exception&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Corporate_Program</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Corporate Program</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/34.0/connection.js&quot;)}
+
+var parentId = window.sfdcPage.getEntityId();
+
+var cncs = sforce.connection.query(&quot;Select Name, CNCS_Child_Program_Name__c from CNCS_Corporate_Program__c where id= &apos;&quot;+parentId+&quot;&apos; &quot;);
+var cncsrecords = cncs.getArray(&quot;records&quot;);
+
+if(cncsrecords.length == 1){
+
+window.location.href=&apos;/a1o/e?CF00Nr0000000VG5p=&apos;+cncsrecords[0].Name+&apos;&amp;CF00Nr0000000VG5p_lkid={!CNCS_Corporate_Program__c.Id}&amp;RecordType=012r00000000E8Z&amp;retURL=%2F{!CNCS_Corporate_Program__c.Id}&amp;nooverride=1&apos;;
+
+}
+else{
+alert(&apos;Exception&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>PM_Admin_Screen</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>PM Admin Screen</masterLabel>
+        <openType>newWindow</openType>
+        <page>PM_Admin2</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Record_History</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Record History</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;/apex/cprh__RecordHistoryViewer?id={!CNCS_Corporate_Program__c.Id}&quot;);</url>
+    </webLinks>
+</CustomObject>

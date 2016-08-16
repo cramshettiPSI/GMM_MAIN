@@ -1,0 +1,37 @@
+<apex:page id="communitiesSelfRegPageCV" showHeader="true" controller="CommunitiesSelfRegControllerCV" title="Register">
+   <html lang="en-US"> 
+   <h1 style= "display:none">Reg</h1>
+   </html>
+     <apex:define name="body">  
+     <center>
+     <h1 style= "display:none">Reg</h1>
+     <apex:form id="theForm" forceSSL="true">
+                    <apex:pageMessages id="error"/>
+                    <h3>Note: all fields are required.</h3>
+                    <apex:panelGrid columns="2" style="margin-top:1em;">
+                    <apex:outputLabel value="First Name" for="firstName"/>
+                    <apex:inputText required="true" id="firstName" value="{!firstName}" label="First Name"/>
+                    <apex:outputLabel value="Last Name" for="lastName"/>
+                    <apex:inputText required="true" id="lastName" value="{!lastName}" label="Last Name"/>
+                    <apex:outputLabel value="Community Nickname" for="communityNickname"/>
+                    <apex:inputText required="true" id="communityNickname" value="{!communityNickname}" label="Community Nickname"/>
+
+                    <apex:outputLabel value="Company" for="company"/>
+                    <apex:inputText required="true" id="company" value="{!company}" label="Company"/>
+
+                    <apex:outputLabel value="Email" for="email"/>
+                    <apex:inputText required="true" id="email" value="{!email}" label="Email}"/>
+                    <apex:outputLabel value="Password" for="password"/>
+                    <apex:inputSecret id="password" value="{!password}"/>
+                    <apex:outputLabel value="Confirm Password" for="confirmPassword"/>
+                    <apex:inputSecret id="confirmPassword" value="{!confirmPassword}"/>
+                    <apex:outputText value=""/>
+
+                    <apex:commandButton action="{!registerUser}" value="Submit" id="submit" />
+                    </apex:panelGrid>
+                    <br/>
+     </apex:form>
+     </center>
+     <br/>
+     </apex:define>
+</apex:page>

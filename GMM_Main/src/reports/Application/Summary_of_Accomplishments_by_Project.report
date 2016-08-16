@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$Project__c.Legacy_Project_ID__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Project__c.Project_Title__c</field>
+    </columns>
+    <columns>
+        <field>Project_Location__c.City__c</field>
+    </columns>
+    <columns>
+        <field>Project_Location__c.State__c</field>
+    </columns>
+    <columns>
+        <field>Project_Location__c.Location_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Project_Location__c.Location_End_Date__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Summary of Accomplishments by Project</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Project_Location__c@Project_Location__c.Project_Lookup__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Project_Location__c.Location_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

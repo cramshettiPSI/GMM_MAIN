@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CCR_Active_Until__c</fullName>
+        <externalId>false</externalId>
+        <label>CCR Active Until</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <picklist>
+            <picklistValues>
+                <fullName>United States</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DUNS_4__c</fullName>
+        <externalId>false</externalId>
+        <label>DUNS+4</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DUNS_Verification__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DUNS Verification</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DUNS__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>DUNS number must be entered for your organization in order to submit an application. If needed please contact Dun &amp; Bradstreet at http://www.dnb.com/get-a-duns-number.html to register for a DUNS number.</inlineHelpText>
+        <label>DUNS #</label>
+        <length>13</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please Specify other details here</inlineHelpText>
+        <label>Other Rate Status Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Descriptions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please provide</inlineHelpText>
+        <label>Other Issuing Agency Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Do_you_have_an_Indirect_Cost_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If you have a current, approved indirect cost rate, it must be reported to CNCS &amp; if you intend to request a budget including indirect costs. This info will be used in all award negotiation/reviews until it&apos;s superseded by a new approved rate or expires.</inlineHelpText>
+        <label>Do you have an Indirect Cost Rate?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EIN__c</fullName>
+        <externalId>false</externalId>
+        <label>EIN #</label>
+        <length>9</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Effective_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective From</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Extended__c</fullName>
+        <externalId>false</externalId>
+        <label>Extended?</label>
+        <picklist>
+            <controllingField>Rate_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Formula_Rate_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Rate_Type__c, &apos;10%Modified Total Direct Cost (MTDC)&apos;),0.1,
+
+Null)</formula>
+        <label>Formula Rate Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Is_this_your_default_cost_rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Is this your default cost rate?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issuing_Agency__c</fullName>
+        <externalId>false</externalId>
+        <label>Issuing Agency</label>
+        <picklist>
+            <controllingField>Rate_Type__c</controllingField>
+            <picklistValues>
+                <fullName>CNCS</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Agriculture</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Commerce</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Defense</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Education</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Energy</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Health and Human Services</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Homeland Security</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of HUD</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Justice</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Labor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Interior</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Treasury</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Transportation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department of Veteran Affairs</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environment Protection Agency</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NASA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Science Foundation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Services Administration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nuclear Regulatory Commission</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office of Personnel Management</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Small Business Administration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Security Administration</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Department of State</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Agency for International Development</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NCCC_Sponsor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NCCC Sponsor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Name_d_b_a__c</fullName>
+        <externalId>false</externalId>
+        <label>Name (d.b.a)</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_Characteristics__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Characteristics</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Governor&apos;s Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Commission/Alt Admin Entity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Education Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other State Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Territory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Education Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Affiliate of National Org</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Statewide Association</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community Action Agency/Prog</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tribal Government Entity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tribal Organization (NGO)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Non-Profit (Multi-State)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Native American Org</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vocational/Technical College</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Historically Black College/Univ. (HBCU)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hispanic-Serving College/Univ.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community College</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-year college</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4-year college</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tribally controlled college/Univ.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>School (K-12)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Area Agency on Aging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chamber of Commerce/Bus. Assn.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Community-Based Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service/Civic Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Volunteer Management Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Law Enforcement Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Department</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self-Inc. Senior Corps Project</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Faith-based organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government, Municipal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Geographic Focus - Rural &amp; Urban</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21st CSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Corps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Initiative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Organization_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Indirect Cost Rate</relationshipLabel>
+        <relationshipName>Indirect_Cost_Rate</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Organization_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Federal Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>For Profit Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Higher Education Organization - Private</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Higher Education Organization - State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HQ Internal Organizations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Tribe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - County</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - Municipal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local Government - Township</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Native American</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Profit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Commission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Education Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>U.S. Territory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown Designation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Organization_s_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Base__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Base</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rate_Percent__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Status</label>
+        <picklist>
+            <controllingField>Rate_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Final</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provisional</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Predetermined</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Agency Approved Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>FederallyNegotiated</controllingFieldValues>
+                <controllingFieldValues>State Cost Allocation Plan</controllingFieldValues>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select federally negotiated for rates issues by fed. agencies. Select state negotiated for rates issued by state. If you&apos;re eligible &amp; have notified a federal or state agency of your intent to use 10% of MTDC rate, select 10% of MTDC.</inlineHelpText>
+        <label>Rate Type</label>
+        <picklist>
+            <controllingField>Do_you_have_an_Indirect_Cost_Rate__c</controllingField>
+            <picklistValues>
+                <fullName>FederallyNegotiated</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Negotiated</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Cost Allocation Plan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10%Modified Total Direct Cost (MTDC)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency Approved Cost Allocation Plan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State1__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <picklist>
+            <controllingField>Rate_Type__c</controllingField>
+            <picklistValues>
+                <fullName>AK</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DC</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HI</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KS</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ND</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NH</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NM</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OR</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RI</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UT</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VT</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WI</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WV</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WY</fullName>
+                <default>false</default>
+                <controllingFieldValues>State Negotiated</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street_Address_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Treatment_of_FringeBenefits__c</fullName>
+        <externalId>false</externalId>
+        <label>Treatment of Fringe Benefits</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Treatment_of_Paid_Absences__c</fullName>
+        <externalId>false</externalId>
+        <label>Treatment of Paid Absences</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VISTA_TIN__c</fullName>
+        <externalId>false</externalId>
+        <label>VISTA TIN</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Website_url__c</fullName>
+        <externalId>false</externalId>
+        <label>Website (url)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Zip_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip+4</label>
+        <length>15</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Indirect Cost Rate Info</label>
+    <nameField>
+        <displayFormat>CR-{00000000}</displayFormat>
+        <label>Indirect  Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Indirect Cost Rate</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Base</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Rate_Base__c ))))</errorConditionFormula>
+        <errorDisplayField>Rate_Base__c</errorDisplayField>
+        <errorMessage>“Rate Base” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Effect</fullName>
+        <active>true</active>
+        <description>Agency_Approved_Cost_Allocation_Effective from</description>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Effective_From__c ))))</errorConditionFormula>
+        <errorDisplayField>Effective_From__c</errorDisplayField>
+        <errorMessage>“Effective From” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Extended</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Text(Extended__c )))))</errorConditionFormula>
+        <errorDisplayField>Extended__c</errorDisplayField>
+        <errorMessage>“Extended” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Fringe</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Treatment_of_FringeBenefits__c ))))</errorConditionFormula>
+        <errorDisplayField>Treatment_of_FringeBenefits__c</errorDisplayField>
+        <errorMessage>“Treatment of FringeBenefits” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Issue</fullName>
+        <active>true</active>
+        <description>validation rule for Issuing Agency</description>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Text(Issuing_Agency__c )))))</errorConditionFormula>
+        <errorDisplayField>Issuing_Agency__c</errorDisplayField>
+        <errorMessage>“Issuing Agency” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Paid</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+
+(ISBLANK(Treatment_of_Paid_Absences__c ))))</errorConditionFormula>
+        <errorDisplayField>Treatment_of_Paid_Absences__c</errorDisplayField>
+        <errorMessage>“Treatment of Paid Absences” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Percent</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+
+(ISBLANK(Rate_Percent__c ))))</errorConditionFormula>
+        <errorDisplayField>Rate_Percent__c</errorDisplayField>
+        <errorMessage>“Rate Percent” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Plan</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Effective_To__c ))))</errorConditionFormula>
+        <errorDisplayField>Effective_To__c</errorDisplayField>
+        <errorMessage>“Effective To” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Agency_Approved_Cost_Allocation_Status</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c, &apos;Agency Approved Cost Allocation Plan&apos;), 
+OR( 
+(ISBLANK(Text(Rate_Status__c )))))</errorConditionFormula>
+        <errorDisplayField>Rate_Status__c</errorDisplayField>
+        <errorMessage>“Rate Status” is required when the rate type is “Agency Approved Cost Allocation Plan.”</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_fields_required</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Do_you_have_an_Indirect_Cost_Rate__c , &apos;Yes&apos;), 
+OR( 
+(ISBLANK( Effective_From__c )), 
+(ISBLANK( Effective_To__c ))))</errorConditionFormula>
+        <errorDisplayField>Do_you_have_an_Indirect_Cost_Rate__c</errorDisplayField>
+        <errorMessage>Effective from and to fields should be required as Indirect cost rate is &quot;Yes&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Date_fields_should_be_left_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+  ISPICKVAL(Do_you_have_an_Indirect_Cost_Rate__c , &apos;No&apos;),
+ OR(
+   NOT(ISBLANK( Effective_From__c )),
+   NOT(ISBLANK( Effective_To__c ))))</errorConditionFormula>
+        <errorDisplayField>Effective_From__c</errorDisplayField>
+        <errorMessage>Effective from and to fields should be blank as you dont have Indirect cost rate</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Description_cant_be_blank</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Rate_Status__c , &apos;Other&apos;) , 
+ISBLANK( Description__c ) )</errorConditionFormula>
+        <errorDisplayField>Description__c</errorDisplayField>
+        <errorMessage>If you have selected &quot;Other&quot; in the Rate status, Please provide the description.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Effective_To_grater_than_Effective_From</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_From__c &gt;  Effective_To__c</errorConditionFormula>
+        <errorDisplayField>Effective_To__c</errorDisplayField>
+        <errorMessage>The “Effective To” date must be greater than the “Effective From” date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Issuing_agency</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Issuing_Agency__c , &apos;Other&apos;) ,
+ ISBLANK( Descriptions__c ) )</errorConditionFormula>
+        <errorDisplayField>Descriptions__c</errorDisplayField>
+        <errorMessage>Please provide description when &quot;issuing agency &quot; is selected as &quot;Other&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_cost_information</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL( Do_you_have_an_Indirect_Cost_Rate__c , &apos;No&apos;) ,
+ OR(
+ NOT(ISBLANK( Description__c ) ),
+ NOT(ISBLANK( Descriptions__c ) ),
+ NOT(ISBLANK(  Rate_Base__c  ) ),
+NOT(ISBLANK( Rate_Percent__c )),
+NOT(ISBLANK(  Treatment_of_FringeBenefits__c ) ),
+NOT(ISBLANK(  Treatment_of_Paid_Absences__c ) )))</errorConditionFormula>
+        <errorDisplayField>Do_you_have_an_Indirect_Cost_Rate__c</errorDisplayField>
+        <errorMessage>You cannot enter information for Indirect cost rate type as &quot;NO&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rate_Base</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+OR(ISPICKVAL(Rate_Type__c,&apos;FederallyNegotiated&apos;),
+ ISPICKVAL(Rate_Type__c,&apos;State Negotiated&apos;),
+ ISPICKVAL(Rate_Type__c, &apos;State Cost Allocation Plan&apos;)),
+ ISBLANK(Rate_Base__c) )</errorConditionFormula>
+        <errorDisplayField>Rate_Base__c</errorDisplayField>
+        <errorMessage>Provide the information</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rate_percent</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR
+( ISPICKVAL(Rate_Type__c, &apos;FederallyNegotiated&apos;),
+ISPICKVAL(Rate_Type__c, &apos;State Negotiated&apos;),  
+ISPICKVAL(Rate_Type__c, &apos;State Cost Allocation Plan&apos;)
+),
+
+
+AND( ISBLANK(Rate_Percent__c) )
+
+)</errorConditionFormula>
+        <errorDisplayField>Rate_Percent__c</errorDisplayField>
+        <errorMessage>Please enter the percentage</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Rule_Percent_Ten</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  ISPICKVAL(Rate_Type__c, &apos;10%Modified Total Direct Cost (MTDC)&apos;)  ,ISCHANGED(Rate_Percent__c))</errorConditionFormula>
+        <errorDisplayField>Rate_Percent__c</errorDisplayField>
+        <errorMessage>The rate percent must be “10” if “10%Modified Total Direct Cost (MTDC)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Treatment_of_FringeBenefits</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+OR(ISPICKVAL(Rate_Type__c,&apos;FederallyNegotiated&apos;),
+ ISPICKVAL(Rate_Type__c,&apos;State Negotiated&apos;),
+ ISPICKVAL(Rate_Type__c, &apos;State Cost Allocation Plan&apos;)),
+ ISBLANK(Rate_Base__c) )</errorConditionFormula>
+        <errorDisplayField>Treatment_of_FringeBenefits__c</errorDisplayField>
+        <errorMessage>Provide the information</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Treatment_of_Paid_AAbsences</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+OR(ISPICKVAL(Rate_Type__c,&apos;FederallyNegotiated&apos;),
+ ISPICKVAL(Rate_Type__c,&apos;State Negotiated&apos;),
+ ISPICKVAL(Rate_Type__c, &apos;State Cost Allocation Plan&apos;)),
+ ISBLANK(Rate_Base__c) )</errorConditionFormula>
+        <errorDisplayField>Treatment_of_Paid_Absences__c</errorDisplayField>
+        <errorMessage>Provide the information</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>modified_total_direct_cost</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( 
+ISPICKVAL(Rate_Type__c,&apos;10%Modified Total Direct Cost (MTDC)&apos;),
+ 
+OR(
+NOT(ISBLANK( Description__c ) ),
+ NOT(ISBLANK( Descriptions__c ) ),
+NOT(ISBLANK( Rate_Percent__c))
+))</errorConditionFormula>
+        <errorDisplayField>Rate_Percent__c</errorDisplayField>
+        <errorMessage>“The rate percent must be “10” if “10%Modified Total Direct Cost (MTDC)” is selected as the rate type.”</errorMessage>
+    </validationRules>
+</CustomObject>

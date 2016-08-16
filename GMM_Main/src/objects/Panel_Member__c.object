@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>COI_Conflict__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>COI Conflict</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expert_Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup to contact object to find an expert reviewer</description>
+        <externalId>false</externalId>
+        <label>Expert Reviewer</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Expert Reviewer</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Panel Members</relationshipLabel>
+        <relationshipName>Panel_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Honorarium_Information__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Honorarium Information</label>
+        <referenceTo>Honorarium_Information__c</referenceTo>
+        <relationshipLabel>Panel Members</relationshipLabel>
+        <relationshipName>Panel_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Panel_Status__c</fullName>
+        <description>It is the status of the panel to which the panel member is associated.</description>
+        <externalId>false</externalId>
+        <formula>Panel__r.Panel_Status_Text__c</formula>
+        <label>Panel Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Panel__c</fullName>
+        <externalId>false</externalId>
+        <label>Panel</label>
+        <referenceTo>Paneling__c</referenceTo>
+        <relationshipLabel>Panel Members</relationshipLabel>
+        <relationshipName>Panel_Members</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Payment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile__c</fullName>
+        <description>It describe to which record, the panel member is associated.</description>
+        <externalId>false</externalId>
+        <formula>IF(Expert_Reviewer__r.RecordType.DeveloperName = &apos;Expert_Reviewer&apos;, &apos;Expert Reviewer&apos;, &apos;Staff User&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Profile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup to Reviewer pool object to find the reviewer</description>
+        <externalId>false</externalId>
+        <label>Reviewer</label>
+        <referenceTo>Reviewer_Pool__c</referenceTo>
+        <relationshipLabel>Panel Members</relationshipLabel>
+        <relationshipName>Panel_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <description>It describe the role of the particular panel members from a set of values.</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Panel Coordinator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternate Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Experienced Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted Expertise Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluation Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Editor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality Control Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inter-Rater Reliability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post-Review Quality Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff Reviewer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff Liaison</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Staff_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Its is a lookup to user object to find the staff member.</description>
+        <externalId>false</externalId>
+        <label>Staff Member</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Panel_Members</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>It describes the status of the panel member from a set of values.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>test__c</fullName>
+        <externalId>false</externalId>
+        <formula>Honorarium_Information__r.Payment_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>test</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Panel Member</label>
+    <nameField>
+        <displayFormat>M-{000000}</displayFormat>
+        <label>Panel Member Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Panel Members</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Staff_Member__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Panel_Members</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Add Panel Members</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/AddPanelMembers?id={!Paneling__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Staff_Reviewer</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Staff Reviewer</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&apos;/soap/ajax/27.0/connection.js&apos;)}
+var conf = confirm(&quot;Are you sure you want to add a staff reviewer? This action cannot be canceled.&quot;)
+if(conf ==true)
+{
+var panelmember = new sforce.SObject(&apos;Panel_Member__c&apos;); 
+panelmember.Panel__c = window.sfdcPage.entityId; 
+value = sforce.connection.create([panelmember ]); 
+if(value[0].success == &apos;true&apos;){ 
+window.location = &quot;/&quot; + value[0].id + &quot;/e?retURL=&quot; + window.sfdcPage.entityId; 
+} 
+else{ 
+alert(&apos;Unable to create the new staff member&apos;); 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Eligibility_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Eligibility Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var con = new sforce.SObject(&quot;Panel_Member__c&quot;); 
+var emailtemplate = sforce.connection.query(&quot;SELECT name,Id from EmailTemplate where Name = &apos;Eligibilty Email&apos;&quot;); 
+var records = emailtemplate.getArray(&quot;records&quot;); 
+con.id = &apos;{!Panel_Member__c.Id}&apos;; 
+con.Status__c = &apos;Eligible&apos;; 
+var result = sforce.connection.update([con]); 
+var targetURL = &apos;/_ui/core/email/author/EmailAuthor?&apos;+ 
+&apos;&amp;retURL=%2F{!Panel_Member__c.Id}&apos;+ 
+&apos;&amp;p2_;t_Id__c}&apos;+ 
+&apos;&amp;template_id=&apos;+records[0].Id; 
+window.location.href = targetURL</url>
+    </webLinks>
+</CustomObject>

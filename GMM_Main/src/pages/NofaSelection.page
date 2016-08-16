@@ -1,0 +1,16 @@
+<apex:page standardController="Application3__c" extensions="NofaSelectionCont"> 
+<html lang="en-US"> 
+</html>
+     <apex:form >
+         <apex:pageBlock title="NOFA">
+             <apex:pageBlockButtons >
+                 <apex:commandButton value="Continue" action="{!continueApp}"/>
+                 <apex:commandButton value="Cancel" action="{!cancel}"/>
+             </apex:pageBlockButtons>
+             <apex:pageBlockSection title="Select Nofa" >
+                 <apex:inputField value="{!application.NOFA_RFP__c}"/>
+             </apex:pageBlockSection>
+         </apex:pageBlock>
+     </apex:form>
+ 
+</apex:page>

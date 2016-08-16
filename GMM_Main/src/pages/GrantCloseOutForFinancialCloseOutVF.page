@@ -1,0 +1,10 @@
+<apex:page standardController="Grant_Close_Out__c" extensions="GrantCloseOutForFinancialCloseOutCntrl" action="{!validationsAndWSInvocations}">
+ <html lang="en-US">
+ <h1 style= "display:none">GrantCloseOut</h1>
+ </html>
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+             <apex:commandButton value="Return to Detail View" action="{!returnToDetailView}"/>                               
+    
+    </apex:form>
+</apex:page>

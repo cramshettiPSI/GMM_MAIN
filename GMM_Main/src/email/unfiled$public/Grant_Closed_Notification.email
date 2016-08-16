@@ -1,0 +1,18 @@
+{!Grant_Close_Out__c.Project_Director_Name__c}
+{!Grant_Close_Out__c.Project_Director_Title__c}
+{!Grant_Close_Out__c.Org_Name__c}
+{!Grant_Close_Out__c.Org_Address__c} 
+
+Grant #: {!Grant_Close_Out__c.Grant_Number__c}
+
+Dear {!Grant_Close_Out__c.Project_Director_Name__c}, 
+
+The grant referenced above has been successfully closed. If you have any questions regarding this grant and closeout action, please contact me at {!Grant_Close_Out__c.GO_Phone__c}.
+
+Please let us know if there is another person in your agency who should be our contact regarding this matter by providing us their name, address and phone number.
+
+On behalf of the Corporation, I would like to thank you for your participation in the program and your cooperation in closing out the grant.
+
+Sincerely,
+{!Grant_Close_Out__c.Grants_Officer__c}
+{!Grant_Close_Out__c.GO_Title__c}

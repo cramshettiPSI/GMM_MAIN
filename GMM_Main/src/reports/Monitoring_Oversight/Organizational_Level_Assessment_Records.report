@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Award__c.Grant__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Application3__c.NOFA_Fiscal_Yr__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Application3__c.Project_Priority__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Application3__c.Activity__c</field>
+    </columns>
+    <description>Missing: Pgm Stream, Assessment Cycle Date, Assessment Points, Act. Date of Mont. Activity, Initiating Office</description>
+    <filter>
+        <criteriaItems>
+            <column>Award__c.Organization_Legal_Name__c</column>
+            <operator>contains</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>FK_$Application3__c.Organization__c</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Organizational Level Assessment Records</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Award__c@Award__c.Application_ID__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Award__c.Project_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

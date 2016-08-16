@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AA_Activity_Canceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Activity Canceled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Activity_Complete__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(AA_Record_Completed_Date__c),1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity Complete</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AA_Actual_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AA_CC_Only__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>CC Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Changes_to_Plan_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Changes to Plan/Comments</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Final_Completed_Letter__c</fullName>
+        <externalId>false</externalId>
+        <label>Final/Completed (Letter)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Follow_Up_Actions_Reqd_Letter__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Actions Reqd (Letter)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Follow_Up_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow Up Completed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Follow_Up_Completion_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow Up Completion Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AA_Follow_Up_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow Up Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Follow_up_Planned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow-up Planned Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AA_Grant_Close_Out__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant Close Out</label>
+        <referenceTo>Grant_Close_Out__c</referenceTo>
+        <relationshipLabel>Additional Activities</relationshipLabel>
+        <relationshipName>Additional_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AA_Inactivate_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Inactivate Record</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Inactive_Record_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Inactive Record (Reason)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Internal_Staff_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Staff Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Additional_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AA_Length__c</fullName>
+        <externalId>false</externalId>
+        <label>Length</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AA_Master_Award_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Award Name</label>
+        <referenceTo>Master_Award__c</referenceTo>
+        <relationshipLabel>Additional Activities</relationshipLabel>
+        <relationshipName>Additional_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AA_Monitoring_Activity__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Activity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Programmatic &amp; Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compliance Visit – Programmatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desk Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drawdown Analysis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-up Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-site Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On-site Training/Technical Assistance (T/TA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State Standards review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Targeted/Issue-based Site Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>AA_Monitoring_Fiscal_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Monitoring Fiscal Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AA_Notification_Letter__c</fullName>
+        <externalId>false</externalId>
+        <label>Notification (Letter)</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>AA_Other_Team_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Other Team User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Additional_Activities1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AA_Planned_Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Month</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AA_Record_Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Completed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AA_Scheduled_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>AA_Staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Staff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Monitoring__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grant Monitoring</label>
+        <referenceTo>Grant_Monitoring__c</referenceTo>
+        <relationshipLabel>Additional Activities</relationshipLabel>
+        <relationshipName>Additional_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initiating_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Initiating Office</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint – Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joint – Financial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Additional Activities</label>
+    <nameField>
+        <displayFormat>AA-{0000}</displayFormat>
+        <label>Additional Activities Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Additional Activities</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AA_Monitoring_Fiscal_Year</fullName>
+        <active>true</active>
+        <description>Requires 4 characters in the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>LEN(TRIM( AA_Monitoring_Fiscal_Year__c  ))&lt;4</errorConditionFormula>
+        <errorDisplayField>AA_Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Requires 4 characters in the Monitoring Fiscal Year field.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AA_Monitoring_Fiscal_Year_Number_only</fullName>
+        <active>true</active>
+        <description>Requires only numbers entered into the Monitoring Fiscal Year field.</description>
+        <errorConditionFormula>NOT(ISNUMBER(  AA_Monitoring_Fiscal_Year__c  ))</errorConditionFormula>
+        <errorDisplayField>AA_Monitoring_Fiscal_Year__c</errorDisplayField>
+        <errorMessage>Only enter numbers into the Monitoring Fiscal Year field.</errorMessage>
+    </validationRules>
+</CustomObject>

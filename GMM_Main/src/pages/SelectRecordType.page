@@ -1,0 +1,39 @@
+<apex:page standardController="Contact" extensions="accountRecordTypeSelection_Controller"  >
+   <html lang="en-US"> 
+  
+   </html>
+    <apex:form rendered="{!child}">    
+       <apex:pageBlock title="Select Contact Record Type">
+      
+      <!--     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <b>Record Type of new record:&nbsp;&nbsp;&nbsp;&nbsp;</b> -->
+        <b>   <apex:outputLabel for="chooseColor" value="Record Type of new record: " /> </b>
+           <apex:selectList id="chooseColor" value="{!selectedRtType}" size="1">
+                                          <apex:selectOptions value="{!rtValues}"/>
+                                     </apex:selectList> 
+                                   
+       </apex:pageBlock>
+               
+               <center><apex:commandButton value="Continue" action="{!continueWtSelection}"/>
+                   <apex:commandButton action="{!cancel}" value="Cancel"/> </center>
+               
+         <br></br>
+         <h1><b>Available Contact Record Types</b></h1>
+         <table border ="1" width ="30%">
+             <tr>
+                  <td><b>Record Type Name</b></td>
+                  <td><b>Description</b></td> 
+             </tr>
+             <apex:repeat value="{!accRtLst}" var="r">
+                 <tr>
+                     <td>{!r.name}</td>                     
+                     <td>{!r.description }</td>
+                     
+                 </tr>     
+             </apex:repeat>   
+             
+         </table>          
+      
+       
+   </apex:form>
+   </apex:page>

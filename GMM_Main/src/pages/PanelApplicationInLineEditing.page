@@ -1,0 +1,11 @@
+<apex:page standardController="Paneling__c" extensions="PanelApplicationInLineEditing">
+   <apex:form >
+   <apex:outputPanel layout="block" style="overflow:auto;width:1200px;height:250px" >
+      <c:MultiRecordComponent aParentRecId="{!MyRecId}" asObjectType="{!MyObj}" aFieldList="{!MyFieldList}"
+         aRelationField="{!MyRelationField}" aLabelOverrideFieldList="{!MyLabelOverrideFieldList}"
+         aLabelOverrideTextList="{!MyLabelOverrideTextList}" aDefaultValueFieldList="{!MyDefaultValueFieldList}" 
+         aDefaultValueTextList="{!MyDefaultValueTextList}" aBlockTitle="{!MyBlockTitle}" aAllowAdd="{!MyAllowAdd}"
+         aAllowEdit="{!MyAllowEdit}" aAllowDelete="{!MyAllowDelete}" />
+  </apex:OutputPanel>
+  </apex:form> 
+</apex:page>

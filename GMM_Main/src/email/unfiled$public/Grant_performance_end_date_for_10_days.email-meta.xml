@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>System shall send a closeout notification email 10 days before the Grant Performance End Date.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Grant performance end date for 10 days</name>
+    <style>none</style>
+    <subject>Grant performance end date for 10 days</subject>
+    <type>text</type>
+</EmailTemplate>

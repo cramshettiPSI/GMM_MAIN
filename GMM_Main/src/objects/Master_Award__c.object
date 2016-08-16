@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>AR_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>AR Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application3__c</referenceTo>
+        <relationshipLabel>Master Awards</relationshipLabel>
+        <relationshipName>Master_Awards</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AutoNumberNew__c</fullName>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>AutoNumberNew</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Number__c</fullName>
+        <description>Auto Number for Grant # (FAIN).</description>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Auto Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Award_ID__c</fullName>
+        <description>Should be updated from Award record.</description>
+        <externalId>false</externalId>
+        <label>Award ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Balance_Undrawn__c</fullName>
+        <description>Value to be populated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Balance Undrawn</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Balance_Unexpended__c</fullName>
+        <description>Field to be updated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Balance Unexpended</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Commitment__c</fullName>
+        <description>Value to be populated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Commitment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Create_Grant_Close_Out__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create Grant Close Out</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Auto_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Custom Auto Number</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deobligated_at_Closeout__c</fullName>
+        <externalId>false</externalId>
+        <label>Deobligated at Closeout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Drawdowns__c</fullName>
+        <description>Value to be populated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Drawdowns</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Dummy_State_CLR_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Dummy State CLR Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expenditures__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Value to be populated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Expenditures</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FAIN_New__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISPICKVAL (
+Application__r.NOFA_RFP__r.Issuing_Officer__c, &quot;HQ(Office of Grants Management)&quot;), FAIN__c + &apos;H&apos; +
+TEXT(Application__r.Project__r.State__c)+ Auto_Number__c , FAIN__c +
+State_CLR_Code__c + TEXT(Application__r.Project__r.State__c)+ RIGHT( AutoNumberNew__c , 3))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FAIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FAIN_Prime__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT(Prime_Application__r.NOFO_RFP__r.Fiscal_Yr__c  ),2)+ 
+Prime_Application__r.NOFO_RFP__r.CNCS_Corporate_Program__r.Short_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FAIN_Prime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FAIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT( Application__r.NOFA_RFP__r.Fiscal_Yr__c ),2)+ 
+Application__r.NOFA_RFP__r.CNCS_Corporate_Program__r.Short_Code__c</formula>
+        <label>FAIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Federal_Award_Identification_Number__c</fullName>
+        <description>Field gets updated by Workflow Rule. 
+WF Rule = Update FAIN</description>
+        <externalId>false</externalId>
+        <label>Federal Award Identification Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Closed_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Final Closed Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ForCustomAuto_FAIN_Prime__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT(Prime_Application__r.NOFO_RFP__r.Fiscal_Yr__c ),2)+ &apos;AC&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ForCustomAuto FAIN Prime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ForCustomAuto_FAIN__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT( Application__r.NOFA_RFP__r.Fiscal_Yr__c ),2)+ &apos;AC&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ForCustomAuto_FAIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GO_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>GO Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>GO_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>GO Title</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Performance Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Performance Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_Officer_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Grants Officer Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_Officer__c</fullName>
+        <externalId>false</externalId>
+        <label>Grants Officer</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Applicant_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_of_Award_Years__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.NOFA_RFP__r.Max_of_Award_Years__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Max # of Award Years</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFO_RFP__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NOFO/RFP</label>
+        <referenceTo>NOFA__c</referenceTo>
+        <relationshipLabel>Master Awards</relationshipLabel>
+        <relationshipName>Master_Awards</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Amended_Awards__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Number of Amended Awards</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Child_Awards__c</fullName>
+        <description>Roll up of all Awards.</description>
+        <externalId>false</externalId>
+        <label>Number of Child Awards</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Open_Monitoring_Activities__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Number of Open Monitoring Activities</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Obligation__c</fullName>
+        <description>Value to be populated from Momentum.</description>
+        <externalId>false</externalId>
+        <label>Obligation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Org_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Org Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Org_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application__r.Organization__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Org Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Org_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Org Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PD_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>PD Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prime_Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prime Application</label>
+        <referenceTo>Prime_Application__c</referenceTo>
+        <relationshipLabel>Master Awards</relationshipLabel>
+        <relationshipName>Master_Awards</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Officer_Email__c</fullName>
+        <description>Program Officer Email field which is used in the workflow</description>
+        <externalId>false</externalId>
+        <label>Program Officer Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Officer__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Officer</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Director_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Director Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Director_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Director Title</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project Name</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Master Awards</relationshipLabel>
+        <relationshipName>Master_Awards</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_Period_End_date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Project_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Period End date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Period_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Project_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_CLR_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;CA&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;WA&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;AK&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;HI&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;ID&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MT&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;NV&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;OR&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;UT&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;WY&quot;),&quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;GU&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;AS&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MP&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;PA&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;NJ&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;ME&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;NH&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;RI&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;CT&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;VT&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MA&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;DE&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MD&quot;),&quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;PR&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;DC&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;IL&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;OH&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;WI&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;IN&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;IA&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MI&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MN&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;NE&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;SD&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;ND&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;FL&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;GA&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;AL&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;MS&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;TN&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;SC&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;KY&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;WV&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;VA&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application__r.Project__r.State__c , &quot;NC&quot;) , &quot;S&quot;, 
+&quot;W&quot;)))))))))))))))))))))))))))))))))))))))))))))</formula>
+        <label>State CLR Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>This field stores the status of the Master Award</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Obligated_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Obligated Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Unexpended_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Unexpended Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unobligated__c</fullName>
+        <externalId>false</externalId>
+        <formula>((Commitment__c -  Obligation__c ) /  Commitment__c)*100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unobligated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiver_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>Project_Name__r.Waiver_Approved__c</formula>
+        <label>Waiver Approved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Master Award</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Legal_Applicant_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Status__c</columns>
+        <columns>Auto_Number__c</columns>
+        <columns>AutoNumberNew__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Prime_Sub_Awards</fullName>
+        <columns>NAME</columns>
+        <columns>Legal_Applicant_Name__c</columns>
+        <columns>Project_Name__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Master_Award__c.Prime_Master_Award,Master_Award__c.Sub_App_Master_Award</value>
+        </filters>
+        <label>Prime/Sub Awards</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Federal Award Identification Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Master Awards</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>App_Master_Award</fullName>
+        <active>true</active>
+        <label>App Master Award</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Prime_Master_Award</fullName>
+        <active>true</active>
+        <label>Prime Master Award</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sub_App_Master_Award</fullName>
+        <active>true</active>
+        <label>Sub App Master Award</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Project_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Legal_Applicant_Name__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

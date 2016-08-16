@@ -1,0 +1,24 @@
+<apex:component controller="GenericHistoryComponentController" id="history" language="en-US">
+    <!-- Attribute Definition -->
+    <apex:attribute name="myObject1" description="Object we wish to view the history of" type="SObject" required="true" assignTo="{!myObject}" />
+    <apex:attribute name="recordLimit1" description="Number of lines of history to display" type="Integer" required="false" assignTo="{!recordLimit}" />
+
+    <!-- Object History Related List -->
+    <apex:pageBlock title="{!objectLabel} History">
+        <apex:pageBlockTable value="{!ObjectHistory}" var="History" summary="history">
+            <apex:column headerValue="Date" value="{!History.thedate}"/>
+           <apex:column headerValue="User"> 
+               
+  <!--  <apex:column headerValue="User" value="{!History.who}"/> -->
+     <!--   <apex:outputLink id="thelink" value="/{!History.who}"> <a href="/{!History.Userid}"/> </apex:outputLink> -->
+        <apex:outputLink value="/{!History.userId}"> {!History.who} </apex:outputLink> 
+    
+   <!--  <apex:outputLink id="thelink" value="/{!History.userId}"> User Profile </apex:outputLink> -->
+
+
+    
+       </apex:column> 
+            <apex:column headerValue="Action"><apex:outputText escape="false" value="{!History.action}"/></apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

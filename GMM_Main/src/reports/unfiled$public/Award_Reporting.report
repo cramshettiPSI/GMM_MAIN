@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.PM_Module__c</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>Award_Reporting__c.Report_Name__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CUST_CREATED_NAME</column>
+            <operator>equals</operator>
+            <value>System Administrator</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Award Reporting</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Award_Reporting__c@Award_Reporting__c.Award__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

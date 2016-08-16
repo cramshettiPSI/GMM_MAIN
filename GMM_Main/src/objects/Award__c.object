@@ -1,0 +1,2433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>AwarddetailPage</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Add__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.Address_1__c &amp;&quot;,&quot;&amp; Application_ID__r.Project__r.Organization__r.Address_2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Add</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agreement_Period_End_Date__c</fullName>
+        <description>NOFO - Cash Grant= “No&quot; / &quot;Optional&quot;; 
+Application - Program Type = &quot;Standard&quot;
+New Date field created as the new requirements. 
+US # 4783.</description>
+        <externalId>false</externalId>
+        <label>Agreement Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Agreement_Period_Start_Date__c</fullName>
+        <description>NOFO - Cash Grant= “No&quot; / &quot;Optional&quot;; 
+Application - Program Type = &quot;Standard&quot;
+New Date field created as the new requirements. 
+US # 4783.</description>
+        <externalId>false</externalId>
+        <label>Agreement Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Amendment_Reason__c</fullName>
+        <description>Reason for Amendment.</description>
+        <externalId>false</externalId>
+        <label>Amendment Reason</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Amendment_Type__c</fullName>
+        <description>Value comes from Application object.</description>
+        <externalId>false</externalId>
+        <formula>TEXT( Application_ID__r.Option__c )</formula>
+        <label>Amendment Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amendment__c</fullName>
+        <description>Amendment # for Amendment awards.</description>
+        <externalId>false</externalId>
+        <label>Amendment #</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Type_2__c</fullName>
+        <externalId>false</externalId>
+        <label>App Type 2</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application_ID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Application ID related to Award.</description>
+        <externalId>false</externalId>
+        <label>Application ID</label>
+        <referenceTo>Application3__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_Type__c</fullName>
+        <description>Type of Application coming from Application object.</description>
+        <externalId>false</externalId>
+        <formula>if(ispickval(Application_ID__r.Type_of_Application__c, &quot;New&quot;), &quot;New&quot;, 
+if(ispickval(Application_ID__r.Type_of_Application__c, &quot;Continuation&quot;), &quot;Continuation&quot;,
+if(ispickval(Application_ID__r.Type_of_Application__c, &quot;Amendment&quot;), &quot;Amendment&quot;,&quot;None&quot;
+) 
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Application Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Auto_Number__c</fullName>
+        <description>This field is used for Grant #. KY</description>
+        <displayFormat>{000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Auto Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Awaiting_SGO_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Awaiting SGO Approval</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Award_Description__c</fullName>
+        <description>Detailed description of Award.</description>
+        <externalId>false</externalId>
+        <label>Award Description</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Award_Flow__c</fullName>
+        <description>Field determines the Approval process flow. KY</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,&quot;Yes&quot;),
+ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cooperative_Agreement__c, &quot;No&quot;)), &quot;Flow 1&quot;, 
+
+IF(AND(ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,&quot;Optional&quot;),OR(ISPICKVAL(Application_ID__r.Program_Type__c,&quot;Support Grant&quot;),
+ISPICKVAL(Application_ID__r.Program_Type__c,&quot;Program Grant&quot;)),ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cooperative_Agreement__c, &quot;No&quot;)), &quot;Flow 2&quot;, 
+
+IF(AND(ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,&quot;Yes&quot;),
+ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cooperative_Agreement__c, &quot;Yes&quot;)), &quot;Flow 4&quot;, 
+
+IF(AND(ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,&quot;No&quot;),
+ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cooperative_Agreement__c, &quot;No&quot;)), &quot;Flow 6-1&quot;, 
+
+IF(AND(ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,&quot;Optional&quot;),ISPICKVAL(Application_ID__r.Program_Type__c,&quot;Standard&quot;),
+ISPICKVAL(Application_ID__r.NOFA_RFP__r.Cooperative_Agreement__c, &quot;No&quot;)), &quot;Flow 6-2&quot;, &quot;&quot;)))))</formula>
+        <label>Award Flow</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Award_Year__c</fullName>
+        <description>Auto - populate the Award year.</description>
+        <externalId>false</externalId>
+        <label>Award Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Being_Committed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used as a flag to verify if an Award has been previously committed. 
+For SPO actions. (KY)</description>
+        <externalId>false</externalId>
+        <label>Being Committed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Period_End__c</fullName>
+        <description>Field related to Budget information.</description>
+        <externalId>false</externalId>
+        <label>Grant Budget Period End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Period_Start__c</fullName>
+        <description>Field related to Budget information.</description>
+        <externalId>false</externalId>
+        <label>Grant Budget Period Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CNCS_Corporate_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CNCS Corporate Program</label>
+        <referenceTo>CNCS_Corporate_Program__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Committed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this flag when the Award is Being Committed. KY</description>
+        <externalId>false</externalId>
+        <label>Committed?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.NOFA_RFP__r.CNCS_Corporate_Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Corporate Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program_Prime__c</fullName>
+        <externalId>false</externalId>
+        <label>Corporate Program</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Corporate_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Corporate Program</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Share__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Bug 3563</description>
+        <externalId>false</externalId>
+        <label>Cost Share</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DUNS__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.DUNS__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DUNS #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Demonstrates_Ethics_Integrity__c</fullName>
+        <description>Req - 1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>Demonstrates Ethics &amp; Integrity</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EIN__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.EIN__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EIN</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enrollment_Period_End_Date__c</fullName>
+        <description>NOFO - Cash Grant= “Yes&quot;; 
+
+New Date field created as the new requirements. 
+US # 4785.</description>
+        <externalId>false</externalId>
+        <label>Member Enrollment Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Enrollment_Period_Start_Date__c</fullName>
+        <description>NOFO - Cash Grant= “Yes&quot;; 
+
+New Date field created as the new requirements. 
+US # 4785.</description>
+        <externalId>false</externalId>
+        <label>Member Enrollment Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Executive_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Executive Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award4</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FAPIIS_Review_Comments__c</fullName>
+        <description>Req - 1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>FAPIIS Review Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FAPIIS_Review_Date__c</fullName>
+        <description>Req-1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Federal_Award_Identification_Number__c</fullName>
+        <description>New field created as per new requirements from Khalid on 4.12.16.
+Field is populated with Master Award - Name field.
+5.4.16 - Field no longer required.</description>
+        <externalId>false</externalId>
+        <formula>Master_Award__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Federal Award Identification Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Year_Prime__c</fullName>
+        <externalId>false</externalId>
+        <label>Fiscal Year</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fund_Commitment_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Fund Commitment Comments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fund_Obligation_Comments__c</fullName>
+        <description>New Field</description>
+        <externalId>false</externalId>
+        <label>Fund Obligation Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>GO_Email__c</fullName>
+        <description>Grant officer email for Email Template. User Story # 1007.</description>
+        <externalId>false</externalId>
+        <label>GO Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Number__c</fullName>
+        <description>US # 2415</description>
+        <externalId>false</externalId>
+        <formula>RIGHT(TEXT( Application_ID__r.NOFA_RFP__r.Fiscal_Yr__c ),2)+
+ Application_ID__r.NOFA_RFP__r.CNCS_Corporate_Program__r.Short_Code__c</formula>
+        <label>FAIN(FederalAward Identification Number)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_End_Date__c</fullName>
+        <description>NOFO - Cash Grant= “Yes&quot;; 
+
+New Date field created as the new requirements. 
+US # 4784.</description>
+        <externalId>false</externalId>
+        <label>Grant Performance Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_End__c</fullName>
+        <description>Cash Grant Award = Yes; Program Type = Program or Support</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Proposed_End_Date__c</formula>
+        <label>Grant Performance Period End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_Start_Date__c</fullName>
+        <description>NOFO - Cash Grant= &quot;Yes&quot;; 
+
+New Date field created as the new requirements. 
+US # 4784.</description>
+        <externalId>false</externalId>
+        <label>Grant Performance Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Performance_Period_Start__c</fullName>
+        <description>Cash Grant Award = Yes; Program Type = Program or Support</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Proposed_Start_Date__c</formula>
+        <label>Grant Performance Period Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Grant Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Awaiting GO Certification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting PO Certification</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SGO Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SPO Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Organization e-Signature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting XO CSHR Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Being Committed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Obligated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned for Rework</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Being Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SPO Award</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SGO Obligation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SGO Award</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(  
+Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c,
+ &apos;Yes&apos;,CASE(Application_ID__r.Program_Type__c, &apos;&apos;,&apos;NGA Grant&apos;,&apos;&apos;),
+
+&apos;Optional&apos;,CASE(Application_ID__r.Program_Type__c, &apos;Support Grant&apos;,&apos;NGA Grant&apos;,&apos;Program Grant&apos;,&apos;NGA Grant&apos;,&apos;Standard&apos;,&apos;Non NGA Grant&apos;,&apos;&apos;),
+
+&apos;No&apos;,CASE(Application_ID__r.Program_Type__c, &apos;&apos;,&apos;Non NGA Grant&apos;,&apos;&apos;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Grant Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grant__c</fullName>
+        <description>US # 2415</description>
+        <externalId>false</externalId>
+        <label>Federal Award Identification Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Grants_Office_Comments__c</fullName>
+        <description>New field</description>
+        <externalId>false</externalId>
+        <label>Grants Office Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Grants_Officer_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Grants Officer Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Grants_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Grants Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award3</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Information_Available__c</fullName>
+        <description>Req - 1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>Information Available ?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issuing_Office__c</fullName>
+        <description>New field - Should be populated from Issuing Officer field from NOFO. Used for Prime Awards.</description>
+        <externalId>false</externalId>
+        <label>Issuing Office</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HQ(Office of Grants Management)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FFMC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Issuing_Officer__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Application_ID__r.NOFA_RFP__r.Issuing_Officer__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Issuing Office</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Award__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Federal Award Identification Number</label>
+        <referenceTo>Master_Award__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Match_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Match Status</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_of_sub_budgets_per_application__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.NOFA_RFP__r.Max_of_Sub_Budgets__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Max # of sub-budgets per application</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mitigating_Circumstances__c</fullName>
+        <description>Req - 1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>Mitigating Circumstances</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NOFA_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>NOFO/RFP ID</label>
+        <referenceTo>NOFA__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NOFO_RFP_Name_New__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.NOFA_RFP__r.NOFA_name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NOFO/RFP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NOFO_RFP_Name_Prime__c</fullName>
+        <externalId>false</externalId>
+        <label>NOFO/RFP Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NOFO_RFP_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>NOFO/ RFP Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Child_Awards__c</fullName>
+        <externalId>false</externalId>
+        <formula>Master_Award__r.Number_of_Amended_Awards__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number of Child Awards</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Obligated1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Obligated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Obligated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for Award Approvals.</description>
+        <externalId>false</externalId>
+        <label>Obligated?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Org_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Organization__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Org Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_Legal_Name_Prime__c</fullName>
+        <description>Used for Prime Awards.</description>
+        <externalId>false</externalId>
+        <label>Organization Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Organization_Legal_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Legal_Name__c</formula>
+        <label>Organization Legal Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Organization_re_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is checked through a Workflow rule when the Status changes from Awaiting PO Certification to Awaiting Organization eSignature for the first time. Field not shown on Layout. (KY)</description>
+        <externalId>false</externalId>
+        <label>Organization re-Signature</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PO_Certification_Date__c</fullName>
+        <description>Field to populate the date when the PO takes action on Award record.</description>
+        <externalId>false</externalId>
+        <label>PO Certification Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PO_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>PO Comments</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PO__c</fullName>
+        <description>Field to populate the PO Name who took action on Award record.</description>
+        <externalId>false</externalId>
+        <label>PO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field obsolete, Can be deleted.</description>
+        <externalId>false</externalId>
+        <label>PO</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award5</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partnership_Funds__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>As an internal user, I want to view and enter pertinent grant award information so that I can take actions on a grant award record.
+User Story :2661</description>
+        <externalId>false</externalId>
+        <label>Partnership Funds</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prime_Application_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Continuation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amendment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Prime_Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prime Application</label>
+        <referenceTo>Prime_Application__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Program</label>
+        <referenceTo>Program_Name__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Project_End_Date__c</fullName>
+        <description>Field name was changed from &quot;Project End Date&quot; to &quot;Agreement Period End&quot; on 9.15.15_Krishna Yama.
+Cash Grant Award = No; Program Type = Standard</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Proposed_End_Date__c</formula>
+        <label>Agreement Period End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Project Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project_Start_Date__c</fullName>
+        <description>Field name was changed from &quot;Project Start Date&quot; to &quot;Agreement Period Start&quot; on 9.15.15_Krishna Yama.
+Cash Grant Award = No; Program Type = Standard</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Proposed_Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agreement Period Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Project_Title_Prime__c</fullName>
+        <externalId>false</externalId>
+        <label>Project Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Project_Title__c</fullName>
+        <description>Updates Project Title Long Text from Project Object</description>
+        <externalId>false</externalId>
+        <label>Project Title</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Years_Awarded_This_Award__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>US # 4781.</description>
+        <externalId>false</externalId>
+        <label>Project Years Awarded This Award</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>Project__c</referenceTo>
+        <relationshipLabel>Award</relationshipLabel>
+        <relationshipName>Award</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Red_Flag_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>Organization__r.Red_Flag_Count__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Red Flag Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Red_Flags__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE( IF(Red_Flag_Count__c &gt; 0, &quot;img/samples/flag_red.gif&quot;,&quot;img/samples/flag_green.gif&quot; ),&quot;&quot;, 20, 20 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Red Flags</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_for_rework__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Return for rework?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SPO_Certification_Date__c</fullName>
+        <description>Field to populate the date when SPO takes action on Award record.</description>
+        <externalId>false</externalId>
+        <label>SPO Certification Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SPO__c</fullName>
+        <description>Field to populate the SPO Name who took action on Award record.</description>
+        <externalId>false</externalId>
+        <label>SPO</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Satisfactory_Record_Executing_Programs__c</fullName>
+        <description>Req - 1783. Created on 10/29/2015</description>
+        <externalId>false</externalId>
+        <label>Satisfactory Record Executing Programs</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Senior_Grants_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Senior Grants Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Senior_Program_Officer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Senior Program Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Special_Conditions__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Conditions</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sponsor_e_Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Applicant should check this checkbox before Signing the Agreement.
+Changed Label as per # 646.</description>
+        <externalId>false</externalId>
+        <label>I agree to the above Agreement Statement</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_CLR_Code__c</fullName>
+        <description>Used for Grant #.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;CA&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;WA&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;AK&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;HI&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;ID&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MT&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;NV&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;OR&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;UT&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;WY&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;GU&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;AS&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MP&quot;) , &quot;P&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;PA&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;NJ&quot;) , &quot;A&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;ME&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;NH&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;RI&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;CT&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;VT&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MA&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;DE&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MD&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;PR&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;VI&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;DC&quot;) , &quot;A&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;IL&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;OH&quot;) , &quot;N&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;WI&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;IN&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;IA&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MI&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MN&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;NE&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;SD&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;ND&quot;) , &quot;N&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;FL&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;GA&quot;) , &quot;S&quot;, 
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;AL&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;MS&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;TN&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;SC&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;KY&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;WV&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;VA&quot;) , &quot;S&quot;,
+IF( ISPICKVAL( Application_ID__r.Project__r.State__c , &quot;NC&quot;) , &quot;S&quot;,
+&quot;W&quot;))))))))))))))))))))))))))))))))))))))))))))))</formula>
+        <label>State CLR Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>States__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Text(Application_ID__r.Project__r.Organization__r.States__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>States</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Award__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Sub_Application__c</formula>
+        <label>Sub Award?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_budgets_for_multi_year_grants__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Application_ID__r.NOFA_RFP__r.Sub_Budgets_for_Multi_Year_Grants__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub-budgets for multi-year grants</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_to_FAPIIS_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject to FAPIIS Review</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>XO_CSHR__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CSHR Executive Officer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Award6</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Year_of_Grant__c</fullName>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Year_of_Grant__c</formula>
+        <label>Year of Grant</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip1__c</fullName>
+        <description>DDP</description>
+        <externalId>false</externalId>
+        <formula>Application_ID__r.Project__r.Organization__r.Zip1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>eSigned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for Award approvals.</description>
+        <externalId>false</externalId>
+        <label>eSigned?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>of__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Number_of_Child_Awards__c = 0, 0, 
+IF(Number_of_Child_Awards__c = 1, 1, 
+Number_of_Child_Awards__c - 1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>of #</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>test_email__c</fullName>
+        <externalId>false</externalId>
+        <label>test email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <label>Award</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Organization_Legal_Name__c</columns>
+        <columns>Year_of_Grant__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Grant_Type__c</columns>
+        <columns>Corporate_Program1__c</columns>
+        <columns>Grant_Number__c</columns>
+        <columns>Cost_Share__c</columns>
+        <columns>Program_Officer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Grant_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Grant_Status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting PO Certification</value>
+        </filters>
+        <label>All</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Awarded_Grants</fullName>
+        <columns>NAME</columns>
+        <columns>Organization_Legal_Name__c</columns>
+        <columns>Year_of_Grant__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Grant_Type__c</columns>
+        <columns>Corporate_Program1__c</columns>
+        <columns>Grant_Number__c</columns>
+        <columns>Grant_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Grant_Status__c</field>
+            <operation>equals</operation>
+            <value>Awarded</value>
+        </filters>
+        <label>Awarded Grants</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Created_Today2</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Grant_Number__c</columns>
+        <columns>Master_Award__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>8/9/2016 12:00 AM</value>
+        </filters>
+        <label>Created Today</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Awards</fullName>
+        <columns>NAME</columns>
+        <columns>Organization_Legal_Name__c</columns>
+        <columns>Year_of_Grant__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Grant_Type__c</columns>
+        <columns>Corporate_Program1__c</columns>
+        <columns>Grant_Number__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My Awards</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NCCC</fullName>
+        <columns>NAME</columns>
+        <columns>Organization_Legal_Name__c</columns>
+        <columns>Year_of_Grant__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Grant_Type__c</columns>
+        <columns>Corporate_Program1__c</columns>
+        <columns>Grant_Number__c</columns>
+        <columns>Cost_Share__c</columns>
+        <columns>Program_Officer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Grant_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Grant_Status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting PO Certification</value>
+        </filters>
+        <filters>
+            <field>Corporate_Program1__c</field>
+            <operation>equals</operation>
+            <value>AmeriCorps NCCC</value>
+        </filters>
+        <label>NCCC</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>VISTA_Cost_Share</fullName>
+        <columns>NAME</columns>
+        <columns>Organization_Legal_Name__c</columns>
+        <columns>Year_of_Grant__c</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Grant_Type__c</columns>
+        <columns>Corporate_Program1__c</columns>
+        <columns>Grant_Number__c</columns>
+        <columns>Cost_Share__c</columns>
+        <columns>Program_Officer__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Corporate_Program1__c</field>
+            <operation>equals</operation>
+            <value>VISTA State</value>
+        </filters>
+        <label>VISTA Cost Share</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>GO_Group</group>
+            <group>PO_Group</group>
+            <group>SGO_Group</group>
+            <group>SPO_Group</group>
+            <group>XO_Group</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Award ID</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Award</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>App_Award</fullName>
+        <active>true</active>
+        <label>App Award</label>
+        <picklistValues>
+            <picklist>Demonstrates_Ethics_Integrity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Status__c</picklist>
+            <values>
+                <fullName>Awaiting GO Certification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Organization e-Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting PO Certification</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Obligation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting XO CSHR Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obligated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issuing_Office__c</picklist>
+            <values>
+                <fullName>FFMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ%28Office of Grants Management%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfactory_Record_Executing_Programs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject_to_FAPIIS_Review__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Prime_Award</fullName>
+        <active>true</active>
+        <label>Prime Award</label>
+        <picklistValues>
+            <picklist>Demonstrates_Ethics_Integrity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Status__c</picklist>
+            <values>
+                <fullName>Awaiting GO Certification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Organization e-Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting PO Certification</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Obligation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting XO CSHR Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obligated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issuing_Office__c</picklist>
+            <values>
+                <fullName>FFMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ%28Office of Grants Management%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfactory_Record_Executing_Programs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject_to_FAPIIS_Review__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sub_App_Award</fullName>
+        <active>true</active>
+        <label>Sub App Award</label>
+        <picklistValues>
+            <picklist>Demonstrates_Ethics_Integrity__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Grant_Status__c</picklist>
+            <values>
+                <fullName>Awaiting GO Certification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting Organization e-Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting PO Certification</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SGO Obligation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting SPO Award</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awaiting XO CSHR Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awarded</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Being Committed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obligated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Withdrawn</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Information_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Issuing_Office__c</picklist>
+            <values>
+                <fullName>FFMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HQ%28Office of Grants Management%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Satisfactory_Record_Executing_Programs__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject_to_FAPIIS_Review__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Organization_Legal_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Year_of_Grant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Corporate_Program1__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NOFA_Name__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Organization_Legal_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Corporate_Program1__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Agreement_Period_End_Date</fullName>
+        <active>true</active>
+        <description>Agreement Period End Date must be greater than the date entered in the “Agreement Period Start Date” field.
+US # 4783.</description>
+        <errorConditionFormula>Agreement_Period_End_Date__c &lt;= Agreement_Period_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Agreement_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Agreement Period End Date must be greater than Agreement Period Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Award_Name</fullName>
+        <active>true</active>
+        <description>Applicant cannot change Award Name.</description>
+        <errorConditionFormula>AND(ISCHANGED( Name ),  $Profile.Name = &apos;Applicant&apos;)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>You cannot edit the Award Name.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Budget_Period_End_Date1</fullName>
+        <active>true</active>
+        <description>Date entered in this field must be greater than the date entered in the “Budget Period Start Date” field.
+US # 4786</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;))),
+ Budget_Period_End__c &lt;= Budget_Period_Start__c )</errorConditionFormula>
+        <errorDisplayField>Budget_Period_End__c</errorDisplayField>
+        <errorMessage>Budget Period End Date should begreater than Budget Period Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Budget_Period_End_Date2</fullName>
+        <active>true</active>
+        <description>Date entered must be less than or equal to the date in the “Grant Performance Period End Date” field on the award. 
+US # 4786</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;))),
+ Budget_Period_End__c &gt; Grant_Performance_Period_End_Date__c )</errorConditionFormula>
+        <errorDisplayField>Budget_Period_End__c</errorDisplayField>
+        <errorMessage>Budget Period End Date cannot be greater than Grant Performance Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Budget_Period_Start_Date</fullName>
+        <active>true</active>
+        <description>Date entered must be greater than or equal to the date in the “Grant Performance Period Start Date” field on the award.
+US # 4786</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;))),
+ Budget_Period_Start__c &lt; Grant_Performance_Period_Start_Date__c)</errorConditionFormula>
+        <errorDisplayField>Budget_Period_Start__c</errorDisplayField>
+        <errorMessage>Budget Period Start Date cannot be less than Grant Performance Period Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enrollment_Period_End_Date1</fullName>
+        <active>true</active>
+        <description>Date entered in this field must be greater than the date entered in the “Enrollment Period Start Date” field.
+US # 4785</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),
+
+ Enrollment_Period_End_Date__c  &lt;= Enrollment_Period_Start_Date__c )</errorConditionFormula>
+        <errorDisplayField>Enrollment_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Enrollment Period End Date should be greater then Enrollment Period Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enrollment_Period_End_Date2</fullName>
+        <active>true</active>
+        <description>Date date entered must be less than or equal to the date in the “Budget Period End Date” field on the award. 
+US # 4785</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),
+
+ Enrollment_Period_End_Date__c  &gt;  Budget_Period_End__c )</errorConditionFormula>
+        <errorDisplayField>Enrollment_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Enrollment Period End Date cannot be greater than Budget Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enrollment_Period_Start_Date1</fullName>
+        <active>true</active>
+        <description>Date entered in this field must be greater than or equal to the date entered in the “Budget Period Start Date” on the award.
+US # 4785</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),
+
+ Enrollment_Period_Start_Date__c  &lt;  Budget_Period_Start__c )</errorConditionFormula>
+        <errorDisplayField>Enrollment_Period_Start_Date__c</errorDisplayField>
+        <errorMessage>Enrollment Period Start Date cannot be less then Budget Period Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enrollment_Period_Start_Date2</fullName>
+        <active>true</active>
+        <description>Date entered must be less than or equal to the date in the “Budget Period End Date” field on the award.
+US # 4785</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),
+
+ Enrollment_Period_Start_Date__c  &gt;  Budget_Period_End__c )</errorConditionFormula>
+        <errorDisplayField>Enrollment_Period_Start_Date__c</errorDisplayField>
+        <errorMessage>Enrollment Period Start Date cannot be greater than Budget Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Grant_Performance_Period_End_Date1</fullName>
+        <active>true</active>
+        <description>US # 4784</description>
+        <errorConditionFormula>AND(OR(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Yes&apos;),ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;))),
+Grant_Performance_Period_End_Date__c &lt;= Grant_Performance_Period_Start_Date__c)</errorConditionFormula>
+        <errorDisplayField>Grant_Performance_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Grant Performance End Date should be greater than Grant Performance Period Start Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Grant_Performance_Period_End_Date2</fullName>
+        <active>true</active>
+        <description>US # 4784</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;)), 
+Grant_Performance_Period_End_Date__c &gt; Agreement_Period_End_Date__c )</errorConditionFormula>
+        <errorDisplayField>Grant_Performance_Period_End_Date__c</errorDisplayField>
+        <errorMessage>Grant Performance End Date should less than Agreement Period End Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Grant_Performance_Period_Start_Date</fullName>
+        <active>true</active>
+        <description>Date entered must be greater than or equal to the date in the “Agreement Period Start Date” field on the award object.
+US # 4784</description>
+        <errorConditionFormula>AND(ISPICKVAL( Application_ID__r.NOFA_RFP__r.Cash_Grants_Awards__c , &apos;Optional&apos;), 
+OR(ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Program Grant&apos;),ISPICKVAL( Application_ID__r.Program_Type__c, &apos;Support Grant&apos;)), 
+Grant_Performance_Period_Start_Date__c &lt;  Agreement_Period_Start_Date__c 
+)</errorConditionFormula>
+        <errorDisplayField>Grant_Performance_Period_Start_Date__c</errorDisplayField>
+        <errorMessage>Grant Performance Period Start Date should be greater than or equal to Agreement Period Start Date</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Award</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Award</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awarded&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Certify_Application_by_PO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Certify Application (by PO)</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awaiting SPO Approval&apos;; 
+//Aws.PO_Certification_Date__c = new Date();
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ;
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Commit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve Grant previously certified by PO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Being Committed&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Obligate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Obligate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Obligated&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)}
+var Aws = new sforce.SObject(&quot;Award__c&quot;);
+Aws.id = &apos;{!Award__c.Id}&apos;;
+Aws.Grant_Status__c = &apos;Rejected&apos;;
+var result = sforce.connection.update([Aws]);
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Return_for_Rework</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Return for Rework</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Returned for Re-Work&apos;; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_to_GO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve Agreement by XO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awaiting GO Certification&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_to_PO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Return to PO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awaiting PO Certification&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_to_SGO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Certify, send to SGO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awaiting SGO Approval&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_to_SPO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Return to SPO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Awaiting SPO Approval&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_to_XO</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Return to XO</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Being Committed&apos;; 
+//Aws.PO_Certification_Date__c = new Date(); 
+//Aws.PO__c = &apos;{!$User.FirstName} {!$User.LastName}&apos; ; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Withdraw</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Withdraw</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)} 
+var Aws = new sforce.SObject(&quot;Award__c&quot;); 
+Aws.id = &apos;{!Award__c.Id}&apos;; 
+Aws.Grant_Status__c = &apos;Withdrawn&apos;; 
+var result = sforce.connection.update([Aws]); 
+window.location.replace(&apos;{!Award__c.Id}&apos;);</url>
+    </webLinks>
+</CustomObject>

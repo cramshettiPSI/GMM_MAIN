@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>System shall send closeout notification to NCCC grantee 24 hrs after project end.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>closeout notification to NCCC grantee</name>
+    <style>none</style>
+    <subject>closeout notification to NCCC grantee</subject>
+    <type>text</type>
+</EmailTemplate>

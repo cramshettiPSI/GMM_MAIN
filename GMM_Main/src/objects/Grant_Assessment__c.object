@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Grant Monitoring - child of Monitoring Assessment object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Assessment_Criteria_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Criteria Comments</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Assessment_Criteria__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Criteria</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New CNCS Recipient</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Change in Legal Applicant/Responsible Party</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Time Since Last On-Site Compliance Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staffing Changes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overall Programmatic Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi-Site Program</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Participant Enrollment and Retention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Changes in Project Design or Scope</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Large Recipient</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multiple Awards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expenditures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grantee Match</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incomplete or Late Financial Reports</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Competency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recipient Responsiveness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incomplete or Late Progress Reports</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prohibited Activities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Key Concerns or Challenges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On or More Partners or Subcontractors – TTA Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Determination__c</fullName>
+        <externalId>false</externalId>
+        <label>Determination</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Monitoring_Assessment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Monitoring Assessment</label>
+        <referenceTo>Monitoring_Assessment__c</referenceTo>
+        <relationshipLabel>Grant Assessments</relationshipLabel>
+        <relationshipName>Grant_Assessments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Grant Assessment</label>
+    <nameField>
+        <displayFormat>GA-{0000}</displayFormat>
+        <label>Grant Assessment  ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Grant Assessments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Assessment_Criteria_Comments_Required</fullName>
+        <active>true</active>
+        <description>Assessment Criteria Comments Required when Determination != N/A</description>
+        <errorConditionFormula>ISBLANK(Assessment_Criteria_Comments__c) &amp;&amp; (ISPICKVAL( Determination__c , &quot;Yes&quot;) || ISPICKVAL( Determination__c , &quot;No&quot;))</errorConditionFormula>
+        <errorDisplayField>Assessment_Criteria_Comments__c</errorDisplayField>
+        <errorMessage>Please enter Assessment Criteria Comments.</errorMessage>
+    </validationRules>
+</CustomObject>

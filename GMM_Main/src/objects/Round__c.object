@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Class_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Class__r.Class_Number__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Class Record ID</label>
+        <referenceTo>Class__c</referenceTo>
+        <relationshipLabel>Rounds</relationshipLabel>
+        <relationshipName>Rounds</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Round_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Round End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Round_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Round Number</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Round_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Round Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Class_Identifier__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Class__r.Sub_Class_Identifier__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub-Class Identifier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transition_End_Round_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Transition End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transition_Start_Round_Dates__c</fullName>
+        <externalId>false</externalId>
+        <label>Transition Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Round</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Round Record ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Rounds</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Round_EndDate</fullName>
+        <active>true</active>
+        <description>Bug 3793</description>
+        <errorConditionFormula>Round_End_Date__c &gt;=  Class__r.Graduation__c</errorConditionFormula>
+        <errorDisplayField>Round_End_Date__c</errorDisplayField>
+        <errorMessage>Round end date must be before the member graduation date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Round_End_Date</fullName>
+        <active>true</active>
+        <description>Round end date must be after Round start date</description>
+        <errorConditionFormula>Round_End_Date__c  &lt;=  Round_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Round_End_Date__c</errorDisplayField>
+        <errorMessage>Round end date must be after Round start date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Round_start_date</fullName>
+        <active>true</active>
+        <errorConditionFormula>Round_Start_Date__c &lt;=  Class__r.Member_Induction__c</errorConditionFormula>
+        <errorDisplayField>Round_Start_Date__c</errorDisplayField>
+        <errorMessage>Round start date must be after the member induction date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transition_End_Date</fullName>
+        <active>true</active>
+        <description>Transition end date must be after the Transition start date</description>
+        <errorConditionFormula>Transition_End_Round_Date__c  &lt;  Transition_Start_Round_Dates__c</errorConditionFormula>
+        <errorDisplayField>Transition_End_Round_Date__c</errorDisplayField>
+        <errorMessage>Transition end date must be after the Transition start date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transition_End_Date_2</fullName>
+        <active>true</active>
+        <errorConditionFormula>Transition_End_Round_Date__c &gt; Class__r.Graduation__c</errorConditionFormula>
+        <errorDisplayField>Transition_End_Round_Date__c</errorDisplayField>
+        <errorMessage>Transition End Date must be less than or equal to the Graduation Date on the parent Class Year record</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Transition_Start_Date</fullName>
+        <active>true</active>
+        <description>Transition start date must be after the round end date</description>
+        <errorConditionFormula>Transition_Start_Round_Dates__c   &lt; Round_End_Date__c</errorConditionFormula>
+        <errorDisplayField>Transition_Start_Round_Dates__c</errorDisplayField>
+        <errorMessage>Transition start date must be after the round end date</errorMessage>
+    </validationRules>
+</CustomObject>

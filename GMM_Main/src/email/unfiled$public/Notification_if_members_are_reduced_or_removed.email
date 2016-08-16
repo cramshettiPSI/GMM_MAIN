@@ -1,0 +1,7 @@
+Hello {!Team_Assignment__c.Applicant_Name__c}
+ 
+Thank you for your willingness to host an AmeriCorps NCCC team.  Unfortunately, due to urgent program needs, the remainder of your project has been cancelled and your team has been recalled to the campus.  AmeriCorps NCCC staff will be in contact with your shortly to evaluate your project to determine if it can be assigned to another team, either during this or in a future project period. If you have any questions, please contact our staff. 
+
+
+Thank You 
+{!Team_Assignment__c.Award_PO__c}

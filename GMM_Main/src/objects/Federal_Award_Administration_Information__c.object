@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Information1__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Continuation Funding Information and Req</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Information__c</fullName>
+        <externalId>false</externalId>
+        <label>Continuation Funding Information and Re</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Administrative_and_National_Policy_Requi__c</fullName>
+        <defaultValue>&quot;The Notice of Grant Award incorporates the approved application as part of the binding commitments under the [grant award] or [cooperative agreement], as well as the requirements of applicable sections of the National and Community Service Act of 1990 and other applicable statutes. Awards will also be subject to the specific terms and conditions established for [discretionary grants] or [a cooperative agreement] or defined in the Terms and Conditions or Special Conditions attached to the award. If necessary, applicants will have an opportunity to negotiate conditions before they accept an award [Grants] or [Cooperative agreements] under this program are subject to the Uniform Administrative Requirements, Cost Principles, and Audit Requirements for Federal Awards (Uniform Guidance, now consolidated in 2 CFR Parts 200 and 2205). This final guidance supersedes and streamlines requirements from OMB Circulars A–21, A–87,  and A–122 (the former Cost Principles), A-110 and A-102 (the former Administrative Requirements),  A–133 and A-50 (the former Audits and Audit Follow up), and A-89 (the former Federal Domestic Assistance Program Information.)&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Administrative Policy Requirements</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Federal_Award_Notice__c</fullName>
+        <defaultValue>&quot;CNCS will make awards following the grant selection announcement. CNCS anticipates announcing the results of this competition by [early, mid, or late] [MM YYYY] contingent on the availability of congressional appropriations. Applicants will be notified via email as to funding decisions. This notification is not an authorization to begin grant activities. The Notice of Grant Award signed by the grant officer is the authorizing document for grant activities. Unsuccessful applicants will also receive a notification that their application was not approved for funding.An awardee may not expend federal grant funds until the start of the Project Period identified on the Notice of Grant Award.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Federal Award Notice</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>National_Service_Criminal_History_Check__c</fullName>
+        <defaultValue>&quot;The National Service Criminal History Check (NSCHC) is a screening procedure established by law to protect the beneficiaries of national service. The law requires recipients to conduct and document NSCHCs on any person (including award-funded staff, national service participant, or volunteer) receiving a salary, living allowance, stipend or education award through a program receiving CNCS funds.  An individual is ineligible to serve in a position that receives such CNCS funding if the individual is registered, or required to be registered, as a sex offender or has been convicted of murder.  The cost of conducting NSCHCs is an allowable expense under the award.Unless CNCS has provided a recipient with a written exemption or written approval of an alternative search procedure, recipients must perform the following checks–All award-funded staff, national service participants, and volunteers must undergo NSCHCs that include:1. A nationwide name-based search of the National Sex Offender Public Website (NSOPW); and 2. Either • A name- or fingerprint-based search of the statewide criminal history registry in the person’s state of residence and in the state where the person will serve/work or • A fingerprint-based FBI criminal history check. Special Rule for Persons Serving Vulnerable Populations. Award-funded staff, national service participants, and volunteers with recurring access to vulnerable populations (i.e., children age 17 or younger, individuals age 60 or older, or individuals with disabilities) must undergo NSCHCs that include: 1. A nationwide name-based check of the NSOPW; and 2. Both • A name- or fingerprint-based search of the statewide criminal history registry in the person’s state of residence and in the state where the person will serve/work; and • A fingerprint-based FBI criminal history check. See 45 C.F.R. § 2540.200–§ 2540.207 and http://www.nationalservice.gov/resources/criminal-history-check for complete information and FAQs.&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>National Service Criminal History Check</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notice_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Notice ID</label>
+        <referenceTo>Notice__c</referenceTo>
+        <relationshipLabel>Federal Award Administration Information</relationshipLabel>
+        <relationshipName>Federal_Award_Administration_Information</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Reporting_Requirements__c</fullName>
+        <defaultValue>&quot;Recipients are required to submit a variety of reports which are due at specific times during the life cycle of an award. All reports must be accurate, complete, and submitted on time.Edit this section as applicable to the program requirements.Recipients are required to provide annual progress reports and semi-annual financial and narrative progress reports through eGrants, CNCS’s web-based grants management system. All recipients must provide quarterly expense reports through the Payment Management System (PMS) at the U.S. Department of Health and Human Services.In addition, at the end of the award period, recipients must submit final financial and progress reports that are cumulative over the entire award period and consistent with the close-out requirements of CNCS’s Office of Grants Management. The final reports are due 90 days after the end of the agreement.Award recipients will be required to report at www.FSRS.gov on all subawards over $25,000, and may be required to report on executive compensation for the recipient organization and its subrecipients. Recipients [and subrecipients] must have the necessary systems in place to collect and report this information. See 2 CFR Part 170 for more information and to determine how these requirements apply.Once the [grant] or [cooperative agreement] is awarded, recipients will be expected to have data collection and data management policies, processes, and practices that provide reasonable assurance that they are giving CNCS high quality performance measure data. At a minimum, recipients should have policies, processes, and practices that address the following five aspects of data quality for themselves and for subrecipients (if applicable):• the data measures what it intends to measure• the data reported is complete• the recipient collects data in a consistent manner• the recipient takes steps to correct data errors• the recipient actively reviews data for accuracy prior to submission.Failure to submit accurate, complete, and timely required reports may affect the recipient’s ability to secure future CNCS funding.For further guidance and training resources see – Resources: Data Collection and Instruments: https://www.nationalserviceresources.gov/npm/home#.U9qVL_ldW3o&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Reporting Requirements</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Use_of_Material__c</fullName>
+        <defaultValue>&quot;To ensure that materials generated with CNCS funding are available to the public and readily accessible to recipients and non-recipients, CNCS reserves a royalty-free, nonexclusive, and irrevocable right to obtain, use, modify, reproduce, publish, or disseminate publications and materials produced under the award, including data, and to authorize others to do so (2 CFR §200.315).&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Use of Material</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Federal Award Administration Information</label>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Federal Award Administration Information</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Federal Award Administration Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,17 @@
+<apex:page standardController="Prime_Application__c" extensions="PrimeApplicationNOFAlookupclass" language="en-US">
+   <html lang="en">
+     </html>
+     <apex:form >
+         <apex:pageBlock title="NOFA">
+             <apex:pageBlockButtons >
+                <apex:commandButton value="Continue" action="{!cloneapplication}"/>
+                 <apex:commandButton value="Cancel" action="{!cancel}"/>
+             </apex:pageBlockButtons>
+            
+             <apex:pageBlockSection title="Select Nofa" >
+                 <apex:inputField value="{!Prime_Application__c.NOFO_RFP__c}"/>
+             </apex:pageBlockSection>
+         </apex:pageBlock>
+     </apex:form>
+ 
+</apex:page>

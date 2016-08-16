@@ -1,0 +1,11 @@
+Dear {!User.Name}, 
+
+
+
+We appreciate your interest in our organization and your commitment to community service. Unfortunately, your concept paper could not be accepted at this time.
+
+Comments:
+{!Application3__c.Comments__c}
+
+Thank you, 
+Corporation for National and Community Service

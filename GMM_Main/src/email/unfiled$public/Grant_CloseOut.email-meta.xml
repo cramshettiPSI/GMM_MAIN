@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Grant CloseOut</name>
+    <style>none</style>
+    <subject>Create a Grant Close Out Record for the {Master_Award__c.Legal_Applicant_Name__c}</subject>
+    <type>text</type>
+</EmailTemplate>

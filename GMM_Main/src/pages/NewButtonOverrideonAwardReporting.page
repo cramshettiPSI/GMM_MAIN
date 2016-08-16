@@ -1,0 +1,10 @@
+<apex:page standardController="Award_Reporting__c" extensions="AwardReportButtonOverrideExt" action="{!redirect}">
+<html lang="en-US"> 
+</html>
+ <script>
+
+ alert('You are not allowed to create award reporting please go to Award inorder to create the Award Reporting'); 
+ 
+
+ </script>
+</apex:page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Master_Award__c.Award_ID__c</field>
+    </columns>
+    <columns>
+        <field>Master_Award__c.Org_Name__c</field>
+    </columns>
+    <columns>
+        <field>Master_Award__c.Total_Obligated_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Master_Award__c.Obligation__c</field>
+    </columns>
+    <columns>
+        <field>Master_Award__c.Commitment__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Grants with Obligations Less than Commit</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Master_Award__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Master_Award__c.Grant_Performance_Period_End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

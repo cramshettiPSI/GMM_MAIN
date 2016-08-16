@@ -1,0 +1,10 @@
+Dear {!Application3__c.Authorized_Representative__c},        
+
+We appreciate your interest in our organization and your commitment to community service. Unfortunately, your application could not be accepted at this time. 
+
+Thank you,       
+
+Corporation for National and Community Service
+
+Applicant Feedback Summary:
+{!Application3__c.Application_Feedback_Summary__c}

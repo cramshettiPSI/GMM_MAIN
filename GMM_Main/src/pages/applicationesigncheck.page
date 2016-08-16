@@ -1,0 +1,61 @@
+<apex:page standardController="Application3__c" Extensions="Withdrawapplication" sidebar="false" showHeader="false" id="Page">
+    <script>
+    function validate(field,chk){
+       var namval = document.getElementById(field).value;
+       var terms  = document.getElementById(chk).checked;
+          if(namval==""||terms==false){
+            alert('Please Enter name and also check Terms & Conditions');
+          }
+          else {              
+              closeaftersave();
+          }
+    }   
+  function closeaftersave(){  
+   var winMain=window.opener;   
+    if (null==winMain)  
+    {        
+      winMain=window.parent.opener;  
+    }  
+   var a = confirm('Continue?');  
+   if(a==true){
+       //window.close(); 
+       winMain.reload();           
+       return true;  
+   }else{
+       return false;
+   }        
+   //this is the function of parent page which gets invoked from child page 
+   
+       
+   
+   }
+    function winclose(){  
+            
+       if (window.netscape){          
+           netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserWrite");
+       }
+       window.open('','_self');
+       top.close();
+   }
+   
+   </script>
+    <apex:pageMessages />
+    <apex:form id="frm"><br/><br/>
+        <apex:outputLink value="/servlet/servlet.FileDownload?file={!$Label.AssurancesFileId}" target="_blank">Please click here to view Assurances
+            <apex:actionSupport event="onblur"  action="{!setAssurances}" />
+        </apex:outputLink> <br/> <br/>
+        <apex:outputLink value="/servlet/servlet.FileDownload?file={!$Label.CertificationFileId}" target="_blank">Please click here to View Certifications
+            <apex:actionSupport event="onblur"  action="{!setCertifications}" /> 
+        </apex:outputLink> <br/> <br/>
+        
+        &nbsp;&nbsp;<b>Signature:</b>
+        By selecting the "I agree" button, you are signing this agreement electronically. You agree this  electronic signature is the legal equivalent of your manual signature on this Agreement once you have selected this button. <br/><br/>
+        &nbsp;<apex:inputCheckbox id="chkbox" value="{!terms_conditions}"/> <apex:outputLabel >I agree to the above Agreement Statement.</apex:outputLabel><br/><br/>&nbsp;&nbsp;
+        
+        <apex:outputLabel >Name:</apex:outputLabel> &nbsp;<apex:inputText id="name" value="{!authrepname}"/> <br/><br/>&nbsp;&nbsp;
+        <apex:outputLabel >Date:</apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputField value="{!appliInput.Proposed_Start_Date__c}" /><br/><br/>
+        
+        &nbsp;&nbsp;&nbsp;<apex:commandbutton value="Confirm"  onclick="if(!validate('{!$Component.name}','{!$Component.chkbox}')) return false;" action="{!confirmsign}"  />
+        <!-- <apex:actionFunction name="confirm" action="{!confirmsign}"/>  -->
+    </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Submitted_date__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CONTACT_RECORDTYPE</column>
+            <operator>equals</operator>
+            <value>Contact.Expert_Reviewer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Status__c</column>
+            <operator>equals</operator>
+            <value>Submitted</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Expert Reviewer Submission Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

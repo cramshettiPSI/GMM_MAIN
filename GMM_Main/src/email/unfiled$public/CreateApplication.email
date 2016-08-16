@@ -1,0 +1,12 @@
+Hi {!Contact.First_Name__c},
+
+    An Application is Created with Application Number :  {!Application3__c.Application_ID__c}
+
+
+Please follow the link and Submit your Application.
+
+https://devsb12-cncs.cs32.force.com/granteeportal/apex/ApplicationEditpage?id={!Application3__c.Id}&sfdc.override=1 
+
+
+Thanks,
+CNCS

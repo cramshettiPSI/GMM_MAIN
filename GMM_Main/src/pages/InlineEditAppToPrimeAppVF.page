@@ -1,0 +1,39 @@
+<apex:page standardController="Prime_Application__c" extensions="InlineEditAppToPrimeAppCntrl">
+ <apex:form >
+      <apex:pageBlock mode="inlineEdit" >
+           <!-- <apex:pagemessage summary="Validation Error Messages!" severity="Error" Strength="3" rendered="{!errValidationErorExplode}"></apex:pagemessage> -->
+           <apex:pageblockButtons location="top"> 
+                <apex:commandButton action="{!SaveInlineChanges}" value="Save" id="saveButton"/>
+                <apex:commandButton value="Cancel" id="cancelButton" onclick="resetInlineEdit()"/>
+            </apex:pageblockButtons> 
+            <apex:pageBlockTable value="{!lstApp}" var="rec">
+                     <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" 
+                            hideOnEdit="editButton" event="ondblclick" 
+                            changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                     
+                     <apex:column headerValue="Application Id">
+                            <apex:outputtext value="{!rec.Name}" id="nameFld"/>
+                     </apex:column>
+                        
+                     <apex:column headerValue="Rank">
+                            <apex:outputfield value="{!rec.Rank__c}" id="rankFld"/>
+                     </apex:column>
+                                          
+                     <apex:column headerValue="Assessment of Quality Indicators">
+                               <apex:outputfield value="{!rec.Assessment_of_Quality_Indicators__c}"/>
+                     </apex:column> 
+                     
+                     <apex:column headerValue="Ranking Justification">
+                            <apex:outputfield value="{!rec.Ranking_Justification__c}" />
+                     </apex:column>
+                     
+                     <apex:column headerValue="Status">
+                            <apex:outputtext value="{!rec.Status__c}" />
+                     </apex:column>
+                   
+            </apex:pageBlockTable>          
+           
+      </apex:pageBlock>
+ 
+  </apex:form>
+</apex:page>

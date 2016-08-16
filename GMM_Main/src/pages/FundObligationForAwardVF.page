@@ -1,0 +1,143 @@
+<apex:page standardController="Award__c" extensions="FundObligationForAwardCntrl" action="{!invokeObligationDataFor_supp_mech_cd}">
+    <style type="text/css">
+        .popupBackground{
+            background-color:black;
+            opacity: 0.20;
+            filter: alpha(opacity = 20);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+        .custPopup{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            width: 700px;
+            margin-left: -250px;
+            top:100px;
+        }
+
+    </style>
+    
+    <script>
+      function newRecordForm(){
+            //alert('js method entry');
+            actFuncForObligation();
+            //alert('js method exit');
+      }
+    </script>
+    
+     <apex:form >
+       <!--  <apex:actionFunction name="actFuncForObligation" action="{!hidePopup}" reRender="LDB" /> --> 
+         <apex:pageMessages id="showmsg"></apex:pageMessages>
+         <b><apex:outputLabel value="Fund Obligation"></apex:outputLabel></b>
+        <apex:pageBlock id="LDB">
+          <!--    <apex:commandButton action="{!openPopup}" value="Add Record" />
+ 
+             <apex:outputPanel id="tstpopup" rendered="{!showPopup}">
+                <apex:outputPanel styleClass="popupBackground" layout="block" />
+                <apex:outputPanel styleClass="custPopup" layout="block" >
+                    <center>
+                         <BR></BR>
+                         <table>
+                           <tr>
+                             <td>Start FY </td>
+                             <td> <apex:inputText value="{!objFormFundObligation.Start_FY__c}" /> </td>
+                             <td>Ending FY</td> 
+                             <td><apex:inputField value="{!objFormFundObligation.End_FY__c}"/> </td>
+                            </tr>
+                           <tr>   
+                              <td>Current Amount</td>
+                              <td> <apex:inputField value="{!objFormFundObligation.Commitment_Amount__c}"/></td>
+                              <td> Change </td> 
+                              <td> <apex:inputField value="{!objFormFundObligation.Change__c}"/> </td>
+                           </tr> 
+                           <tr>
+                              <td> Fund </td>   
+                              <td><apex:inputField value="{!objFormFundObligation.Fund__c}"/> </td>
+                              <td>Grant_Location </td> 
+                              <td><apex:inputField value="{!objFormFundObligation.Grant_Location__c}"/></td>
+                           </tr>
+                           <tr>   
+                              <td> Object_Class </td> 
+                              <td> <apex:inputField value="{!objFormFundObligation.Object_Class__c}"/></td>
+                             <td> Program </td> 
+                             <td><apex:inputField value="{!objFormFundObligation.Program_Manager__c}"/></td>
+                           </tr>
+                           <tr>   
+                              <td>Purpose </td> <td> <apex:inputField value="{!objFormFundObligation.Purpose__c}"/></td>
+                          </tr>
+                         </table>    
+                         <apex:commandButton value="Save"  onclick="newRecordForm();return false;"/> -->  <!--action="{!Cancel}" -->
+                      <!--   <apex:commandButton value="Cancel" action="{!Cancel}" /> --> <!-- <action="{!Cancel}" -->
+                   <!--  </center>
+                 </apex:outputPanel>
+             </apex:outputPanel> -->
+             <apex:pageBlockTable value="{!lstFundObligation}" var="fundObligationRec">
+                     <apex:column headerValue="Begin FY" >
+                         <apex:outputField value="{!fundObligationRec.Begin_Fiscal_Yr__c}"/> <!--  rendered="{!!ipFlg}" -->
+                             <!-- <apex:inputField value="{!fundObligationRec.Start_FY__c}" rendered="{!ipFlg}"/> -->
+                          </apex:column>
+                      
+                          <apex:column headerValue="End FY" >
+                              <apex:outputField value="{!fundObligationRec.End_Fiscal_Yr__c}" />
+                          </apex:column> 
+                     
+                          <apex:column headerValue="Current Committed Amount" >
+                              <apex:outputField value="{!fundObligationRec.Commitment_Amount__c}" />
+                          </apex:column> 
+                          
+                          <apex:column headerValue="Current Obligated Amount" >
+                              <apex:outputField value="{!fundObligationRec.LINE_OBLIGATED_AMT__c}" />
+                          </apex:column> 
+                     
+                          <apex:column headerValue="Change" >
+                              <apex:outputField value="{!fundObligationRec.Change__c}">
+                                 <apex:inlineEditSupport showOnEdit="saveButton" event="ondblclick"/>   
+                              </apex:outputField>   
+                          </apex:column> 
+                            
+                          <apex:column headerValue="Fund" >
+                              <apex:outputField value="{!fundObligationRec.Fund__c}" />
+                          </apex:column> 
+                          
+                          <apex:column headerValue="Grant_Location" >
+                              <apex:outputField value="{!fundObligationRec.Grant_Location__c}" />
+                          </apex:column> 
+         
+         
+                          <apex:column headerValue="Object_Class" >
+                              <apex:outputField value="{!fundObligationRec.Object_Class__c}" />
+                          </apex:column> 
+         
+                          <apex:column headerValue="Program Manager" >
+                              <apex:outputField value="{!fundObligationRec.Program_Manager__c}" />
+                          </apex:column> 
+     
+                          <apex:column headerValue="Purpose" >
+                              <apex:outputField value="{!fundObligationRec.Purpose__c}" />
+                          </apex:column>   
+                      
+                          <apex:column headerValue="Start FY" >
+                              <apex:outputField value="{!fundObligationRec.Start_FY__c}"/> <!--  rendered="{!!ipFlg}" -->
+                             <!-- <apex:inputField value="{!fundObligationRec.Start_FY__c}" rendered="{!ipFlg}"/> -->
+                          </apex:column>
+                      
+                          <apex:column headerValue="Ending FY" >
+                              <apex:outputField value="{!fundObligationRec.End_FY__c}" />
+                          </apex:column>            
+     
+             </apex:pageBlockTable>
+             <apex:pageblockButtons >
+                        <apex:commandButton value="Update Fund Obligation" action="{!updateObligationFundTransaction}" disabled="{!objAward.Grant_Status__c=='Awaiting Organization e-Signature'}" rendered="{!(showSGOButton) && (objAward.Application_ID__r.Type_of_Application__c!='Amendment' && objAward.NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && objAward.Application_ID__r.Program_Type__c==null && objAward.Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (objAward.Application_ID__r.Type_of_Application__c!='Amendment' && objAward.NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && objAward.NOFA_Name__r.Cooperative_Agreement__c=='Yes' && objAward.Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (objAward.Application_ID__r.Type_of_Application__c!='Amendment' && objAward.NOFA_Name__r.Cash_Grants_Awards__c=='Yes' && objAward.NOFA_Name__r.Cooperative_Agreement__c=='Yes' && objAward.Grant_Status__c=='Awaiting SGO Obligation') || (showSGOButton) && (objAward.Application_ID__r.Type_of_Application__c!='Amendment' && objAward.NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && objAward.Application_ID__r.Program_Type__c=='Support Grant' && objAward.Grant_Status__c=='Awaiting SGO Approval') || (showSGOButton) && (objAward.Application_ID__r.Type_of_Application__c!='Amendment' && objAward.NOFA_Name__r.Cash_Grants_Awards__c=='Optional' && objAward.Application_ID__r.Program_Type__c=='Program Grant' && objAward.Grant_Status__c=='Awaiting SGO Approval') }"/> 
+             </apex:pageblockButtons>
+         </apex:pageBlock> 
+     </apex:form>  
+</apex:page>
